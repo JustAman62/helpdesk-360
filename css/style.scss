@@ -1,4 +1,20 @@
-.bg-off-white {
-  background-color: #f5f5f5;
+.ticket-card {
+  //border-radius: 20px;
 }
 
+.closed-ticket-card {
+  background-color: #e0efe0;
+}
+
+.open-ticket-card {
+  background-color: #FFF9E6;
+}
+
+.open-ticket-clickable:hover {
+  background-color: #ffeeba;
+  text-decoration: none;
+}
+
+.open-card-header {
+  background-color: #ffeeba;
+}
