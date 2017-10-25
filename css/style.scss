@@ -1,9 +1,53 @@
-.ticket-card {
-  //border-radius: 20px;
-}
-
 .open-ticket-clickable:hover {
   background-color: #ffeeba;
   text-decoration: none;
+  border-radius: 10px;
+  color: #533f03;
 }
+
+.open-ticket-clickable {
+  background-color: #fff3cd;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #856404;
+  margin-bottom: 0.75rem;
+  .ticket-header {
+    background-color: #ffeeba;
+  }
+}
+
+.closed-ticket-clickable:hover {
+  background-color: #d4edda;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #0b2e13;
+}
+
+.closed-ticket-clickable {
+  background-color: #e5f4e8;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #155724;
+  margin-bottom: 0.75rem;
+  .ticket-header {
+    background-color: #d4edda;
+  }
+}
+
+.ticket-header {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  h4 {
+    margin: 0px;
+  }
+}
+
+.ticket-body {
+  background-color: transparent;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 0.75rem 0.75rem 0.6rem 0.75rem;
+}
+
 

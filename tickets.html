@@ -44,62 +44,129 @@
     </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <!--Open Tickets-->
-        <div class="col-sm-12 col-md-6 ticket-card pt-2">
+        <div class="col-sm-12 col-md-6 pt-2">
 
             <h4 class="text-center">Open Tickets</h4>
             <!--All tickets below this line should be generated via js my looking at the db using this template-->
-            <a href="#" class="open-ticket-clickable"><div class="col-12">
-                <div class=" alert alert-warning open-ticket-clickable">
-                    <h4 class="card-title">Ticket 1</h4>
-                    <p class="card-text">Ticket Description</p>
-                    <p class="card-text">Date ticket was created</p>
-                </div>
-            </div></a>
-            <a href="#" class="open-ticket-clickable"><div class="col-12">
-                <div class=" alert alert-warning open-ticket-clickable">
-                    <h4 class="card-title">Ticket 2</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut enim laborum necessitatibus odio reprehenderit, ullam vero! Accusamus aperiam dolor ducimus est illo, libero minima molestias obcaecati quod repudiandae ullam vero?</p>
-                    <p class="card-text">Date ticket was created</p>
-                </div>
-            </div></a>
-            <a href="#" class="open-ticket-clickable"><div class="col-12">
-                <div class=" alert alert-warning open-ticket-clickable">
-                    <h4 class="card-title">Ticket 3</h4>
-                    <p class="card-text">Ticket Description</p>
-                    <p class="card-text">Date ticket was created</p>
-                </div>
-            </div></a>
+            <a href="#" class="open-ticket-clickable">
+                <div class="w-100 open-ticket-clickable">
+                    <div class="d-flex ticket-header">
+                        <h4 class="card-title">Ticket 1</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="card-text">Ticket Description</p>
 
+                        <!--Table footer-->
+                        <table class="w-100">
+                            <tr>
+                                <td>Date Created</td>
+                                <td class="text-right">Unassigned / Specialist</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="open-ticket-clickable">
+                <div class="w-100 open-ticket-clickable">
+                    <div class="d-flex ticket-header">
+                        <h4 class="card-title">Ticket 2</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="card-text">Ticket Description</p>
+
+                        <!--Table footer-->
+                        <table class="w-100">
+                            <tr>
+                                <td>Date Created</td>
+                                <td class="text-right">Unassigned / Specialist</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="open-ticket-clickable">
+                <div class="w-100 open-ticket-clickable">
+                    <div class="d-flex ticket-header">
+                        <h4 class="card-title">Ticket 3</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab alias asperiores autem, eius eligendi eveniet exercitationem fugit hic inventore ipsam maiores nam odio officia perferendis, praesentium quasi vel! Sequi.</p>
+
+                        <!--Table footer-->
+                        <table class="w-100">
+                            <tr>
+                                <td>Date Created</td>
+                                <td class="text-right">Unassigned / Specialist</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </a>
         </div>
 
         <!--Closed Tickets-->
-        <div class="col-sm-12 col-md-6 ticket-card pt-2">
+        <div class="col-sm-12 col-md-6 pt-2">
+
             <h4 class="text-center">Closed Tickets</h4>
             <!--All tickets below this line should be generated via js my looking at the db using this template-->
-            <div class="col-12">
-                <div class="alert alert-success">
-                    <h4 class="card-title">Ticket 1</h4>
-                    <p class="card-text">Ticket Description</p>
-                    <p class="card-text">Date ticket was created</p>
+            <a href="#" class="closed-ticket-clickable">
+                <div class="w-100 closed-ticket-clickable">
+                    <div class="d-flex ticket-header">
+                        <h4 class="card-title">Ticket 1</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="card-text">Ticket Description</p>
+                        <!--Table footer-->
+                        <table class="w-100">
+                            <tr>
+                                <td>Date Created</td>
+                                <td class="text-right">Date Closed</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12">
-                <div class="alert alert-success">
-                    <h4 class="card-title">Ticket 1</h4>
-                    <p class="card-text">Ticket Description</p>
-                    <p class="card-text">Date ticket was created</p>
+            </a>
+
+            <a href="#" class="closed-ticket-clickable">
+                <div class="w-100 closed-ticket-clickable">
+                    <div class="d-flex ticket-header">
+                        <h4 class="card-title">Ticket 2</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab amet consectetur consequatur, dolorem eos fuga fugiat, fugit itaque minus perferendis praesentium quaerat quibusdam recusandae, repellendus similique tempora ut vitae.</p>
+                        <!--Table footer-->
+                        <table class="w-100">
+                            <tr>
+                                <td>Date Created</td>
+                                <td class="text-right">Date Closed</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12">
-                <div class="alert alert-success">
-                    <h4 class="card-title">Ticket 1</h4>
-                    <p class="card-text">Ticket Description</p>
-                    <p class="card-text">Date ticket was created</p>
+            </a>
+
+            <a href="#" class="closed-ticket-clickable">
+                <div class="w-100 closed-ticket-clickable">
+                    <div class="d-flex ticket-header">
+                        <h4 class="card-title">Ticket 3</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="card-text">Ticket Description</p>
+                        <!--Table footer-->
+                        <table class="w-100">
+                            <tr>
+                                <td>Date Created</td>
+                                <td class="text-right">Date Closed</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
