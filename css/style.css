@@ -41,4 +41,12 @@
   border-bottom-left-radius: 10px;
   padding: 0.75rem 0.75rem 0.6rem 0.75rem; }
 
+#open-ticket-list {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem; }
+
+#closed-ticket-list {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem; }
+
 /*# sourceMappingURL=style.css.map */

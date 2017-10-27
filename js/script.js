@@ -18,5 +18,7 @@ var openTicket =  `<a href="#" class="open-ticket-clickable">
     </a>`
 
 function addTicket() {
-    $('#open-ticket-list').innerHTML += openTicket;
+    var html = $('#open-ticket-list').html();
+    $('#open-ticket-list').html(html + openTicket);
+    console.log(openTicket, 'lala');
 }
