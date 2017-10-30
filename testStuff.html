@@ -87,19 +87,39 @@
     <!--Display each note in a seperate list item, grouped together
     When a item is clicked, show a modal to allow editing of the note-->
     <div class="list-group">
-        <button type="button" class="list-group-item list-group-item-action">
+        <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#notesModal">
             <small>19/09/2018 06:10</small><br>
             <span>some notes</span>
         </button>
-        <button type="button" class="list-group-item list-group-item-action">
+        <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#notesModal">
             <small>19/09/2018 06:10</small><br>
             <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta enim esse facere facilis harum inventore ipsum itaque laboriosam minus molestiae necessitatibus, reprehenderit sequi sint sunt totam ut! Quisquam, sapiente?</span>
         </button>
-        <button type="button" class="list-group-item list-group-item-action">
+        <button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#notesModal">
             <small>19/09/2018 06:10</small><br>
             <span>some notes</span>
         </button>
     </div>
 </div>
+
+<!--Notes modal-->
+<div id="notesModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-between">
+                <h3 class="my-0">Edit Note</h3>
+                <small>11/11/2011</small>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
