@@ -1,3 +1,5 @@
+//TODO: Make an example database structure to allow some dynamic content to be made in js
+
 let notes = [
     'ndwqd dowqboi nwoi',
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!',
