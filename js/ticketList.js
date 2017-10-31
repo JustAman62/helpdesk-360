@@ -15,10 +15,10 @@ var openTicket =  `<a href="#" class="open-ticket-clickable">
     </table>
     </div>
     </div>
-    </a>`
+    </a>`;
 
 function addTicket() {
-    var html = $('#open-ticket-list').html();
+    let html = $('#open-ticket-list').html();
     $('#open-ticket-list').html(html + openTicket);
     console.log(openTicket, 'lala');
 }
