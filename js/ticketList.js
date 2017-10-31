@@ -22,3 +22,4 @@ function addTicket() {
     $('#open-ticket-list').html(html + openTicket);
     console.log(openTicket, 'lala');
 }
+//TODO: Make this work with createElement, not the lazy way!
