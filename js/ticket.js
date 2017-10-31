@@ -36,6 +36,8 @@ $(function() {
     //    Close the modal
         $('#notesModal').modal('hide');
     })
+
+
 });
 
 function populateTicketInfo() {
