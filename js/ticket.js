@@ -19,9 +19,12 @@ $(function() {
         // console.log(noteID)
 
         let noteModal = $(this);
-        noteModal.find('.modal-body textarea').val(notes[noteID]);
-    })
+        noteModal.find('.modal-body textarea').val(notes[noteID]).trigger('input');
 
+    }).on('shown.bs.modal', function(event) {
+        $('.modal-body textarea').trigger('input');
+        console.log('lala')
+    })
     //Save the note displayed in the modal when the save button is clicked
     $('#saveNote').on('click', function() {
         let note = $('.modal-body textarea').val();
@@ -35,21 +38,37 @@ $(function() {
 
     //    Close the modal
         $('#notesModal').modal('hide');
-    })
+    });
+
+    //    auto resize text areas
+    $('textarea').each(function () {
+        this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+    }).on('input change cut paste drop keyup', resizeTextArea);
 
 
 });
+
+function resizeTextArea() {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+}
 
 function populateTicketInfo() {
     // Make sure the notes section is empty to prevent repetitions
     $('#note-list').html('')
     for (i in notes) {
-        makeNote(i);
+        makeNoteListItem(i);
     }
-
+//    Add a make new note button
+    let newNoteElement = document.createElement('button')
+    newNoteElement.setAttribute('type', 'button');
+    newNoteElement.setAttribute('class', 'list-group-item list-group-item-action');
+    newNoteElement.setAttribute('onclick', 'javascript:addNewNote()');
+    newNoteElement.appendChild(document.createTextNode('Add New Note'));
+    $('#note-list').append(newNoteElement)
 }
 
-function makeNote(noteID) {
+function makeNoteListItem(noteID) {
     // Template for making a note
     // `<button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#notesModal" data-note-id="0">
     //     <small>19/09/2018 06:10</small><br>
@@ -78,4 +97,9 @@ function makeNote(noteID) {
     noteElement.appendChild(noteText);
 
     $('#note-list').append(noteElement)
+}
+
+function addNewNote() {
+    notes.push("New Note")
+    populateTicketInfo();
 }
