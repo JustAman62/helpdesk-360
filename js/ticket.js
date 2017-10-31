@@ -69,7 +69,7 @@ function populateTicketInfo() {
     let plusIcon = document.createElement('i')
     plusIcon.setAttribute('class', 'icon-plus-circled');
     newNoteElement.appendChild(plusIcon);
-    newNoteElement.appendChild(document.createTextNode('Add New Note'));
+    newNoteElement.appendChild(document.createTextNode(' Add New Note'));
     $('#note-list').append(newNoteElement)
 }
 
