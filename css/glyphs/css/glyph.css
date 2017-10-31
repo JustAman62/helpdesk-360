@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'glyph';
-  src: url('../font/glyph.eot?60226913');
-  src: url('../font/glyph.eot?60226913#iefix') format('embedded-opentype'),
-       url('../font/glyph.woff2?60226913') format('woff2'),
-       url('../font/glyph.woff?60226913') format('woff'),
-       url('../font/glyph.ttf?60226913') format('truetype'),
-       url('../font/glyph.svg?60226913#glyph') format('svg');
+  src: url('../font/glyph.eot?66267265');
+  src: url('../font/glyph.eot?66267265#iefix') format('embedded-opentype'),
+       url('../font/glyph.woff2?66267265') format('woff2'),
+       url('../font/glyph.woff?66267265') format('woff'),
+       url('../font/glyph.ttf?66267265') format('truetype'),
+       url('../font/glyph.svg?66267265#glyph') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'glyph';
-    src: url('../font/glyph.svg?60226913#glyph') format('svg');
+    src: url('../font/glyph.svg?66267265#glyph') format('svg');
   }
 }
 */
@@ -61,3 +61,4 @@
 .icon-up-open-big:before { content: '\e803'; } /* '' */
 .icon-user:before { content: '\e804'; } /* '' */
 .icon-user-add:before { content: '\e805'; } /* '' */
+.icon-plus-circled:before { content: '\e806'; } /* '' */
