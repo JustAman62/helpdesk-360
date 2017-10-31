@@ -64,7 +64,9 @@ function populateTicketInfo() {
     newNoteElement.setAttribute('type', 'button');
     newNoteElement.setAttribute('class', 'list-group-item list-group-item-action');
     newNoteElement.setAttribute('onclick', 'javascript:addNewNote()');
-    newNoteElement.appendChild(document.createElement('i').setAttribute('class', 'icon-plus-circled'));
+    let plusIcon = document.createElement('i')
+    plusIcon.setAttribute('class', 'icon-plus-circled');
+    newNoteElement.appendChild(plusIcon);
     newNoteElement.appendChild(document.createTextNode('Add New Note'));
     $('#note-list').append(newNoteElement)
 }
@@ -94,7 +96,8 @@ function makeNoteListItem(noteID) {
     noteElement.appendChild(document.createElement('br'));
 
     let noteText = document.createElement('span');
-    noteText.appendChild(document.createTextNode(notes[noteID]));
+    // noteText.appendChild(document.create(notes[noteID].replace('\n', '<br>')));
+    $(noteText).html(notes[noteID].replace('\n', ' <br> '));
     noteElement.appendChild(noteText);
 
     $('#note-list').append(noteElement)
