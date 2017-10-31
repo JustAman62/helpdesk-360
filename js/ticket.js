@@ -9,7 +9,7 @@ let noteID = 0;
 $(function() {
     //When the page is first loaded, populate the ticket info
     // populateTicketInfo();
-    populateTicketInfo()
+    populateTicketInfo();
 
 
     //When the notes modal is shown, update the note textarea to match the note it was clicked on
@@ -21,15 +21,15 @@ $(function() {
         let noteModal = $(this);
         noteModal.find('.modal-body textarea').val(notes[noteID]).trigger('input');
 
-    }).on('shown.bs.modal', function(event) {
+    }).on('shown.bs.modal', function() {
         $('.modal-body textarea').trigger('input');
         console.log('lala')
-    })
+    });
     //Save the note displayed in the modal when the save button is clicked
     $('#saveNote').on('click', function() {
         let note = $('.modal-body textarea').val();
-        console.log(noteID)
-        console.log(notes)
+        console.log(noteID);
+        console.log(notes);
         notes[noteID] = note;
         console.log(notes);
 
