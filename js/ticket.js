@@ -64,7 +64,7 @@ function populateTicketInfo() {
     newNoteElement.setAttribute('type', 'button');
     newNoteElement.setAttribute('class', 'list-group-item list-group-item-action');
     newNoteElement.setAttribute('onclick', 'javascript:addNewNote()');
-    newNoteElement.appendChild(document.createElement('i').setAttribute('class', 'icon-'));
+    newNoteElement.appendChild(document.createElement('i').setAttribute('class', 'icon-plus-circled'));
     newNoteElement.appendChild(document.createTextNode('Add New Note'));
     $('#note-list').append(newNoteElement)
 }
