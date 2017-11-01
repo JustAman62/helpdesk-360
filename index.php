@@ -6,7 +6,6 @@ if (isset($_REQUEST['user'])) {
 if (isset($_REQUEST['password'])) {
     $_SESSION['password'] = $_REQUEST['password'];
 }
-echo $_REQUEST['password'];
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +27,8 @@ echo $_REQUEST['password'];
     <script src="js/script.js"></script>
 </head>
 <body class="bg-light">
-<?= array_values($_SESSION) ?>
+<?= array_values($_SESSION); ?>
+<?= $_REQUEST['password']; ?>
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
