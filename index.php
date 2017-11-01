@@ -6,6 +6,7 @@ if (isset($_REQUEST['user'])) {
 if (isset($_REQUEST['password'])) {
     $_SESSION['password'] = $_REQUEST['password'];
 }
+echo $_REQUEST['password'];
 ?>
 
 <!DOCTYPE html>
