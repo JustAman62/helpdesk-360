@@ -26,19 +26,7 @@
     <div class="navbar-collapse collapse order-3 order-md-1">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tickets.php">View Tickets</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="exampleTicket.php">Test ticket page</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">Example Login Page</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="tickets.html">View Tickets</a>
             </li>
         </ul>
     </div>

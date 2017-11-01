@@ -25,19 +25,7 @@
     <div class="navbar-collapse collapse order-3 order-md-1">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="tickets.php">View Tickets</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="exampleTicket.php">Test ticket page</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">Example Login Page</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="tickets.html">View Tickets</a>
             </li>
         </ul>
     </div>
@@ -54,7 +42,7 @@
             <h4 class="text-center">Open Tickets</h4>
             <!--<button type="button" class="button" onclick="javascript:addTicket()">add</button>-->
             <!--All tickets below this line should be generated via js my looking at the db using this template-->
-            <a href="exampleTicket.php" class="open-ticket-clickable">
+            <a href="exampleTicket.html" class="open-ticket-clickable">
                 <div class="w-100 open-ticket-clickable">
                     <div class="d-flex ticket-header">
                         <h4 class="card-title">Ticket 1</h4>
