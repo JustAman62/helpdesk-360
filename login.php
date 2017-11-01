@@ -40,21 +40,21 @@
             <div class="jumbotron" style="padding-top: 2rem;">
                 <h1 class="display-4 text-center mb-4">Login</h1>
                 <div class="row justify-content-center">
-                    <form>
+                    <form action="index.php">
                         <div class="input-group">
                             <span class="input-group-addon">User ID</span>
-                            <input class="form-control" type="text" title="User ID">
+                            <input class="form-control" type="text" title="User ID" name="user">
                         </div>
                         <br>
                         <div class="input-group">
                             <span class="input-group-addon">Password</span>
-                            <input class="form-control" type="password" title="Password">
+                            <input class="form-control" type="password" title="Password" name="password">
+                        </div>
+                        <br>
+                        <div class="row justify-content-center col-4 mx-auto">
+                            <button class="btn btn-primary w-100" type="submit">Login</button>
                         </div>
                     </form>
-                </div>
-                <br>
-                <div class="row justify-content-center col-4 mx-auto">
-                    <button class="btn btn-primary w-100">Login</button>
                 </div>
             </div>
         </div>
