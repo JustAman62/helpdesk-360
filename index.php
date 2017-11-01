@@ -28,7 +28,7 @@ echo $_REQUEST['password'];
     <script src="js/script.js"></script>
 </head>
 <body class="bg-light">
-<?= $_SESSION ?>
+<?= array_values($_SESSION) ?>
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
