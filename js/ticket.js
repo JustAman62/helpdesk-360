@@ -99,7 +99,7 @@ function makeNoteListItem(noteID) {
 
     let noteText = document.createElement('span');
     // noteText.appendChild(document.create(notes[noteID].replace('\n', '<br>')));
-    $(noteText).html(notes[noteID].replaceAll('\n', ' <br> '));
+    $(noteText).html(notes[noteID].replace(/\n/g, ' <br> '));
     noteElement.appendChild(noteText);
 
     $('#note-list').append(noteElement)
