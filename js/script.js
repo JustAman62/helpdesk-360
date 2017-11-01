@@ -3,7 +3,7 @@
 $(function() {
     //    Init popover
     $('#accountPopover').popover({
-        'content': "<a href='login.html'> <button type='button' class='btn btn-primary'> Logout </button></a>",
+        'content': "<a href='login.php'> <button type='button' class='btn btn-primary'> Logout </button></a>",
         'html': true
     });
 });
