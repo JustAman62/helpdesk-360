@@ -1,3 +1,13 @@
+<?php
+if (isset($_REQUEST['user'])) {
+    $_SESSION['user'] = $_REQUEST['user'];
+}
+
+if (isset($_REQUEST['password'])) {
+    $_SESSION['password'] = $_REQUEST['password'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
