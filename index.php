@@ -27,8 +27,11 @@ if (isset($_REQUEST['password'])) {
     <script src="js/script.js"></script>
 </head>
 <body class="bg-light">
-<?= array_values($_SESSION); ?>
-<?= $_REQUEST['password']; ?>
+<?php
+foreach ($_SESSION as $key => $value) {
+    echo "Key: $key; Value: $value\n";
+}
+?>
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
