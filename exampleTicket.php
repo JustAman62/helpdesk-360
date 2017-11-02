@@ -36,7 +36,8 @@
 </nav>
 
 <!-----------------------Content----------------------------->
-<div class="container my-5">
+<div class="container mb-5 mt-2">
+    <a href="tickets.php"><i class="icon icon-left-open-big"></i>Back</a>
     <h1 class="display-4 text-center">Ticket #321047</h1>
     <div class="container text-center">
         <span class="badge badge-success">Assigned</span>
