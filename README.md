@@ -1,3 +1,3 @@
 # helpdesk-360
-Team project repo HELLO 
+Team project repo
 
