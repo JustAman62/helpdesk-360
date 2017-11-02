@@ -47,9 +47,15 @@ if (isset($_REQUEST['password'])) {
 
 <div class="container mt-4">
     <div class="row d-flex flex-justify-content-between">
-        <div class="col-sm-12 col-md-4 px-4"><p class="alert alert-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque doloremque esse pariatur quibusdam. Adipisci eos ex, exercitationem itaque minus optio sapiente. At corporis doloremque earum, nihil nobis odio tempora.</p></div>
-        <div class="col-sm-12 col-md-4 px-4"><p class="alert alert-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque doloremque esse pariatur quibusdam. Adipisci eos ex, exercitationem itaque minus optio sapiente. At corporis doloremque earum, nihil nobis odio tempora.</p></div>
-        <div class="col-sm-12 col-md-4 px-4"><p class="alert alert-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque doloremque esse pariatur quibusdam. Adipisci eos ex, exercitationem itaque minus optio sapiente. At corporis doloremque earum, nihil nobis odio tempora.</p></div>
+        <div class="col-sm-12 col-md-4 px-4">
+            <button class="btn btn-primary">Add Ticket</button>
+        </div>
+        <div class="col-sm-12 col-md-4 px-4">
+            <button class="btn btn-primary">New Call</button>
+        </div>
+        <div class="col-sm-12 col-md-4 px-4">
+            <button class="btn btn-primary">Search For Ticket</button>
+        </div>
     </div>
 </div>
 
