@@ -48,13 +48,13 @@ if (isset($_REQUEST['password'])) {
 <div class="container mt-4">
     <div class="row d-flex flex-justify-content-between">
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-primary">Add Ticket</button>
+            <button class="btn btn-secondary btn-lg">Add Ticket</button>
         </div>
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-primary">New Call</button>
+            <button class="btn btn-secondary btn-lg">New Call</button>
         </div>
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-primary">Search For Ticket</button>
+            <button class="btn btn-secondary btn-lg">Search For Ticket</button>
         </div>
     </div>
 </div>
