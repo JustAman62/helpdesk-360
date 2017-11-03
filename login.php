@@ -2,7 +2,6 @@
 
 //End the session every time the login page is opened, to simulate a logout
 session_start();
-echo $_SESSION['user'];
 $_SESSION = array();
 session_destroy();
 session_regenerate_id(true);
