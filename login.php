@@ -30,7 +30,7 @@ session_regenerate_id(true);
 <body>
 
 <!--Navigation-->
-<nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
+<nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand mx-auto" href="index.php">Helpdesk 360</a>
 </nav>
 
