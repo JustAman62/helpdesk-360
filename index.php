@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_REQUEST['user'])) {
     $_SESSION['user'] = $_REQUEST['user'];
 }

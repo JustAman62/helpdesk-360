@@ -1,10 +1,10 @@
 <?php
 
-//End the session every time the login page is opened, to simulate a lotout
+//End the session every time the login page is opened, to simulate a logout
 session_destroy();
 
 //Start a session, to allow the user to login and keep them logged in until session is ended
-session_start();
+//session_start();
 
 ?>
 

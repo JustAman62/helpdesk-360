@@ -1,8 +1,9 @@
 <?php
 //If user is not logged in, ask user to log in
 if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
+//    header('Location: login.php');
 }
+echo $_SESSION['user'];
 ?>
 
 <!DOCTYPE html>
