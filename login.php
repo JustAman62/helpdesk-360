@@ -31,17 +31,7 @@ session_regenerate_id(true);
 
 <!--Navigation-->
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand nav-abs order-1" href="index.php">Helpdesk 360</a>
-    <div class="navbar-collapse collapse order-3 order-md-1">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="tickets.php">View Tickets</a>
-            </li>
-        </ul>
-    </div>
+    <a class="navbar-brand mx-auto" href="index.php">Helpdesk 360</a>
 </nav>
 
 
