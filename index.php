@@ -4,7 +4,7 @@ if (isset($_REQUEST['user'])) {
 }
 
 if (!isset($_SESSION['user'])) {
-    http_redirect('login.php');
+    header('Location: login.php');
 }
 ?>
 
@@ -41,7 +41,7 @@ if (!isset($_SESSION['user'])) {
         </ul>
     </div>
     <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
-        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"><?= $_SESSION['user'] ?>i class="icon-user"></i></a>
+        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['user'] ?> <i class="icon-user"></i></a>
     </div>
 </nav>
 
