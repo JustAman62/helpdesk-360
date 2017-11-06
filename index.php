@@ -49,13 +49,13 @@ if (!isset($_SESSION['user'])) {
 <div class="container mt-4">
     <div class="row d-flex flex-justify-content-between">
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-secondary btn-lg">Add Ticket</button>
+            <button class="btn btn-secondary btn-block">Add Ticket</button>
         </div>
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-secondary btn-lg">New Call</button>
+            <button class="btn btn-secondary btn-block">New Call</button>
         </div>
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-secondary btn-lg">Search For Ticket</button>
+            <button class="btn btn-secondary btn-block">Search For Ticket</button>
         </div>
     </div>
 </div>
