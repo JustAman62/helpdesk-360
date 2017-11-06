@@ -62,4 +62,8 @@
   color: rgba(0, 0, 0, 0.8) !important;
   text-decoration: none; }
 
+.btn-block {
+  padding: 20%;
+}
+
 /*# sourceMappingURL=style.css.map */
