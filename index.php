@@ -46,7 +46,7 @@ if (!isset($_SESSION['user'])) {
     </div>
 </nav>
 
-<div class="container mt-4">
+<div class="container mt-4" style="min-height:80vh">
     <div class="row d-flex flex-justify-content-between">
         <div class="col-sm-12 col-md-4 px-4">
             <button class="btn btn-secondary btn-block">Add Ticket</button>
