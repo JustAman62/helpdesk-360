@@ -46,16 +46,16 @@ if (!isset($_SESSION['user'])) {
     </div>
 </nav>
 
-<div class="container mt-4" style="min-height:400vh">
+<div class="container mt-4">
     <div class="row d-flex flex-justify-content-between">
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-secondary btn-block" style="min-height:200vh">Add Ticket</button>
+            <button class="btn btn-secondary btn-block" style="min-height:50vh">Add Ticket</button>
         </div>
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-secondary btn-block" style="min-height:200vh">New Call</button>
+            <button class="btn btn-secondary btn-block" style="min-height:50vh">New Call</button>
         </div>
         <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-secondary btn-block" style="min-height:100vh">Search For Ticket</button>
+            <button class="btn btn-secondary btn-block" style="min-height:50vh">Search For Ticket</button>
         </div>
     </div>
 </div>
