@@ -62,13 +62,75 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="create-call-time">Call Time</label>
                             <input type="time" class="form-control" id="create-call-time" placeholder="hh:mm">
-                            <small>Time the call was received</small>
+                            <small class="text-secondary">Time the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-call-date">Call Date</label>
                             <input type="date" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
-                            <small>Date the call was received</small>
+                            <small class="text-secondary">Date the call was received</small>
                         </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 col-md-4">
+                            <label for="create-employee-id">Employee's ID</label>
+                            <div class="input-group">
+                                <input type="time" class="form-control" id="create-employee-id" placeholder="1234">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="create-employee-name">Employee's Name</label>
+                            <input type="time" class="form-control" id="create-employee-name" placeholder="John Smith">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="create-employee-contact-number">Employee's Contact Number</label>
+                            <input type="date" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789">
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <label for="create-problem-description">Problem Description</label>
+                            <textarea name="" id="create-problem-description" class="form-control w-100"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4 mt-4">
+                            <h5>Software Issue</h5>
+                            <label for="create-licence-number">Licence Number</label>
+                            <div class="input-group">
+                                <input type="text" id="create-licence-number" class="form-control w-100">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Check</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8 mt-4">
+                            <h5>Hardware Issue</h5>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label for="create-serial-number">Serial Number</label>
+                                    <div class="input-group">
+                                        <input type="text" id="create-serial-number" class="form-control w-100">
+                                        <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Check</button>
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="create-unique-identifier">Unique Identifier</label>
+                                    <div class="input-group">
+                                        <input type="text" id="create-unique-identifier" class="form-control w-100">
+                                        <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Check</button>
+                                </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
@@ -76,6 +138,7 @@ if (!isset($_SESSION['user'])) {
                             <textarea name="" id="create-problem-description" class="form-control w-100"></textarea>
                         </div>
                     </div>
+
                     <div class="row mt-4">
                         <div class="col-12">
                             <label for="add-notes">Call Notes</label>
@@ -85,6 +148,8 @@ if (!isset($_SESSION['user'])) {
 
                 </form>
             </div>
+
+            <!--Add to existing ticket tab-->
             <div class="tab-pane fade" id="add" role="tabpanel">
                 Form to add a new call to a chosen ticket for this call
                 <form action="">
@@ -92,17 +157,36 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="add-call-time">Call Time</label>
                             <input type="time" class="form-control" id="add-call-time" placeholder="hh:mm">
-                            <small>Time the call was received</small>
+                            <small class="text-secondary">Time the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="add-call-date">Call Date</label>
                             <input type="date" class="form-control" id="add-call-date" placeholder="dd/mm/yyyy">
-                            <small>Date the call was received</small>
+                            <small class="text-secondary">Date the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="add-ticket-number">Ticket Number</label>
                             <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
-                            <small>Ticket to add call to</small>
+                            <small class="text-secondary">Ticket to add call to</small>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 col-md-4">
+                            <label for="add-employee-id">Employee's ID</label>
+                            <div class="input-group">
+                                <input type="time" class="form-control" id="add-employee-id" placeholder="1234">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="add-employee-name">Employee's Name</label>
+                            <input type="time" class="form-control" id="add-employee-name" placeholder="John Smith">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="add-employee-contact-number">Employee's Contact Number</label>
+                            <input type="date" class="form-control" id="add-employee-contact-number" placeholder="07123 456 789">
                         </div>
                     </div>
                     <div class="row mt-4">
