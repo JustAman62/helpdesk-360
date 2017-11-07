@@ -93,42 +93,6 @@ if (!isset($_SESSION['user'])) {
                     </div>
                 </div>
             </a>
-
-            <a href="#" class="closed-ticket-clickable">
-                <div class="w-100 closed-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 2</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab amet consectetur consequatur, dolorem eos fuga fugiat, fugit itaque minus perferendis praesentium quaerat quibusdam recusandae, repellendus similique tempora ut vitae.</p>
-                        <!--Table footer-->
-                        <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Date Closed</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="closed-ticket-clickable">
-                <div class="w-100 closed-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 3</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Ticket Description</p>
-                        <!--Table footer-->
-                        <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Date Closed</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </a>
         </div>
     </div>
 </div>
