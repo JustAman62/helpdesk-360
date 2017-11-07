@@ -21,6 +21,7 @@ if (!isset($_SESSION['user'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+    <script src="js/data.js"></script>
     <script src="js/script.js"></script>
     <script src="js/ticketList.js"></script>
 </head>
@@ -59,44 +60,6 @@ if (!isset($_SESSION['user'])) {
                         <p class="card-text">Ticket Description</p>
 
                         <!--Footer created using a table-->
-                        <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Unassigned / Specialist</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="open-ticket-clickable">
-                <div class="w-100 open-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 2</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Ticket Description</p>
-
-                        <!--Table footer-->
-                        <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Unassigned / Specialist</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="open-ticket-clickable">
-                <div class="w-100 open-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 3</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab alias asperiores autem, eius eligendi eveniet exercitationem fugit hic inventore ipsam maiores nam odio officia perferendis, praesentium quasi vel! Sequi.</p>
-
-                        <!--Table footer-->
                         <table class="w-100">
                             <tr>
                                 <td>Date Created</td>
