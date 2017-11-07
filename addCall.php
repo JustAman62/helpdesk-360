@@ -166,7 +166,12 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="add-ticket-number">Ticket Number</label>
-                            <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                </span>
+                            </div>
                             <small class="text-secondary">Ticket to add call to</small>
                         </div>
                     </div>
