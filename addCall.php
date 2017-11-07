@@ -56,7 +56,6 @@ if (!isset($_SESSION['user'])) {
         </ul>
         <div class="tab-content col-12">
             <div class="tab-pane fade show active" id="create" role="tabpanel">
-                Form to create a new ticket associated with this call
                 <form action="">
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -151,7 +150,6 @@ if (!isset($_SESSION['user'])) {
 
             <!--Add to existing ticket tab-->
             <div class="tab-pane fade" id="add" role="tabpanel">
-                Form to add a new call to a chosen ticket for this call
                 <form action="">
                     <div class="row">
                         <div class="col-12 col-md-4">
