@@ -42,18 +42,10 @@ $(function() {
         $('#notesModal').modal('hide');
     });
 
-    //    auto resize text areas
-    $('textarea').each(function () {
-        this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
-    }).on('input change cut paste drop keyup', resizeTextArea);
+
 
 
 });
-
-function resizeTextArea() {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-}
 
 function populateTicketInfo() {
     // Make sure the notes section is empty to prevent repetitions
