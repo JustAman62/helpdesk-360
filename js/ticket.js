@@ -25,15 +25,11 @@ $(function() {
 
     }).on('shown.bs.modal', function() {
         $('.modal-body textarea').trigger('input');
-        console.log('lala')
     });
     //Save the note displayed in the modal when the save button is clicked
     $('#saveNote').on('click', function() {
         let note = $('.modal-body textarea').val();
-        console.log(noteID);
-        console.log(notes);
         notes[noteID] = note;
-        console.log(notes);
 
     //    Update the ticket page
         populateTicketInfo();
