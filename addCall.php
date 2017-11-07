@@ -57,6 +57,38 @@ if (!isset($_SESSION['user'])) {
         <div class="tab-content col-12">
             <div class="tab-pane fade" id="create" role="tabpanel">
                 Form to create a new ticket associated with this call
+                <form action="">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <label for="add-call-time">Call Time</label>
+                            <input type="time" class="form-control" id="add-call-time" placeholder="hh:mm">
+                            <small>Time the call was received</small>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="add-call-date">Call Date</label>
+                            <input type="date" class="form-control" id="add-call-date" placeholder="dd/mm/yyyy">
+                            <small>Date the call was received</small>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="add-ticket-number">Ticket Number</label>
+                            <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
+                            <small>Ticket to add call to</small>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <label for="add-notes">Problem Description</label>
+                            <textarea name="" id="add-notes" class="form-control w-100"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <label for="add-notes">Call Notes</label>
+                            <textarea name="" id="add-notes" class="form-control w-100"></textarea>
+                        </div>
+                    </div>
+
+                </form>
             </div>
             <div class="tab-pane fade show active" id="add" role="tabpanel">
                 Form to add a new call to a chosen ticket for this call
