@@ -48,49 +48,44 @@ if (!isset($_SESSION['user'])) {
     <div class="row my-2">
         <ul class="nav nav-tabs nav-fill w-100" role="tablist">
             <li class="nav-item">
-                <a href="#create" id="create-tab" data-toggle="tab" role="tab" class="nav-link">Create New Ticket</a>
+                <a href="#create" id="create-tab" data-toggle="tab" role="tab" class="nav-link active">Create New Ticket</a>
             </li>
             <li class="nav-item">
-                <a href="#add" id="add-tab" data-toggle="tab" role="tab" class="nav-link active">Add to existing Ticket</a>
+                <a href="#add" id="add-tab" data-toggle="tab" role="tab" class="nav-link">Add to existing Ticket</a>
             </li>
         </ul>
         <div class="tab-content col-12">
-            <div class="tab-pane fade" id="create" role="tabpanel">
+            <div class="tab-pane fade show active" id="create" role="tabpanel">
                 Form to create a new ticket associated with this call
                 <form action="">
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <label for="add-call-time">Call Time</label>
-                            <input type="time" class="form-control" id="add-call-time" placeholder="hh:mm">
+                            <label for="create-call-time">Call Time</label>
+                            <input type="time" class="form-control" id="create-call-time" placeholder="hh:mm">
                             <small>Time the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
-                            <label for="add-call-date">Call Date</label>
-                            <input type="date" class="form-control" id="add-call-date" placeholder="dd/mm/yyyy">
+                            <label for="create-call-date">Call Date</label>
+                            <input type="date" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
                             <small>Date the call was received</small>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <label for="add-ticket-number">Ticket Number</label>
-                            <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
-                            <small>Ticket to add call to</small>
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
                             <label for="add-notes">Problem Description</label>
-                            <textarea name="" id="add-notes" class="form-control w-100"></textarea>
+                            <textarea name="" id="create-problem-description" class="form-control w-100"></textarea>
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
                             <label for="add-notes">Call Notes</label>
-                            <textarea name="" id="add-notes" class="form-control w-100"></textarea>
+                            <textarea name="" id="create-notes" class="form-control w-100"></textarea>
                         </div>
                     </div>
 
                 </form>
             </div>
-            <div class="tab-pane fade show active" id="add" role="tabpanel">
+            <div class="tab-pane fade" id="add" role="tabpanel">
                 Form to add a new call to a chosen ticket for this call
                 <form action="">
                     <div class="row">
