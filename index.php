@@ -50,7 +50,7 @@ if (!isset($_SESSION['user'])) {
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="row d-flex flex-justify-content-between">
-                <div class="col-12 px-4 margin-top:10px">
+                <div class="col-12 px-4" style= "margin-top: 10px">
                     <button class="btn btn-secondary btn-block" style="min-height:10vh" onclick="location.href='addCall.php'">New Call</button>
                 </div>
                 <div class="col-12 px-4 my-5">
