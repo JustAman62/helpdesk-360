@@ -33,9 +33,11 @@ session_regenerate_id(true);
 
 <div class="container" style="min-height:80vh">
     <div class="row justify-content-center align-items-center" style="min-height: 80vh">
-        <div class="justify-content-center align-items-center col-12 col-md-6">
-            <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="350px">   
-                <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="400px">   
+        </div>
+    </div>
+    <div class="row justify-content-center">
                     <form action="index.php">
                         <div class="input-group">
                             <span class="input-group-addon">User ID</span>
@@ -52,8 +54,6 @@ session_regenerate_id(true);
                         </div>
                     </form>
                 </div>
-        </div>
-    </div>
 </div>
 </body>
 </html>
