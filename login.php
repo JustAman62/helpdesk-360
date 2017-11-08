@@ -31,8 +31,8 @@ session_regenerate_id(true);
 
 
 
-<div class="container" style="min-height:80vh">
-    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh">
+<div class="container" style="min-height:0px">
+    <div class="d-flex justify-content-center align-items-center" style="margin-top: 10rem">
         <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="400px">   
     </div>
     <br>
