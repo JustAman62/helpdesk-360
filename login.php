@@ -32,28 +32,27 @@ session_regenerate_id(true);
 
 
 <div class="container" style="min-height:80vh">
-    <div class="row justify-content-center align-items-center" style="min-height: 80vh">
-        <div class="col-12 col-md-6">
-            <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="400px">   
-        </div>
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh">
+        <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="400px">   
     </div>
+    <br>
     <div class="row justify-content-center">
-                    <form action="index.php">
-                        <div class="input-group">
-                            <span class="input-group-addon">User ID</span>
-                            <input class="form-control" type="text" title="User ID" name="user">
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <span class="input-group-addon">Password</span>
-                            <input class="form-control" type="password" title="Password" name="password">
-                        </div>
-                        <br>
-                        <div class="row justify-content-center col-4 mx-auto">
-                            <button class="btn btn-primary w-100" type="submit">Login</button>
-                        </div>
-                    </form>
-                </div>
+        <form action="index.php">
+            <div class="input-group">
+                <span class="input-group-addon">User ID</span>
+                <input class="form-control" type="text" title="User ID" name="user">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">Password</span>
+                <input class="form-control" type="password" title="Password" name="password">
+            </div>
+            <br>
+            <div class="row justify-content-center col-4 mx-auto">
+                <button class="btn btn-primary w-100" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>
