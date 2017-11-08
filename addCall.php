@@ -73,7 +73,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="create-employee-id">Employee's ID</label>
                             <div class="input-group">
-                                <input type="time" class="form-control" id="create-employee-id" placeholder="1234">
+                                <input type="text" class="form-control" id="create-employee-id" placeholder="1234">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Confirm</button>
                                 </span>
@@ -81,11 +81,11 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-employee-name">Employee's Name</label>
-                            <input type="time" class="form-control" id="create-employee-name" placeholder="John Smith">
+                            <input type="text" class="form-control" id="create-employee-name" placeholder="John Smith">
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-employee-contact-number">Employee's Contact Number</label>
-                            <input type="date" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789">
+                            <input type="text" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789">
                         </div>
                     </div>
                     <div class="row mt-4">
