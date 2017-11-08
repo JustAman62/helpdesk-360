@@ -33,8 +33,8 @@ session_regenerate_id(true);
 
 <div class="container" style="min-height:80vh">
     <div class="row justify-content-center align-items-center" style="min-height: 80vh">
-      <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="500px">
         <div class="col-12 col-md-6">
+            <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="350px">   
                 <div class="row justify-content-center">
                     <form action="index.php">
                         <div class="input-group">
