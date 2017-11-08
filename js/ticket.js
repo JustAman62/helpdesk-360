@@ -49,8 +49,8 @@ function populateNotes() {
     // Make sure the notes section is empty to prevent repetitions
     $('#note-list').html('');
 
-    for (i in notes) {
-        if (notes[i].ticketNumber === ticketNum) ticketNotes.push(I);
+    for (let i in notes) {
+        if (notes[i].ticketNumber === ticketNum) ticketNotes.push(i);
     }
 
     for (i in ticketNotes) {
