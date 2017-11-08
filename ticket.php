@@ -47,7 +47,7 @@ if (!isset($_SESSION['user'])) {
 <!-----------------------Content----------------------------->
 <div class="container mb-5 mt-3">
     <a class="back-button" href="ticketList.php"><i class="icon icon-left-open-big"></i>Back</a>
-    <h1 class="display-4 text-center">Ticket <span class="auto-fill" data-autofill="ticketNumber"></span></h1>
+    <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
     <div class="container text-center">
         <span class="badge badge-success">Assigned</span>
         <span class="badge badge-danger">Not Assigned</span>
@@ -76,6 +76,18 @@ if (!isset($_SESSION['user'])) {
 
         <dt class="col-4 col-md-3 text-right">Original Description</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="originalDescription" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+
+        <dt class="col-4 col-md-3 text-right">Serial Number</dt>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="serialNumber" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+
+        <dt class="col-4 col-md-3 text-right">Unique Identifier</dt>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="uniqueIdentifier" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+
+        <dt class="col-4 col-md-3 text-right">Software Licence Number</dt>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="softwareLicenceNumber" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+
+        <dt class="col-4 col-md-3 text-right">Operating System</dt>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="operatingSystem" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
     </dl>
 
     <h6 class="auto-fill" data-autofill="specialistID">Not Assigned to a Specialist</h6>
