@@ -29,16 +29,11 @@ session_regenerate_id(true);
 </head>
 <body>
 
-<!--Navigation-->
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand mx-auto" href="index.php">Helpdesk 360</a>
-</nav>
 
 
 <div class="container" style="min-height:80vh">
     <div class="row justify-content-center align-items-center" style="min-height: 80vh">
         <div class="col-12 col-md-6">
-            <div class="jumbotron" style="padding-top: 2rem;">
                 <h1 class="display-4 text-center mb-4">Login</h1>
                 <div class="row justify-content-center">
                     <form action="index.php">
@@ -57,7 +52,6 @@ session_regenerate_id(true);
                         </div>
                     </form>
                 </div>
-            </div>
         </div>
     </div>
 </div>
