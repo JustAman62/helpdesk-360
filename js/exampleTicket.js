@@ -1,12 +1,17 @@
-//Find out what ticket number the page has been opened for, default to ticket 1
-let ticketNum = 1;
+//TODO: Make an example database structure to allow some dynamic content to be made in js
+
+let notes = [
+    'ndwqd dowqboi nwoi',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!',
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!'
+];
+let noteID = 0;
+
+
 $(function() {
-    console.log(location.search.split('&')[0].split('=')[1]);
-    ticketNum = location.search.split('&')[0].split('=')[1];
     //When the page is first loaded, populate the ticket info
     // populateNotes();
     populateTicketInfo();
-    populateNotes();
 
 
     //When the notes modal is shown, update the note textarea to match the note it was clicked on
@@ -27,7 +32,7 @@ $(function() {
         notes[noteID] = note;
 
         //    Update the ticket page
-        populateNotes();
+        populateTicketInfo();
 
         //    Close the modal
         $('#notesModal').modal('hide');
@@ -39,22 +44,10 @@ $(function() {
 });
 
 function populateTicketInfo() {
-    $('.auto-fill').each(function(i, element) {
-        element.innerHTML = tickets[ticketNum][element.dataset.autofill];
-    })
-}
-
-function populateNotes() {
-    let ticketNotes = [];
     // Make sure the notes section is empty to prevent repetitions
-    $('#note-list').html('');
-
+    $('#note-list').html('')
     for (i in notes) {
-        if (notes[i].ticketNumber === ticketNum) ticketNotes.push(i);
-    }
-
-    for (i in ticketNotes) {
-        makeNoteListItem(ticketNotes[i]);
+        makeNoteListItem(i);
     }
 //    Add a make new note button
     let newNoteElement = document.createElement('button')
@@ -94,7 +87,7 @@ function makeNoteListItem(noteID) {
 
     let noteText = document.createElement('span');
     // noteText.appendChild(document.create(notes[noteID].replace('\n', '<br>')));
-    $(noteText).html(notes[noteID].Text.replace(/\n/g, ' <br> '));
+    $(noteText).html(notes[noteID].replace(/\n/g, ' <br> '));
     noteElement.appendChild(noteText);
 
     $('#note-list').append(noteElement)
@@ -102,5 +95,5 @@ function makeNoteListItem(noteID) {
 
 function addNewNote() {
     notes.push("New Note")
-    populateNotes();
+    populateTicketInfo();
 }
