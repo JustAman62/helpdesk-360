@@ -34,7 +34,6 @@ session_regenerate_id(true);
 <div class="container" style="min-height:80vh">
     <div class="row justify-content-center align-items-center" style="min-height: 80vh">
         <div class="col-12 col-md-6">
-                <h1 class="display-4 text-center mb-4">Login</h1>
                 <div class="row justify-content-center">
                     <form action="index.php">
                         <div class="input-group">
