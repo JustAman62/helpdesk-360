@@ -2,7 +2,7 @@
 let ticketNum = 1;
 $(function() {
     console.log(location.search.split('&')[0].split('=')[1]);
-    ticketNum = location.search.split('&')[0].split('=')[1];
+    ticketNum = location.search.split('&')[0].split('=')[1] - 1;
     //When the page is first loaded, populate the ticket info
     // populateNotes();
     populateTicketInfo();
@@ -50,7 +50,7 @@ function populateNotes() {
     $('#note-list').html('');
 
     for (i in notes) {
-        if (notes[i].ticketNumber === ticketNum) ticketNotes.push(i);
+        if (notes[i].ticketNumber === ticketNum) ticketNotes.push(I);
     }
 
     for (i in ticketNotes) {

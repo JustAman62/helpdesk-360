@@ -20,8 +20,8 @@ var openTicket =  `<a href="#" class="open-ticket-clickable">
 $(function() {
     for (i in tickets) {
         console.log(tickets[i].ticketStatus);
-        if (tickets[i].ticketStatus===1) addOpenTicket(i);
-        else addClosedTicket(i)
+        if (tickets[i].ticketStatus===1) addOpenTicket(tickets[i].ticketNumber);
+        else addClosedTicket(tickets[i].ticketNumber)
     }
 })
 
