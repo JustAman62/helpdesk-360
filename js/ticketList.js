@@ -47,7 +47,7 @@ function addOpenTicket(ticketNum) {
 }
 
 function addClosedTicket(ticketNum) {
-    let ticketText = '<a href="#" class="closed-ticket-clickable">\n    <div class="w-100 closed-ticket-clickable">\n    <div class="d-flex ticket-header">\n    <h4 class="card-title"> Ticket ';
+    let ticketText = '<a href="ticket.php?ticketNum=\'+ tickets[ticketNum].ticketNumber + \'" class="closed-ticket-clickable">\n    <div class="w-100 closed-ticket-clickable">\n    <div class="d-flex ticket-header">\n    <h4 class="card-title"> Ticket ';
     ticketText += tickets[ticketNum].ticketNumber;
     ticketText += '</div>\n<div class="ticket-body">\n    <p class="card-text">';
     ticketText += tickets[ticketNum].originalDescription;
