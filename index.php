@@ -50,10 +50,10 @@ if (!isset($_SESSION['user'])) {
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="row d-flex flex-justify-content-between">
-                <div class="col-12 px-4">
+                <div class="col-12 px-4 m-5">
                     <button class="btn btn-secondary btn-block" style="min-height:10vh" onclick="location.href='addCall.php'">New Call</button>
                 </div>
-                <div class="col-12 px-4">
+                <div class="col-12 px-4 m-5">
                     <button class="btn btn-secondary btn-block" style="min-height:10vh">Search For Ticket</button>
                 </div>
             </div>
