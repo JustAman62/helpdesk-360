@@ -46,7 +46,7 @@ if (!isset($_SESSION['user'])) {
 <div class="container">
     <div class="row">
         <!--Open Tickets-->
-        <div class="col-sm-12 col-md-6 pt-2" id="open-ticket-list">
+        <div class="col-sm-12 col-md-6 pt-2" id="open-ticket-list" style="margine-top: 20px">
 
             <h4 class="text-center">Open Tickets TODO: Implement drag and drop</h4>
             <!--<button type="button" class="button" onclick="javascript:addTicket()">add</button>-->
