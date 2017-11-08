@@ -46,7 +46,7 @@ if (!isset($_SESSION['user'])) {
 <div class="container">
     <div class="row">
         <!--Open Tickets-->
-        <div class="col-sm-12 col-md-6 pt-2" id="open-ticket-list" style="margin-top: 100px">
+        <div class="col-sm-12 col-md-6 pt-2" id="open-ticket-list" style="">
 
             <h4 class="text-center">Open Tickets TODO: Implement drag and drop</h4>
             <!--<button type="button" class="button" onclick="javascript:addTicket()">add</button>-->
@@ -72,7 +72,7 @@ if (!isset($_SESSION['user'])) {
         </div>
 
         <!--Closed Tickets-->
-        <div class="col-sm-12 col-md-6 pt-2" id="closed-ticket-list" style="margin-top: 100px">
+        <div class="col-sm-12 col-md-6 pt-2" id="closed-ticket-list" style="">
 
             <h4 class="text-center">Closed Tickets</h4>
             <!--All tickets below this line should be generated via js my looking at the db using this template-->
