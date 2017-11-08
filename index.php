@@ -26,6 +26,7 @@ if (!isset($_SESSION['user'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body class="bg-light">
 
@@ -54,12 +55,29 @@ if (!isset($_SESSION['user'])) {
                     <button class="btn btn-secondary btn-block m-auto" style="width:65%;min-height:17vh;font-size: 25px;" onclick="location.href='addCall.php'">New Call<i class="icon-phone"></i></button>
                 </div>
                 <div class="col-12 px-4 my-5">
-                    <button class="btn btn-secondary btn-block m-auto" style="width:65%;min-height:17vh;font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
+                    <button class="btn btn-secondary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="width:65%;min-height:17vh;font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-6">
         ticket list
+        </div>
+    </div>
+</div>
+
+<!--Modal for search for tickets-->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog w-50 pt-5" style="max-width: inherit" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                    <div class="input-group col-12">
+                        <label for="searchText"></label>
+                        <input type="text" id="searchText" class="border border-secondary rounded my-0 form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" onclick="navToTicket()">Search</button>
+                        </span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
