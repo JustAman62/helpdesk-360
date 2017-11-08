@@ -33,7 +33,7 @@ function addTicket() {
 
 function addOpenTicket(ticketNum) {
     let ticketText = '<a href="ticket.php?ticketNum='+ tickets[ticketNum].ticketNumber + '" class="open-ticket-clickable">\n    <div class="w-100 open-ticket-clickable">\n    <div class="d-flex ticket-header">\n    <h4 class="card-title"> Ticket ';
-    ticketText += tickets[ticketNum].ticketNumber + '<span class="badge badge-success">Priority </span>';
+    ticketText += tickets[ticketNum].ticketNumber + '<span class="badge badge-success">Priority</span>';
     ticketText += '</div>\n<div class="ticket-body">\n    <p class="card-text">';
     ticketText += tickets[ticketNum].originalDescription;
     ticketText += '</p>\n\n<!--Table footer-->\n<table class="w-100">\n    <tr>\n    <td>';
