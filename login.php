@@ -32,7 +32,7 @@ session_regenerate_id(true);
 
 
 <div class="container" style="min-height:0px">
-    <div class="d-flex justify-content-center align-items-center" style="margin-top: 10rem">
+    <div class="d-flex justify-content-center align-items-center" style="margin-top: 5%">
         <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="400px">   
     </div>
     <br>
