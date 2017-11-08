@@ -23,7 +23,7 @@ if (!isset($_SESSION['user'])) {
 
     <script src="js/script.js"></script>
 </head>
-<body class="bg-light">
+<body class="bg-light body-margin-bottom">
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
         <span class="navbar-toggler-icon"></span>
