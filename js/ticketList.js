@@ -18,10 +18,9 @@ var openTicket =  `<a href="#" class="open-ticket-clickable">
     </a>`;
 
 $(function() {
-    for (i in tickets) {
-        console.log(tickets[i].ticketStatus);
-        if (tickets[i].ticketStatus===1) addOpenTicket(tickets[i].ticketNumber);
-        else addClosedTicket(tickets[i].ticketNumber)
+    for (let i in tickets) {
+        if (tickets[i].ticketStatus===1) addOpenTicket(i);
+        else addClosedTicket(i)
     }
 })
 

@@ -1,7 +1,6 @@
 //Find out what ticket number the page has been opened for, default to ticket 1
 let ticketNum = 1;
 $(function() {
-    console.log(location.search.split('&')[0].split('=')[1]);
     ticketNum = location.search.split('&')[0].split('=')[1] - 1;
     //When the page is first loaded, populate the ticket info
     // populateNotes();
@@ -16,15 +15,14 @@ $(function() {
         // console.log(noteID)
 
         let noteModal = $(this);
-        noteModal.find('.modal-body textarea').val(notes[noteID]).trigger('input');
-
+        noteModal.find('.modal-body textarea').val(notes[noteID].Text).trigger('input');
     }).on('shown.bs.modal', function() {
         $('.modal-body textarea').trigger('input');
     });
     //Save the note displayed in the modal when the save button is clicked
     $('#saveNote').on('click', function() {
         let note = $('.modal-body textarea').val();
-        notes[noteID] = note;
+        notes[noteID].Text = note;
 
         //    Update the ticket page
         populateNotes();
