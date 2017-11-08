@@ -47,17 +47,20 @@ if (!isset($_SESSION['user'])) {
 </nav>
 
 <div class="container mt-4">
+<div class="col-12 col-md-6">
     <div class="row d-flex flex-justify-content-between">
-        <div class="col-sm-12 col-md-4 px-4">
-            <button class="btn btn-secondary btn-block" style="min-height:10vh">Add Ticket</button>
-        </div>
-        <div class="col-sm-12 col-md-4 px-4">
+        <div class="col-12 px-4">
             <button class="btn btn-secondary btn-block" style="min-height:10vh" onclick="location.href='addCall.php'">New Call</button>
         </div>
-        <div class="col-sm-12 col-md-4 px-4">
+        <div class="col-12 px-4">
             <button class="btn btn-secondary btn-block" style="min-height:10vh">Search For Ticket</button>
         </div>
     </div>
+</div>
+<div class="col-12 col-md-6">
+ticket list
+</div>
+
 </div>
 
 </body>
