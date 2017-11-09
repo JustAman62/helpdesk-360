@@ -49,13 +49,13 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-12 col-md-4 px-4 my-5">
-            <button class="btn btn-primary m-auto" style="font-size: 25px;" onclick="location.href='addCall.php'">New Call<i class="icon-phone"></i></button>
+        <div class="col-12 col-md-5 px-4 my-5">
+            <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;" onclick="location.href='addCall.php'">New Call<i class="icon-phone"></i></button>
         </div>
-        <div class= "col-md-4">
+        <div class="col-md-2">
         </div>
-        <div class="col-12 col-md-4 px-4 my-5">
-            <button class="btn btn-primary m-auto" data-toggle="modal" data-target="#searchModal" style="font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
+        <div class="col-12 col-md-5 px-4 my-5">
+            <button class="btn btn-primary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
         </div>
     </div>
 </div>
