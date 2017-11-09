@@ -44,8 +44,20 @@ function addOpenTicket(ticketNum) {
     let header = createTicketElement('h4', 'card-title');
     header.appendChild(document.createTextNode('Ticket #' + tickets[ticketNum].ticketNumber));
     headerDiv.appendChild(header);
-    let priorityBadge = createTicketElement('span', 'badge badge-success ml-auto');
-    priorityBadge.appendChild(document.createTextNode('Priority'));
+    let priorityBadge;
+    let priorityText = "";
+    if (tickets[ticketNum].priority === 0) {
+        priorityBadge = createTicketElement('span', 'badge badge-success ml-auto');
+        priorityBadge.appendChild(document.createTextNode('Low Priority'));
+    }
+    else if (tickets[ticketNum].priority === 1) {
+        priorityBadge = createTicketElement('span', 'badge badge-warning ml-auto');
+        priorityBadge.appendChild(document.createTextNode('Medium Priority'));
+    }
+    else {
+        priorityBadge = createTicketElement('span', 'badge badge-danger ml-auto');
+        priorityBadge.appendChild(document.createTextNode('High Priority'));
+    }
     headerDiv.appendChild(priorityBadge);
 
     let divBody = createTicketElement('div', 'ticket-body');
