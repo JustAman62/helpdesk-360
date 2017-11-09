@@ -62,10 +62,10 @@ if (!isset($_SESSION['user'])) {
 
 <!--Modal for search for tickets-->
 <div class="modal fade" id="searchModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog w-50 pt-5" style="max-width: inherit" role="document">
+    <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                    <div class="input-group col-12">
+                    <div class="input-group">
                         <label for="searchText"></label>
                         <input type="text" id="searchText" class="border border-secondary rounded my-0 form-control" placeholder="Search">
                         <span class="input-group-btn">
