@@ -40,7 +40,23 @@ function populateTicketInfo() {
     //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
         element.innerHTML = tickets[ticketNum][element.dataset.autofill];
-    })
+    });
+
+    //Add badges for if the ticket if open or closed
+    if (tickets[ticketNum].ticketStatus === 1) {
+        //Add open badge
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-warning ml-1');
+        badge.appendChild(document.createTextNode('Open'));
+        $('#badge-list').append(badge);
+    }
+    else {
+        //Add closed badge
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-success ml-1');
+        badge.appendChild(document.createTextNode('Closed'));
+        $('#badge-list').append(badge);
+    }
 
     //Make badges at the top of the screen
     // Specialist assigned/Not assigned badges
@@ -57,8 +73,9 @@ function populateTicketInfo() {
         $('#badge-list').append(badge)
     }
 
-//    Only for open tickets
+//    Show number of days only for open tickets
     if (tickets[ticketNum].ticketStatus === 1) {
+        //Add number of days ticket has been open
         let currentDate = new Date();
         let dateString = tickets[ticketNum].dateCreated.split('/');
         let createdDay = dateString[0];
@@ -67,13 +84,13 @@ function populateTicketInfo() {
         let createdDate = new Date(createdYear, createdMonth-1, createdDay);
 
         let difference = Math.floor((currentDate - createdDate) / (1000*60*60*24));
-        if (difference > 60) {
+        if (difference > 24) {
             let badge = document.createElement('span');
             badge.setAttribute('class', 'badge badge-danger ml-1');
             badge.appendChild(document.createTextNode(difference.toString() + " days"));
             $('#badge-list').append(badge);
         }
-        else if (difference > 30) {
+        else if (difference > 10) {
             let badge = document.createElement('span');
             badge.setAttribute('class', 'badge badge-warning ml-1');
             badge.appendChild(document.createTextNode(difference.toString() + " days"));
@@ -86,12 +103,7 @@ function populateTicketInfo() {
             $('#badge-list').append(badge);
         }
     }
-    else {
-        let badge = document.createElement('span');
-        badge.setAttribute('class', 'badge badge-success ml-1');
-        badge.appendChild(document.createTextNode(Closed));
-        $('#badge-list').append(badge);
-    }
+
 
 }
 
