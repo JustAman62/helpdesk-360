@@ -65,6 +65,12 @@
       "css": "search",
       "code": 59401,
       "src": "entypo"
+    },
+    {
+      "uid": "c77fd2fd065b5fe16d6f2b41e190b266",
+      "css": "pencil",
+      "code": 59402,
+      "src": "entypo"
     }
   ]
 }

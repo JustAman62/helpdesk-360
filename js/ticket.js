@@ -1,5 +1,6 @@
 //Find out what ticket number the page has been opened for, default to ticket 1
 let ticketNum = 1;
+let counter = 0;
 $(function() {
     ticketNum = location.search.split('&')[0].split('=')[1] - 1;
     //When the page is first loaded, populate the ticket info
@@ -37,9 +38,94 @@ $(function() {
 });
 
 function populateTicketInfo() {
+    //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
         element.innerHTML = tickets[ticketNum][element.dataset.autofill];
-    })
+    });
+
+    //Add badges for if the ticket if open or closed
+    if (tickets[ticketNum].ticketStatus === 1) {
+        //Add open badge
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-warning ml-1');
+        badge.appendChild(document.createTextNode('Open'));
+        $('#badge-list').append(badge);
+    }
+    else {
+        //Add closed badge
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-success ml-1');
+        badge.appendChild(document.createTextNode('Closed'));
+        $('#badge-list').append(badge);
+    }
+
+    //Make badges at the top of the screen
+    // Specialist assigned/Not assigned badges
+    if (tickets[ticketNum].specialistID) {
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-success ml-1');
+        badge.appendChild(document.createTextNode('Assigned'));
+        $('#badge-list').append(badge)
+    }
+    else {
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-warning ml-1');
+        badge.appendChild(document.createTextNode('Not Assigned'));
+        $('#badge-list').append(badge)
+    }
+
+//    Priority badge
+    if (tickets[ticketNum].priority === 0) {
+        let priorityBadge = document.createElement('span')
+        priorityBadge.setAttribute('class', 'badge badge-success ml-1');
+        priorityBadge.appendChild(document.createTextNode('Low Priority'));
+        $('#badge-list').append(priorityBadge);
+    }
+    else if (tickets[ticketNum].priority === 1) {
+        let priorityBadge = document.createElement('span')
+        priorityBadge.setAttribute('class', 'badge badge-warning ml-1');
+        priorityBadge.appendChild(document.createTextNode('Medium Priority'));
+        $('#badge-list').append(priorityBadge);
+    }
+    else {
+        let priorityBadge = document.createElement('span')
+        priorityBadge.setAttribute('class', 'badge badge-danger ml-1');
+        priorityBadge.appendChild(document.createTextNode('High Priority'));
+        $('#badge-list').append(priorityBadge);
+    }
+
+//    Show number of days only for open tickets
+    if (tickets[ticketNum].ticketStatus === 1) {
+        //Add number of days ticket has been open
+        let currentDate = new Date();
+        let dateString = tickets[ticketNum].dateCreated.split('/');
+        let createdDay = dateString[0];
+        let createdMonth = dateString[1];
+        let createdYear = dateString[2];
+        let createdDate = new Date(createdYear, createdMonth-1, createdDay);
+
+        let difference = Math.floor((currentDate - createdDate) / (1000*60*60*24));
+        if (difference > 24) {
+            let badge = document.createElement('span');
+            badge.setAttribute('class', 'badge badge-danger ml-1');
+            badge.appendChild(document.createTextNode(difference.toString() + " days"));
+            $('#badge-list').append(badge);
+        }
+        else if (difference > 10) {
+            let badge = document.createElement('span');
+            badge.setAttribute('class', 'badge badge-warning ml-1');
+            badge.appendChild(document.createTextNode(difference.toString() + " days"));
+            $('#badge-list').append(badge);
+        }
+        else {
+            let badge = document.createElement('span');
+            badge.setAttribute('class', 'badge badge-success ml-1');
+            badge.appendChild(document.createTextNode(difference.toString() + " days"));
+            $('#badge-list').append(badge);
+        }
+    }
+
+
 }
 
 function populateNotes() {
@@ -86,8 +172,14 @@ function makeNoteListItem(noteID) {
     let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
     let dateTimeText = document.createElement('small');
-    dateTimeText.appendChild(document.createTextNode(dateString));
+    dateTimeText.appendChild(document.createTextNode(dateString + '   '));
     noteElement.appendChild(dateTimeText);
+    if (counter % 3 === 0) {
+        let callBadge = document.createElement('i');
+        callBadge.setAttribute('class', 'icon icon-phone');
+        noteElement.appendChild(callBadge);
+    }
+    counter++;
     noteElement.appendChild(document.createElement('br'));
 
     let noteText = document.createElement('span');

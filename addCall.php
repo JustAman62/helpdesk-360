@@ -69,8 +69,8 @@ if (!isset($_SESSION['user'])) {
                             <small class="text-secondary">Date the call was received</small>
                         </div>
                         <div class="form-group col-12 col-md-4">
-                            <label for="sel1">Priority</label>
-                            <select class="form-control" id="select-call-priority">
+                            <label for="create-priority">Priority</label>
+                            <select class="form-control" id="create-priority">
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
@@ -139,13 +139,6 @@ if (!isset($_SESSION['user'])) {
                         </div>
 
                     </div>
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <label for="add-notes">Problem Description</label>
-                            <textarea name="" id="create-problem-description" class="form-control w-100"></textarea>
-                        </div>
-                    </div>
-
                     <div class="row mt-4">
                         <div class="col-12">
                             <label for="add-notes">Call Notes</label>

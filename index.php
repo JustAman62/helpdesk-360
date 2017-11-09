@@ -65,13 +65,15 @@ if (!isset($_SESSION['user'])) {
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
             <div class="modal-body">
+                <form action="javascript:navToTicket()">
                     <div class="input-group">
                         <label for="searchText"></label>
-                        <input type="text" id="searchText" class="border border-secondary rounded my-0 form-control" placeholder="Search">
+                        <input type="text" id="searchText" class="border border-secondary rounded my-0 form-control" placeholder="Ticket Number">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" onclick="navToTicket()">Search</button>
+                            <button class="btn btn-primary" onclick="navToTicket()" type="submit">Search</button>
                         </span>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
