@@ -64,7 +64,7 @@ if (!isset($_SESSION['user'])) {
         <a class="ml-auto no-hover-underline" href="#">Edit <i class="icon icon-pencil"></i> </a>
     </div>
     <dl class="row">
-        <dt class="col-4 col-md-3 text-right">Opened</dt>
+        <dt class="col-4 col-md-3 text-right">Created</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="dateCreated" id="">20/10/2017 12:48 (6 days)</dd>
 
         <dt class="col-4 col-md-3 text-right">Last Modified</dt>

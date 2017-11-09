@@ -64,7 +64,7 @@ function populateTicketInfo() {
         let createdDay = dateString[0];
         let createdMonth = dateString[1];
         let createdYear = dateString[2];
-        let createdDate = new Date(createdYear, createdMonth, createdDay);
+        let createdDate = new Date(createdYear, createdMonth-1, createdDay);
 
         let difference = Math.floor((currentDate - createdDate) / (1000*60*60*24));
         if (difference > 60) {
@@ -85,6 +85,12 @@ function populateTicketInfo() {
             badge.appendChild(document.createTextNode(difference.toString() + " days"));
             $('#badge-list').append(badge);
         }
+    }
+    else {
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-success ml-1');
+        badge.appendChild(document.createTextNode(Closed));
+        $('#badge-list').append(badge);
     }
 
 }
