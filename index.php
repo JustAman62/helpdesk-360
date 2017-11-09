@@ -67,7 +67,7 @@ if (!isset($_SESSION['user'])) {
             <div class="modal-body">
                     <div class="input-group">
                         <label for="searchText"></label>
-                        <input type="text" id="searchText" class="border border-secondary rounded my-0 form-control" placeholder="Search">
+                        <input type="text" id="searchText" class="border border-secondary rounded my-0 form-control" placeholder="Ticket Number">
                         <span class="input-group-btn">
                             <button class="btn btn-primary" onclick="navToTicket()">Search</button>
                         </span>
