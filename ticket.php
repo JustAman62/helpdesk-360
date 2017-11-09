@@ -63,7 +63,10 @@ if (!isset($_SESSION['user'])) {
 
     <hr>
 
-    <h3>Ticket Details TODO make modifiable</h3>
+    <div class="d-flex mb-3">
+        <h3>Ticket Details</h3>
+        <a class="ml-auto back-button" href="#">Edit</a>
+    </div>
     <dl class="row">
         <dt class="col-4 col-md-3 text-right">Opened</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="dateCreated" id="">20/10/2017 12:48 (6 days)</dd>
