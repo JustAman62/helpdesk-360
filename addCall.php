@@ -68,9 +68,9 @@ if (!isset($_SESSION['user'])) {
                             <input type="date" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
                             <small class="text-secondary">Date the call was received</small>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-12 col-md-4">
                             <label for="sel1">Priority</label>
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" id="select-call-priority">
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
