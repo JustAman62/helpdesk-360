@@ -37,9 +37,56 @@ $(function() {
 });
 
 function populateTicketInfo() {
+    //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
         element.innerHTML = tickets[ticketNum][element.dataset.autofill];
     })
+
+    //Make badges at the top of the screen
+    // Specialist assigned/Not assigned badges
+    if (tickets[ticketNum].specialistID) {
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-success ml-1');
+        badge.appendChild(document.createTextNode('Assigned'));
+        $('#badge-list').append(badge)
+    }
+    else {
+        let badge = document.createElement('span');
+        badge.setAttribute('class', 'badge badge-warning ml-1');
+        badge.appendChild(document.createTextNode('Not Assigned'));
+        $('#badge-list').append(badge)
+    }
+
+//    Only for open tickets
+    if (tickets[ticketNum].ticketStatus === 1) {
+        let currentDate = new Date();
+        let dateString = tickets[ticketNum].dateCreated.split('/');
+        let createdDay = dateString[0];
+        let createdMonth = dateString[1];
+        let createdYear = dateString[2];
+        let createdDate = new Date(createdYear, createdMonth, createdDay);
+
+        let difference = Math.floor((currentDate - createdDate) / (1000*60*60*24));
+        if (difference > 60) {
+            let badge = document.createElement('span');
+            badge.setAttribute('class', 'badge badge-danger ml-1');
+            badge.appendChild(document.createTextNode(difference.toString() + " days"));
+            $('#badge-list').append(badge);
+        }
+        else if (difference > 30) {
+            let badge = document.createElement('span');
+            badge.setAttribute('class', 'badge badge-warning ml-1');
+            badge.appendChild(document.createTextNode(difference.toString() + " days"));
+            $('#badge-list').append(badge);
+        }
+        else {
+            let badge = document.createElement('span');
+            badge.setAttribute('class', 'badge badge-success ml-1');
+            badge.appendChild(document.createTextNode(difference.toString() + " days"));
+            $('#badge-list').append(badge);
+        }
+    }
+
 }
 
 function populateNotes() {

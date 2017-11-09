@@ -48,11 +48,7 @@ if (!isset($_SESSION['user'])) {
 <div class="container mb-5 mt-3">
     <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Back</a>
     <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
-    <div class="container text-center">
-        <span class="badge badge-success">Assigned</span>
-        <span class="badge badge-danger">Not Assigned</span>
-        <span class="badge badge-success">2 days</span>
-        <span class="badge badge-warning">6 days</span>
+    <div class="container text-center" id="badge-list">
     </div>
 
     <hr>
@@ -84,7 +80,7 @@ if (!isset($_SESSION['user'])) {
         <dd class="col-8 col-md-9 auto-fill" data-autofill="serialNumber" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
 
         <dt class="col-4 col-md-3 text-right">Unique Identifier</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="uniqueIdentifier" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+        <dd class="col-8 col-md-9" id="">6372593</dd>
 
         <dt class="col-4 col-md-3 text-right">Software Licence Number</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="softwareLicenceNumber" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
