@@ -44,18 +44,18 @@ function addOpenTicket(ticketNum) {
     let header = createTicketElement('h4', 'card-title');
     header.appendChild(document.createTextNode('Ticket #' + tickets[ticketNum].ticketNumber));
     headerDiv.appendChild(header);
+
     let priorityBadge;
-    let priorityText = "";
     if (tickets[ticketNum].priority === 0) {
-        priorityBadge = createTicketElement('span', 'badge badge-success ml-auto');
+        priorityBadge = createTicketElement('span', 'badge badge-success ml-auto ticket-list-badge px-2');
         priorityBadge.appendChild(document.createTextNode('Low Priority'));
     }
     else if (tickets[ticketNum].priority === 1) {
-        priorityBadge = createTicketElement('span', 'badge badge-warning ml-auto');
+        priorityBadge = createTicketElement('span', 'badge badge-warning ml-auto ticket-list-badge px-2');
         priorityBadge.appendChild(document.createTextNode('Medium Priority'));
     }
     else {
-        priorityBadge = createTicketElement('span', 'badge badge-danger ml-auto');
+        priorityBadge = createTicketElement('span', 'badge badge-danger ml-auto ticket-list-badge px-2');
         priorityBadge.appendChild(document.createTextNode('High Priority'));
     }
     headerDiv.appendChild(priorityBadge);

@@ -59,7 +59,7 @@ if (!isset($_SESSION['user'])) {
 
     TODO: SHow specialist details
     TODO: Add assign specialist button
-    TODO: Add Close Ticket button
+    TODO: Add Close Ticket button˚
 
     <hr>
 
