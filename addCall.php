@@ -68,6 +68,15 @@ if (!isset($_SESSION['user'])) {
                             <input type="date" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
                             <small class="text-secondary">Date the call was received</small>
                         </div>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Priority
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Low</a></li>
+                                <li><a href="#">Medium</a></li>
+                                <li><a href="#">High</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12 col-md-4">
