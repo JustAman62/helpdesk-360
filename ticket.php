@@ -90,8 +90,6 @@ if (!isset($_SESSION['user'])) {
     </dl>
 
     <h6 class="auto-fill" data-autofill="specialistID">Not Assigned to a Specialist</h6>
-    <h6>Not Assigned to a Specialist</h6>
-    <h6>Assigned to Jane Doe (Printer Issues)</h6>
 
     <hr>
 
@@ -108,8 +106,6 @@ if (!isset($_SESSION['user'])) {
     </div>
 
     <hr>
-
-    <h3>TODO: Add Calls related to this ticket</h3>
 </div>
 
 <!--Notes modal-->

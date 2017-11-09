@@ -1,5 +1,6 @@
 //Find out what ticket number the page has been opened for, default to ticket 1
 let ticketNum = 1;
+let counter = 0;
 $(function() {
     ticketNum = location.search.split('&')[0].split('=')[1] - 1;
     //When the page is first loaded, populate the ticket info
@@ -71,6 +72,26 @@ function populateTicketInfo() {
         badge.setAttribute('class', 'badge badge-warning ml-1');
         badge.appendChild(document.createTextNode('Not Assigned'));
         $('#badge-list').append(badge)
+    }
+
+//    Priority badge
+    if (tickets[ticketNum].priority === 0) {
+        let priorityBadge = document.createElement('span')
+        priorityBadge.setAttribute('class', 'badge badge-success ml-1');
+        priorityBadge.appendChild(document.createTextNode('Low Priority'));
+        $('#badge-list').append(priorityBadge);
+    }
+    else if (tickets[ticketNum].priority === 1) {
+        let priorityBadge = document.createElement('span')
+        priorityBadge.setAttribute('class', 'badge badge-warning ml-1');
+        priorityBadge.appendChild(document.createTextNode('Medium Priority'));
+        $('#badge-list').append(priorityBadge);
+    }
+    else {
+        let priorityBadge = document.createElement('span')
+        priorityBadge.setAttribute('class', 'badge badge-danger ml-1');
+        priorityBadge.appendChild(document.createTextNode('High Priority'));
+        $('#badge-list').append(priorityBadge);
     }
 
 //    Show number of days only for open tickets
@@ -151,8 +172,14 @@ function makeNoteListItem(noteID) {
     let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
     let dateTimeText = document.createElement('small');
-    dateTimeText.appendChild(document.createTextNode(dateString));
+    dateTimeText.appendChild(document.createTextNode(dateString + '   '));
     noteElement.appendChild(dateTimeText);
+    if (counter % 3 === 0) {
+        let callBadge = document.createElement('i');
+        callBadge.setAttribute('class', 'icon icon-phone');
+        noteElement.appendChild(callBadge);
+    }
+    counter++;
     noteElement.appendChild(document.createElement('br'));
 
     let noteText = document.createElement('span');
