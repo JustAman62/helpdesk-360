@@ -70,11 +70,7 @@
   color: rgba(255,255,255,0.75) !important;
 }
 
-.back-button {
-  color: rgba(0,0,0,0.6) !important;
-}
-.back-button:hover {
-  color: rgba(0,0,0,0.8) !important;
+.no-hover-underline:hover {
   text-decoration: none;
 }
 
