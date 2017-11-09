@@ -81,7 +81,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="create-employee-id">Employee's ID</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" id="create-employee-id" placeholder="1234">
+                                <input type="text" class="form-control" id="create-employee-id" placeholder="1234">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Confirm</button>
                                 </span>
@@ -93,7 +93,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-employee-contact-number">Employee's Contact Number</label>
-                            <input type="number" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789">
+                            <input type="text" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789">
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -108,7 +108,7 @@ if (!isset($_SESSION['user'])) {
                             <h5>Software Issue</h5>
                             <label for="create-licence-number">Licence Number</label>
                             <div class="input-group">
-                                <input type="number" id="create-licence-number" class="form-control w-100">
+                                <input type="text" id="create-licence-number" class="form-control w-100">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Check</button>
                                 </span>
@@ -120,7 +120,7 @@ if (!isset($_SESSION['user'])) {
                                 <div class="col-12 col-md-6">
                                     <label for="create-serial-number">Serial Number</label>
                                     <div class="input-group">
-                                        <input type="number" id="create-serial-number" class="form-control w-100">
+                                        <input type="text" id="create-serial-number" class="form-control w-100">
                                         <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Check</button>
                                 </span>
@@ -129,7 +129,7 @@ if (!isset($_SESSION['user'])) {
                                 <div class="col-12 col-md-6">
                                     <label for="create-unique-identifier">Unique Identifier</label>
                                     <div class="input-group">
-                                        <input type="number" id="create-unique-identifier" class="form-control w-100">
+                                        <input type="text" id="create-unique-identifier" class="form-control w-100">
                                         <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Check</button>
                                 </span>
@@ -173,7 +173,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="add-ticket-number">Ticket Number</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" id="add-ticket-number" placeholder="123456">
+                                <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Confirm</button>
                                 </span>
@@ -185,7 +185,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="add-employee-id">Employee's ID</label>
                             <div class="input-group">
-                                <input type="number" class="form-control" id="add-employee-id" placeholder="1234">
+                                <input type="text" class="form-control" id="add-employee-id" placeholder="1234">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Confirm</button>
                                 </span>
@@ -197,7 +197,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="add-employee-contact-number">Employee's Contact Number</label>
-                            <input type="number" class="form-control" id="add-employee-contact-number" placeholder="07123 456 789">
+                            <input type="text" class="form-control" id="add-employee-contact-number" placeholder="07123 456 789">
                         </div>
                     </div>
                     <div class="row mt-4">
