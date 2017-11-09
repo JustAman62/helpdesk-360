@@ -57,6 +57,10 @@ if (!isset($_SESSION['user'])) {
     <h6>John Doe</h6>
     <h6>07123 123456</h6>
 
+    TODO: SHow specialist details
+    TODO: Add assign specialist button
+    TODO: Add Close Ticket button
+
     <hr>
 
     <div class="d-flex mb-3">
@@ -89,8 +93,11 @@ if (!isset($_SESSION['user'])) {
         <dd class="col-8 col-md-9 auto-fill" data-autofill="operatingSystem" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
     </dl>
 
-    <h6 class="auto-fill" data-autofill="specialistID">Not Assigned to a Specialist</h6>
 
+    <hr>
+
+    <h3>Specialist Details</h3>
+    <h6 class="auto-fill" data-autofill="specialistID">Not Assigned to a Specialist</h6>
     <hr>
 
     <h3>Notes</h3>
@@ -105,7 +112,6 @@ if (!isset($_SESSION['user'])) {
         <!--</button>-->
     </div>
 
-    <hr>
 </div>
 
 <!--Notes modal-->
