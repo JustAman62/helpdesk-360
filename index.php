@@ -52,10 +52,10 @@ if (!isset($_SESSION['user'])) {
         <div class="col-12 col-md-6">
             <div class="row d-flex ">
                 <div class="col-12 px-4 my-5">
-                    <button class="btn btn-secondary btn-block m-auto" style="width:65%;min-height:7rem;font-size: 25px;" onclick="location.href='addCall.php'">New Call<i class="icon-phone"></i></button>
+                    <button class="btn btn-primary btn-block m-auto" style="width:65%;min-height:7rem;font-size: 25px;" onclick="location.href='addCall.php'">New Call<i class="icon-phone"></i></button>
                 </div>
                 <div class="col-12 px-4 my-5">
-                    <button class="btn btn-secondary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="width:65%;min-height:7rem;font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
+                    <button class="btn btn-primary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="width:65%;min-height:7rem;font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
                 </div>
             </div>
         </div>
