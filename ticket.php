@@ -46,7 +46,7 @@ if (!isset($_SESSION['user'])) {
 
 <!-----------------------Content----------------------------->
 <div class="container mb-5 mt-3">
-    <a class="back-button" href="ticketList.php"><i class="icon icon-left-open-big"></i>Back</a>
+    <a class="back-button" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Back</a>
     <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
     <div class="container text-center">
         <span class="badge badge-success">Assigned</span>
