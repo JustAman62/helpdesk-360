@@ -11,7 +11,7 @@ if (!isset($_SESSION['user'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> View Tickets </title>
+    <title> New Call | Helpdesk 360 </title>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -46,7 +46,7 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container my-3">
     <div class="row">
-        <h1 class="display-4 text-center w-100">Add Call</h1>
+        <h1 class="display-4 text-center w-100">New Call</h1>
     </div>
     <div class="row my-2">
         <ul class="nav nav-tabs nav-fill w-100" role="tablist">
