@@ -1,8 +1,15 @@
 //Find out what ticket number the page has been opened for, default to ticket 1
 let ticketNum = 1;
+
+//Count for temporary call icons on notes
 let counter = 0;
 $(function() {
+    //Get the ticket number from the GET request when the page is loaded
     ticketNum = location.search.split('&')[0].split('=')[1] - 1;
+
+    // Place the ticket number in the title of the page
+    document.title = "Ticket #" + tickets[ticketNum].ticketNumber + " | Helpdesk 360"
+
     //When the page is first loaded, populate the ticket info
     // populateNotes();
     populateTicketInfo();
