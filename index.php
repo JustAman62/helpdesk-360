@@ -69,10 +69,9 @@ if (!isset($_SESSION['user'])) {
             <div class="modal-body">
                 <form action="javascript:navToTicket()">
                     <div class="input-group">
-                        <label for="searchText"></label>
-                        <input type="text" id="searchText" class="border border-secondary rounded my-0 form-control" placeholder="Ticket Number">
+                        <input type="text" id="searchText" class="my-0 form-control" placeholder="Ticket Number">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary" onclick="navToTicket()" type="submit">Search</button>
+                            <button class="btn btn-primary" onclick="navToTicket()" type="submit">Open</button>
                         </span>
                     </div>
                 </form>
