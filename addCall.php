@@ -70,7 +70,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="form-group col-12 col-md-4">
                             <label for="create-priority">Priority</label>
-                            <select class="form-control" id="create-priority">
+                            <select class="form-control custom-select" id="create-priority">
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
