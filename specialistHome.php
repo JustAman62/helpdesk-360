@@ -41,10 +41,12 @@ if (!isset($_SESSION['user'])) {
     <div class="navbar-collapse collapse order-3 order-md-1">
         <ul class="navbar-nav">
             <li class="nav-item">
+                <a class="nav-link active" href="specialistHome.php">Specialist Home</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="ticketList.php">View Tickets</a>
             </li>
-        </ul>
-    </div>
+        </ul>    </div>
     <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
         <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['user'] ?> <i class="icon-user"></i></a>
     </div>
