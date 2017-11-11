@@ -50,6 +50,7 @@ if (!isset($_SESSION['user'])) {
 <div class="container mb-5 mt-3">
     <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Back</a>
     <button class="btn btn-secondary" type="button">Close ticket</button>
+    <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Close ticket</a>
     <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
     <div class="container text-center" id="badge-list">
     </div>
