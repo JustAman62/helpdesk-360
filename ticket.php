@@ -49,6 +49,7 @@ if (!isset($_SESSION['user'])) {
 <!-----------------------Content----------------------------->
 <div class="container mb-5 mt-3">
     <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Back</a>
+    <button class="btn btn-secondary" type="button">Close ticket</button>
     <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
     <div class="container text-center" id="badge-list">
     </div>
@@ -66,7 +67,7 @@ if (!isset($_SESSION['user'])) {
     <hr>
 
     <div class="d-flex mb-3">
-        <h3>Ticket Details hello</h3>
+        <h3>Ticket Details</h3>
         <a class="ml-auto no-hover-underline" href="#">Edit <i class="icon icon-pencil"></i> </a>
     </div>
     <dl class="row">
