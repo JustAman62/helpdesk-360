@@ -60,7 +60,7 @@ if (!isset($_SESSION['user'])) {
             <button class="btn btn-primary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
         </div>
     </div>
-    <hr size = "10"> 
+    <hr> 
 </div>
 
 <!--Modal for search for tickets-->
