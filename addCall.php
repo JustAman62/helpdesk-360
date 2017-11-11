@@ -201,7 +201,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12">
                             <label for="add-notes">Call Notes</label>
                             <textarea name="" id="add-notes" class="form-control w-100"></textarea>
-                            <button class="btn btn-secondary" type="button">Add to ticket</button>
+                            <button class="btn btn-secondary my-5" type="button">Add to ticket</button>
                         </div>
                     </div>
 
