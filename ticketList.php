@@ -78,7 +78,7 @@ if (!isset($_SESSION['user'])) {
 
             <h4 class="text-center">Closed Tickets</h4>
             <!--All tickets below this line should be generated via js my looking at the db using this template-->
- <!--           <a href="#" class="closed-ticket-clickable">
+    <!--        <a href="#" class="closed-ticket-clickable">
                 <div class="w-100 closed-ticket-clickable">
                     <div class="d-flex ticket-header">
                         <h4 class="card-title">Ticket 1</h4>
@@ -86,7 +86,7 @@ if (!isset($_SESSION['user'])) {
                     <div class="ticket-body">
                         <p class="card-text">Ticket Description</p>-->
                         <!--Table footer-->
-   <!--                     <table class="w-100">
+    <!--                    <table class="w-100">
                             <tr>
                                 <td>Date Created</td>
                                 <td class="text-right">Date Closed</td>

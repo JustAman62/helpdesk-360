@@ -66,7 +66,7 @@ if (!isset($_SESSION['user'])) {
     <hr>
 
     <div class="d-flex mb-3">
-        <h3>Ticket Details</h3>
+        <h3>Ticket Details hello</h3>
         <a class="ml-auto no-hover-underline" href="#">Edit <i class="icon icon-pencil"></i> </a>
     </div>
     <dl class="row">
