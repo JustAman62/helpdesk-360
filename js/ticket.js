@@ -134,6 +134,25 @@ function populateTicketInfo() {
         }
     }
 
+//    Populate specialist details
+    if (tickets[ticketNum].specialistID) {
+        let ID = document.createElement('h6');
+        ID.appendChild(document.createTextNode('ID: ' + tickets[ticketNum].specialistID));
+        let name = document.createElement('h6');
+        name.appendChild(document.createTextNode('Jane Doe'));
+        let number = document.createElement('h6');
+        number.appendChild(document.createTextNode('01234 123 321'));
+        let specialism = document.createElement('h6');
+        specialism.appendChild(document.createTextNode('Printing Issues'));
+
+        $('#specialistDetails').append(ID, name, number, specialism);
+    }
+    else {
+        let notAssigned = document.createElement('h6');
+        notAssigned.appendChild(document.createTextNode('Not Assigned to a Specialist'));
+        $('#specialistDetails').append(notAssigned);
+    }
+
 
 }
 

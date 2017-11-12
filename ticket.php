@@ -102,9 +102,9 @@ if (!isset($_SESSION['user'])) {
     <hr>
 
     <h3>Specialist Details</h3>
-    <h6>ID: <span class="auto-fill" data-autofill="specialistID">Not Assigned to a Specialist</span></h6>
-    <h6>Jane Doe</h6>
-    <h6>Printing</h6>
+    <div id="specialistDetails">
+        <h6>Not Assigned to a Specialist</h6>
+    </div>
     <hr>
 
     <h3>Notes</h3>
