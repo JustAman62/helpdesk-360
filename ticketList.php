@@ -46,13 +46,17 @@ if (!isset($_SESSION['user'])) {
     </div>
 </nav>
 
-<div class="container">
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4 text-center">All Tickets</h1>
+        </div>
+    </div>
     <div class="row">
         <!--Open Tickets-->
         <div class="col-sm-12 col-md-6 pt-2" id="open-ticket-list" style="">
 
             <h4 class="text-center">Open Tickets</h4>
-            <!--<button type="button" class="button" onclick="javascript:addTicket()">add</button>-->
             <!--All tickets below this line should be generated via js my looking at the db using this template-->
 <!--            <a href="exampleTicket.php" class="open-ticket-clickable">
                 <div class="w-100 open-ticket-clickable">
