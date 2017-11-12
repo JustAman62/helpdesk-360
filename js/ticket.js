@@ -47,7 +47,9 @@ $(function() {
 function populateTicketInfo() {
     //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
-        element.innerHTML = tickets[ticketNum][element.dataset.autofill];
+        if (tickets[ticketNum][element.dataset.autofill]) {
+            element.innerHTML = tickets[ticketNum][element.dataset.autofill];
+        }
     });
 
     //Add badges for if the ticket if open or closed
