@@ -1,9 +1,6 @@
 <?php
 session_start();
-if (isset($_REQUEST['user'])) {
-    $_SESSION['user'] = $_REQUEST['user'];
-}
-
+//If user is not logged in, ask user to log in
 if (!isset($_SESSION['user'])) {
     header('Location: login.php');
 }
