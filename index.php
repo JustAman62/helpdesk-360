@@ -53,6 +53,11 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container mt-4">
     <div class="row">
+        <div class="col-12">
+            <h1 class="display-4 text-center">Operator Homepage</h1>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12 col-md-5 px-4 my-5">
             <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;" onclick="location.href='addCall.php'">New Call<i class="icon-phone"></i></button>
         </div>
