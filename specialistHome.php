@@ -78,7 +78,7 @@ if (!isset($_SESSION['user'])) {
     <hr>
 
     <div class="row justify-content-center">
-        <div class="col-12 col-8">
+        <div class="col-12 col-md-8">
             <h4 class="text-center">My Tickets</h4>
             <h4 class="text-center small my-0">Sort By</h4>
             <div class="btn-group btn-group-sm mb-2 w-100 my-1">
