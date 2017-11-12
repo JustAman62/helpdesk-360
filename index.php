@@ -27,7 +27,7 @@ if (!isset($_SESSION['user'])) {
 
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
-<!--    <script src="js/ticketList.js"></script>-->
+    <script src="js/ticketGenerator.js"></script>
     <script src="js/index.js"></script>
 </head>
 <body class="bg-light">
@@ -63,8 +63,9 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
     <hr>
-    <div class="row">
-        <div class="col-12">
+    <!--Auto generated tickets go here-->
+    <div class="row justify-content-center">
+        <div class="col-8">
             <h4 class="text-center">Most Recent Tickets</h4>
             <div id="open-ticket-list"></div>
         </div>
