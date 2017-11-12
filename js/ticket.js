@@ -141,18 +141,18 @@ function populateNotes() {
     $('#note-list').html('');
 
     for (let i in notes) {
-        if (notes[i].ticketNumber === ticketNum) ticketNotes.push(i);
+        if (notes[i].ticketNumber === ticketNum+1) ticketNotes.push(i);
     }
 
-    for (i in ticketNotes) {
+    for (let i in ticketNotes) {
         makeNoteListItem(ticketNotes[i]);
     }
 //    Add a make new note button
     let newNoteElement = document.createElement('button')
     newNoteElement.setAttribute('type', 'button');
     newNoteElement.setAttribute('class', 'list-group-item list-group-item-action');
-    newNoteElement.setAttribute('onclick', 'javascript:addNewNote()');
-    let plusIcon = document.createElement('i')
+    newNoteElement.setAttribute('onclick', "javascript:addNewNote('New Note')");
+    let plusIcon = document.createElement('i');
     plusIcon.setAttribute('class', 'icon-plus-circled');
     newNoteElement.appendChild(plusIcon);
     newNoteElement.appendChild(document.createTextNode(' Add New Note'));
@@ -174,8 +174,6 @@ function makeNoteListItem(noteID) {
     noteElement.setAttribute('data-note-id', noteID);
 
     let date = new Date();
-    // let dateString = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes();
-
     let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
 
     let dateTimeText = document.createElement('small');
@@ -197,7 +195,23 @@ function makeNoteListItem(noteID) {
     $('#note-list').append(noteElement)
 }
 
-function addNewNote() {
-    notes.push("New Note")
+function addNewNote(text) {
+    let date = new Date();
+    notes.push(
+        {
+            "noteID":notes.length,
+            "Text":text,
+            "Date":date.getDate() + "/" + date.getMonth()+1 + "/" + date.getFullYear(),
+            "ticketNumber":tickets[ticketNum].ticketNumber
+        });
+
     populateNotes();
+    $('.list-group button:nth-last-child(2)').trigger('click');
+}
+
+function closeTicket() {
+    let date = new Date();
+    let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
+
+    addNewNote("Ticket closed on: " + dateString + "\n\nReason:");
 }

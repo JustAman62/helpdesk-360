@@ -49,8 +49,6 @@ if (!isset($_SESSION['user'])) {
 <!-----------------------Content----------------------------->
 <div class="container mb-5 mt-3">
     <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Back</a>
-    <button class="btn btn-secondary" type="button">Close ticket</button>
-    <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Close ticket</a>
     <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
     <div class="container text-center" id="badge-list">
     </div>
@@ -114,6 +112,20 @@ if (!isset($_SESSION['user'])) {
         <!--<small>19/09/2018 06:10</small><br>-->
         <!--<span>some notes</span>-->
         <!--</button>-->
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Ticket Actions</h3>
+        </div>
+        <div class="col-12 col-md-6">
+            <button class="btn btn-primary btn-block mr-0 ml-md-1 my-2 my-md-0">Assign to Specialist</button>
+        </div>
+        <div class="col12 col-md-6">
+            <button class="btn btn-danger btn-block ml-0 mr-md-1 my-2 my-md-0" onclick="closeTicket()">Close Ticket</button>
+        </div>
     </div>
 
 </div>
