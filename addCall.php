@@ -40,6 +40,10 @@ if (!isset($_SESSION['user'])) {
             <li class="nav-item">
                 <a class="nav-link" href="analytics.php">Analytics</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.php">Admin</a>
+            </li>
+
         </ul>
     </div>
     <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
