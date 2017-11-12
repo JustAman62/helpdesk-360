@@ -103,7 +103,6 @@ if (!isset($_SESSION['user'])) {
 
     <h3>Specialist Details</h3>
     <div id="specialistDetails">
-        <h6>Not Assigned to a Specialist</h6>
     </div>
     <hr>
 
