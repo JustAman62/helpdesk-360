@@ -77,7 +77,7 @@ if (!isset($_SESSION['user'])) {
         <dd class="col-8 col-md-9 auto-fill" data-autofill="dateCreated" id="">20/10/2017 12:48 (6 days)</dd>
 
         <dt class="col-4 col-md-3 text-right">Last Modified</dt>
-        <dd class="col-8 col-md-9" id="last-modified">21/10/2017 15:35 (not yet coded)</dd>
+        <dd class="col-8 col-md-9" id="last-modified">21/10/2017 15:35</dd>
 
         <dt class="col-4 col-md-3 text-right">Problem Type</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="problemTypeID" id="">Printer Issues</dd>
