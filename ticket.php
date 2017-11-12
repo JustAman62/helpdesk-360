@@ -64,8 +64,6 @@ if (!isset($_SESSION['user'])) {
     <h6>John Doe</h6>
     <h6>07123 123456</h6>
 
-    TODO: Show specialist details
-
     <hr>
 
     <div class="d-flex mb-3">
