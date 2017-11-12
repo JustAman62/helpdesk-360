@@ -78,22 +78,22 @@ if (!isset($_SESSION['user'])) {
         <dd class="col-8 col-md-9" id="last-modified">21/10/2017 15:35</dd>
 
         <dt class="col-4 col-md-3 text-right">Problem Type</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="problemTypeID" id="">Printer Issues</dd>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="problemTypeID" id="">No Problem Type Given</dd>
 
         <dt class="col-4 col-md-3 text-right">Original Description</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="originalDescription" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
 
         <dt class="col-4 col-md-3 text-right">Serial Number</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="serialNumber" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="serialNumber" id="">No Serial Number Given</dd>
 
         <dt class="col-4 col-md-3 text-right">Unique Identifier</dt>
-        <dd class="col-8 col-md-9" id="">6372593</dd>
+        <dd class="col-8 col-md-9" id="">No Unique Identifier Given</dd>
 
         <dt class="col-4 col-md-3 text-right">Software Licence Number</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="softwareLicenceNumber" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="softwareLicenceNumber" id="">No Licence Number Given</dd>
 
         <dt class="col-4 col-md-3 text-right">Operating System</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="operatingSystem" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+        <dd class="col-8 col-md-9 auto-fill" data-autofill="operatingSystem" id="">No Operating System Given</dd>
     </dl>
 
 
