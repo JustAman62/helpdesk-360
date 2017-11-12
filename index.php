@@ -26,6 +26,7 @@ if (!isset($_SESSION['user'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+    <script src="js/ticketList.js"></script>
     <script src="js/index.js"></script>
 </head>
 <body class="bg-light">
@@ -60,7 +61,13 @@ if (!isset($_SESSION['user'])) {
             <button class="btn btn-primary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
         </div>
     </div>
-    <hr> 
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-center">Most Recent Tickets</h4>
+            <div id="open-ticket-list"></div>
+        </div>
+    </div>
 </div>
 
 <!--Modal for search for tickets-->
