@@ -60,8 +60,6 @@ if (!isset($_SESSION['user'])) {
     <h6>07123 123456</h6>
 
     TODO: Show specialist details <br>
-    TODO: Add assign specialist button <br>
-    TODO: Add Close Ticket button <br>
 
     <hr>
 
