@@ -17,3 +17,9 @@ function resizeTextArea() {
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
 }
+
+function navToTicket() {
+    let searchTicket = $('#searchText').val();
+    if (searchTicket === undefined || searchTicket === "") searchTicket = 1;
+    location.href = 'ticket.php?ticketNum=' + searchTicket
+}
