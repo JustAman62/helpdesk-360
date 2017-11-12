@@ -26,7 +26,8 @@ if (!isset($_SESSION['user'])) {
 
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/ticketList.js"></script>
+    <script src="js/ticketGenerator.js"></script>
+    <script src="js/specialistHome.js"></script>
 
 </head>
 
@@ -54,15 +55,50 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-12 col-md-6 px-4 my-5">
-            <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;">My tickets</button>
+        <div class="col-12">
+            <h1 class="text-center display-4">Specialist Homepage</h1>
+            <h4 class="text-center small">(#1005)</h4>
         </div>
-        <div class="col-12 col-md-6 px-4 my-5">
-            <div class="col-12 col-md-12 px-4 my-5">
-                <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;">View All tickets</button>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-5 px-4 my-5">
+            <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;" onclick="location.href='ticketList.php'">View All Tickets</button>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-12 col-md-5 px-4 my-5">
+            <button class="btn btn-primary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h4 class="text-center">My Tickets</h4>
+            <h4 class="text-center small my-0">Sort By</h4>
+            <div class="btn-group btn-group-sm mb-2 w-100 my-1">
+                <button class="btn btn-secondary ml-auto active">Date Created</button>
+                <button class="btn btn-secondary mr-auto">Priority</button>
             </div>
-            <div class="col-12 col-md-12 px-4 my-5">
-                <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;">Search tickets</button>
+            <div id="open-ticket-list"></div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for search for tickets-->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog pt-5" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="javascript:navToTicket()">
+                    <div class="input-group">
+                        <input type="text" id="searchText" class="my-0 form-control" placeholder="Ticket Number">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" onclick="navToTicket()" type="submit">Open</button>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
