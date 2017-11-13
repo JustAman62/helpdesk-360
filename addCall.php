@@ -153,9 +153,13 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12">
                             <label for="add-notes">Call Notes</label>
                             <textarea name="" id="create-notes" class="form-control w-100"></textarea>
-                            <button class="btn btn-secondary my-5" type="button">Make Ticket</button>
                         </div>
                     </div>
+
+                    <div class="row justify-content-center">
+                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Create Ticket</button>
+                    </div>
+
 
                 </form>
             </div>
@@ -208,8 +212,10 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12">
                             <label for="add-notes">Call Notes</label>
                             <textarea name="" id="add-notes" class="form-control w-100"></textarea>
-                            <button class="btn btn-secondary my-5" type="button">Add to ticket</button>
                         </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Add to ticket</button>
                     </div>
 
                 </form>
