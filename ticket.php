@@ -76,6 +76,9 @@ if (!isset($_SESSION['user'])) {
         <dt class="col-4 col-md-3 text-right">Created</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="dateCreated" id="">20/10/2017 12:48 (6 days)</dd>
 
+        <dt class="col-4 col-md-3 text-right">Created By</dt>
+        <dd class="col-8 col-md-9" id="">John (1003)</dd>
+
         <dt class="col-4 col-md-3 text-right">Last Modified</dt>
         <dd class="col-8 col-md-9" id="last-modified">21/10/2017 15:35</dd>
 

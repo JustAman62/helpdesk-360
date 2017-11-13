@@ -234,5 +234,5 @@ function closeTicket() {
     let date = new Date();
     let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
 
-    addNewNote("Ticket closed on: " + dateString + " by: " + "{Username}" + "\n\nReason:");
+    addNewNote("Ticket closed on: " + dateString + " by: " + "John" + "\n\nReason:");
 }
