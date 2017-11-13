@@ -68,12 +68,12 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-5 px-4 my-5">
+        <div class="col-12 col-md-5 px-4 my-2">
             <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;" onclick="location.href='ticketList.php'">View All Tickets</button>
         </div>
         <div class="col-md-2">
         </div>
-        <div class="col-12 col-md-5 px-4 my-5">
+        <div class="col-12 col-md-5 px-4 my-2">
             <button class="btn btn-primary btn-block m-auto" data-toggle="modal" data-target="#searchModal" style="font-size: 25px;">Search For Ticket <i class="icon-search"></i></button>
         </div>
     </div>
