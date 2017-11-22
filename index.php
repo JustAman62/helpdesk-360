@@ -59,6 +59,7 @@ if (!isset($_SESSION['user'])) {
     </div>
 </nav>
 
+
 <div class="container mt-4">
     <div class="row">
         <div class="col-12">
