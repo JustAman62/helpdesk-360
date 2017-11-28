@@ -17,13 +17,10 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
-<<<<<<< HEAD
     <link rel="stylesheet" href="awesomplete.css" />
     <script src="awesomplete.js" async></script>
-=======
     <link rel="stylesheet" href="css/awesomplete.css" />
     <script src="js/awesomplete.js"></script>
->>>>>>> e3ad9534703ca6fba7e2f787a5256be15b8dec6e
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -86,24 +83,18 @@ if (!isset($_SESSION['user'])) {
                             <input type="date" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
                             <small class="text-secondary">Date the call was received</small>
                         </div>
-<<<<<<< Updated upstream
                         <div class="form-group col-12 col-md-4">
                             <label for="create-priority">Priority</label>
                             <select class="form-control custom-select" id="create-priority">
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
-<<<<<<< HEAD
-=======
                         <div class="form-group">
                             <label for="sel1">Priority</label>
                             <select class="form-control" id="sel1">
                                 <option >Low</option>
                                 <option >Medium</option>
                                 <option >High</option>
->>>>>>> Stashed changes
-=======
->>>>>>> e3ad9534703ca6fba7e2f787a5256be15b8dec6e
                             </select>
                         </div>
                     </div>
@@ -197,7 +188,7 @@ if (!isset($_SESSION['user'])) {
 
                     <div class="row justify-content-center col-12">
                         <!--  <button class="btn btn-primary col-md-4 my-5" type="button">Assign to specialist</button> -->
-                        <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal" style="font-size: 25px;">Assign to specialist</button>
+                        <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
                         <button class="btn btn-primary col-md-4 my-5" type="button">Create Ticket</button>
@@ -266,7 +257,7 @@ if (!isset($_SESSION['user'])) {
     </div>
 </div>
 
-<!--Modal for asign to specialist-->
+<!--Modal for assign to specialist
 <div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
@@ -282,7 +273,7 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
