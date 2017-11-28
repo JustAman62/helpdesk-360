@@ -120,8 +120,8 @@ if (!isset($_SESSION['user'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete" data-list="#mylist" />
-                              <ul id="mylist">
+                            <input class="awesomplete form-control custom-select" data-list="#mylist" />
+                              <ul style = "display:none"  id="mylist">
                               	<li>Ada</li>
                               	<li>Java</li>
                               	<li>JavaScript</li>
