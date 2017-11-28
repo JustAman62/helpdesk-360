@@ -111,7 +111,7 @@ if (!isset($_SESSION['user'])) {
                             <label for="create-problem-type">Problem Type</label>
                             <input type="text" class="form-control" id="create-problem-type" placeholder="Printer">
                         </div>
-                    </div>  
+                    </div>
                     <div class="row mt-4">
                         <div class="col-12">
                             <label for="create-problem-description">Problem Description</label>
