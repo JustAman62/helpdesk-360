@@ -87,13 +87,6 @@ if (!isset($_SESSION['user'])) {
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
-
-                        <div class="form-group">
-                            <label for="sel1">Priority</label>
-                            <select class="form-control" id="sel1">
-                                <option >Low</option>
-                                <option >Medium</option>
-                                <option >High</option>
                             </select>
                         </div>
                     </div>
@@ -119,8 +112,16 @@ if (!isset($_SESSION['user'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete"
-                                   data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" />
+                            <input class="awesomplete" data-list="#mylist" />
+                              <ul id="mylist">
+                              	<li>Ada</li>
+                              	<li>Java</li>
+                              	<li>JavaScript</li>
+                              	<li>Brainfuck</li>
+                              	<li>LOLCODE</li>
+                              	<li>Node.js</li>
+                              	<li>Ruby on Rails</li>
+                              </ul>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-OS">Operating System</label>
