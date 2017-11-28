@@ -17,8 +17,13 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="awesomplete.css" />
     <script src="awesomplete.js" async></script>
+=======
+    <link rel="stylesheet" href="css/awesomplete.css" />
+    <script src="js/awesomplete.js"></script>
+>>>>>>> e3ad9534703ca6fba7e2f787a5256be15b8dec6e
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -88,6 +93,7 @@ if (!isset($_SESSION['user'])) {
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
+<<<<<<< HEAD
 =======
                         <div class="form-group">
                             <label for="sel1">Priority</label>
@@ -96,6 +102,8 @@ if (!isset($_SESSION['user'])) {
                                 <option >Medium</option>
                                 <option >High</option>
 >>>>>>> Stashed changes
+=======
+>>>>>>> e3ad9534703ca6fba7e2f787a5256be15b8dec6e
                             </select>
                         </div>
                     </div>
@@ -121,8 +129,16 @@ if (!isset($_SESSION['user'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete"
-                                   data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" />
+                            <input class="awesomplete" data-list="#mylist" />
+                              <ul id="mylist">
+                              	<li>Ada</li>
+                              	<li>Java</li>
+                              	<li>JavaScript</li>
+                              	<li>Brainfuck</li>
+                              	<li>LOLCODE</li>
+                              	<li>Node.js</li>
+                              	<li>Ruby on Rails</li>
+                              </ul>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-OS">Operating System</label>
