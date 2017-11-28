@@ -167,6 +167,7 @@ if (!isset($_SESSION['user'])) {
                     </div>
 
                     <div class="row justify-content-center">
+                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Assign to specialist</button>
                         <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Create Ticket</button>
                     </div>
 
