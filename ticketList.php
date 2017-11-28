@@ -25,6 +25,7 @@ if (!isset($_SESSION['user'])) {
     <script src="js/script.js"></script>
     <script src="js/ticketGenerator.js"></script>
     <script src="js/ticketList.js"></script>
+
 </head>
 <body class="bg-light">
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
@@ -57,6 +58,14 @@ if (!isset($_SESSION['user'])) {
     <div class="row">
         <div class="col-12">
             <h1 class="display-4 text-center">All Tickets</h1>
+
+            <form action="">
+                <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Closed Tickets" value="CTicket" id="CTicket" onclick="CheckCTicket()">
+                    Closed Ticket Only
+                </label>
+            </form>
+
         </div>
     </div>
     <div class="row">

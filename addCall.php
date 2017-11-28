@@ -81,12 +81,21 @@ if (!isset($_SESSION['user'])) {
                             <input type="date" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
                             <small class="text-secondary">Date the call was received</small>
                         </div>
+<<<<<<< Updated upstream
                         <div class="form-group col-12 col-md-4">
                             <label for="create-priority">Priority</label>
                             <select class="form-control custom-select" id="create-priority">
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
+=======
+                        <div class="form-group">
+                            <label for="sel1">Priority</label>
+                            <select class="form-control" id="sel1">
+                                <option >Low</option>
+                                <option >Medium</option>
+                                <option >High</option>
+>>>>>>> Stashed changes
                             </select>
                         </div>
                     </div>
@@ -112,15 +121,8 @@ if (!isset($_SESSION['user'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete form-control custom-select" list="mylist" />
-                              <datalist id="mylist">
-                              	<option>Printer</option>
-                              	<option>Printer jam</option>
-                              	<option>Printer power</option>
-                              	<option>Storage</option>
-                              	<option>Mouse</option>
-                              	<option>Internet connection</option>
-                              </datalist>
+                            <input class="awesomplete"
+                                   data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" />
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-OS">Operating System</label>
