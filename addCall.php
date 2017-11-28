@@ -107,11 +107,11 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-12">
+                        <div class="col-12 col-md-4">
                             <label for="create-problem-type">Problem Type</label>
                             <input type="text" class="form-control" id="create-problem-type" placeholder="Printer">
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 col-md-4">
                             <label for="create-OS">Operating System</label>
                             <input type="text" class="form-control" id="create-OS" placeholder="Windows 10">
                         </div>
