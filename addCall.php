@@ -111,13 +111,6 @@ if (!isset($_SESSION['user'])) {
                             <label for="create-problem-type">Problem Type</label>
                             <input type="text" class="form-control" id="create-problem-type" placeholder="Printer">
                         </div>
-<<<<<<< HEAD
-=======
-                        <div class="col-12">
-                            <label for="create-OS">Operating System</label>
-                            <input type="text" class="form-control" id="create-OS" placeholder="Windows 10">
-                        </div>
->>>>>>> 5b0cc61e5d669913336c6d8176b30d25f11ca606
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
@@ -171,6 +164,7 @@ if (!isset($_SESSION['user'])) {
 
                     <div class="row justify-content-center">
                         <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Assign to specialist</button>
+                        <div class ="col-12 col-md-2"></div>
                         <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Create Ticket</button>
                     </div>
 
