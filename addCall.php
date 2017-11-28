@@ -178,12 +178,12 @@ if (!isset($_SESSION['user'])) {
                     </div>
 
                     <div class="row justify-content-center col-12">
-                        <button class="btn btn-primary col-md-4 my-5" type="button">Assign to specialist</button>
+                        <!--  <button class="btn btn-primary col-md-4 my-5" type="button">Assign to specialist</button> -->
+                        <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal" style="font-size: 25px;">Search For Ticket</i></button>
                            <div class ="col-md-2">
                            </div>
                         <button class="btn btn-primary col-md-4 my-5" type="button">Create Ticket</button>
                     </div>
-
 
                 </form>
             </div>
@@ -247,6 +247,26 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
 </div>
+
+<!--Modal for asign to specialist-->
+<div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog pt-5" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-between">
+                <h3 class="my-0">Available specialists</h3>
+            </div>
+            <div class="modal-body">
+                <textarea name="note" id="modalAvailableSpec" class="col-12 border border-secondary rounded my-0" placeholder="Notes"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="saveSpecialist">Assign</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 </body>
 </html>
