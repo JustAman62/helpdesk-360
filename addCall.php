@@ -111,6 +111,13 @@ if (!isset($_SESSION['user'])) {
                             <label for="create-problem-type">Problem Type</label>
                             <input type="text" class="form-control" id="create-problem-type" placeholder="Printer">
                         </div>
+<<<<<<< HEAD
+=======
+                        <div class="col-12">
+                            <label for="create-OS">Operating System</label>
+                            <input type="text" class="form-control" id="create-OS" placeholder="Windows 10">
+                        </div>
+>>>>>>> 5b0cc61e5d669913336c6d8176b30d25f11ca606
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
