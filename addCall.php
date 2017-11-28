@@ -112,15 +112,14 @@ if (!isset($_SESSION['user'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete" list="mylist" />
+                            <input class="awesomplete form-control custom-select" list="mylist" />
                               <datalist id="mylist">
-                              	<option>Ada</option>
-                              	<option>Java</option>
-                              	<option>JavaScript</option>
-                              	<option>Brainfuck</option>
-                              	<option>LOLCODE</option>
-                              	<option>Node.js</option>
-                              	<option>Ruby on Rails</option>
+                              	<option>Printer</option>
+                              	<option>Printer jam</option>
+                              	<option>Printer power</option>
+                              	<option>Storage</option>
+                              	<option>Mouse</option>
+                              	<option>Internet connection</option>
                               </datalist>
                         </div>
                         <div class="col-12 col-md-4">
