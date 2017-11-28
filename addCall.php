@@ -166,11 +166,11 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="row justify-content-center">
-                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Assign to specialist</button>
+                    <div class="row justify-content-center col-12">
+                        <button class="btn btn-primary col-md-4 my-5" type="button">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
-                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Create Ticket</button>
+                        <button class="btn btn-primary col-md-4 my-5" type="button">Create Ticket</button>
                     </div>
 
 
