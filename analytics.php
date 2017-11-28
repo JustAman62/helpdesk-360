@@ -26,6 +26,7 @@ if (!isset($_SESSION['user'])) {
     <script src="js/script.js"></script>
     <script src="js/ticketGenerator.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/Chart.bundle.min.js"></script>
 </head>
 <body class="bg-light">
 
