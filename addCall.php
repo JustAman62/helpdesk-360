@@ -17,6 +17,9 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
+    <link rel="stylesheet" href="awesomplete.css" />
+    <script src="awesomplete.js" async></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -116,6 +119,25 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <div class="row mt-4">
+                        <div class="col-12 col-md-4">
+                            <label for="create-problem-type">Problem Type</label>
+                            <input class="awesomplete" data-list="#problemtypes" />
+                            <ul id="problemtypes">
+                            	<li>Printer</li>
+                            	<li>Printer jam</li>
+                            	<li>Printer power</li>
+                            	<li>Storage</li>
+                            	<li>Mouse</li>
+                            	<li>Keyboard</li>
+                            	<li>Internet connection</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="create-OS">Operating System</label>
+                            <input type="text" class="form-control" id="create-OS" placeholder="Windows 10">
+                        </div>
+                    </div>
+                    <div class="row mt-4">
                         <div class="col-12">
                             <label for="create-problem-description">Problem Description</label>
                             <textarea name="" id="create-problem-description" class="form-control w-100"></textarea>
@@ -165,8 +187,11 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
 
-                    <div class="row justify-content-center">
-                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Create Ticket</button>
+                    <div class="row justify-content-center col-12">
+                        <button class="btn btn-primary col-md-4 my-5" type="button">Assign to specialist</button>
+                           <div class ="col-md-2">
+                           </div>
+                        <button class="btn btn-primary col-md-4 my-5" type="button">Create Ticket</button>
                     </div>
 
 
