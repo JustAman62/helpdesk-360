@@ -61,8 +61,8 @@ if (!isset($_SESSION['user'])) {
 
             <form action="">
                 <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="Closed Tickets" value="CTicket" id="CTicket" onclick="CheckCTicket()">
-                    Closed Ticket Only
+                <input class="form-check-input" type="checkbox" name="Closed Tickets" value="CTicket" id="CTicket" onchange="CheckCTicket()">
+                    Open and Closed Tickets
                 </label>
             </form>
 
