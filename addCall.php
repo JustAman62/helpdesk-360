@@ -122,18 +122,22 @@ if (!isset($_SESSION['user'])) {
                             <label for="create-problem-type">Problem Type</label>
                             <input class="awesomplete form-control custom-select" data-list="#mylist" />
                               <ul style = "display:none"  id="mylist">
-                              	<li>Ada</li>
-                              	<li>Java</li>
-                              	<li>JavaScript</li>
-                              	<li>Brainfuck</li>
-                              	<li>LOLCODE</li>
-                              	<li>Node.js</li>
-                              	<li>Ruby on Rails</li>
+                              	<li>Printer</li>
+                              	<li>Printer jam</li>
+                              	<li>Printer out of ink</li>
+                              	<li>Connection problems</li>
+                                <li>System login</li>
                               </ul>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-OS">Operating System</label>
-                            <input type="text" class="form-control" id="create-OS" placeholder="Windows 10">
+                            <input class="awesomplete form-control custom-select" data-list="#mylist" />
+                              <ul style = "display:none"  id="mylist">
+                              	<li>Linux</li>
+                              	<li>Mac OS</li>
+                              	<li>Windows 10</li>
+                              	<li>Windows 8</li>
+                              </ul>
                         </div>
                     </div>
                     <div class="row mt-4">
