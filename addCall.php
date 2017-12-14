@@ -92,9 +92,9 @@ if (!isset($_SESSION['user'])) {
                         <div class="form-group">
                             <label for="sel1">Priority</label>
                             <select class="form-control" id="sel1">
-                                <option >Low</option>
-                                <option >Medium</option>
-                                <option >High</option>
+                                <option hidden>Low</option>
+                                <option hidden>Medium</option>
+                                <option hidden>High</option>
                             </select>
                         </div>
                     </div>
