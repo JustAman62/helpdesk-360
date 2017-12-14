@@ -120,8 +120,8 @@ if (!isset($_SESSION['user'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete form-control custom-select" data-list="#mylist" />
-                              <ul style = "display:none"  id="mylist">
+                            <input class="awesomplete form-control custom-select" data-list="#problems" />
+                              <ul style = "display:none"  id="problems">
                               	<li>Printer</li>
                               	<li>Printer jam</li>
                               	<li>Printer out of ink</li>
@@ -131,8 +131,8 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-OS">Operating System</label>
-                            <input class="awesomplete form-control custom-select" data-list="#mylist" />
-                              <ul style = "display:none"  id="mylist">
+                            <input class="awesomplete form-control custom-select" data-list="#OS" />
+                              <ul style = "display:none"  id="OS">
                               	<li>Linux</li>
                               	<li>Mac OS</li>
                               	<li>Windows 10</li>
