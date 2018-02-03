@@ -7,7 +7,7 @@
  * login information for the database, to be included in db scripts
  */
 
-$username = 'root';
+$username = 'user';
 $password = 'password-360';
 $host = 'helpdesk360.co.uk';
 $dbName = 'helpdesk';
