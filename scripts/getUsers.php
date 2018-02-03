@@ -7,12 +7,16 @@
  * Gets all information for the users in the system, and outputs a json file with this information
  */
 
-include 'getUsers.php'; // For db information
+include 'database-details.php'; // For db information
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbName);
 
 if ($conn->connect_error) {
     die('Connection failed'.$conn->connect_error);
 }
 
-echo 'connection successful';
+$sql = 'SELECT * FROM Users';
+
+$result = $conn->query($sql);
+
+echo json_encode($result->fetch_assoc());
