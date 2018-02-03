@@ -61,6 +61,26 @@ if (!isset($_SESSION['user'])) {
             <h1 class="display-4 text-center">Admin</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <h2 class="text-center">Users (#) <a class="text-secondary" href=""><i class="icon icon-plus-circled"></i></a> </h2>
+            cards for each user go here\
+            <div class="card">
+                <h5 class="card-header text-center">
+                    Users
+                    <a class="text-secondary" href=""><i class="icon icon-plus-circled"></i></a>
+                </h5>
+                <div class="list-group list-group-flush" id="user-list">
+                    <button class="list-group-item list-group-item-action">User 1</button>
+                    <button class="list-group-item list-group-item-action">User 1</button>
+                    <button class="list-group-item list-group-item-action">User 1</button>
+                </div>
+                <div class="card-footer text-muted small text-center">
+                    18 Users
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
