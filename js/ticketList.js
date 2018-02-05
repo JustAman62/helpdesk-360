@@ -12,7 +12,7 @@ function CheckCTicket(){
 
     if(check===true)
     {
-        $("#closed-ticket-list").html("<h4 class=\"text-center\">Closed Tickets</h4>");
+        $("#closed-ticket-list").hide();
         for(let i in tickets) {
 
             if(tickets[i].ticketStatus===0)
@@ -21,12 +21,11 @@ function CheckCTicket(){
     }
     if(check === false)
     {
-        $("#closed-ticket-list").html("");
+        $("#closed-ticket-list").show();
     }
 
     for (let i in tickets) {
         if (tickets[i].ticketStatus===1) addOpenTicket(i);
-
     }
 }
 
