@@ -58,18 +58,18 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-12">
-            <h2 class="display-4 text-center">Welcome to the Analytics Page</h2>
-        </div>
-    </div>
-    <div class="row">
       <div class="col-12">
-        <h3 class="display-4 text-center">Here you can see Up-to-Date and past analytics</h3>
+        <h2 class="display-4 text-center">Welcome to the Analytics Page</h2>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <h3 class="display-4 text-center">Select a button to continue</h3>
+        <h5 class="display-4 text-center">Here you can see Up-to-Date and past analytics</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h6 class="display-4 text-center">Select a button to continue</h6>
       </div>
     </div>
 </div>
