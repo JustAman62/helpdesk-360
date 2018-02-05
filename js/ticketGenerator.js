@@ -35,7 +35,7 @@ function addOpenTicket(ticketNum) {
     divBody.appendChild(description);
 
     let table = createTicketElement('table', 'w-100');
-    let row = createTicketElement('tr', '')
+    let row = createTicketElement('tr', '');
     table.appendChild(row);
     let dateCreated = createTicketElement('td', '');
     dateCreated.appendChild(document.createTextNode(tickets[ticketNum].dateCreated));
@@ -54,7 +54,7 @@ function addClosedTicket(ticketNum) {
     ticketText += tickets[ticketNum].ticketNumber;
     ticketText += '</div>\n<div class="ticket-body">\n    <p class="card-text">';
     ticketText += tickets[ticketNum].originalDescription;
-    ticketText += '</p>\n\n<!--Table footer-->\n<table class="w-100">\n    <tr>\n    <td>';
+    ticketText += '</p><table class="w-100">\n    <tr>\n    <td>';
     ticketText += tickets[ticketNum].dateCreated;
     ticketText += '</td>\n<td class="text-right">';
     ticketText += tickets[ticketNum].dateClosed;
