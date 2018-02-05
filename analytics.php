@@ -59,18 +59,24 @@ if (!isset($_SESSION['user'])) {
 <div class="container mt-4">
     <div class="row">
       <div class="col-12">
-        <h1 class="display-4 text-center mt-4" style="font-size: 2em">Welcome to the Analytics Page</h1>
+        <h1 class="display-4 text-center mt-4" style="font-size: 4em">Welcome to the Analytics Page</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <h4 class="display-4 text-center mt-4" style="font-size: 1.5em">Here you can see Up-to-Date and past analytics</h4>
+        <h4 class="display-4 text-center mt-4" style="font-size: 2em">Here you can see Current and past analytics</h4>
       </div>
     </div>
-    <div class="row">
+<!--    <div class="row">
       <div class="col-12">
-        <h4 class="display-4 text-center mt-4" style="font-size: 1.5em">Select a button to continue</h4>
+        <h4 class="display-4 text-center mt-4" style="font-size: 2em">Select a button to continue</h4>
       </div>
+    </div>   -->
+    <div class="col-12 col-md-5 px-4 my-2">
+        <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;" onclick="location.href='ticketList.php'">Current Analytics</button>
+    </div>
+    <div class="col-12 col-md-5 px-4 my-2">
+        <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;" onclick="location.href='ticketList.php'">Past Analytics</button>
     </div>
 </div>
 
