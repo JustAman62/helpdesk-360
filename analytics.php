@@ -71,7 +71,7 @@ if (!isset($_SESSION['user'])) {
       <div class="col-12">
         <h4 class="display-4 text-center mt-4" style="font-size: 2em">Select a button to continue</h4>
       </div>
-    </div>   -->
+    </div>  -->
     <div class="row">
       <div class="col-12 col-md-5 px-4 my-2">
           <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;" onclick="location.href='ticketList.php'">Current Analytics</button>
