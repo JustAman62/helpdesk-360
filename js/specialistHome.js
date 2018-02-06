@@ -7,7 +7,7 @@ $(function() {
         return (obj.specialistID === specialistID);
     });
     for (let i in filteredTickets) {
-        addOpenTicket(filteredTickets[i].ticketNumber-1);
+        createTicket(filteredTickets[i].ticketNumber-1);
     }
 
     $('#num-tickets').text(filteredTickets.length)

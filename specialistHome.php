@@ -88,7 +88,9 @@ if (!isset($_SESSION['user'])) {
                 <button class="btn btn-secondary ml-auto active">Date Created</button>
                 <button class="btn btn-secondary mr-auto">Priority</button>
             </div>
-            <div id="open-ticket-list"></div>
+        </div>
+        <div class="col-12">
+            <div id="ticket-list"></div>
         </div>
     </div>
 </div>

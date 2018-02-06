@@ -95,9 +95,9 @@
     <hr>
     <!--Auto generated tickets go here-->
     <div class="row justify-content-center">
-        <div class="col-12 col-md-8">
+        <div class="col-12">
             <h4 class="text-center">Most Recent Tickets</h4>
-            <div id="open-ticket-list"></div>
+            <div id="ticket-list"></div>
         </div>
     </div>
 </div>
