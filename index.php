@@ -1,12 +1,27 @@
 <?php
-session_start();
-if (isset($_REQUEST['user'])) {
-    $_SESSION['user'] = $_REQUEST['user'];
-}
+  session_start();
 
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
-}
+  if (isset($_POST['user']) and isset($_POST['password'])){
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM `Users` WHERE userID='$username' and password='$password'";
+
+    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+    $count = mysqli_num_rows($result);
+
+    if ($count == 1){
+      $_SESSION['user'] = $username;
+    }else{
+
+      $fmsg = "Invalid Login Credentials.";
+    }
+  }
+
+  if (!isset($_SESSION['user'])) {
+      header('Location: login.php');
+  }
 ?>
 
 <!DOCTYPE html>

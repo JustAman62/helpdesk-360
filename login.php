@@ -1,4 +1,5 @@
 <?php
+
 //End the session every time the login page is opened, to simulate a logout
 session_start();
 $_SESSION = array();
@@ -26,7 +27,7 @@ session_regenerate_id(true);
 <body>
 <div class="container" style="min-height:0px">
     <div class="d-flex justify-content-center align-items-center" style="margin-top: 5%">
-        <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="400px">   
+        <img src="img/helpdesk-login.png" alt="Helpdesk-360 Login" height="400px">
     </div>
     <br>
     <div class="row justify-content-center">
