@@ -1,12 +1,12 @@
 $(function(){
-    loadUserList();
+    loadEmployeeList();
 });
 
-function loadUserList() {
+function loadEmployeeList() {
     $.get('././scripts/getFullEmployeeDetails.php', function(result) {
         //Create list items for each user returned in the query
         for (let i in result) {
-            createUserItem(result[i]);
+            createEmployeeItem(result[i]);
         }
 
         //Create a list item to allow a new user to be added
@@ -21,11 +21,12 @@ function loadUserList() {
 
         //Update the footer to show how many users are in the list
         $('#user-count').text(result.length);
+        console.log(result)
 
     }, 'json');
 }
 
-function createUserItem(user) {
+function createEmployeeItem(user) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
     item.dataset.userID = user.userID;
@@ -33,4 +34,10 @@ function createUserItem(user) {
     item.dataset.target = '#employeeModal';
     item.append(document.createTextNode(user.firstName + ' ' + user.lastName));
     $('#user-list').append(item);
+}
+
+function loadEmployeeById(employeeID) {
+    $.get('././scripts/getFullEmployeeDetailsByID.php', {'employeeid':employeeID}, function(result) {
+        console.log(result)
+    })
 }

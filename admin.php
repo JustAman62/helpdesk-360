@@ -120,25 +120,29 @@ if (!isset($_SESSION['user'])) {
 
                     <hr>
 
-                    <div class="form-group row">
-                        <label for="userID" class="col-sm-4 col-form-label">User ID</label>
-                        <div class="col-sm-8">
-                            <input type="text" readonly class="form-control-plaintext" id="userID" value="lala">
+                    <p class=" text-center">This employee has no user account</p>
+
+                    <div id="user-details">
+                        <div class="form-group row">
+                            <label for="userID" class="col-sm-4 col-form-label">User ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="userID" value="lala">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="user-password" class="col-sm-4 col-form-label">Password</label>
-                        <div class="col-sm-8">
-                            <input type="password" class="form-control" id="user-password" placeholder="Password">
+                        <div class="form-group row">
+                            <label for="user-password" class="col-sm-4 col-form-label">Password</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="user-password" placeholder="Password">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="user-access-level" class="col-sm-4 col-form-label">Access Level</label>
-                        <div class="col-sm-8">
-                            <select class="form-control custom-select" id="user-access-level">
-                                <option value="Operator & Specialist"></option>
-                                <option value="Specialist"></option>
-                            </select>                        
+                        <div class="form-group row">
+                            <label for="user-access-level" class="col-sm-4 col-form-label">Access Level</label>
+                            <div class="col-sm-8">
+                                <select class="form-control custom-select" id="user-access-level">
+                                    <option value="Operator & Specialist"></option>
+                                    <option value="Specialist"></option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </form>

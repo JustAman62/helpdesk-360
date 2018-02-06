@@ -8,14 +8,14 @@
  */
 require('connect.php');
 
-$employeeID = $_REQUEST['employee-id'];
+$employeeID = $_REQUEST['employeeid'];
 
-$sql = 'SELECT * FROM Users RIGHT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Employees.employeeID = $employeeID';
+
+$sql = "SELECT * FROM Users RIGHT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Employees.employeeID = $employeeID";
 
 $result = $conn->query($sql);
 
-while($row = $result->fetch_object()) {
-    $rows[]=$row;
-}
+if ($conn->error) die($conn->error);
 
-echo json_encode($rows);
+
+echo json_encode($result->fetch_object());
