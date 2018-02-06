@@ -58,28 +58,15 @@ if (!isset($_SESSION['user'])) {
     <div class="row">
         <div class="col-12">
             <h1 class="display-4 text-center">All Tickets</h1>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-secondary">Open Tickets</button>
-                <button type="button" class="btn btn-secondary">Closed Tickets</button>
-            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary">Open Tickets</button>
+            <button type="button" class="btn btn-secondary">Closed Tickets</button>
         </div>
     </div>
     <div class="row" id="ticket-list">
-        <a class="col-12 col-md-6 col-xl-4 p-3 ticket" href="ticket.php?ticketNum=1">
-            <div class="ticket-header justify-content-between">
-                <h5>Heading</h5>
-                <h5><span class="badge badge-primary">Low Priority</span></h5>
-            </div>
-            <div class="ticket-body">
-                <div class="ticket-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque ea eaque earum enim esse hic, inventore ipsam magnam necessitatibus, </p>
-                </div>
-                <div class="ticket-footer justify-content-between">
-                    <span>left</span>
-                    <span>right</span>
-                </div>
-            </div>
-        </a>
     </div>
 </div>
 </body>

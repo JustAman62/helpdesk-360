@@ -20,9 +20,9 @@ function createTicket(ticketNum) {
         return element.ticketNumber === ticketNum;
     });
 
-    console.log(ticket);
 
-    let ticketContainer = createNewElement('a', 'col-12 col-md-6 col-xl-4 p-3 ticket');
+    // let ticketContainer = createNewElement('a', 'col-12 col-md-6 col-xl-4 p-2 ticket');
+    let ticketContainer = createNewElement('a', 'ticket');
     ticketContainer.setAttribute('href', 'ticket.php?ticketNum=' + ticket.ticketNumber);
 
     //--------
@@ -32,7 +32,7 @@ function createTicket(ticketNum) {
     let ticketHeading = createNewElement('h5');
     ticketHeading.append(document.createTextNode('Ticket #' + ticket.ticketNumber));
 
-    let headingBadge = createNewElement('h5');
+    let headingBadge = document.createElement('h5');
     let badge = createNewElement('span', 'badge badge-success');
     badge.append(document.createTextNode('Low Priority'));
     headingBadge.append(badge);
@@ -40,11 +40,11 @@ function createTicket(ticketNum) {
     ticketHeaderContainer.append(ticketHeading);
     ticketHeaderContainer.append(headingBadge);
 
-    ticketContainer.append(ticketHeaderContainer);
 
     //---------
 
     let ticketBody = createNewElement('div', 'ticket-body');
+    ticketBody.append(ticketHeaderContainer);
 
     let ticketDescriptionContainer = createNewElement('div', 'ticket-description');
     let ticketDescription = createNewElement('p');
@@ -53,10 +53,10 @@ function createTicket(ticketNum) {
     ticketBody.append(ticketDescriptionContainer);
 
     let ticketFooter = createNewElement('div', 'ticket-footer justify-content-between');
-    let dateCreated = createNewElement('span', '');
+    let dateCreated = document.createElement('span');
     dateCreated.append(document.createTextNode('Date'));
     ticketFooter.append(dateCreated);
-    let assignedSpecialist = createNewElement('span', '');
+    let assignedSpecialist = document.createElement('span');
     assignedSpecialist.append(document.createTextNode('Not Assigned'));
     ticketFooter.append(assignedSpecialist);
 
