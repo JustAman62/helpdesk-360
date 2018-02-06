@@ -64,11 +64,11 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" id="ticket-list">
         <a class="col-12 col-md-6 col-xl-4 p-3 ticket" href="ticket.php?ticketNum=1">
             <div class="ticket-header justify-content-between">
                 <h5>Heading</h5>
-                <h5>Badge thing</h5>
+                <h5><span class="badge badge-primary">Low Priority</span></h5>
             </div>
             <div class="ticket-body">
                 <div class="ticket-description">
@@ -80,7 +80,6 @@ if (!isset($_SESSION['user'])) {
                 </div>
             </div>
         </a>
-
     </div>
 </div>
 </body>

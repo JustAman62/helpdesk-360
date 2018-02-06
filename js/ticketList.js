@@ -23,7 +23,7 @@ function showTickets(){
     }
 
     for (let i in tickets) {
-        if (tickets[i].ticketStatus===1) addOpenTicket(i);
+        if (tickets[i].ticketStatus===1) createTicket(tickets[i].ticketNumber);
     }
 }
 
