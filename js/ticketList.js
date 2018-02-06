@@ -18,7 +18,6 @@ function resizeGridItem(item){
     let rowGap = parseInt(window.getComputedStyle(ticketList).getPropertyValue('grid-row-gap'));
     let rowSpan = Math.ceil((item.querySelector('.ticket-body').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
     item.style.gridRowEnd = "span "+rowSpan;
-    console.log(ticketList.querySelector('.ticket-body'))
 }
 
 function showTickets(){
