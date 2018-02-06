@@ -1,5 +1,8 @@
 .ticket {
-  color: #856404; }
+  color: #856404;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0; }
 
 .ticket:hover {
   color: #533f03;
