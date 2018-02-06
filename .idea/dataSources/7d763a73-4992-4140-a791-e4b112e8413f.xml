@@ -356,22 +356,22 @@
     </foreign-key>
     <column id="85" parent="16" name="userID">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="86" parent="16" name="password">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="87" parent="16" name="accessLevel">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="88" parent="16" name="employeeID">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="89" parent="16" name="employeeID">
