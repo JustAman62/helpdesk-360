@@ -1,10 +1,10 @@
 <?php
   session_start();
 
-  if (isset($_POST['user']) and isset($_POST['password'])){
+  if (isset($_REQUEST['user']) and isset($_REQUEST['password'])){
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_REQUEST['username'];
+    $password = $_REQUEST['password'];
 
     $query = "SELECT * FROM `Users` WHERE userID='$username' and password='$password'";
 
