@@ -28,6 +28,9 @@ function loadUserList() {
 function createUserItem(user) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
+    item.dataset.userID = user.userID;
+    item.dataset.toggle = 'modal';
+    item.dataset.target = '#userModal';
     item.append(document.createTextNode(user.firstName + ' ' + user.lastName));
     $('#user-list').append(item);
 }
