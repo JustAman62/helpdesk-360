@@ -12,4 +12,8 @@ $sql = 'SELECT * FROM Users';
 
 $result = $conn->query($sql);
 
-echo json_encode($result->fetch_assoc());
+while($row = $result->fetch_object()) {
+    $rows[]=$row;
+}
+
+echo json_encode($rows);

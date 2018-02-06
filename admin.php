@@ -14,7 +14,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin Page - Helpdesk 360</title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
@@ -68,13 +68,9 @@ if (!isset($_SESSION['user'])) {
                     Users
                     <a class="text-secondary" href=""><i class="icon icon-plus-circled"></i></a>
                 </h5>
-                <div class="list-group list-group-flush" id="user-list">
-                    <button class="list-group-item list-group-item-action">User 1</button>
-                    <button class="list-group-item list-group-item-action">User 1</button>
-                    <button class="list-group-item list-group-item-action">User 1</button>
-                </div>
+                <div class="list-group list-group-flush" id="user-list"></div>
                 <div class="card-footer text-muted small text-center">
-                    18 Users
+                    <span id="user-count"></span> Users
                 </div>
             </div>
         </div>
