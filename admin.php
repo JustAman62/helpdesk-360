@@ -82,11 +82,30 @@ if (!isset($_SESSION['user'])) {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
-                <h3 class="my-0">Edit Note</h3>
+                <h3 class="my-0">Edit User</h3>
                 <small>Created On: 11/11/2011</small>
             </div>
             <div class="modal-body">
-                <textarea name="note" id="modalNoteText" class="col-12 border border-secondary rounded my-0" placeholder="Notes"></textarea>
+                <form>
+                    <div class="form-group row">
+                        <label for="userID" class="col-sm-4 col-form-label">User ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" readonly class="form-control-plaintext" id="userID" value="lala">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="firstName" class="col-sm-4 col-form-label">First Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="firstName" placeholder="John">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-sm-4 col-form-label">Last Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="lastName" placeholder="Smith">
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
