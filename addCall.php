@@ -47,7 +47,7 @@ if (!isset($_SESSION['user'])) {
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="admin.php">Admin</a>
-            </li>
+            </li>block
 
         </ul>
     </div>
