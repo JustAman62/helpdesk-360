@@ -63,7 +63,7 @@ if (!isset($_SESSION['user'])) {
         <div class="col-md-4 col-12">
             <div class="card">
                 <h5 class="card-header text-center">
-                    Users
+                    Employees
                     <a class="text-secondary" href=""><i class="icon icon-search"></i></a>
                 </h5>
                 <div class="list-group list-group-flush" id="user-list"></div>
@@ -88,15 +88,9 @@ if (!isset($_SESSION['user'])) {
             <div class="modal-body">
                 <form>
                     <div class="form-group row">
-                    <div class="form-group row">
                         <label for="employee-id" class="col-sm-4 col-form-label">Employee ID</label>
                         <div class="col-sm-8">
                             <input type="text" readonly class="form-control-plaintext" id="employeeID" value="lala">
-                        </div>
-                    </div>
-                        <label for="userID" class="col-sm-4 col-form-label">User ID</label>
-                        <div class="col-sm-8">
-                            <input type="text" readonly class="form-control-plaintext" id="userID" value="lala">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -121,6 +115,30 @@ if (!isset($_SESSION['user'])) {
                         <label for="job-title" class="col-sm-4 col-form-label">Job Title</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="lastName" placeholder="Software Engineer">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="form-group row">
+                        <label for="userID" class="col-sm-4 col-form-label">User ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" readonly class="form-control-plaintext" id="userID" value="lala">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-password" class="col-sm-4 col-form-label">Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" id="user-password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-access-level" class="col-sm-4 col-form-label">Access Level</label>
+                        <div class="col-sm-8">
+                            <select class="form-control custom-select" id="user-access-level">
+                                <option value="Operator & Specialist"></option>
+                                <option value="Specialist"></option>
+                            </select>                        
                         </div>
                     </div>
                 </form>

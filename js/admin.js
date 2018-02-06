@@ -3,7 +3,7 @@ $(function(){
 });
 
 function loadUserList() {
-    $.get('././scripts/getFullUserDetails.php', function(result) {
+    $.get('././scripts/getFullEmployeeDetails.php', function(result) {
         //Create list items for each user returned in the query
         for (let i in result) {
             createUserItem(result[i]);

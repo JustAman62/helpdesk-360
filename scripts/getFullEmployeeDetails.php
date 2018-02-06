@@ -8,7 +8,7 @@
  */
 require('connect.php');
 
-$sql = 'SELECT * FROM Users INNER JOIN Employees ON Users.employeeID = Employees.employeeID';
+$sql = 'SELECT * FROM Users RIGHT JOIN Employees ON Users.employeeID = Employees.employeeID';
 
 $result = $conn->query($sql);
 
