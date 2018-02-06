@@ -61,8 +61,6 @@ if (!isset($_SESSION['user'])) {
     </div>
     <div class="row">
         <div class="col-md-4 col-12">
-            <h2 class="text-center">Users (#) <a class="text-secondary" href=""><i class="icon icon-plus-circled"></i></a> </h2>
-            cards for each user go here\
             <div class="card">
                 <h5 class="card-header text-center">
                     Users
