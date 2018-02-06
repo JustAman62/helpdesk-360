@@ -64,7 +64,7 @@ if (!isset($_SESSION['user'])) {
             <div class="card">
                 <h5 class="card-header text-center">
                     Users
-                    <a class="text-secondary" href=""><i class="icon icon-plus-circled"></i></a>
+                    <a class="text-secondary" href=""><i class="icon icon-search"></i></a>
                 </h5>
                 <div class="list-group list-group-flush" id="user-list"></div>
                 <div class="card-footer text-muted small text-center">
