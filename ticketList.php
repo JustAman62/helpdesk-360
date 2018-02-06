@@ -58,65 +58,29 @@ if (!isset($_SESSION['user'])) {
     <div class="row">
         <div class="col-12">
             <h1 class="display-4 text-center">All Tickets</h1>
-
-            <form action="">
-                <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="Closed Tickets" value="CTicket" id="CTicket" onchange="CheckCTicket()">
-                    Open and Closed Tickets
-                </label>
-            </form>
-
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary">Open Tickets</button>
+                <button type="button" class="btn btn-secondary">Closed Tickets</button>
+            </div>
         </div>
     </div>
     <div class="row">
-        <!--Open Tickets-->
-        <div class="col-sm-12 col-md-6 pt-2" id="open-ticket-list" style="">
-
-            <h4 class="text-center">Open Tickets</h4>
-            <!--All tickets below this line should be generated via js my looking at the db using this template-->
-<!--            <a href="exampleTicket.php" class="open-ticket-clickable">
-                <div class="w-100 open-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 1</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Ticket Description</p>-->
-
-                        <!--Footer created using a table-->
-<!--                        <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Unassigned / Specialist</td>
-                            </tr>
-                        </table>
-                    </div>
+        <div class="col-12 col-md-6 col-xl-4 p-3">
+            <div class="ticket-header justify-content-between">
+                <h4>Heading</h4>
+                <h4>Badge thing</h4>
+            </div>
+            <div class="ticket-body">
+                <div class="ticket-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque ea eaque earum enim esse hic, inventore ipsam magnam necessitatibus, </p>
                 </div>
-            </a>-->
+                <div class="ticket-footer justify-content-between">
+                    <span>left</span>
+                    <span>right</span>
+                </div>
+            </div>
         </div>
 
-        <!--Closed Tickets-->
-        <div class="col-sm-12 col-md-6 pt-2" id="closed-ticket-list" style="">
-
-            <h4 class="text-center">Closed Tickets</h4>
-            <!--All tickets below this line should be generated via js my looking at the db using this template-->
-    <!--        <a href="#" class="closed-ticket-clickable">
-                <div class="w-100 closed-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 1</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Ticket Description</p>-->
-                        <!--Table footer-->
-    <!--                    <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Date Closed</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </a>-->
-        </div>
     </div>
 </div>
 </body>

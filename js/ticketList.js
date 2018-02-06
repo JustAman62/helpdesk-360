@@ -1,11 +1,9 @@
 
 $(function() {
-    CheckCTicket();
+    showTickets();
 });
 
-function CheckCTicket(){
-
-
+function showTickets(){
 
     let check = document.getElementById("CTicket").checked;
     console.log(check);
