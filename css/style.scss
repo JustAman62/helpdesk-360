@@ -1,3 +1,11 @@
+.ticket {
+  color: #856404;
+}
+
+.ticket:hover {
+  color: #533f03;
+  text-decoration: none;
+}
 .ticket-body {
   background-color: #fff3cd;
   border-bottom-left-radius: 10px;
