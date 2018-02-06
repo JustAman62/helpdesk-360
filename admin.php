@@ -68,7 +68,7 @@ if (!isset($_SESSION['user'])) {
                 </h5>
                 <div class="list-group list-group-flush" id="user-list"></div>
                 <div class="card-footer text-muted small text-center">
-                    <span id="user-count"></span> Users
+                    <span id="user-count"></span> Employees
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@ if (!isset($_SESSION['user'])) {
 
 
 <!--Modal for user creation/modifying-->
-<div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
@@ -88,21 +88,39 @@ if (!isset($_SESSION['user'])) {
             <div class="modal-body">
                 <form>
                     <div class="form-group row">
+                    <div class="form-group row">
+                        <label for="employee-id" class="col-sm-4 col-form-label">Employee ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" readonly class="form-control-plaintext" id="employeeID" value="lala">
+                        </div>
+                    </div>
                         <label for="userID" class="col-sm-4 col-form-label">User ID</label>
                         <div class="col-sm-8">
                             <input type="text" readonly class="form-control-plaintext" id="userID" value="lala">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="firstName" class="col-sm-4 col-form-label">First Name</label>
+                        <label for="first-name" class="col-sm-4 col-form-label">First Name</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="firstName" placeholder="John">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="lastName" class="col-sm-4 col-form-label">Last Name</label>
+                        <label for="last-name" class="col-sm-4 col-form-label">Last Name</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="lastName" placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="department" class="col-sm-4 col-form-label">Department</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="department" placeholder="Accounting">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="job-title" class="col-sm-4 col-form-label">Job Title</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="lastName" placeholder="Software Engineer">
                         </div>
                     </div>
                 </form>

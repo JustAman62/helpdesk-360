@@ -30,7 +30,7 @@ function createUserItem(user) {
     item.setAttribute('class', 'list-group-item list-group-item-action');
     item.dataset.userID = user.userID;
     item.dataset.toggle = 'modal';
-    item.dataset.target = '#userModal';
+    item.dataset.target = '#employeeModal';
     item.append(document.createTextNode(user.firstName + ' ' + user.lastName));
     $('#user-list').append(item);
 }
