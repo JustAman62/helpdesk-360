@@ -10,8 +10,7 @@ require('connect.php');
 
 $employeeID = $_REQUEST['employeeid'];
 
-
-$sql = "SELECT * FROM Users RIGHT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Employees.employeeID = $employeeID";
+$sql = "SELECT * FROM Users RIGHT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Employees.employeeID = ".intval($employeeID).";";
 
 $result = $conn->query($sql);
 

@@ -90,19 +90,25 @@ if (!isset($_SESSION['user'])) {
                     <div class="form-group row">
                         <label for="employee-id" class="col-sm-4 col-form-label">Employee ID</label>
                         <div class="col-sm-8">
-                            <input type="text" readonly class="form-control-plaintext" id="employeeID" value="lala">
+                            <input type="text" readonly class="form-control-plaintext" id="employee-id" value="lala">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="first-name" class="col-sm-4 col-form-label">First Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="firstName" placeholder="John">
+                            <input type="text" class="form-control" id="first-name" placeholder="John">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="last-name" class="col-sm-4 col-form-label">Last Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="lastName" placeholder="Smith">
+                            <input type="text" class="form-control" id="last-name" placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="contact-number" class="col-sm-4 col-form-label">Contact Number</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" id="contact-number" placeholder="07123456789">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -114,19 +120,19 @@ if (!isset($_SESSION['user'])) {
                     <div class="form-group row">
                         <label for="job-title" class="col-sm-4 col-form-label">Job Title</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="lastName" placeholder="Software Engineer">
+                            <input type="text" class="form-control" id="job-title" placeholder="Software Engineer">
                         </div>
                     </div>
 
                     <hr>
 
-                    <p class=" text-center">This employee has no user account</p>
+                    <p class="text-center" id="user-indicator">This employee has no user account</p>
 
                     <div id="user-details">
                         <div class="form-group row">
-                            <label for="userID" class="col-sm-4 col-form-label">User ID</label>
+                            <label for="user-id" class="col-sm-4 col-form-label">User ID</label>
                             <div class="col-sm-8">
-                                <input type="text" readonly class="form-control-plaintext" id="userID" value="lala">
+                                <input type="text" readonly class="form-control-plaintext" id="user-id" value="lala">
                             </div>
                         </div>
                         <div class="form-group row">

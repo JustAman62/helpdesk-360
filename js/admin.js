@@ -1,5 +1,10 @@
 $(function(){
     loadEmployeeList();
+
+    $('#employeeModal').on('show.bs.modal', function(event) {
+        let employeeID = event.relatedTarget.dataset.employeeId;
+        loadEmployeeById(employeeID)
+    });
 });
 
 function loadEmployeeList() {
@@ -29,7 +34,7 @@ function loadEmployeeList() {
 function createEmployeeItem(user) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
-    item.dataset.userID = user.userID;
+    item.dataset.employeeId = user.employeeID;
     item.dataset.toggle = 'modal';
     item.dataset.target = '#employeeModal';
     item.append(document.createTextNode(user.firstName + ' ' + user.lastName));
@@ -37,7 +42,31 @@ function createEmployeeItem(user) {
 }
 
 function loadEmployeeById(employeeID) {
-    $.get('././scripts/getFullEmployeeDetailsByID.php', {'employeeid':employeeID}, function(result) {
+    $.get('././scripts/getFullEmployeeDetailsByID.php', {employeeid: employeeID}, function(result) {
         console.log(result)
-    })
+        // Fill in employee details in the employee modal
+        $('#employee-id').val(result.employeeID);
+        $('#first-name').val(result.firstName);
+        $('#last-name').val(result.lastName);
+        $('#job-title').val(result.jobTitle);
+        $('#department').val(result.department);
+        $('#contact-number').val(result.contactNumber);
+
+
+    //    Check if this employee has a user account, if yes
+    //    then showhide the relevent elements and populate the fields
+
+        if (result.userID) {
+            $('#user-indicator').hide();
+            $('#user-details').show();
+
+            $('#user-id').val(result.userID);
+            $('#user-password').val(result.password);
+            $('#user-access-level')[0].selectedIndex = result.accessLevel;
+        }
+        else {
+            $('#user-indicator').show();
+            $('#user-details').hide();
+        }
+    }, 'json')
 }
