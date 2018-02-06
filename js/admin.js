@@ -3,7 +3,7 @@ $(function(){
 });
 
 function loadUserList() {
-    $.get('././scripts/getUsers.php', function(result) {
+    $.get('././scripts/getFullUserDetails.php', function(result) {
         for (let i in result) {
             createUserItem(result[i]);
         }
