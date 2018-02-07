@@ -8,15 +8,19 @@
       header('Location: login.php');
   }
 
-  //require('connect.php');
+  $conn = new mysqli('localhost', 'root', 'password-360', 'helpdesk');
 
-  //$sql = "SELECT * FROM Users WHERE employeeid='".$_REQUEST["user"]. "' and password = '". $_REQUEST["password"]."'");
+  if ($conn->connect_error) {
+      die('Connection failed'.$conn->connect_error);
+  }
 
-  //$result = $conn->query($sql);
+  $sql = "SELECT * FROM Users WHERE employeeid='".$_REQUEST["user"]. "' and password = '". $_REQUEST["password"]."'");
 
-  //if ($conn->error) die($conn->error);
+  $result = $conn->query($sql);
 
-  //echo json_encode($result->fetch_object());
+  if ($conn->error) die($conn->error);
+
+  echo json_encode($result->fetch_object());
 ?>
 
 <!DOCTYPE html>
