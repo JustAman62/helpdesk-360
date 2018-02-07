@@ -13,6 +13,7 @@
 
     if ($count == 1){
       $_SESSION['user'] = $username;
+      header('Location: index.php');
     }else{
 
       $fmsg = "Invalid Login Credentials.";
