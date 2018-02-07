@@ -76,6 +76,9 @@ if (!isset($_SESSION['user'])) {
       <div class="col-12 col-md-5 px-4 my-2">
           <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;">Current Analytics</button>
       </div>
+      </div>
+      <div class="col-md-2">
+      </div>
       <div class="col-12 col-md-5 px-4 my-2">
           <button class="btn btn-primary btn-block m-auto" style="font-size: 25px;">Past Analytics</button>
       </div>
