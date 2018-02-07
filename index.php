@@ -6,6 +6,9 @@
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
 
+    echo "$username"
+    echo "$password"
+
     $query = "SELECT * FROM `Users` WHERE userID='$username' and password='$password'";
 
     $result = $conn->query($query);
