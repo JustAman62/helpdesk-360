@@ -2,13 +2,17 @@ $(function(){
     loadEmployeeList();
 
     $('#employeeModal').on('show.bs.modal', function(event) {
-        let employeeID = event.relatedTarget.dataset.employeeId;
-        loadEmployeeById(employeeID)
+        let employeeID;
+        if (event.relatedTarget) {
+            employeeID = event.relatedTarget.dataset.employeeId;
+            loadEmployeeById(employeeID)
+        }
     });
 });
 
 function loadEmployeeList() {
     $.get('././scripts/getFullEmployeeDetails.php', function(result) {
+        $('#user-list').html("");
         //Create list items for each user returned in the query
         for (let i in result) {
             createEmployeeItem(result[i]);
@@ -105,21 +109,26 @@ function saveRecord() {
         password: $('#user-password').val(),
         accesslevel: $('#user-access-level')[0].selectedIndex
     }, function(result) {
+        //On success, update the employee list
+        loadEmployeeList();
+        //    close the modal which this has been called from
+        $('#employeeModal').modal('hide');
+
     });
-
-//    close the modal which this has been called from
-    $('#employeeModal').modal('hide');
-
 }
 
 function createNewEmployee() {
     $.get('scripts/createEmployee.php', function(result) {
         $('#employeeModal').modal('show');
-        $('#employee-id').val(result.employeeID);
-        $('#first-name').val('');
-        $('#last-name').val('');
-        $('#job-title').val('');
-        $('#department').val('');
-        $('#contact-number').val('');
+        loadEmployeeById(result.employeeid)
+        loadEmployeeList();
     }, 'json');
+}
+
+function deleteUser() {
+    $.get('scripts/deleteUser.php', {userid: $('#user-id').val()}, function(result) {
+        loadEmployeeById($('#employee-id').val());
+        loadEmployeeList();
+    });
+
 }
