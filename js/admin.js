@@ -20,7 +20,7 @@ function loadEmployeeList() {
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addUser.append(plusSign);
-        addUser.append(document.createTextNode(' Add User'));
+        addUser.append(document.createTextNode(' Add Employee'));
 
         $('#user-list').append(addUser);
 
@@ -43,7 +43,7 @@ function createEmployeeItem(user) {
 
 function loadEmployeeById(employeeID) {
     $.get('././scripts/getFullEmployeeDetailsByID.php', {employeeid: employeeID}, function(result) {
-        console.log(result)
+        console.log(result);
         // Fill in employee details in the employee modal
         $('#employee-id').val(result.employeeID);
         $('#first-name').val(result.firstName);
@@ -69,4 +69,11 @@ function loadEmployeeById(employeeID) {
             $('#user-details').hide();
         }
     }, 'json')
+}
+
+function createUserForEmployee() {
+    let employeeID = $('#employee-id').val();
+    $.get('././scripts/createUserWithEmployeeID.php', {employeeid: employeeID}, function(result) {
+        console.log(result);
+    }, 'json');
 }

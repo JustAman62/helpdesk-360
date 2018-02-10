@@ -125,8 +125,10 @@ if (!isset($_SESSION['user'])) {
                     </div>
 
                     <hr>
-
-                    <p class="text-center" id="user-indicator">This employee has no user account</p>
+                    <div id="user-indicator">
+                        <p class="text-center">This employee has no user account</p>
+                        <button class="btn btn-primary mx-auto btn-block btn-sm" onclick="">Create User Account</button>
+                    </div>
 
                     <div id="user-details">
                         <div class="form-group row">
