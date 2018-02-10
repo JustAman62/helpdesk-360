@@ -80,3 +80,23 @@ function createUserForEmployee() {
         console.log(result);
     }, 'json');
 }
+
+function saveRecord() {
+    $.get('scripts/updateEmployeeUserDetails.php', {
+        employeeid: $('#employee-id').val(),
+        firstname: $('#first-name').val(),
+        lastname: $('#last-name').val(),
+        jobtitle: $('#job-title').val(),
+        department: $('#department').val(),
+        contactnumber: $('#contact-number').val(),
+        userid: $('#user-id').val(),
+        password: $('#user-password').val(),
+        accesslevel: $('#user-access-level')[0].selectedIndex
+    }, function(result) {
+        console.log(result);
+    });
+
+
+
+
+}

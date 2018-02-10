@@ -22,7 +22,7 @@ $accesslevel = $_REQUEST['accesslevel'];
 
 // update employee table
 
-$sql = "UPDATE `Employees` SET `firstName`=$firstname,`lastName`=$lastname,`jobTitle`=$jobtitle,`department`=$department,`contactNumber`=$contactnumber WHERE `employeeID`=$employeeID";
+$sql = "UPDATE `Employees` SET `firstName`='$firstname',`lastName`='$lastname',`jobTitle`='$jobtitle',`department`='$department',`contactNumber`='$contactnumber' WHERE `employeeID`=$employeeID";
 
 $result = $conn->query($sql);
 

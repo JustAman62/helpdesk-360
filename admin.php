@@ -157,7 +157,7 @@ if (!isset($_SESSION['user'])) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-success" id="saveNote">Save</button>
+                <button type="button" class="btn btn-success" onclick="saveRecord()">Save</button>
             </div>
         </div>
     </div>
