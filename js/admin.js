@@ -17,6 +17,7 @@ function loadEmployeeList() {
         //Create a list item to allow a new user to be added
         let addUser = document.createElement('button');
         addUser.setAttribute('class', 'list-group-item list-group-item-action');
+        addUser.setAttribute('onclick', 'createNewEmployee()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addUser.append(plusSign);
@@ -109,7 +110,16 @@ function saveRecord() {
 //    close the modal which this has been called from
     $('#employeeModal').modal('hide');
 
+}
 
-
-
+function createNewEmployee() {
+    $.get('scripts/createEmployee.php', function(result) {
+        $('#employeeModal').modal('show');
+        $('#employee-id').val(result.employeeID);
+        $('#first-name').val('');
+        $('#last-name').val('');
+        $('#job-title').val('');
+        $('#department').val('');
+        $('#contact-number').val('');
+    }, 'json');
 }

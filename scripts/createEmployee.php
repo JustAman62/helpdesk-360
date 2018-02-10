@@ -9,6 +9,7 @@
  */
 
 // Find the max user id, and add one to get the value of the next ID
+require('connect.php');
 
 $sql = "SELECT MAX(employeeID) FROM Employees";
 
