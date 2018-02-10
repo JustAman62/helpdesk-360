@@ -18,13 +18,14 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
     <link rel="stylesheet" href="css/awesomplete.css" />
-    <script src="js/awesomplete.js"></script>
+    <script src="js/awesomplete.js" async></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+    <script src="js/addCall.js"></script>
 </head>
 <body class="bg-light body-margin-bottom">
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
@@ -116,18 +117,11 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete form-control custom-select" data-list="#problems" />
-                              <ul style = "display:none"  id="problems">
-                              	<li>Printer</li>
-                              	<li>Printer jam</li>
-                              	<li>Printer out of ink</li>
-                              	<li>Connection problems</li>
-                                <li>System login</li>
-                              </ul>
+                            <input class="form-control custom-select" id="create-problem-type"/>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-OS">Operating System</label>
                             <input class="awesomplete form-control custom-select" data-list="#OS" />
                               <ul style = "display:none"  id="OS">
