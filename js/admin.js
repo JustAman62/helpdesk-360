@@ -36,7 +36,12 @@ function createEmployeeItem(user) {
     item.dataset.employeeId = user.employeeID;
     item.dataset.toggle = 'modal';
     item.dataset.target = '#employeeModal';
-    item.append(document.createTextNode(user.firstName + ' ' + user.lastName));
+    item.append(document.createTextNode(user.firstName + ' ' + user.lastName + ' '));
+    if (user.userID) {
+        let userIcon = document.createElement('i');
+        userIcon.setAttribute('class', 'icon icon-user');
+        item.append(userIcon);
+    }
     $('#user-list').append(item);
 }
 

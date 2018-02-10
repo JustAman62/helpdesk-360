@@ -147,8 +147,8 @@ if (!isset($_SESSION['user'])) {
                             <label for="user-access-level" class="col-sm-4 col-form-label">Access Level</label>
                             <div class="col-sm-8">
                                 <select class="form-control custom-select" id="user-access-level">
-                                    <option value="Operator & Specialist"></option>
-                                    <option value="Specialist"></option>
+                                    <option>Operater & Specialist</option>
+                                    <option>Specialist</option>
                                 </select>
                             </div>
                         </div>
