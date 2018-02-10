@@ -64,7 +64,7 @@ if (!isset($_SESSION['user'])) {
             <div class="card">
                 <h5 class="card-header text-center">
                     Employees
-                    <a class="text-secondary" href=""><i class="icon icon-search"></i></a>
+                    <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
                 </h5>
                 <div class="list-group list-group-flush" id="user-list"></div>
                 <div class="card-footer text-muted small text-center">
@@ -127,7 +127,7 @@ if (!isset($_SESSION['user'])) {
                     <hr>
                     <div id="user-indicator">
                         <p class="text-center">This employee has no user account</p>
-                        <button class="btn btn-primary mx-auto btn-block btn-sm" onclick="">Create User Account</button>
+                        <button type="button" class="btn btn-primary mx-auto btn-block btn-sm" onclick="createUserForEmployee()">Create User Account</button>
                     </div>
 
                     <div id="user-details">

@@ -26,7 +26,6 @@ function loadEmployeeList() {
 
         //Update the footer to show how many users are in the list
         $('#user-count').text(result.length);
-        console.log(result)
 
     }, 'json');
 }
@@ -43,7 +42,6 @@ function createEmployeeItem(user) {
 
 function loadEmployeeById(employeeID) {
     $.get('././scripts/getFullEmployeeDetailsByID.php', {employeeid: employeeID}, function(result) {
-        console.log(result);
         // Fill in employee details in the employee modal
         $('#employee-id').val(result.employeeID);
         $('#first-name').val(result.firstName);
@@ -73,7 +71,7 @@ function loadEmployeeById(employeeID) {
 
 function createUserForEmployee() {
     let employeeID = $('#employee-id').val();
-    $.get('././scripts/createUserWithEmployeeID.php', {employeeid: employeeID}, function(result) {
+    $.get('scripts/createUserWithEmployeeID.php', {employeeid: employeeID}, function(result) {
         console.log(result);
     }, 'json');
 }
