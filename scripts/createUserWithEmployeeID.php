@@ -18,7 +18,7 @@ $sql = "SELECT MAX(userID) FROM Users";
 
 $userID = $conn->query($sql);
 if ($conn->error) die($conn->error);
-$userID++;
+$userID = intval($userID->fetch_all());
 
 
 $sql = "INSERT INTO Users (userID, password, accessLevel, employeeID) VALUES ($userID, 'password', 1, $employeeID)";
