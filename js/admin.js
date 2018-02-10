@@ -104,7 +104,6 @@ function saveRecord() {
         password: $('#user-password').val(),
         accesslevel: $('#user-access-level')[0].selectedIndex
     }, function(result) {
-        console.log(result);
     });
 
 //    close the modal which this has been called from
