@@ -54,7 +54,7 @@ function loadEmployeeById(employeeID) {
 
 
     //    Check if this employee has a user account, if yes
-    //    then showhide the relevent elements and populate the fields
+    //    then show/hide the relevant elements and populate the fields
 
         if (result.userID) {
             $('#user-indicator').hide();
