@@ -83,7 +83,6 @@ if (!isset($_SESSION['user'])) {
         <div class="modal-content">
             <div class="modal-header justify-between">
                 <h3 class="my-0">Edit User</h3>
-                <small>Created On: 11/11/2011</small>
             </div>
             <div class="modal-body">
                 <form>
@@ -108,7 +107,7 @@ if (!isset($_SESSION['user'])) {
                     <div class="form-group row">
                         <label for="contact-number" class="col-sm-4 col-form-label">Contact Number</label>
                         <div class="col-sm-8">
-                            <input type="number" class="form-control" id="contact-number" placeholder="07123456789">
+                            <input type="tel" class="form-control" id="contact-number" placeholder="07123456789">
                         </div>
                     </div>
                     <div class="form-group row">

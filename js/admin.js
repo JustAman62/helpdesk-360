@@ -70,6 +70,11 @@ function loadEmployeeById(employeeID) {
         else {
             $('#user-indicator').show();
             $('#user-details').hide();
+
+        //    reset the value of the user fields, to prevent data inconsistencies when saving
+            $('#user-id').val('');
+            $('#user-password').val('');
+            $('#user-access-level')[0].selectedIndex = 0;
         }
     }, 'json')
 }
@@ -78,6 +83,12 @@ function createUserForEmployee() {
     let employeeID = $('#employee-id').val();
     $.get('scripts/createUserWithEmployeeID.php', {employeeid: employeeID}, function(result) {
         console.log(result);
+        $('#user-indicator').hide();
+        $('#user-details').show();
+
+        $('#user-id').val(result.userid);
+        $('#user-password').val(result.password);
+        $('#user-access-level')[0].selectedIndex = result.accesslevel;
     }, 'json');
 }
 
@@ -95,6 +106,9 @@ function saveRecord() {
     }, function(result) {
         console.log(result);
     });
+
+//    close the modal which this has been called from
+    $('#employeeModal').modal('hide');
 
 
 

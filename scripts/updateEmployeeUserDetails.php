@@ -20,10 +20,17 @@ $userid = $_REQUEST['userid'];
 $password = $_REQUEST['password'];
 $accesslevel = $_REQUEST['accesslevel'];
 
+
+
 // update employee table
 
 $sql = "UPDATE `Employees` SET `firstName`='$firstname',`lastName`='$lastname',`jobTitle`='$jobtitle',`department`='$department',`contactNumber`='$contactnumber' WHERE `employeeID`=$employeeID";
 
 $result = $conn->query($sql);
+if ($conn->error) die($conn->error);
 
+//update user table
+if (!$userid) die('Stopping');
+$sql = "UPDATE `Users` SET `password`='$password',`accessLevel`=$accesslevel,`employeeID`=$employeeID WHERE userID=$userid";
+$result = $conn->query($sql);
 if ($conn->error) die($conn->error);

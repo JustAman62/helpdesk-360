@@ -30,10 +30,14 @@ if ($numUsers->num_rows > 0) die('Employee already has user account');
 //Create the user account for the user
 
 $sql = "INSERT INTO Users (userID, password, accessLevel, employeeID) VALUES ($userID, 'password', 1, $employeeID)";
-
 $result = $conn->query($sql);
-
 if ($conn->error) die($conn->error);
 
+//create an array of the record just created to return back
+$array['userid'] = $userID;
+$array['password'] = "password";
+$array['accesslevel'] = 1;
 
-echo "User created for employee #$employeeID";
+
+
+echo json_encode($array);
