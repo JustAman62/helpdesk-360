@@ -94,6 +94,8 @@ function createUserForEmployee() {
         $('#user-id').val(result.userid);
         $('#user-password').val(result.password);
         $('#user-access-level')[0].selectedIndex = result.accesslevel;
+
+        loadEmployeeList();
     }, 'json');
 }
 
@@ -130,5 +132,12 @@ function deleteUser() {
         loadEmployeeById($('#employee-id').val());
         loadEmployeeList();
     });
+}
 
+function deleteEmployee() {
+    deleteUser();
+    $.get('scripts/deleteEmployee.php', {employeeid: $('#employee-id').val()}, function(result) {
+        loadEmployeeList();
+        $('#employeeModal').modal('hide');
+    });
 }
