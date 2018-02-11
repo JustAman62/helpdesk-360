@@ -93,7 +93,7 @@ function createNewTicket() {
     }, function(result) {
         console.log(result);
 
-        if ($.isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
+        if ($.isNumeric(result)) window.location.href='/ticket.php?ticketNum=' + result;
     }, 'json');
 
 }
@@ -113,7 +113,7 @@ function createNewCallNote() {
 
     }, function(result) {
         console.log(result);
-        if ($.isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
+        if ($.isNumeric(result)) window.location.href='/ticket.php?ticketNum=' + result;
     }, 'json');
 
 }
