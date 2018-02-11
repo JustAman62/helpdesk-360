@@ -24,8 +24,16 @@ if (!isset($_SESSION['user'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+<!--    Date and time pickers-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.min.js"></script>
+    <link rel="stylesheet" href="css/datepicker.css">
+    <script src="js/bootstrap-datepicker.js"></script>
+
+
     <script src="js/script.js"></script>
     <script src="js/addCall.js"></script>
+
 </head>
 <body class="bg-light body-margin-bottom">
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
@@ -72,9 +80,9 @@ if (!isset($_SESSION['user'])) {
             <div class="tab-pane fade show active" id="create" role="tabpanel">
                 <form action="">
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="form-group col-12 col-md-4">
                             <label for="create-call-time">Call Time</label>
-                            <input type="time" class="form-control" id="create-call-time" placeholder="hh:mm">
+                            <input type="text" class="form-control" id="create-time" placeholder="hh:mm"/>
                             <small class="text-secondary">Time the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
@@ -88,12 +96,6 @@ if (!isset($_SESSION['user'])) {
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
-                        <div class="form-group">
-                            <label for="sel1">Priority</label>
-                            <select class="form-control" id="sel1">
-                                <option hidden>Low</option>
-                                <option hidden>Medium</option>
-                                <option hidden>High</option>
                             </select>
                         </div>
                     </div>
@@ -123,13 +125,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-OS">Operating System</label>
-                            <input class="awesomplete form-control custom-select" data-list="#OS" />
-                              <ul style = "display:none"  id="OS">
-                              	<li>Linux</li>
-                              	<li>Mac OS</li>
-                              	<li>Windows 10</li>
-                              	<li>Windows 8</li>
-                              </ul>
+                            <input class="form-control custom-select" id="create-OS"/>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -183,7 +179,6 @@ if (!isset($_SESSION['user'])) {
                     </div>
 
                     <div class="row justify-content-center col-12">
-                        <!--  <button class="btn btn-primary col-md-4 my-5" type="button">Assign to specialist</button> -->
                         <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
