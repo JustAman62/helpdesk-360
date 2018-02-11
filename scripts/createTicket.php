@@ -18,8 +18,6 @@ $employeeid = $_REQUEST['employeeid'];
 $problemtype = $_REQUEST['problemtype'];
 $operatingsystem = $_REQUEST['operatingsystem'];
 $problemdescription = $_REQUEST['problemdescription'];
-$licencenumber = $_REQUEST['licencenumber'];
-$serialnumber = $_REQUEST['serialnumber'];
 $callnotes = $_REQUEST['callnotes'];
 $ticketstatus = $_REQUEST['ticketstatus'];
 $userid = $_REQUEST['userid'];
@@ -44,8 +42,30 @@ if ($conn->error) die ($conn->error);
 
 $ticketnumber = $result->fetch_row()[0]+1;
 
-$sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `serialNumber`, `licenceNumber`, `operatingSystem`)
+//change the sql for creating a ticket depending on iff the licence number and serial number are provided
+$licencenumber = $_REQUEST['licencenumber'];
+$serialnumber = $_REQUEST['serialnumber'];
+
+if (isset($_REQUEST['licencenumber']) && isset($_REQUEST['serialnumber'])) {
+    $licencenumber = $_REQUEST['licencenumber'];
+    $serialnumber = $_REQUEST['serialnumber'];
+    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `serialNumber`, `licenceNumber`, `operatingSystem`)
         VALUES ($ticketnumber,$userid,$employeeid,'$calldate',$priority,$problemtypeid,'$problemdescription',$ticketstatus,$serialnumber,$licencenumber,'$operatingsystem')";
+}
+else if (isset($_REQUEST['licencenumber'])) {
+    $licencenumber = $_REQUEST['licencenumber'];
+    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `serialNumber`, `operatingSystem`)
+        VALUES ($ticketnumber,$userid,$employeeid,'$calldate',$priority,$problemtypeid,'$problemdescription',$ticketstatus,$serialnumber,'$operatingsystem')";
+}
+else if (isset($_REQUEST['serialnumber'])) {
+    $serialnumber = $_REQUEST['serialnumber'];
+    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `licenceNumber`, `operatingSystem`)
+        VALUES ($ticketnumber,$userid,$employeeid,'$calldate',$priority,$problemtypeid,'$problemdescription',$ticketstatus,$licencenumber,'$operatingsystem')";
+}
+else{
+    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `operatingSystem`)
+        VALUES ($ticketnumber,$userid,$employeeid,'$calldate',$priority,$problemtypeid,'$problemdescription',$ticketstatus,'$operatingsystem')";
+}
 
 $conn->query($sql);
 if ($conn->error) die ($conn->error);

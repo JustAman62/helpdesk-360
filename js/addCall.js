@@ -84,8 +84,8 @@ function createNewTicket() {
         problemtype: $('#create-problem-type').val(),
         operatingsystem: $('#create-OS').val(),
         problemdescription: $('#create-problem-description').val(),
-        licencenumber: $('#create-licence-number').val(),
-        serialnumber: $('#create-serial-number').val(),
+        licencenumber: $('#create-licence-number').val() ? $('#create-licence-number').val() : undefined,
+        serialnumber: $('#create-serial-number').val() ? $('#create-serial-number').val() : undefined,
         callnotes: $('#create-notes').val(),
         ticketstatus: 0,
         userid: 1000
@@ -93,7 +93,7 @@ function createNewTicket() {
     }, function(result) {
         console.log(result);
 
-        if (isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
+        if ($.isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
     }, 'json');
 
 }
@@ -113,7 +113,7 @@ function createNewCallNote() {
 
     }, function(result) {
         console.log(result);
-        if (isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
+        if ($.isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
     }, 'json');
 
 }

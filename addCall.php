@@ -211,7 +211,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="add-ticket-number">Ticket Number</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
+                                <input type="text" class="form-control" id="add-ticket-number" placeholder="1234">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Confirm</button>
                                 </span>
