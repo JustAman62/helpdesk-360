@@ -92,6 +92,8 @@ function createNewTicket() {
     //    todo: send correct userid when sending request
     }, function(result) {
         console.log(result);
+
+        if (isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
     }, 'json');
 
 }
@@ -108,8 +110,10 @@ function createNewCallNote() {
         userid: 1000,
         ticketnumber: $('#add-ticket-number').val()
         //    todo: send correct userid when sending request
+
     }, function(result) {
         console.log(result);
+        if (isNumeric(result)) window.location.href='/ticket?ticketNum=' + result;
     }, 'json');
 
 }
