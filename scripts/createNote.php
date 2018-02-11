@@ -10,7 +10,6 @@
 
 require 'connect.php';
 
-print_r($_REQUEST);
 $ticketnumber = $_REQUEST['ticketnumber'];
 $notes = $_REQUEST['notes'];
 $userid = $_REQUEST['userid'];

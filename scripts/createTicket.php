@@ -24,7 +24,6 @@ $callnotes = $_REQUEST['callnotes'];
 $ticketstatus = $_REQUEST['ticketstatus'];
 $userid = $_REQUEST['userid'];
 
-print_r($_REQUEST);
 
 $datetime = DateTime::createFromFormat('d/m/Y', $calldate);
 $calldate = $datetime->format('Y-m-d');
