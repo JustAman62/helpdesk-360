@@ -22,9 +22,12 @@ function resizeGridItem(item){
 
 function showTickets(){
 
-    for (let i in tickets) {
-        if (tickets[i].ticketStatus===1) createTicket(tickets[i].ticketNumber);
-    }
+    $.get('scripts/getTickets.php', function(result) {
+        console.log(result);
+        for (let i in result) {
+            if (result[i].ticketStatus==0) createTicket(i, result);
+        }
+    }, 'json');
 }
 
 

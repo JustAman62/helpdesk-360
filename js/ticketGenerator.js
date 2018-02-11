@@ -15,10 +15,10 @@
         </a>`
 
 
-function createTicket(ticketNum) {
-    let ticket = tickets.find(function(element) {
-        return element.ticketNumber === ticketNum;
-    });
+function createTicket(index, tickets) {
+
+    console.log(index, tickets);
+    let ticket = tickets[index];
 
 
     // let ticketContainer = createNewElement('a', 'col-12 col-md-6 col-xl-4 p-2 ticket');
@@ -33,8 +33,19 @@ function createTicket(ticketNum) {
     ticketHeading.append(document.createTextNode('Ticket #' + ticket.ticketNumber));
 
     let headingBadge = document.createElement('h5');
-    let badge = createNewElement('span', 'badge badge-success');
-    badge.append(document.createTextNode('Low Priority'));
+    let badge = createNewElement('span', 'badge');
+
+    //Only assign a priority badge is the ticket is open, otherwise assign a closed badge
+    if (ticket.ticketStatus == 0) {
+        let badgeClass = ['badge badge-success', 'badge badge-warning', 'badge badge-danger'];
+        badge.setAttribute('class', badgeClass[ticket.priority]);
+        let badgeText = ['Low Priority', 'Medium Priority', 'High Priority'];
+        badge.append(document.createTextNode(badgeText[ticket.priority]));
+    }
+    else {
+        badge.setAttribute('class', 'badge badge-primary');
+        badge.append(document.createTextNode('Closed'));
+    }
     headingBadge.append(badge);
 
     ticketHeaderContainer.append(ticketHeading);
