@@ -21,7 +21,6 @@ if (!isset($_SESSION['user'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-    <script src="js/data.js"></script>
     <script src="js/script.js"></script>
     <script src="js/ticket.js"></script>
 </head>
@@ -82,7 +81,7 @@ if (!isset($_SESSION['user'])) {
     </div>
     <dl class="row">
         <dt class="col-4 col-md-3 text-right">Created</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="dateCreated" id="">20/10/2017 12:48 (6 days)</dd>
+        <dd class="col-8 col-md-9" id="date-created">20/10/2017 12:48 (6 days)</dd>
 
 <!--        TODO: Make this dynamic-->
         <dt class="col-4 col-md-3 text-right">Created By</dt>
@@ -153,9 +152,10 @@ if (!isset($_SESSION['user'])) {
         <div class="modal-content">
             <div class="modal-header justify-between">
                 <h3 class="my-0">Edit Note</h3>
-                <small>Created On: 11/11/2011</small>
+                <small>Created On: <span id="date-note-created"></span></small>
             </div>
             <div class="modal-body">
+                <input type="hidden" id="note-id">
                 <textarea name="note" id="modalNoteText" class="col-12 border border-secondary rounded my-0" placeholder="Notes"></textarea>
             </div>
             <div class="modal-footer">

@@ -1,8 +1,6 @@
-//Find out what ticket number the page has been opened for, default to ticket 1
-let ticketNum = 1;
 
-//Count for temporary call icons on notes
-let counter = 0;
+let ticketInfo;
+
 $(function() {
     //Get the ticket number from the GET request when the page is loaded
     ticketNum = location.search.split('&')[0].split('=')[1];
@@ -16,7 +14,7 @@ $(function() {
 
 
         //When the page is first loaded, populate the ticket info
-        // populateNotes();
+        ticketInfo = result[0];
         populateTicketInfo(result[0]);
         populateNotes(result[0]);
     }, 'json');
@@ -26,25 +24,34 @@ $(function() {
 
     //When the notes modal is shown, update the note textarea to match the note it was clicked on
     $('#notesModal').on('show.bs.modal', function(event) {
-        // console.log($(event.relatedTarget).data());
         noteID = $(event.relatedTarget).data('noteId');
-        // console.log(noteID)
 
-        let noteModal = $(this);
-        noteModal.find('.modal-body textarea').val(notes[noteID].Text).trigger('input');
+        $.get('scripts/getNotes.php', {noteid: noteID}, function(result) {
+            console.log(result);
+            let noteModal = $('#notesModal');
+            noteModal.find('.modal-body textarea').val(result[0].text).trigger('input');
+            noteModal.find('.modal-body input#note-id').val(result[0].noteID);
+            $('#date-note-created').text(formatDate(result[0].date));
+        }, 'json');
+
     }).on('shown.bs.modal', function() {
         $('.modal-body textarea').trigger('input');
     });
+
+
     //Save the note displayed in the modal when the save button is clicked
     $('#saveNote').on('click', function() {
-        let note = $('.modal-body textarea').val();
-        notes[noteID].Text = note;
+        let noteText = $('.modal-body textarea').val();
+        let noteID = $('.modal-body input#note-id').val();
+        $.get('scripts/updateNote.php', {noteid: noteID, text:noteText}, function(result) {
+            console.log(result);
+            //    Update the ticket page
+            populateNotes(ticketInfo);
 
-        //    Update the ticket page
-        populateNotes();
+            //    Close the modal
+            $('#notesModal').modal('hide');
+        });
 
-        //    Close the modal
-        $('#notesModal').modal('hide');
     });
 
 
@@ -142,9 +149,12 @@ function populateTicketInfo(ticket) {
 
 //    Populate problem type field
 
-    $.get('scripts/findProblemTypeNAme.php',{problemtypeid:ticket.problemTypeID}, function(result) {
-        $('#problem-type').text(result[0][0])
+    $.get('scripts/findProblemTypeName.php',{problemtypeid:ticket.problemTypeID}, function(result) {
+        $('#problem-type').text(result[0].problemTypeName)
     }, 'json');
+
+//    Populate other fields
+    $('#date-created').html(formatDate(ticket.dateCreated));
 
 //    Populate specialist details
     if (ticket.specialistID) {
@@ -168,18 +178,16 @@ function populateTicketInfo(ticket) {
 
 }
 
-function populateNotes() {
-    let ticketNotes = [];
-    // Make sure the notes section is empty to prevent repetitions
-    $('#note-list').html('');
+function populateNotes(ticket) {
 
-    for (let i in notes) {
-        if (notes[i].ticketNumber === ticketNum+1) ticketNotes.push(i);
-    }
+    $.get('scripts/getNotes.php', {ticketnumber: ticket.ticketNumber}, function(result) {
+        console.log(result);
+        for (let i in result) {
+            makeNoteListItem(result[i]);
+        }
+    }, 'json');
 
-    for (let i in ticketNotes) {
-        makeNoteListItem(ticketNotes[i]);
-    }
+
 //    Add a make new note button
     let newNoteElement = document.createElement('button')
     newNoteElement.setAttribute('type', 'button');
@@ -192,37 +200,32 @@ function populateNotes() {
     $('#note-list').append(newNoteElement)
 }
 
-function makeNoteListItem(noteID) {
+function makeNoteListItem(note) {
     // Template for making a note
     // `<button type="button" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#notesModal" data-note-id="0">
     //     <small>19/09/2018 06:10</small><br>
     // <span>some notes</span>
     // </button>`
 
-    let noteElement = document.createElement('button')
+    let noteElement = document.createElement('button');
     noteElement.setAttribute('type', 'button');
     noteElement.setAttribute('class', 'list-group-item list-group-item-action');
     noteElement.setAttribute('data-toggle', 'modal');
     noteElement.setAttribute('data-target', '#notesModal');
-    noteElement.setAttribute('data-note-id', noteID);
-
-    let date = new Date();
-    let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+    noteElement.setAttribute('data-note-id', note.noteID);
 
     let dateTimeText = document.createElement('small');
-    dateTimeText.appendChild(document.createTextNode(dateString + '   '));
+    dateTimeText.appendChild(document.createTextNode(formatDate(note.date) + '   '));
     noteElement.appendChild(dateTimeText);
-    if (counter % 3 === 0) {
+    if (note.callID) {
         let callBadge = document.createElement('i');
         callBadge.setAttribute('class', 'icon icon-phone');
         noteElement.appendChild(callBadge);
     }
-    counter++;
     noteElement.appendChild(document.createElement('br'));
 
     let noteText = document.createElement('span');
-    // noteText.appendChild(document.create(notes[noteID].replace('\n', '<br>')));
-    $(noteText).html(notes[noteID].Text.replace(/\n/g, ' <br> '));
+    $(noteText).html(note.text.replace(/\n/g, ' <br> '));
     noteElement.appendChild(noteText);
 
     $('#note-list').append(noteElement)
