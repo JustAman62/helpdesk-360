@@ -139,6 +139,13 @@ function populateTicketInfo(ticket) {
         }
     }
 
+
+//    Populate problem type field
+
+    $.get('scripts/findProblemTypeNAme.php',{problemtypeid:ticket.problemTypeID}, function(result) {
+        $('#problem-type').text(result[0][0])
+    }, 'json');
+
 //    Populate specialist details
     if (ticket.specialistID) {
         let ID = document.createElement('h6');

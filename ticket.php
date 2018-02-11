@@ -84,14 +84,16 @@ if (!isset($_SESSION['user'])) {
         <dt class="col-4 col-md-3 text-right">Created</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="dateCreated" id="">20/10/2017 12:48 (6 days)</dd>
 
+<!--        TODO: Make this dynamic-->
         <dt class="col-4 col-md-3 text-right">Created By</dt>
         <dd class="col-8 col-md-9" id="">John (1003)</dd>
 
+<!--TODO: Make this actually work-->
         <dt class="col-4 col-md-3 text-right">Last Modified</dt>
         <dd class="col-8 col-md-9" id="last-modified">21/10/2017 15:35</dd>
 
         <dt class="col-4 col-md-3 text-right">Problem Type</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="problemTypeID" id="">No Problem Type Given</dd>
+        <dd class="col-8 col-md-9" id="problem-type">No Problem Type Given</dd>
 
         <dt class="col-4 col-md-3 text-right">Original Description</dt>
         <dd class="col-8 col-md-9 auto-fill" data-autofill="originalDescription" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
