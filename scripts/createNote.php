@@ -57,4 +57,4 @@ if (isset($_REQUEST['employeeid'])) {
 $conn->query($noteSQL);
 if ($conn->error) die ($conn->error);
 
-echo 'success';
+echo $ticketnumber;

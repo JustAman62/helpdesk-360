@@ -77,6 +77,6 @@ $sql = "INSERT INTO `Notes` (`noteID`, `text`, `date`, `ticketNumber`, `callID`,
 $conn->query($sql);
 if ($conn->error) die ($conn->error);
 
-echo 'success';
+echo $ticketnumber;
 
 
