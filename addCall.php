@@ -105,7 +105,7 @@ if (!isset($_SESSION['user'])) {
                             <div class="input-group">
                                 <input type="text" class="form-control" id="create-employee-id" placeholder="1234">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button" onclick="checkEmployeeDetails()">Confirm</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkCreateEmployeeDetails()">Confirm</button>
                                 </span>
                             </div>
                         </div>
@@ -223,9 +223,9 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="add-employee-id">Employee's ID</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="add-employee-id" placeholder="1234">
+                                <input type="text" class="form-control" id="add-employee-id" placeholder="1234" >
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkAddEmployeeDetails()">Confirm</button>
                                 </span>
                             </div>
                         </div>
@@ -235,7 +235,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="add-employee-contact-number">Employee's Contact Number</label>
-                            <input type="text" class="form-control" id="add-employee-contact-number" placeholder="07123 456 789">
+                            <input type="text" class="form-control" id="add-employee-contact-number" placeholder="07123 456 789" readonly>
                         </div>
                     </div>
                     <div class="row mt-4">

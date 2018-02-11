@@ -53,7 +53,7 @@ $(function() {
     $('#add-call-date').datepicker('setValue', new Date());
 });
 
-function checkEmployeeDetails() {
+function checkCreateEmployeeDetails() {
     let employeeID = $('#create-employee-id').val();
     $.get('scripts/checkDetails.php', {employeeid: employeeID}, function(result) {
         if (result) {
@@ -67,6 +67,24 @@ function checkEmployeeDetails() {
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
             $('#create-employee-name').val("").removeClass('is-valid').removeClass('is-invalid');
             $('#create-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
+        }
+    }, 'json')
+}
+
+function checkAddEmployeeDetails() {
+    let employeeID = $('#add-employee-id').val();
+    $.get('scripts/checkDetails.php', {employeeid: employeeID}, function(result) {
+        if (result) {
+            $('#add-employee-id').addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+            $('#add-employee-name').val(result.firstName + ' ' + result.lastName).addClass('is-valid').removeClass('is-invalid');
+            $('#add-employee-contact-number').val(result.contactNumber).addClass('is-valid').removeClass('is-invalid');
+        }
+        else {
+            $('#add-employee-id').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+            $('#add-employee-name').val("").removeClass('is-valid').removeClass('is-invalid');
+            $('#add-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
         }
     }, 'json')
 }
