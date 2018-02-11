@@ -65,10 +65,18 @@ function createTicket(index, tickets) {
 
     let ticketFooter = createNewElement('div', 'ticket-footer justify-content-between');
     let dateCreated = document.createElement('span');
-    dateCreated.append(document.createTextNode('Date'));
+    let dateOpened = ticket.dateCreated.split("-");
+
+    dateCreated.append(document.createTextNode(dateOpened[2] + '/' + dateOpened[1] + '/' + dateOpened[0]));
     ticketFooter.append(dateCreated);
     let assignedSpecialist = document.createElement('span');
-    assignedSpecialist.append(document.createTextNode('Not Assigned'));
+    let specialistString = "Not Assigned";
+    if (ticket.specialistID) specialistString = ticket.specialistID;
+    if (ticket.ticketStatus == 1) {
+        let dateClosed = ticket.dateClosed.split('-')
+        specialistString = dateClosed[2] + '/' + dateClosed[1] + '/' + dateClosed[0]
+    }
+    assignedSpecialist.append(document.createTextNode(specialistString));
     ticketFooter.append(assignedSpecialist);
 
     ticketBody.append(ticketFooter);

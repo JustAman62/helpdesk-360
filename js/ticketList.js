@@ -25,7 +25,7 @@ function showTickets(){
     $.get('scripts/getTickets.php', function(result) {
         console.log(result);
         for (let i in result) {
-            if (result[i].ticketStatus==0) createTicket(i, result);
+            createTicket(i, result);
         }
     }, 'json');
 }
