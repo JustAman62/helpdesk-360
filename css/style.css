@@ -6,24 +6,26 @@
   grid-gap: 15px; }
 
 .ticket {
-  color: #856404; }
+  color: whitesmoke; }
 
 .ticket:hover {
-  color: #533f03;
+  color: white;
   text-decoration: none; }
 
 .ticket-body {
-  background-color: #fff3cd;
-  border-radius: 10px;
-  line-height: 1.4; }
+  background-color: #487eb0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  line-height: 1.4;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .ticket-body:hover {
-  background-color: #ffeeba; }
+  background-color: #40739e; }
 
 .ticket-header {
-  background-color: #ffeeba;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color: #40739e;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   display: flex;
   padding: 0.25em 0.5em 0 0.5em; }
   .ticket-header h5 {

@@ -66,7 +66,7 @@ if (!isset($_SESSION['user'])) {
             <button type="button" class="btn btn-secondary">Closed Tickets</button>
         </div>
     </div>
-    <div class="row" id="ticket-list">
+    <div class="row mt-3" id="ticket-list">
     </div>
 </div>
 </body>
