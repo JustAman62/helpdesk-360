@@ -28,7 +28,7 @@ $noteid = $result->fetch_row()[0]+1;
 
 //Create the sql statement for creating a new note
 $noteSQL = "INSERT INTO `Notes`(`noteID`, `text`, `date`, `ticketNumber`, `userID`, `time`)
-        VALUES ('$noteid','$notes','$calldate','$ticketnumber',$userid,$calltime)";
+        VALUES ('$noteid','$notes','$calldate','$ticketnumber','$userid','$calltime')";
 
 if (isset($_REQUEST['employeeid'])) {
     $employeeid = $_REQUEST['employeeid'];

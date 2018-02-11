@@ -180,6 +180,8 @@ function populateTicketInfo(ticket) {
 
 function populateNotes(ticket) {
 
+    $('#note-list').html("");
+
     $.get('scripts/getNotes.php', {ticketnumber: ticket.ticketNumber}, function(result) {
         console.log(result);
         for (let i in result) {
@@ -233,16 +235,23 @@ function makeNoteListItem(note) {
 
 function addNewNote(text) {
     let date = new Date();
-    notes.push(
-        {
-            "noteID":notes.length,
-            "Text":text,
-            "Date":date.getDate() + "/" + date.getMonth()+1 + "/" + date.getFullYear(),
-            "ticketNumber":tickets[ticketNum].ticketNumber
-        });
+    let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
+    let timeString = `${date.getHours()}:${date.getMinutes()}:00`;
+    $.get('scripts/createNote.php', {
+        calltime: timeString,
+        calldate: dateString,
+        notes: text,
+        userid: 1000,
+        ticketnumber: ticketInfo.ticketNumber
+        //    todo: send correct userid when sending request
 
-    populateNotes();
-    $('.list-group button:nth-last-child(2)').trigger('click');
+    }, function(result) {
+        console.log(result);
+    }, 'json');
+
+
+    populateNotes(ticketInfo);
+    // $('.list-group button:nth-last-child(1)').trigger('click');
 }
 
 function closeTicket() {
