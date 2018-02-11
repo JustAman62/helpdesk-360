@@ -105,17 +105,23 @@ if (!isset($_SESSION['user'])) {
                             <div class="input-group">
                                 <input type="text" class="form-control" id="create-employee-id" placeholder="1234">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkEmployeeDetails()">Confirm</button>
                                 </span>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-employee-name">Employee's Name</label>
-                            <input type="text" class="form-control" id="create-employee-name" placeholder="John Smith">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="create-employee-name" placeholder="John Smith">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Search</button>
+                                    <!--TODO: implement name lookup-->
+                                </span>
+                            </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-employee-contact-number">Employee's Contact Number</label>
-                            <input type="text" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789">
+                            <input type="text" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789" readonly>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -182,7 +188,7 @@ if (!isset($_SESSION['user'])) {
                         <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
-                        <button class="btn btn-primary col-md-4 my-5" type="button">Create Ticket</button>
+                        <button class="btn btn-primary col-md-4 my-5" type="button" onclick="createNewTicket()">Create Ticket</button>
                     </div>
 
                 </form>

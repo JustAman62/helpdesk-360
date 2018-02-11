@@ -5,8 +5,12 @@ $(function() {
     let problemTypesList = new Awesomplete(input[0]);
     problemTypesList.minChars = 0;
     $.get('scripts/getProblemTypes.php', function(result) {
-       console.log(result);
-       problemTypesList.list = result;
+       console.log(result[0]);
+       let array = [];
+       for (let i in result) {
+           array.push(result[i][0]);
+       }
+       problemTypesList.list = array;
     }, 'json');
 
     input.on('focus', function() {
@@ -36,5 +40,49 @@ $(function() {
         format: 'dd/mm/yyyy'
     });
     $('#create-call-date').datepicker('setValue', new Date());
-
 });
+
+function checkEmployeeDetails() {
+    let employeeID = $('#create-employee-id').val();
+    $.get('scripts/checkDetails.php', {employeeid: employeeID}, function(result) {
+        if (result) {
+            $('#create-employee-id').addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+            $('#create-employee-name').val(result.firstName + ' ' + result.lastName).addClass('is-valid').removeClass('is-invalid');
+            $('#create-employee-contact-number').val(result.contactNumber).addClass('is-valid').removeClass('is-invalid');
+        }
+        else {
+            $('#create-employee-id').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+            $('#create-employee-name').val("").removeClass('is-valid').removeClass('is-invalid');
+            $('#create-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
+        }
+    }, 'json')
+}
+
+function createNewTicket() {
+//    TODO: implement validation
+    let calltime = $('#create-time').val();
+    calltime = calltime.substring(0, calltime.length-2) + ':00';
+
+    $.get('scripts/createTicket.php', {
+        calltime: calltime,
+        calldate: $('#create-call-date').val(),
+        priority: $('#create-priority')[0].selectedIndex,
+        employeeid: $('#create-employee-id').val(),
+        employeename: $('#create-employee-name').val(),
+        employeecontact: $('#create-employee-contact-number').val(),
+        problemtype: $('#create-problem-type').val(),
+        operatingsystem: $('#create-OS').val(),
+        problemdescription: $('#create-problem-description').val(),
+        licencenumber: $('#create-licence-number').val(),
+        serialnumber: $('#create-serial-number').val(),
+        callnotes: $('#create-notes').val(),
+        ticketstatus: 0,
+        userid: 1000
+    //    todo: send correct userid when sending request
+    }, function(result) {
+        console.log(result);
+    }, 'json');
+
+}
