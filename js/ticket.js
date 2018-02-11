@@ -172,7 +172,7 @@ function populateTicketInfo(ticket) {
 
 }
 
-function populateNotes(ticket) {
+function populateNotes(ticket, open=false) {
 
 
     $.get('scripts/getNotes.php', {ticketnumber: ticket.ticketNumber}, function(result) {
@@ -192,6 +192,10 @@ function populateNotes(ticket) {
         newNoteElement.appendChild(plusIcon);
         newNoteElement.appendChild(document.createTextNode(' Add New Note'));
         $('#note-list').append(newNoteElement)
+
+        if (open)   $('.list-group button:nth-last-child(2)').trigger('click')
+
+
     }, 'json');
 
 
@@ -241,17 +245,18 @@ function addNewNote(text) {
         //    todo: send correct userid when sending request
 
     }, function(result) {
+        populateNotes(ticketInfo, true);
     }, 'json');
 
 
-    populateNotes(ticketInfo);
 }
 
 function closeTicket() {
     let date = new Date();
-    let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
+    let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
+    let timeString = `${date.getHours()}:${date.getMinutes()}:00`;
 
-    addNewNote("Ticket closed on: " + dateString + " by: " + "John" + "\n\nReason:");
+    addNewNote("Ticket closed on: " + dateString  + timeString + "\n\nReason:");
 }
 
 function deleteNote() {
