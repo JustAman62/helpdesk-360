@@ -63,7 +63,7 @@ function populateTicketInfo(ticket) {
     });
 
     //Add badges for if the ticket if open or closed
-    if (ticket.ticketStatus === 1) {
+    if (ticket.ticketStatus == 0) {
         //Add open badge
         let badge = document.createElement('span');
         badge.setAttribute('class', 'badge badge-warning ml-1');
@@ -94,33 +94,21 @@ function populateTicketInfo(ticket) {
     }
 
 //    Priority badge
-    if (ticket.priority === 0) {
-        let priorityBadge = document.createElement('span')
-        priorityBadge.setAttribute('class', 'badge badge-success ml-1');
-        priorityBadge.appendChild(document.createTextNode('Low Priority'));
-        $('#badge-list').append(priorityBadge);
-    }
-    else if (ticket.priority === 1) {
-        let priorityBadge = document.createElement('span')
-        priorityBadge.setAttribute('class', 'badge badge-warning ml-1');
-        priorityBadge.appendChild(document.createTextNode('Medium Priority'));
-        $('#badge-list').append(priorityBadge);
-    }
-    else {
-        let priorityBadge = document.createElement('span')
-        priorityBadge.setAttribute('class', 'badge badge-danger ml-1');
-        priorityBadge.appendChild(document.createTextNode('High Priority'));
-        $('#badge-list').append(priorityBadge);
-    }
+    let priorityBadge = document.createElement('span');
+    let badgeClass = ['badge badge-success ml-1', 'badge badge-warning ml-1', 'badge badge-danger ml-1'];
+    priorityBadge.setAttribute('class', badgeClass[ticket.priority]);
+    let badgeText = ['Low Priority', 'Medium Priority', 'High Priority'];
+    priorityBadge.appendChild(document.createTextNode(badgeText[ticket.priority]));
+    $('#badge-list').append(priorityBadge);
 
 //    Show number of days only for open tickets
-    if (ticket.ticketStatus === 1) {
+    if (ticket.ticketStatus == 0) {
         //Add number of days ticket has been open
         let currentDate = new Date();
-        let dateString = ticket.dateCreated.split('/');
-        let createdDay = dateString[0];
+        let dateString = ticket.dateCreated.split('-');
+        let createdDay = dateString[2];
         let createdMonth = dateString[1];
-        let createdYear = dateString[2];
+        let createdYear = dateString[0];
         let createdDate = new Date(createdYear, createdMonth-1, createdDay);
 
         let difference = Math.floor((currentDate - createdDate) / (1000*60*60*24));
