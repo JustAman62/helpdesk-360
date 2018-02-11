@@ -62,6 +62,13 @@ function populateTicketInfo(ticket) {
         }
     });
 
+    //Fill in employee details
+    $.get('scripts/getFullEmployeeDetailsByID.php', {employeeid:ticket.employeeID}, function(result) {
+        $('#employee-id').text(result.employeeID);
+        $('#employee-name').text(result.firstName + ' ' + result.lastName);
+        $('#employee-contact-number').text(result.contactNumber.substr(0, 5) + ' ' + result.contactNumber.substr(5));
+    }, 'json')
+
     //Add badges for if the ticket if open or closed
     if (ticket.ticketStatus == 0) {
         //Add open badge

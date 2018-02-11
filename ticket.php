@@ -63,8 +63,16 @@ if (!isset($_SESSION['user'])) {
     <hr>
 
     <h3>Employee Details</h3>
-    <h6>John Doe</h6>
-    <h6>07123 123456</h6>
+    <dl class="row">
+        <dt class="col-4 col-md-3 text-right">ID</dt>
+        <dd class="col-8 col-md-9" id="employee-id">1234</dd>
+
+        <dt class="col-4 col-md-3 text-right">Name</dt>
+        <dd class="col-8 col-md-9" id="employee-name">Name</dd>
+
+        <dt class="col-4 col-md-3 text-right">Contact Number</dt>
+        <dd class="col-8 col-md-9" id="employee-contact-number">07123 456789</dd>
+    </dl>
 
     <hr>
 
