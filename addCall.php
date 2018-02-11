@@ -198,9 +198,9 @@ if (!isset($_SESSION['user'])) {
             <div class="tab-pane fade" id="add" role="tabpanel">
                 <form action="">
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="form-group col-12 col-md-4">
                             <label for="add-call-time">Call Time</label>
-                            <input type="time" class="form-control" id="add-call-time" placeholder="hh:mm">
+                            <input type="text" class="form-control" id="add-call-time" placeholder="hh:mm"/>
                             <small class="text-secondary">Time the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
@@ -245,7 +245,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Add to ticket</button>
+                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button" onclick="createNewCallNote()">Add to ticket</button>
                     </div>
 
                 </form>

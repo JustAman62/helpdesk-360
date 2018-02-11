@@ -40,6 +40,17 @@ $(function() {
         format: 'dd/mm/yyyy'
     });
     $('#create-call-date').datepicker('setValue', new Date());
+    $('#add-call-time').timepicker({
+        minTime: '09:00am',
+        step: 15,
+        scrollDefault: 'now'
+    });
+    $('#add-call-time').timepicker('setTime', new Date());
+
+    $('#add-call-date').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+    $('#add-call-date').datepicker('setValue', new Date());
 });
 
 function checkEmployeeDetails() {
@@ -70,8 +81,6 @@ function createNewTicket() {
         calldate: $('#create-call-date').val(),
         priority: $('#create-priority')[0].selectedIndex,
         employeeid: $('#create-employee-id').val(),
-        employeename: $('#create-employee-name').val(),
-        employeecontact: $('#create-employee-contact-number').val(),
         problemtype: $('#create-problem-type').val(),
         operatingsystem: $('#create-OS').val(),
         problemdescription: $('#create-problem-description').val(),
@@ -81,6 +90,24 @@ function createNewTicket() {
         ticketstatus: 0,
         userid: 1000
     //    todo: send correct userid when sending request
+    }, function(result) {
+        console.log(result);
+    }, 'json');
+
+}
+function createNewCallNote() {
+//    TODO: implement validation
+    let calltime = $('#add-call-time').val();
+    calltime = calltime.substring(0, calltime.length-2) + ':00';
+
+    $.get('scripts/createNote.php', {
+        calltime: calltime,
+        calldate: $('#add-call-date').val(),
+        employeeid: $('#add-employee-id').val(),
+        notes: $('#add-notes').val(),
+        userid: 1000,
+        ticketnumber: $('#add-ticket-number').val()
+        //    todo: send correct userid when sending request
     }, function(result) {
         console.log(result);
     }, 'json');
