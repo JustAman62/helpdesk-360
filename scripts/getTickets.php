@@ -13,6 +13,7 @@ require 'connect.php';
 $sql = "SELECT * FROM Tickets";
 
 if (isset($_REQUEST['ticketnum'])) {
+    $ticketnum = $_REQUEST['ticketnum'];
     $sql = "SELECT * FROM Tickets WHERE ticketNumber = $ticketnum";
 }
 
