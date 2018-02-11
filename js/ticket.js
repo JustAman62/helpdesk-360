@@ -31,7 +31,8 @@ $(function() {
             let noteModal = $('#notesModal');
             noteModal.find('.modal-body textarea').val(result[0].text).trigger('input');
             noteModal.find('.modal-body input#note-id').val(result[0].noteID);
-            $('#date-note-created').text(formatDate(result[0].date));
+            noteModal.find('.modal-body input#call-id').val(result[0].callID);
+            $('#date-note-created').text(formatDate(result[0].date) + ' ' + result[0].time.substr(0,5));
         }, 'json');
 
     }).on('shown.bs.modal', function() {
@@ -44,7 +45,6 @@ $(function() {
         let noteText = $('.modal-body textarea').val();
         let noteID = $('.modal-body input#note-id').val();
         $.get('scripts/updateNote.php', {noteid: noteID, text:noteText}, function(result) {
-            console.log(result);
             //    Update the ticket page
             populateNotes(ticketInfo);
 
@@ -53,12 +53,6 @@ $(function() {
         });
 
     });
-
-
-
-
-
-
 });
 
 function populateTicketInfo(ticket) {
@@ -180,26 +174,27 @@ function populateTicketInfo(ticket) {
 
 function populateNotes(ticket) {
 
-    $('#note-list').html("");
 
     $.get('scripts/getNotes.php', {ticketnumber: ticket.ticketNumber}, function(result) {
-        console.log(result);
+        $('#note-list').html("");
+
         for (let i in result) {
             makeNoteListItem(result[i]);
         }
+
+    //    Add a make new note button
+        let newNoteElement = document.createElement('button')
+        newNoteElement.setAttribute('type', 'button');
+        newNoteElement.setAttribute('class', 'list-group-item list-group-item-action');
+        newNoteElement.setAttribute('onclick', "javascript:addNewNote('New Note')");
+        let plusIcon = document.createElement('i');
+        plusIcon.setAttribute('class', 'icon-plus-circled');
+        newNoteElement.appendChild(plusIcon);
+        newNoteElement.appendChild(document.createTextNode(' Add New Note'));
+        $('#note-list').append(newNoteElement)
     }, 'json');
 
 
-//    Add a make new note button
-    let newNoteElement = document.createElement('button')
-    newNoteElement.setAttribute('type', 'button');
-    newNoteElement.setAttribute('class', 'list-group-item list-group-item-action');
-    newNoteElement.setAttribute('onclick', "javascript:addNewNote('New Note')");
-    let plusIcon = document.createElement('i');
-    plusIcon.setAttribute('class', 'icon-plus-circled');
-    newNoteElement.appendChild(plusIcon);
-    newNoteElement.appendChild(document.createTextNode(' Add New Note'));
-    $('#note-list').append(newNoteElement)
 }
 
 function makeNoteListItem(note) {
@@ -217,7 +212,7 @@ function makeNoteListItem(note) {
     noteElement.setAttribute('data-note-id', note.noteID);
 
     let dateTimeText = document.createElement('small');
-    dateTimeText.appendChild(document.createTextNode(formatDate(note.date) + '   '));
+    dateTimeText.appendChild(document.createTextNode(formatDate(note.date) + ' ' + note.time.substr(0, 5) ));
     noteElement.appendChild(dateTimeText);
     if (note.callID) {
         let callBadge = document.createElement('i');
@@ -246,12 +241,10 @@ function addNewNote(text) {
         //    todo: send correct userid when sending request
 
     }, function(result) {
-        console.log(result);
     }, 'json');
 
 
     populateNotes(ticketInfo);
-    // $('.list-group button:nth-last-child(1)').trigger('click');
 }
 
 function closeTicket() {
@@ -259,4 +252,17 @@ function closeTicket() {
     let dateString = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
 
     addNewNote("Ticket closed on: " + dateString + " by: " + "John" + "\n\nReason:");
+}
+
+function deleteNote() {
+    $.get('scripts/deleteNote.php', {
+        noteid: $('#note-id').val(),
+        callid: $('#call-id').val() ? $('#call-id').val() : undefined
+    }, function(result) {
+        //    Update the ticket page
+        populateNotes(ticketInfo);
+
+        //    Close the modal
+        $('#notesModal').modal('hide');
+    });
 }

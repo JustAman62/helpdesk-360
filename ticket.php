@@ -150,17 +150,23 @@ if (!isset($_SESSION['user'])) {
 <div class="modal fade" id="notesModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header justify-between">
+            <div class="modal-header">
                 <h3 class="my-0">Edit Note</h3>
                 <small>Created On: <span id="date-note-created"></span></small>
             </div>
             <div class="modal-body">
                 <input type="hidden" id="note-id">
+                <input type="hidden" id="call-id">
                 <textarea name="note" id="modalNoteText" class="col-12 border border-secondary rounded my-0" placeholder="Notes"></textarea>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-success" id="saveNote">Save</button>
+            <div class="modal-footer justify-content-between">
+                <div class="left">
+                    <button type="button" class="btn btn-outline-danger" onclick="deleteNote()">Delete Note</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="saveNote">Save</button>
+                </div>
             </div>
         </div>
     </div>
