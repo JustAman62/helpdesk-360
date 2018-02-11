@@ -5,15 +5,23 @@ let ticketNum = 1;
 let counter = 0;
 $(function() {
     //Get the ticket number from the GET request when the page is loaded
-    ticketNum = location.search.split('&')[0].split('=')[1] - 1;
+    ticketNum = location.search.split('&')[0].split('=')[1];
 
-    // Place the ticket number in the title of the page
-    document.title = "Ticket #" + tickets[ticketNum].ticketNumber + " | Helpdesk 360"
+    $.get('scripts/getTickets.php', {ticketnum:ticketNum}, function(result) {
+        if (!result) {
+            return;
+        }
+        // Place the ticket number in the title of the page
+        document.title = "Ticket #" + result[0].ticketNumber + " | Helpdesk 360";
 
-    //When the page is first loaded, populate the ticket info
-    // populateNotes();
-    populateTicketInfo();
-    populateNotes();
+
+        //When the page is first loaded, populate the ticket info
+        // populateNotes();
+        populateTicketInfo(result[0]);
+        populateNotes(result[0]);
+    }, 'json');
+
+
 
 
     //When the notes modal is shown, update the note textarea to match the note it was clicked on
@@ -46,16 +54,16 @@ $(function() {
 
 });
 
-function populateTicketInfo() {
+function populateTicketInfo(ticket) {
     //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
-        if (tickets[ticketNum][element.dataset.autofill]) {
-            element.innerHTML = tickets[ticketNum][element.dataset.autofill];
+        if (ticket[element.dataset.autofill]) {
+            element.innerHTML = ticket[element.dataset.autofill];
         }
     });
 
     //Add badges for if the ticket if open or closed
-    if (tickets[ticketNum].ticketStatus === 1) {
+    if (ticket.ticketStatus === 1) {
         //Add open badge
         let badge = document.createElement('span');
         badge.setAttribute('class', 'badge badge-warning ml-1');
@@ -72,7 +80,7 @@ function populateTicketInfo() {
 
     //Make badges at the top of the screen
     // Specialist assigned/Not assigned badges
-    if (tickets[ticketNum].specialistID) {
+    if (ticket.specialistID) {
         let badge = document.createElement('span');
         badge.setAttribute('class', 'badge badge-success ml-1');
         badge.appendChild(document.createTextNode('Assigned'));
@@ -86,13 +94,13 @@ function populateTicketInfo() {
     }
 
 //    Priority badge
-    if (tickets[ticketNum].priority === 0) {
+    if (ticket.priority === 0) {
         let priorityBadge = document.createElement('span')
         priorityBadge.setAttribute('class', 'badge badge-success ml-1');
         priorityBadge.appendChild(document.createTextNode('Low Priority'));
         $('#badge-list').append(priorityBadge);
     }
-    else if (tickets[ticketNum].priority === 1) {
+    else if (ticket.priority === 1) {
         let priorityBadge = document.createElement('span')
         priorityBadge.setAttribute('class', 'badge badge-warning ml-1');
         priorityBadge.appendChild(document.createTextNode('Medium Priority'));
@@ -106,10 +114,10 @@ function populateTicketInfo() {
     }
 
 //    Show number of days only for open tickets
-    if (tickets[ticketNum].ticketStatus === 1) {
+    if (ticket.ticketStatus === 1) {
         //Add number of days ticket has been open
         let currentDate = new Date();
-        let dateString = tickets[ticketNum].dateCreated.split('/');
+        let dateString = ticket.dateCreated.split('/');
         let createdDay = dateString[0];
         let createdMonth = dateString[1];
         let createdYear = dateString[2];
@@ -137,9 +145,9 @@ function populateTicketInfo() {
     }
 
 //    Populate specialist details
-    if (tickets[ticketNum].specialistID) {
+    if (ticket.specialistID) {
         let ID = document.createElement('h6');
-        ID.appendChild(document.createTextNode('ID: ' + tickets[ticketNum].specialistID));
+        ID.appendChild(document.createTextNode('ID: ' + ticket.specialistID));
         let name = document.createElement('h6');
         name.appendChild(document.createTextNode('Jane Doe'));
         let number = document.createElement('h6');
