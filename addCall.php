@@ -260,7 +260,7 @@ if (!isset($_SESSION['userid'])) {
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
-                <h3 class="my-0">Available specialists</h3>
+                <h3 class="my-0">Available specialists<i class="icon icon-search"></i></h3>
             </div>
             <!-- <div class="container mt-4">
                 <div class="row">
@@ -271,7 +271,6 @@ if (!isset($_SESSION['userid'])) {
                 <div class="row">
                     <div class="col-md-4 col-12">
                         <div class="card">
-                            <h5 class="card-header text-center">Specialists<a class="text-secondary" href="#"><i class="icon icon-search"></i></a></h5>
                             <div class="list-group list-group-flush" id="specialist-list"></div>
                             <!-- <div class="card-footer text-muted small text-center">
                                 <span id="user-count"></span> Tickets
