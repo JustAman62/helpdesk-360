@@ -1,7 +1,7 @@
 <?php
 session_start();
-//If user is not logged in, ask user to log in
-if (!isset($_SESSION['user'])) {
+//If the user is not logged in, send them to login page
+if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
 }
 ?>
@@ -13,7 +13,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> Example Ticket - Helpdesk 360 </title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
@@ -48,7 +48,7 @@ if (!isset($_SESSION['user'])) {
         </ul>
     </div>
     <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
-        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['user'] ?> <i class="icon-user"></i></a>
+        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['username'] ?> <i class="icon-user"></i></a>
     </div>
 </nav>
 

@@ -1,11 +1,9 @@
 <?php
 session_start();
-if (isset($_REQUEST['user'])) {
-    $_SESSION['user'] = $_REQUEST['user'];
-}
 
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
+//If the user is not logged in, send them to login page
+if (!isset($_SESSION['userid'])) {
+  header('Location: login.php');
 }
 ?>
 
@@ -17,7 +15,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Operator Home - Helpdesk 360</title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
@@ -30,7 +28,7 @@ if (!isset($_SESSION['user'])) {
     <script src="js/ticketGenerator.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body class="bg-light">
+<body>
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
@@ -55,7 +53,7 @@ if (!isset($_SESSION['user'])) {
         </ul>
     </div>
     <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
-        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['user'] ?> <i class="icon-user"></i></a>
+        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['username'] ?> <i class="icon-user"></i></a>
     </div>
 </nav>
 
@@ -80,9 +78,9 @@ if (!isset($_SESSION['user'])) {
     <hr>
     <!--Auto generated tickets go here-->
     <div class="row justify-content-center">
-        <div class="col-12 col-md-8">
+        <div class="col-12">
             <h4 class="text-center">Most Recent Tickets</h4>
-            <div id="open-ticket-list"></div>
+            <div id="ticket-list"></div>
         </div>
     </div>
 </div>

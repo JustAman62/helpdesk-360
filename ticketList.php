@@ -1,7 +1,7 @@
 <?php
 session_start();
-//If user is not logged in, ask user to log in
-if (!isset($_SESSION['user'])) {
+//If the user is not logged in, send them to login page
+if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
 }
 ?>
@@ -13,7 +13,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> All Tickets | Helpdesk 360 </title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['user'])) {
     <script src="js/ticketList.js"></script>
 
 </head>
-<body class="bg-light">
+<body>
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
         <span class="navbar-toggler-icon"></span>
@@ -50,73 +50,27 @@ if (!isset($_SESSION['user'])) {
         </ul>
     </div>
     <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
-        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['user'] ?> <i class="icon-user"></i></a>
+        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['username'] ?> <i class="icon-user"></i></a>
     </div>
 </nav>
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-12">
-            <h1 class="display-4 text-center">All Tickets</h1>
-
-            <form action="">
-                <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="Closed Tickets" value="CTicket" id="CTicket" onclick="CheckCTicket()">
-                    Closed Ticket Only
-                </label>
-            </form>
-
+        <h1 class="display-4 text-center w-100">All Tickets</h1>
+        <h6 class="w-100 text-center">Filters</h6>
+        <div class="d-flex justify-content-center w-100 flex-wrap">
+            <div class="btn-group-toggle btn-group m-1" role="group">
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-open-tickets">Open Tickets</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-closed-tickets">Closed Tickets</button>
+            </div>
+            <div class="btn-group-toggle btn-group m-1" role="group">
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-low-priority">Low Priority</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-med-priority">Medium Priority</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-high-priority">High Priority</button>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <!--Open Tickets-->
-        <div class="col-sm-12 col-md-6 pt-2" id="open-ticket-list" style="">
-
-            <h4 class="text-center">Open Tickets</h4>
-            <!--All tickets below this line should be generated via js my looking at the db using this template-->
-<!--            <a href="exampleTicket.php" class="open-ticket-clickable">
-                <div class="w-100 open-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 1</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Ticket Description</p>-->
-
-                        <!--Footer created using a table-->
-<!--                        <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Unassigned / Specialist</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </a>-->
-        </div>
-
-        <!--Closed Tickets-->
-        <div class="col-sm-12 col-md-6 pt-2" id="closed-ticket-list" style="">
-
-            <h4 class="text-center">Closed Tickets</h4>
-            <!--All tickets below this line should be generated via js my looking at the db using this template-->
-    <!--        <a href="#" class="closed-ticket-clickable">
-                <div class="w-100 closed-ticket-clickable">
-                    <div class="d-flex ticket-header">
-                        <h4 class="card-title">Ticket 1</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="card-text">Ticket Description</p>-->
-                        <!--Table footer-->
-    <!--                    <table class="w-100">
-                            <tr>
-                                <td>Date Created</td>
-                                <td class="text-right">Date Closed</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </a>-->
-        </div>
+    <div class="row mt-3" id="ticket-list">
     </div>
 </div>
 </body>

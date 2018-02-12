@@ -1,10 +1,9 @@
 <?php
 session_start();
-//If user is not logged in, ask user to log in
-if (!isset($_SESSION['user'])) {
+//If the user is not logged in, send them to login page
+if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
-}
-?>
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,20 +12,27 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> New Call | Helpdesk 360 </title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
-    <link rel="stylesheet" href="awesomplete.css" />
-    <script src="awesomplete.js" async></script>
     <link rel="stylesheet" href="css/awesomplete.css" />
-    <script src="js/awesomplete.js"></script>
+    <script src="js/awesomplete.js" async></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
+<!--    Date and time pickers-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.min.js"></script>
+    <link rel="stylesheet" href="css/datepicker.css">
+    <script src="js/bootstrap-datepicker.js"></script>
+
+
     <script src="js/script.js"></script>
+    <script src="js/addCall.js"></script>
+
 </head>
 <body class="bg-light body-margin-bottom">
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
@@ -52,7 +58,7 @@ if (!isset($_SESSION['user'])) {
         </ul>
     </div>
     <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
-        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['user'] ?> <i class="icon-user"></i></a>
+        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['username'] ?> <i class="icon-user"></i></a>
     </div>
 </nav>
 
@@ -73,9 +79,9 @@ if (!isset($_SESSION['user'])) {
             <div class="tab-pane fade show active" id="create" role="tabpanel">
                 <form action="">
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="form-group col-12 col-md-4">
                             <label for="create-call-time">Call Time</label>
-                            <input type="time" class="form-control" id="create-call-time" placeholder="hh:mm">
+                            <input type="text" class="form-control" id="create-time" placeholder="hh:mm"/>
                             <small class="text-secondary">Time the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
@@ -89,12 +95,6 @@ if (!isset($_SESSION['user'])) {
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
-                        <div class="form-group">
-                            <label for="sel1">Priority</label>
-                            <select class="form-control" id="sel1">
-                                <option >Low</option>
-                                <option >Medium</option>
-                                <option >High</option>
                             </select>
                         </div>
                     </div>
@@ -104,36 +104,33 @@ if (!isset($_SESSION['user'])) {
                             <div class="input-group">
                                 <input type="text" class="form-control" id="create-employee-id" placeholder="1234">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkCreateEmployeeDetails()">Confirm</button>
                                 </span>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-employee-name">Employee's Name</label>
-                            <input type="text" class="form-control" id="create-employee-name" placeholder="John Smith">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="create-employee-name" placeholder="John Smith">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Search</button>
+                                    <!--TODO: implement name lookup-->
+                                </span>
+                            </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-employee-contact-number">Employee's Contact Number</label>
-                            <input type="text" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789">
+                            <input type="text" class="form-control" id="create-employee-contact-number" placeholder="07123 456 789" readonly>
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="awesomplete form-control custom-select" data-list="#mylist" />
-                              <ul style = "display:none"  id="mylist">
-                              	<li>Ada</li>
-                              	<li>Java</li>
-                              	<li>JavaScript</li>
-                              	<li>Brainfuck</li>
-                              	<li>LOLCODE</li>
-                              	<li>Node.js</li>
-                              	<li>Ruby on Rails</li>
-                              </ul>
+                            <input class="form-control custom-select" id="create-problem-type"/>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-OS">Operating System</label>
-                            <input type="text" class="form-control" id="create-OS" placeholder="Windows 10">
+                            <input class="form-control custom-select" id="create-OS"/>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -187,11 +184,10 @@ if (!isset($_SESSION['user'])) {
                     </div>
 
                     <div class="row justify-content-center col-12">
-                        <!--  <button class="btn btn-primary col-md-4 my-5" type="button">Assign to specialist</button> -->
                         <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
-                        <button class="btn btn-primary col-md-4 my-5" type="button">Create Ticket</button>
+                        <button class="btn btn-primary col-md-4 my-5" type="button" onclick="createNewTicket()">Create Ticket</button>
                     </div>
 
                 </form>
@@ -201,9 +197,9 @@ if (!isset($_SESSION['user'])) {
             <div class="tab-pane fade" id="add" role="tabpanel">
                 <form action="">
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="form-group col-12 col-md-4">
                             <label for="add-call-time">Call Time</label>
-                            <input type="time" class="form-control" id="add-call-time" placeholder="hh:mm">
+                            <input type="text" class="form-control" id="add-call-time" placeholder="hh:mm"/>
                             <small class="text-secondary">Time the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">
@@ -214,7 +210,7 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="add-ticket-number">Ticket Number</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="add-ticket-number" placeholder="123456">
+                                <input type="text" class="form-control" id="add-ticket-number" placeholder="1234">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button">Confirm</button>
                                 </span>
@@ -226,9 +222,9 @@ if (!isset($_SESSION['user'])) {
                         <div class="col-12 col-md-4">
                             <label for="add-employee-id">Employee's ID</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="add-employee-id" placeholder="1234">
+                                <input type="text" class="form-control" id="add-employee-id" placeholder="1234" >
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkAddEmployeeDetails()">Confirm</button>
                                 </span>
                             </div>
                         </div>
@@ -238,7 +234,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="add-employee-contact-number">Employee's Contact Number</label>
-                            <input type="text" class="form-control" id="add-employee-contact-number" placeholder="07123 456 789">
+                            <input type="text" class="form-control" id="add-employee-contact-number" placeholder="07123 456 789" readonly>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -248,7 +244,7 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button">Add to ticket</button>
+                        <button class="btn btn-primary col-12 col-md-4 my-5" type="button" onclick="createNewCallNote()">Add to ticket</button>
                     </div>
 
                 </form>

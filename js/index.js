@@ -18,6 +18,6 @@ $(function() {
         return bDate - aDate;
     });
     for (let i = 0; i < 3; i++) {
-        addOpenTicket(sortedTickets[i].ticketNumber-1);
+        createTicket(sortedTickets[i].ticketNumber-1);
     }
 });
