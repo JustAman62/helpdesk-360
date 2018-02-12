@@ -17,7 +17,6 @@
 
 function createTicket(index, tickets) {
 
-    console.log(index, tickets);
     let ticket = tickets[index];
 
 
