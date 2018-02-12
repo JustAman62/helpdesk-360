@@ -39,7 +39,7 @@ $(function() {
     createTime.timepicker('setTime', new Date());
 
     $('#create-call-date').datepicker({
-        format: 'yyyy-mm-dd'
+        format: 'dd/mm/yyyy'
     });
     $('#create-call-date').datepicker('setValue', new Date());
     $('#add-call-time').timepicker({
@@ -51,7 +51,7 @@ $(function() {
     $('#add-call-time').timepicker('setTime', new Date());
 
     $('#add-call-date').datepicker({
-        format: 'yyyy-mm-dd'
+        format: 'dd/mm/yyyy'
     });
     $('#add-call-date').datepicker('setValue', new Date());
 });
