@@ -140,6 +140,10 @@ function populateTicketInfo(ticket) {
         }
     }
 
+//    Populate Created By Field
+    $.get('scripts/getUserDetailsByID.php',{userid:ticket.userID}, function(result) {
+        $('#created-by').text(result.firstName + ' ' + result.lastName + ' (' + result.userID + ')');
+    }, 'json');
 
 //    Populate problem type field
 

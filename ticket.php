@@ -80,12 +80,11 @@ if (!isset($_SESSION['userid'])) {
         <a class="ml-auto no-hover-underline" href="#">Edit <i class="icon icon-pencil"></i> </a>
     </div>
     <dl class="row">
-        <dt class="col-4 col-md-3 text-right">Created</dt>
+        <dt class="col-4 col-md-3 text-right">Created On</dt>
         <dd class="col-8 col-md-9" id="date-created">20/10/2017 12:48 (6 days)</dd>
 
-<!--        TODO: Make this dynamic-->
         <dt class="col-4 col-md-3 text-right">Created By</dt>
-        <dd class="col-8 col-md-9" id="">John (1003)</dd>
+        <dd class="col-8 col-md-9" id="created-by">John (1003)</dd>
 
 <!--TODO: Make this actually work-->
         <dt class="col-4 col-md-3 text-right">Last Modified</dt>
