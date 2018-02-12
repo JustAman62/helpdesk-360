@@ -27,7 +27,7 @@ if (!isset($_SESSION['user'])) {
     <script src="js/ticketList.js"></script>
 
 </head>
-<body class="bg-light">
+<body>
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
         <span class="navbar-toggler-icon"></span>
@@ -56,14 +56,18 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-12">
-            <h1 class="display-4 text-center">All Tickets</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-secondary">Open Tickets</button>
-            <button type="button" class="btn btn-secondary">Closed Tickets</button>
+        <h1 class="display-4 text-center w-100">All Tickets</h1>
+        <h6 class="w-100 text-center">Filters</h6>
+        <div class="d-flex justify-content-center w-100 flex-wrap">
+            <div class="btn-group-toggle btn-group m-1" role="group">
+                <button type="button" class="btn btn-outline-primary" data-toggle="button">Open Tickets</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button">Closed Tickets</button>
+            </div>
+            <div class="btn-group-toggle btn-group m-1" role="group">
+                <button type="button" class="btn btn-outline-primary" data-toggle="button">Low Priority</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button">Medium Priority</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button">High Priority</button>
+            </div>
         </div>
     </div>
     <div class="row mt-3" id="ticket-list">
