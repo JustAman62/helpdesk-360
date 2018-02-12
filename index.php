@@ -44,7 +44,7 @@
     <script src="js/ticketGenerator.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body class="bg-light">
+<body>
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
