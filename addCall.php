@@ -257,7 +257,7 @@ if (!isset($_SESSION['user'])) {
     </div>
 </div>
 
-<!--Modal for assign to specialist
+<!-- Modal for assign to specialist -->
 <div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
@@ -273,7 +273,7 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 
 
