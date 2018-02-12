@@ -60,13 +60,13 @@ if (!isset($_SESSION['user'])) {
         <h6 class="w-100 text-center">Filters</h6>
         <div class="d-flex justify-content-center w-100 flex-wrap">
             <div class="btn-group-toggle btn-group m-1" role="group">
-                <button type="button" class="btn btn-outline-primary" data-toggle="button">Open Tickets</button>
-                <button type="button" class="btn btn-outline-primary" data-toggle="button">Closed Tickets</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-open-tickets">Open Tickets</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-closed-tickets">Closed Tickets</button>
             </div>
             <div class="btn-group-toggle btn-group m-1" role="group">
-                <button type="button" class="btn btn-outline-primary" data-toggle="button">Low Priority</button>
-                <button type="button" class="btn btn-outline-primary" data-toggle="button">Medium Priority</button>
-                <button type="button" class="btn btn-outline-primary" data-toggle="button">High Priority</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-low-priority">Low Priority</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-med-priority">Medium Priority</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="getTicketList()" id="filter-high-priority">High Priority</button>
             </div>
         </div>
     </div>
