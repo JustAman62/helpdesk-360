@@ -69,8 +69,10 @@ if (!isset($_SESSION['userid'])) {
     </div>
 
 </div>
+<div class="col-12 col-md-8 mx-auto">
 
-<div class="ct-chart ct-perfect-fourth"></div>
+<div class="ct-chart ct-double-octave"></div>
+</div>
 
 
 
