@@ -260,6 +260,8 @@ function closeTicket() {
     let timeString = `${date.getHours()}:${date.getMinutes()}:00`;
 
     addNewNote("Ticket closed on: " + dateString  + timeString + "\n\nReason:");
+
+    $.get('scripts/closeTicket.php', {ticketnumber: ticketInfo.ticketNumber, dateclosed:dateString});
 }
 
 function deleteNote() {

@@ -29,12 +29,14 @@ $(function() {
     });
 
 
-    $('#create-time').timepicker({
+    let createTime = $('#create-time');
+    createTime.timepicker({
         minTime: '09:00am',
         step: 15,
-        scrollDefault: 'now'
+        scrollDefault: 'now',
+        timeFormat: 'H:i'
     });
-    $('#create-time').timepicker('setTime', new Date());
+    createTime.timepicker('setTime', new Date());
 
     $('#create-call-date').datepicker({
         format: 'dd/mm/yyyy'
@@ -43,7 +45,8 @@ $(function() {
     $('#add-call-time').timepicker({
         minTime: '09:00am',
         step: 15,
-        scrollDefault: 'now'
+        scrollDefault: 'now',
+        timeFormat: 'H:i'
     });
     $('#add-call-time').timepicker('setTime', new Date());
 
@@ -91,8 +94,7 @@ function checkAddEmployeeDetails() {
 
 function createNewTicket() {
 //    TODO: implement validation
-    let calltime = $('#create-time').val();
-    calltime = calltime.substring(0, calltime.length-2) + ':00';
+    let calltime = $('#create-time').val() + ':00';
 
     $.get('scripts/createTicket.php', {
         calltime: calltime,
@@ -115,8 +117,7 @@ function createNewTicket() {
 }
 function createNewCallNote() {
 //    TODO: implement validation
-    let calltime = $('#add-call-time').val();
-    calltime = calltime.substring(0, calltime.length-2) + ':00';
+    let calltime = $('#add-call-time').val() + ':00';
 
     $.get('scripts/createNote.php', {
         calltime: calltime,
