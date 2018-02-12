@@ -5,7 +5,7 @@
  * Date: 11/02/2018
  * Time: 16:49
  *
- * Create a new ticket based on the information given
+ * Create a COOL new ticket based on the information given
  */
 
 session_start();
@@ -24,8 +24,8 @@ $ticketstatus = $_REQUEST['ticketstatus'];
 $userid = $_SESSION['userid'];
 
 
-$datetime = DateTime::createFromFormat('d/m/Y', $calldate);
-$calldate = $datetime->format('Y-m-d');
+// $datetime = DateTime::createFromFormat('d/m/Y', $calldate);
+// $calldate = $datetime->format('Y-m-d');
 
 
 //Create a new ticket
