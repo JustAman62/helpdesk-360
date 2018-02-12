@@ -46,6 +46,9 @@ $_SESSION = array();
             <div class="row justify-content-center col-4 mx-auto">
                 <button class="btn btn-primary w-100" type="submit">Login</button>
             </div>
+            <div class="row justify-content-center col-10 mx-auto my-1">
+                <small class="text-danger text-center" id="login-failure">User ID / Password incorrect <br> Please Try Again</small>
+            </div>
         </form>
     </div>
 </div>
