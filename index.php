@@ -1,26 +1,10 @@
 <?php
-  session_start();
-  if (isset($_REQUEST['user'])) {
-      $_SESSION['user'] = $_REQUEST['user'];
-  }
+session_start();
 
-  if (!isset($_SESSION['user'])) {
-      header('Location: login.php');
-  }
-
-  //$conn = new mysqli('localhost', 'root', 'password-360', 'helpdesk');
-
-  //if ($conn->connect_error) {
-  //    die('Connection failed'.$conn->connect_error);
-  //}
-
-  //$sql = "SELECT * FROM Users WHERE employeeid='".$_REQUEST["user"]. "' and password = '". $_REQUEST["password"]."'");
-
-  //$result = $conn->query($sql);
-
-  //if ($conn->error) die($conn->error);
-
-  //echo json_encode($result->fetch_object());
+//If the user is not logged in, send them to login page
+if (!isset($_SESSION['userId'])) {
+  header('Location: login.php');
+}
 ?>
 
 <!DOCTYPE html>

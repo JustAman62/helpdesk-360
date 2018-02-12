@@ -1,10 +1,10 @@
 <?php
 
-//End the session every time the login page is opened, to simulate a logout
-session_start();
-$_SESSION = array();
+//End and recreate the session every time the login page is opened, to simulate a logout
 session_destroy();
 session_regenerate_id(true);
+session_start();
+$_SESSION = array();
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +23,7 @@ session_regenerate_id(true);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
 </head>
 <body>
 <div class="container" style="min-height:0px">
@@ -31,15 +32,15 @@ session_regenerate_id(true);
     </div>
     <br>
     <div class="row justify-content-center">
-        <form action="index.php">
+        <form action="javascript:login()">
             <div class="input-group">
                 <span class="input-group-addon">User ID</span>
-                <input class="form-control" type="text" title="User ID" name="user">
+                <input class="form-control" type="text" title="User ID" name="user" id="user-id">
             </div>
             <br>
             <div class="input-group">
                 <span class="input-group-addon">Password</span>
-                <input class="form-control" type="password" title="Password" name="password">
+                <input class="form-control" type="password" title="Password" name="password" id="password">
             </div>
             <br>
             <div class="row justify-content-center col-4 mx-auto">
