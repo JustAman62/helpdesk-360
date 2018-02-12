@@ -240,7 +240,6 @@ function addNewNote(text) {
         calltime: timeString,
         calldate: dateString,
         notes: text,
-        userid: 1000,
         ticketnumber: ticketInfo.ticketNumber
         //    todo: send correct userid when sending request
 

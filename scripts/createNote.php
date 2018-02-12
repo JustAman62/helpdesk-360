@@ -8,11 +8,12 @@
  * Creates a new note, and call if required to, for a specified ticket number
  */
 
+session_start();
 require 'connect.php';
 
 $ticketnumber = $_REQUEST['ticketnumber'];
 $notes = $_REQUEST['notes'];
-$userid = $_REQUEST['userid'];
+$userid = $_SESSION['userid'];
 $calldate = $_REQUEST['calldate'];
 $calltime = $_REQUEST['calltime'];
 

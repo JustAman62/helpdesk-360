@@ -106,7 +106,6 @@ function createNewTicket() {
         serialnumber: $('#create-serial-number').val() ? $('#create-serial-number').val() : undefined,
         callnotes: $('#create-notes').val(),
         ticketstatus: 0,
-        userid: 1000
     //    todo: send correct userid when sending request
     }, function(result) {
         console.log(result);
@@ -124,7 +123,6 @@ function createNewCallNote() {
         calldate: $('#add-call-date').val(),
         employeeid: $('#add-employee-id').val(),
         notes: $('#add-notes').val(),
-        userid: 1000,
         ticketnumber: $('#add-ticket-number').val()
         //    todo: send correct userid when sending request
 

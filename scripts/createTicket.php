@@ -8,6 +8,7 @@
  * Create a new ticket based on the information given
  */
 
+session_start();
 require 'connect.php';
 
 //get information from the request
@@ -20,7 +21,7 @@ $operatingsystem = $_REQUEST['operatingsystem'];
 $problemdescription = $_REQUEST['problemdescription'];
 $callnotes = $_REQUEST['callnotes'];
 $ticketstatus = $_REQUEST['ticketstatus'];
-$userid = $_REQUEST['userid'];
+$userid = $_SESSION['userid'];
 
 
 $datetime = DateTime::createFromFormat('d/m/Y', $calldate);
