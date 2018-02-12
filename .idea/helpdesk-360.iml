@@ -10,5 +10,6 @@
     <orderEntry type="library" name="tempusdominus-bootstrap-4" level="application" />
     <orderEntry type="library" name="all" level="application" />
     <orderEntry type="library" name="jquery.timepicker" level="application" />
+    <orderEntry type="library" name="jquery-3.3.1" level="application" />
   </component>
 </module>
