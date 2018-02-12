@@ -263,7 +263,13 @@ if (!isset($_SESSION['userid'])) {
                 <h3 class="my-0">Available specialists</h3>
             </div>
             <div class="modal-body">
+                <h5 class="display-4 text-center mt-4">Select the Specialist</h5>
                 <textarea name="note" id="modalAvailableSpec" class="col-12 border border-secondary rounded my-0" placeholder="Notes"></textarea>
+            </div>
+            <div class="list-group">
+              <a href="#" class="list-group-item">Specialist 1</a>
+              <a href="#" class="list-group-item">Specialist 2</a>
+              <a href="#" class="list-group-item">Specialist 3</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
