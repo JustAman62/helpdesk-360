@@ -14,8 +14,8 @@
 
 .ticket-body {
   background-color: #487eb0;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   line-height: 1.4;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
@@ -24,8 +24,8 @@
 
 .ticket-header {
   background-color: #40739e;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   display: flex;
   padding: 0.25em 0.5em 0 0.5em; }
   .ticket-header h5 {
