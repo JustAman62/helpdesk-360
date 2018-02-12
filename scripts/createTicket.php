@@ -5,7 +5,7 @@
  * Date: 11/02/2018
  * Time: 16:49
  *
- * Create a new ticket based on the information given
+ * Create a COOL new ticket based on the information given
  */
 
 session_start();
@@ -24,8 +24,8 @@ $ticketstatus = $_REQUEST['ticketstatus'];
 $userid = $_SESSION['userid'];
 
 
-$datetime = DateTime::createFromFormat('d/m/Y', $calldate);
-$calldate = $datetime->format('Y-m-d');
+// $datetime = DateTime::createFromFormat('d/m/Y', $calldate);
+// $calldate = $datetime->format('Y-m-d');
 
 
 //Create a new ticket
@@ -65,7 +65,7 @@ else if (isset($_REQUEST['serialnumber'])) {
 }
 else{
     $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `operatingSystem`)
-        VALUES ($ticketnumber,$userid,$employeeid,'$calldate',$priority,$problemtypeid,'$problemdescription',$ticketstatus,'$operatingsystem')";
+        VALUES ('$ticketnumber','$userid','$employeeid','$calldate','$priority','$problemtypeid','$problemdescription','$ticketstatus','$operatingsystem')";
 }
 
 $conn->query($sql);
@@ -90,7 +90,7 @@ $sql = "SELECT MAX(noteID) FROM Notes";
 $result = $conn->query($sql);
 if ($conn->error) die ($conn->error);
 $noteid = $result->fetch_row()[0]+1;
-$sql = "INSERT INTO `Notes` (`noteID`, `text`, `date`, `ticketNumber`, `callID`, `userID`, `time`) 
+$sql = "INSERT INTO `Notes` (`noteID`, `text`, `date`, `ticketNumber`, `callID`, `userID`, `time`)
         VALUES ('$noteid', '$callnotes', '$calldate', '$ticketnumber', '$callid', '$userid', '$calltime')";
 
 
@@ -98,5 +98,3 @@ $conn->query($sql);
 if ($conn->error) die ($conn->error);
 
 echo $ticketnumber;
-
-

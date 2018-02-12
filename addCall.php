@@ -12,12 +12,11 @@ if (!isset($_SESSION['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> New Call | Helpdesk 360 </title>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
     <link rel="stylesheet" href="css/awesomplete.css" />
-    <script src="js/awesomplete.js" async></script>
+    <script src="js/awesomplete.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -184,7 +183,7 @@ if (!isset($_SESSION['userid'])) {
                     </div>
 
                     <div class="row justify-content-center col-12">
-                        <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
+                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
                         <button class="btn btn-primary col-md-4 my-5" type="button" onclick="createNewTicket()">Create Ticket</button>
@@ -219,6 +218,8 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                     </div>
                     <div class="row mt-4">
+
+
                         <div class="col-12 col-md-4">
                             <label for="add-employee-id">Employee's ID</label>
                             <div class="input-group">
@@ -253,15 +254,29 @@ if (!isset($_SESSION['userid'])) {
     </div>
 </div>
 
-<!--Modal for assign to specialist-->
+<!-- Modal for assign to specialist -->
 <div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
-                <h3 class="my-0">Available specialists</h3>
+                <h3 class="my-0">Available specialists<i class="icon icon-search"></i></h3>
             </div>
-            <div class="modal-body">
-                <textarea name="note" id="modalAvailableSpec" class="col-12 border border-secondary rounded my-0" placeholder="Notes"></textarea>
+            <!-- <div class="container mt-4">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="display-4 text-center">Specialists</h6>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-md-4 col-12">
+                        <div class="card">
+                            <div class="list-group list-group-flush" id="specialist-list"></div>
+                            <!-- <div class="card-footer text-muted small text-center">
+                                <span id="user-count"></span> Tickets
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
@@ -270,6 +285,7 @@ if (!isset($_SESSION['userid'])) {
         </div>
     </div>
 </div>
+
 
 
 </body>
