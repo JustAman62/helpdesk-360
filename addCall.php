@@ -267,9 +267,9 @@ if (!isset($_SESSION['userid'])) {
                 <textarea name="note" id="modalAvailableSpec" class="col-12 border border-secondary rounded my-0" placeholder="Notes"></textarea>
             </div>
             <div class="list-group">
-              <a href="#" class="list-group-item">Specialist 1</a>
-              <a href="#" class="list-group-item">Specialist 2</a>
-              <a href="#" class="list-group-item">Specialist 3</a>
+              <a class="list-group-item">Specialist 1</a>
+              <a class="list-group-item">Specialist 2</a>
+              <a class="list-group-item">Specialist 3</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
