@@ -218,7 +218,7 @@ if (!isset($_SESSION['userid'])) {
                             <small class="text-secondary">Ticket to add call to</small>
                         </div>
                     </div>
-                    <div class="row mt-4">.com/BrownKnight/helpdesk-360
+                    <div class="row mt-4">
 
 
                         <div class="col-12 col-md-4">
