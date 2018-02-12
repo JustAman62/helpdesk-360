@@ -184,7 +184,7 @@ if (!isset($_SESSION['userid'])) {
                     </div>
 
                     <div class="row justify-content-center col-12">
-                        <button class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
+                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
                         <button class="btn btn-primary col-md-4 my-5" type="button" onclick="createNewTicket()">Create Ticket</button>
@@ -218,7 +218,9 @@ if (!isset($_SESSION['userid'])) {
                             <small class="text-secondary">Ticket to add call to</small>
                         </div>
                     </div>
-                    <div class="row mt-4">
+                    <div class="row mt-4">.com/BrownKnight/helpdesk-360
+
+
                         <div class="col-12 col-md-4">
                             <label for="add-employee-id">Employee's ID</label>
                             <div class="input-group">
