@@ -1,7 +1,8 @@
 
 $(function() {
+//
+
     showTickets();
-    resizeAllGridItems();
 
 });
 
@@ -25,7 +26,12 @@ function showTickets(){
     $.get('scripts/getTickets.php', function(result) {
         console.log(result);
         for (let i in result) {
+            // Filtering for tickets goes here
             createTicket(i, result);
+
+
+
+            resizeAllGridItems();
         }
     }, 'json');
 }
