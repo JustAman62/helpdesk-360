@@ -1,10 +1,9 @@
 <?php
 session_start();
-//If user is not logged in, ask user to log in
-if (!isset($_SESSION['user'])) {
+//If the user is not logged in, send them to login page
+if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
-}
-?>
+}?>
 
 <!DOCTYPE html>
 <html lang="en">

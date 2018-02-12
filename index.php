@@ -2,7 +2,7 @@
 session_start();
 
 //If the user is not logged in, send them to login page
-if (!isset($_SESSION['userId'])) {
+if (!isset($_SESSION['userid'])) {
   header('Location: login.php');
 }
 ?>
