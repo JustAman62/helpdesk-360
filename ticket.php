@@ -77,15 +77,14 @@ if (!isset($_SESSION['userid'])) {
 
     <div class="d-flex mb-3">
         <h3>Ticket Details</h3>
-        <a class="ml-auto no-hover-underline" href="#">Edit <i class="icon icon-pencil"></i> </a>
+        <a class="ml-auto no-hover-underline" id="edit-button" href="javascript:editTicket()">Edit <i class="icon icon-pencil"></i> </a>
+        <a class="ml-auto no-hover-underline" id="save-button" href="javascript:saveTicket()">Save <i class="icon icon-pencil"></i> </a>
     </div>
-<!--        <dt class="col-4 col-md-3 text-right">Created On</dt>-->
-<!--        <dd class="col-8 col-md-9" id="date-created">20/10/2017 12:48 (6 days)</dd>-->
     <form id="ticket-details">
         <div class="form-group row">
-            <label for="date-created" class="col-2 col-md-3 col-form-label text-right">Email</label>
+            <label for="date-created" class="col-2 col-md-3 col-form-label text-right">Created On</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext" id="date-created" value="email@example.com">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="date-created" value="Placeholder">
             </div>
         </div>
 
@@ -107,42 +106,42 @@ if (!isset($_SESSION['userid'])) {
         <div class="form-group row">
             <label for="problem-type" class="col-2 col-md-3 text-right col-form-label">Problem Type</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext" id="problem-type" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="problem-type" value="Placeholder">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="original-description" class="col-2 col-md-3 text-right col-form-label">Original Description</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="serial-number" class="col-2 col-md-3 text-right col-form-label">Serial Number</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="serialNumber" id="serial-number" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="serialNumber" id="serial-number" value="Placeholder">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="unique-identifier" class="col-2 col-md-3 text-right col-form-label">Unique Identifier</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext" id="unique-identifier" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="unique-identifier" value="Placeholder">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="software-licence-number" class="col-2 col-md-3 text-right col-form-label">Software Licence Number</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="Placeholder">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="operating-system" class="col-2 col-md-3 text-right col-form-label">Operating System</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="operatingSystem" id="operating-system" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="operatingSystem" id="operating-system" value="Placeholder">
             </div>
         </div>
     </form>

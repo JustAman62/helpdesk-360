@@ -2,6 +2,8 @@
 let ticketInfo;
 
 $(function() {
+    $('#save-button').hide();
+
     //Get the ticket number from the GET request when the page is loaded
     ticketNum = location.search.split('&')[0].split('=')[1];
 
@@ -59,7 +61,7 @@ function populateTicketInfo(ticket) {
     //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
         if (ticket[element.dataset.autofill]) {
-            element.innerHTML = ticket[element.dataset.autofill];
+            $(element).val(ticket[element.dataset.autofill]);
         }
     });
 
@@ -68,7 +70,7 @@ function populateTicketInfo(ticket) {
         $('#employee-id').text(result.employeeID);
         $('#employee-name').text(result.firstName + ' ' + result.lastName);
         $('#employee-contact-number').text(result.contactNumber.substr(0, 5) + ' ' + result.contactNumber.substr(5));
-    }, 'json')
+    }, 'json');
 
     //Add badges for if the ticket if open or closed
     if (ticket.ticketStatus == 0) {
@@ -142,17 +144,17 @@ function populateTicketInfo(ticket) {
 
 //    Populate Created By Field
     $.get('scripts/getUserDetailsByID.php',{userid:ticket.userID}, function(result) {
-        $('#created-by').text(result.firstName + ' ' + result.lastName + ' (' + result.userID + ')');
+        $('#created-by').val(result.firstName + ' ' + result.lastName + ' (' + result.userID + ')');
     }, 'json');
 
 //    Populate problem type field
 
     $.get('scripts/findProblemTypeName.php',{problemtypeid:ticket.problemTypeID}, function(result) {
-        $('#problem-type').text(result[0].problemTypeName)
+        $('#problem-type').val(result[0].problemTypeName)
     }, 'json');
 
 //    Populate other fields
-    $('#date-created').html(formatDate(ticket.dateCreated));
+    $('#date-created').val(formatDate(ticket.dateCreated));
 
 //    Populate specialist details
     if (ticket.specialistID) {
@@ -274,5 +276,26 @@ function deleteNote() {
 
         //    Close the modal
         $('#notesModal').modal('hide');
+    });
+}
+
+function editTicket() {
+    // let inputs = ;
+
+    $('input.modifiable').fadeOut(function () {
+        $(this).fadeIn().addClass('form-control').removeClass('form-control-plaintext').removeAttr('readonly');
+    });
+
+    $('#edit-button').fadeOut(function() {
+        $('#save-button').fadeIn();
+    });
+}
+
+function saveTicket() {
+    $('input.modifiable').fadeIn().addClass('form-control-plaintext').removeClass('form-control').attr('readonly');
+
+
+    $('#save-button').fadeOut(function() {
+        $('#edit-button').fadeIn();
     });
 }
