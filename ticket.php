@@ -114,6 +114,13 @@ if (!isset($_SESSION['userid'])) {
         </div>
 
         <div class="form-group row">
+            <label for="priority" class="col-2 col-md-3 text-right col-form-label">Priority</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="priority" value="Placeholder">
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label for="original-description" class="col-2 col-md-3 text-right col-form-label">Original Description</label>
             <div class="col-10 col-md-9">
                 <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
@@ -123,21 +130,21 @@ if (!isset($_SESSION['userid'])) {
         <div class="form-group row">
             <label for="serial-number" class="col-2 col-md-3 text-right col-form-label">Serial Number</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="serialNumber" id="serial-number" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="serialNumber" id="serial-number" value="">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="unique-identifier" class="col-2 col-md-3 text-right col-form-label">Unique Identifier</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable" id="unique-identifier" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="unique-identifier" value="">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="software-licence-number" class="col-2 col-md-3 text-right col-form-label">Software Licence Number</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="">
             </div>
         </div>
 

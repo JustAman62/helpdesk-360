@@ -156,6 +156,9 @@ function populateTicketInfo(ticket) {
 //    Populate other fields
     $('#date-created').val(formatDate(ticket.dateCreated));
 
+    let priorities = ['Low', 'Medium', 'High'];
+    $('#priority').val(priorities[ticket.priority]);
+
 //    Populate specialist details
     if (ticket.specialistID) {
         let ID = document.createElement('h6');
@@ -278,6 +281,7 @@ function deleteNote() {
         $('#notesModal').modal('hide');
     });
 }
+
 let problemTypesList;
 function editTicket() {
     // let inputs = ;
@@ -318,4 +322,22 @@ function saveTicket() {
     });
 
     problemTypesList.destroy();
+
+    let priority = $('#priority').val();
+
+    if (priority === "Low") priority = 0;
+    if (priority === "Medium") priority = 1;
+    if (priority === "High") priority = 2;
+
+    $.get('scripts/updateTicket.php', {
+        ticketnumber: ticketInfo.ticketNumber,
+        priority: priority,
+        problemtype: $('#problem-type').val(),
+        operatingsystem: $('#operating-system').val(),
+        problemdescription: $('#original-description').val(),
+        licencenumber: $('#software-licence-number').val() === "" ? 'NULL' : $('#software-licence-number').val(),
+        serialnumber: $('#serial-number').val() === "" ? 'NULL' : $('#serial-number').val(),
+    }, function(result) {
+
+    }, 'json');
 }
