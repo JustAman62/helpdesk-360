@@ -62,14 +62,47 @@ function checkCreateEmployeeDetails() {
         if (result) {
             $('#create-employee-id').addClass('is-valid').removeClass('is-invalid')
                 .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
-            $('#create-employee-name').val(result.firstName + ' ' + result.lastName).addClass('is-valid').removeClass('is-invalid');
+            $('#create-employee-name').val(result.firstName + ' ' + result.lastName).addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
             $('#create-employee-contact-number').val(result.contactNumber).addClass('is-valid').removeClass('is-invalid');
         }
         else {
             $('#create-employee-id').addClass('is-invalid').removeClass('is-valid')
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
-            $('#create-employee-name').val("").removeClass('is-valid').removeClass('is-invalid');
-            $('#create-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
+            $('#create-employee-name').val("").removeClass('is-valid').addClass('is-invalid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+            $('#create-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
+        }
+    }, 'json')
+}
+
+function checkCreateEmployeeName() {
+    let firstName = "";
+    let lastName = "";
+    let name = $('#create-employee-name').val();
+    name = name.split(" ");
+    if (name.length === 1) {
+        firstName = name[0];
+        lastName = name[0];
+    }
+    else {
+        firstName = name[0];
+        lastName = name[1];
+    }
+
+    $.get('scripts/getEmployeeInfoFromSpecialistID.php', {firstname: firstName, lastName: lastname}, function(result) {
+        if (result) {
+            $('#add-employee-id').addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+            $('#add-employee-name').val(result.firstName + ' ' + result.lastName).addClass('is-valid').removeClass('is-invalid');
+            $('#add-employee-contact-number').val(result.contactNumber).addClass('is-valid').removeClass('is-invalid');
+        }
+        else {
+            $('#add-employee-id').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+            $('#add-employee-name').val("").removeClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');            ;
+            $('#add-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
         }
     }, 'json')
 }
@@ -86,8 +119,8 @@ function checkAddEmployeeDetails() {
         else {
             $('#add-employee-id').addClass('is-invalid').removeClass('is-valid')
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
-            $('#add-employee-name').val("").removeClass('is-valid').removeClass('is-invalid');
-            $('#add-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
+            $('#add-employee-name').val("").removeClass('is-valid').addClass('is-invalid');
+            $('#add-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
         }
     }, 'json')
 }

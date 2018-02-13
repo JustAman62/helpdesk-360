@@ -113,7 +113,7 @@ if (!isset($_SESSION['userid'])) {
                             <div class="input-group">
                                 <input type="text" class="form-control" id="create-employee-name" placeholder="John Smith">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Search</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkCreateEmployeeName()">Search</button>
                                     <!--TODO: implement name lookup-->
                                 </span>
                             </div>
@@ -287,6 +287,22 @@ if (!isset($_SESSION['userid'])) {
     </div>
 </div>
 
+<div class="modal fade" id="nameModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog pt-5" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 col-12">
+                        <div class="card">
+                            <div class="list-group list-group-flush" id="name-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 
 </body>
