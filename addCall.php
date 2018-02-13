@@ -12,15 +12,16 @@ if (!isset($_SESSION['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> New Call | Helpdesk 360 </title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
     <link rel="stylesheet" href="css/awesomplete.css" />
     <script src="js/awesomplete.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
 <!--    Date and time pickers-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.min.css">
@@ -85,7 +86,7 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="create-call-date">Call Date</label>
-                            <input type="date" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
+                            <input type="text" class="form-control" id="create-call-date" placeholder="dd/mm/yyyy">
                             <small class="text-secondary">Date the call was received</small>
                         </div>
                         <div class="form-group col-12 col-md-4">
@@ -203,7 +204,7 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                         <div class="col-12 col-md-4">
                             <label for="add-call-date">Call Date</label>
-                            <input type="date" class="form-control" id="add-call-date" placeholder="dd/mm/yyyy">
+                            <input type="text" class="form-control" id="add-call-date" placeholder="dd/mm/yyyy">
                             <small class="text-secondary">Date the call was received</small>
                         </div>
                         <div class="col-12 col-md-4">

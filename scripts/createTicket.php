@@ -24,8 +24,8 @@ $ticketstatus = $_REQUEST['ticketstatus'];
 $userid = $_SESSION['userid'];
 
 
-// $datetime = DateTime::createFromFormat('d/m/Y', $calldate);
-// $calldate = $datetime->format('Y-m-d');
+ $datetime = DateTime::createFromFormat('d/m/Y', $calldate);
+ $calldate = $datetime->format('Y-m-d');
 
 
 //Create a new ticket
