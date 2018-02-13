@@ -292,10 +292,8 @@ if (!isset($_SESSION['userid'])) {
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-4 col-12">
-                        <div class="card">
-                            <div class="list-group list-group-flush" id="name-list"></div>
-                        </div>
+                    <div class="col-12">
+                        <div class="list-group list-group-flush" id="name-list"></div>
                     </div>
                 </div>
             </div>

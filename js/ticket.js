@@ -198,7 +198,7 @@ function populateNotes(ticket, open=false) {
         plusIcon.setAttribute('class', 'icon-plus-circled');
         newNoteElement.appendChild(plusIcon);
         newNoteElement.appendChild(document.createTextNode(' Add New Note'));
-        $('#note-list').append(newNoteElement)
+        $('#note-list').append(newNoteElement);
 
         if (open)   $('.list-group button:nth-last-child(2)').trigger('click')
 

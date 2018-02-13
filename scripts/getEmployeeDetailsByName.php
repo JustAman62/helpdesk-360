@@ -9,6 +9,7 @@
 $firstName = $_REQUEST['firstname'];
 $lastName = $_REQUEST['lastname'];
 
+
 require 'connect.php';
 
 $sql = "SELECT * FROM Employees WHERE (firstName LIKE '%$firstName%') OR (lastName LIKE '%$lastName%')";
