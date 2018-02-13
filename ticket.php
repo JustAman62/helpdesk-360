@@ -79,35 +79,73 @@ if (!isset($_SESSION['userid'])) {
         <h3>Ticket Details</h3>
         <a class="ml-auto no-hover-underline" href="#">Edit <i class="icon icon-pencil"></i> </a>
     </div>
-    <dl class="row">
-        <dt class="col-4 col-md-3 text-right">Created On</dt>
-        <dd class="col-8 col-md-9" id="date-created">20/10/2017 12:48 (6 days)</dd>
+<!--        <dt class="col-4 col-md-3 text-right">Created On</dt>-->
+<!--        <dd class="col-8 col-md-9" id="date-created">20/10/2017 12:48 (6 days)</dd>-->
+    <form id="ticket-details">
+        <div class="form-group row">
+            <label for="date-created" class="col-2 col-md-3 col-form-label text-right">Email</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext" id="date-created" value="email@example.com">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Created By</dt>
-        <dd class="col-8 col-md-9" id="created-by">John (1003)</dd>
+        <div class="form-group row">
+            <label for="created-by" class="col-2 col-md-3 text-right col-form-label">Created By</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext" id="created-by" value="fwefwe">
+            </div>
+        </div>
 
 <!--TODO: Make this actually work-->
-        <dt class="col-4 col-md-3 text-right">Last Modified</dt>
-        <dd class="col-8 col-md-9" id="last-modified">21/10/2017 15:35</dd>
+        <div class="form-group row">
+            <label for="last-modified" class="col-2 col-md-3 text-right col-form-label">Last Modified</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext" id="last-modified" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Problem Type</dt>
-        <dd class="col-8 col-md-9" id="problem-type">No Problem Type Given</dd>
+        <div class="form-group row">
+            <label for="problem-type" class="col-2 col-md-3 text-right col-form-label">Problem Type</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext" id="problem-type" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Original Description</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="originalDescription" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+        <div class="form-group row">
+            <label for="original-description" class="col-2 col-md-3 text-right col-form-label">Original Description</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Serial Number</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="serialNumber" id="">No Serial Number Given</dd>
+        <div class="form-group row">
+            <label for="serial-number" class="col-2 col-md-3 text-right col-form-label">Serial Number</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="serialNumber" id="serial-number" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Unique Identifier</dt>
-        <dd class="col-8 col-md-9" id="">No Unique Identifier Given</dd>
+        <div class="form-group row">
+            <label for="unique-identifier" class="col-2 col-md-3 text-right col-form-label">Unique Identifier</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext" id="unique-identifier" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Software Licence Number</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="softwareLicenceNumber" id="">No Licence Number Given</dd>
+        <div class="form-group row">
+            <label for="software-licence-number" class="col-2 col-md-3 text-right col-form-label">Software Licence Number</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Operating System</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="operatingSystem" id="">No Operating System Given</dd>
-    </dl>
+        <div class="form-group row">
+            <label for="operating-system" class="col-2 col-md-3 text-right col-form-label">Operating System</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext auto-fill" data-autofill="operatingSystem" id="operating-system" value="Placeholder">
+            </div>
+        </div>
+    </form>
 
 
     <hr>
