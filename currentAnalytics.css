@@ -1,0 +1,8 @@
+.ct-series-a .ct-line {
+    stroke: #487eb0;
+}
+.ct-series-a .ct-point {
+    stroke: #40739e;
+    stroke-linecap: square;
+}
+
