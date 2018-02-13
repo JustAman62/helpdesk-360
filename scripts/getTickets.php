@@ -10,7 +10,9 @@
 
 require 'connect.php';
 
-$sql = "SELECT * FROM Tickets";
+$sort = $_REQUEST['sort'];
+
+$sql = "SELECT * FROM Tickets ORDER BY '$sort'";
 
 if (isset($_REQUEST['ticketnum'])) {
     $ticketnum = $_REQUEST['ticketnum'];
