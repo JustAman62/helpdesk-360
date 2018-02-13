@@ -278,7 +278,7 @@ function deleteNote() {
         $('#notesModal').modal('hide');
     });
 }
-
+let problemTypesList;
 function editTicket() {
     // let inputs = ;
 
@@ -289,13 +289,33 @@ function editTicket() {
     $('#edit-button').fadeOut(function() {
         $('#save-button').fadeIn();
     });
+
+//    Add awesomplete stuff to priority type, to match the add call GUI
+    let input = $('#problem-type');
+    problemTypesList = new Awesomplete(input[0]);
+    problemTypesList.minChars = 0;
+    $.get('scripts/getProblemTypes.php', function(result) {
+        console.log(result[0]);
+        let array = [];
+        for (let i in result) {
+            array.push(result[i][0]);
+        }
+        problemTypesList.list = array;
+    }, 'json');
+
+    input.on('focus', function() {
+        problemTypesList.evaluate();
+        problemTypesList.open();
+    });
 }
 
 function saveTicket() {
-    $('input.modifiable').fadeIn().addClass('form-control-plaintext').removeClass('form-control').attr('readonly');
+    $('input.modifiable').fadeIn().addClass('form-control-plaintext').removeClass('form-control').attr('readonly', true);
 
 
     $('#save-button').fadeOut(function() {
         $('#edit-button').fadeIn();
     });
+
+    problemTypesList.destroy();
 }
