@@ -12,13 +12,12 @@ require 'connect.php';
 
 $sort = $_REQUEST['sort'];
 
-$sql = "SELECT * FROM Tickets ORDER BY '$sort'";
+$sql = "SELECT * FROM Tickets ORDER BY $sort";
 
 if (isset($_REQUEST['ticketnum'])) {
     $ticketnum = $_REQUEST['ticketnum'];
     $sql = "SELECT * FROM Tickets WHERE ticketNumber = $ticketnum";
 }
-
 $result = $conn->query($sql);
 if ($conn->error) die($conn->error);
 
