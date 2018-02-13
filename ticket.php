@@ -58,7 +58,7 @@ if (!isset($_SESSION['userid'])) {
 <!-----------------------Content----------------------------->
 <div class="container mb-5 mt-3">
     <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Back</a>
-    <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
+    <h1 class="display-4 text-center">Ticket #<span id="ticket-number"></span></h1>
     <div class="container text-center" id="badge-list">
     </div>
 
@@ -67,13 +67,13 @@ if (!isset($_SESSION['userid'])) {
     <h3>Employee Details</h3>
     <dl class="row">
         <dt class="col-4 col-md-3 text-right">ID</dt>
-        <dd class="col-8 col-md-9" id="employee-id">1234</dd>
+        <dd class="col-8 col-md-9" id="employee-id">Placeholder</dd>
 
         <dt class="col-4 col-md-3 text-right">Name</dt>
-        <dd class="col-8 col-md-9" id="employee-name">Name</dd>
+        <dd class="col-8 col-md-9" id="employee-name">Placeholder</dd>
 
         <dt class="col-4 col-md-3 text-right">Contact Number</dt>
-        <dd class="col-8 col-md-9" id="employee-contact-number">07123 456789</dd>
+        <dd class="col-8 col-md-9" id="employee-contact-number">Placeholder</dd>
     </dl>
 
     <hr>
@@ -135,13 +135,6 @@ if (!isset($_SESSION['userid'])) {
         </div>
 
         <div class="form-group row">
-            <label for="unique-identifier" class="col-2 col-md-3 text-right col-form-label">Unique Identifier</label>
-            <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable" id="unique-identifier" value="">
-            </div>
-        </div>
-
-        <div class="form-group row">
             <label for="software-licence-number" class="col-2 col-md-3 text-right col-form-label">Software Licence Number</label>
             <div class="col-10 col-md-9">
                 <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="">
@@ -160,7 +153,18 @@ if (!isset($_SESSION['userid'])) {
     <hr>
 
     <h3>Specialist Details</h3>
+    <h6 id="no-specialist">No Specialist is currently assigned to this ticket</h6>
     <div id="specialistDetails">
+        <dl class="row">
+            <dt class="col-4 col-md-3 text-right">ID</dt>
+            <dd class="col-8 col-md-9" id="specialist-employee-id">Placeholder</dd>
+
+            <dt class="col-4 col-md-3 text-right">Name</dt>
+            <dd class="col-8 col-md-9" id="specialist-name">Placeholder</dd>
+
+            <dt class="col-4 col-md-3 text-right">Contact Number</dt>
+            <dd class="col-8 col-md-9" id="specialist-contact-number">Placeholder</dd>
+        </dl>
     </div>
     <hr>
 

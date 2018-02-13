@@ -7,7 +7,7 @@ $(function() {
     //Get the ticket number from the GET request when the page is loaded
     ticketNum = location.search.split('&')[0].split('=')[1];
 
-    $.get('scripts/getTickets.php', {ticketnum:ticketNum}, function(result) {
+    $.get('scripts/getTickets.php', {ticketnum:ticketNum, sort:'ticketNumber'}, function(result) {
         if (!result) {
             return;
         }
@@ -159,23 +159,21 @@ function populateTicketInfo(ticket) {
     let priorities = ['Low', 'Medium', 'High'];
     $('#priority').val(priorities[ticket.priority]);
 
+    $('#ticket-number').text(ticket.ticketNumber);
+
 //    Populate specialist details
     if (ticket.specialistID) {
-        let ID = document.createElement('h6');
-        ID.appendChild(document.createTextNode('ID: ' + ticket.specialistID));
-        let name = document.createElement('h6');
-        name.appendChild(document.createTextNode('Jane Doe'));
-        let number = document.createElement('h6');
-        number.appendChild(document.createTextNode('01234 123 321'));
-        let specialism = document.createElement('h6');
-        specialism.appendChild(document.createTextNode('Printing Issues'));
-
-        $('#specialistDetails').append(ID, name, number, specialism);
+        $('#no-specialist').hide();
+        $('#specialistDetails').show()
+        $.get('scripts/getEmployeeInfoFromSpecialistID.php', {specialistid: ticket.specialistID}, function(result) {
+            $('#specialist-employee-id').text(result.employeeID);
+            $('#specialist-name').text(result.firstName + ' ' + result.lastName);
+            $('#specialist-contact-number').text(result.contactNumber);
+        }, 'json');
     }
     else {
-        let notAssigned = document.createElement('h6');
-        notAssigned.appendChild(document.createTextNode('Not Assigned to a Specialist'));
-        $('#specialistDetails').append(notAssigned);
+        $('#no-specialist').show();
+        $('#specialistDetails').hide()
     }
 
 
