@@ -12,7 +12,6 @@ if (!isset($_SESSION['userid'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> Ticket - Helpdesk 360 </title>
-    <link rel="shortcut icon" href="img/helpdesk-icon.png">
 
     <link rel="stylesheet" href="css/awesomplete.css" />
     <script src="js/awesomplete.js"></script>
