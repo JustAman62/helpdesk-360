@@ -263,12 +263,13 @@ if (!isset($_SESSION['userid'])) {
                 <h3 class="my-0">Available specialists<i class="icon icon-search"></i></h3>
             </div>
                 <div class="row">
-                    <div class="col-md-4 col-12">
-                        <label>Select a specialist:</label>
-                        <div class="col-md-4 col-12">
-                          <input class="form-control custom-select" id="available-Specialists"/>
-                        </div>
+                    <div class="col-md-4 col-5">
+                        <label for="available-Specialists">Select a specialist:</label>
                     </div>
+                    <div class="col-md-4 col-7">
+                          <input class="form-control custom-select" id="available-Specialists"/>
+                    </div>
+
                 </div>
 
             </div>
