@@ -198,7 +198,11 @@ $.get('scripts/assignSpecialist.php', function(result) {
   for (let i in result) {
       array.push(result[i][0]);
   }
-  specialistList.list = array;
 
 }, 'json')
+
+  input.on('focus', function() {
+     specialistList.evaluate();
+     specialistList.open();
+});
 }
