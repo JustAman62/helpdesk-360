@@ -264,11 +264,9 @@ if (!isset($_SESSION['userid'])) {
             </div>
                 <div class="row">
                     <div class="col-md-4 col-12">
-                        <div class="card">
-                            <label>Select a specialist:</label>
-                            <div class="col-md-4 col-12">
-                              <input class="form-control custom-select" id="available-Specialists"/>
-                            </div>
+                        <label>Select a specialist:</label>
+                        <div class="col-md-4 col-12">
+                          <input class="form-control custom-select" id="available-Specialists"/>
                         </div>
                     </div>
                 </div>
