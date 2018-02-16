@@ -72,8 +72,8 @@ $(function() {
 });
 
 function assignSpecialist() {
-    input = $('#available-Specialists');
-    let specialistsList
+    let input = $('#available-Specialists');
+    let specialistsList = new Awesomplete(input[0]);
     $.get('scripts/assignSpecialist.php', function(result) {
         let array = [];
         for (let i in result) {
@@ -82,7 +82,7 @@ function assignSpecialist() {
 
     }, 'json');
 
-    input.on('focus', assignSpecialist()
+    input.on('focus', function assignSpecialist()
     {
         specialistList.evaluate();
         specialistList.open();
