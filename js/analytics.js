@@ -84,37 +84,55 @@ function charts2() {
         var bothDates = result1.reduce(function(arr, v, i) {
             return arr.concat(v, result2[i]);
         }, []);
+
         console.log(bothDates);
+        //var length = bothDates.length;
+        var filteredDates = [];
+        var unwantedDates = [];
+        var i =0;
+        function newDateArray(value) {
 
-        var oneDay = 1000*60*60*24;
 
-        for(i=0; i<bothDates.length; i+2){
+            if(value !== null){
+                if(bothDates[i+1] === null) {
+                    unwantedDates.push(value);
+                }
+                else{
+                    filteredDates.push(value);
+                }
+            }
+            i++;
+        }
+        bothDates.forEach(newDateArray);
+        var y = 0;
+        var z = 1;
+        var splitArray = [];
+        for(i=0; i<filteredDates.length, z<filteredDates.length, y<filteredDates.length; i++) {
 
-                var date1 = bothDates[i];
-                var date2 = bothDates[i + 1];
-                var date1MS = date1.getTime();
-                var date2MS = date2.getTime();
-                var differenceMS = date2MS - date1MS;
-        var resultDays = Math.round(differenceMS/oneDay);
-        console.log(resultDays);
+            splitArray.push(filteredDates[y].split("-"));
+            splitArray.push(filteredDates[z].split("-"));
+            y += 2;
+            z += 2;
+            console.log(y);
+            console.log(z);
+            console.log(filteredDates.length);
 
         }
-        /*var p0 = [];
-        var p1 = [];
-        var p2 = [];
+        console.log(splitArray);
+        var oneDay = 24*60*60*1000;
+        var finalDays = [];
+        for(f=0; f<splitArray.length-1; f+=2){
 
-        function splitPriority(value) {
-            if(value == 0){
-                p0.push(value);
-            }
-            if(value == 1){
-                p1.push(value);
-            }
-            if(value == 2){
-                p2.push(value);
-            }
+
+            var firstDate = new Date(splitArray[f+1][0], splitArray[f+1][1], splitArray[f+1][2]);
+            var secondDate = new Date (splitArray[f][0], splitArray[f][1], splitArray[f][2]);
+            var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+            finalDays.push(diffDays);
+
         }
-        result1.forEach(splitPriority);*/
+        console.log(finalDays);
+        console.log(Math.max.apply(Math, finalDays));
+
 
 
     }, 'json')
