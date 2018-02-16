@@ -265,18 +265,18 @@ if (!isset($_SESSION['userid'])) {
                 <br/>
                 <div class="row">
                     <div class="col-md-4 col-5">
-                        <label for="available-Specialists">Select a specialist:</label>
+                        <label for="available-Specialists">  Select a specialist:</label>
                     </div>
                     <div class="col-md-4 col-7">
                           <input class="form-control custom-select" id="available-Specialists"/>
                     </div>
                 </div>
                 <br/>
-            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-success" id="saveSpecialist">Assign</button>
             </div>
+        </div>
         </div>
     </div>
 </div>
