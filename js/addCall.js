@@ -189,7 +189,7 @@ function createNewCallNote() {
 
 }
 
-function (assignSpecialist() {
+function assignSpecialist() {
 
 input = $('#available-Specialists');
 let specialistsList
@@ -205,4 +205,4 @@ $.get('scripts/assignSpecialist.php', function(result) {
      specialistList.evaluate();
      specialistList.open();
 });
-});
+};
