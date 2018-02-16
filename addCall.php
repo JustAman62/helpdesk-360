@@ -113,7 +113,7 @@ if (!isset($_SESSION['userid'])) {
                             <div class="input-group">
                                 <input type="text" class="form-control" id="create-employee-name" placeholder="John Smith">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Search</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkCreateEmployeeName()">Search</button>
                                     <!--TODO: implement name lookup-->
                                 </span>
                             </div>
@@ -262,31 +262,39 @@ if (!isset($_SESSION['userid'])) {
             <div class="modal-header justify-between">
                 <h3 class="my-0">Available specialists<i class="icon icon-search"></i></h3>
             </div>
-            <!-- <div class="container mt-4">
+                <br/>
                 <div class="row">
-                    <div class="col-12">
-                        <h6 class="display-4 text-center">Specialists</h6>
+                    <div class="col-md-4 col-5" style="text-align: right">
+                        <label for="available-Specialists">Select a specialist:</label>
                     </div>
-                </div> -->
-                <div class="row">
-                    <div class="col-md-4 col-12">
-                        <div class="card">
-                            <div class="list-group list-group-flush" id="specialist-list"></div>
-                            <!-- <div class="card-footer text-muted small text-center">
-                                <span id="user-count"></span> Tickets
-                            </div> -->
-                        </div>
+                    <div class="col-md-4 col-7">
+                          <input class="form-control custom-select" id="available-Specialists"/>
                     </div>
                 </div>
-            </div>
+                <br/>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-success" id="saveSpecialist">Assign</button>
             </div>
         </div>
+        </div>
     </div>
 </div>
 
+<div class="modal fade" id="nameModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog pt-5" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group list-group-flush" id="name-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 
 </body>

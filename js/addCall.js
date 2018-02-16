@@ -1,4 +1,5 @@
 
+let nameList;
 
 $(function() {
     let input = $('#create-problem-type');
@@ -54,6 +55,20 @@ $(function() {
         format: 'dd/mm/yyyy'
     });
     $('#add-call-date').datepicker('setValue', new Date());
+
+    $('#nameModal').on('show.bs.modal', function(event) {
+        let list = $('#name-list');
+        list.html("");
+        //    Make a list item
+        for (let i in nameList) {
+            let listItem = document.createElement('button')
+            listItem.setAttribute('type', 'button');
+            listItem.setAttribute('class', 'list-group-item list-group-item-action');
+            listItem.setAttribute('onclick', "javascript:chooseName(" + i + ")");
+            listItem.appendChild(document.createTextNode(nameList[i].firstName + ' ' + nameList[i].lastName + '   ' + nameList[i].contactNumber));
+            $('#name-list').append(listItem);
+        }
+    });
 });
 
 function checkCreateEmployeeDetails() {
@@ -62,16 +77,56 @@ function checkCreateEmployeeDetails() {
         if (result) {
             $('#create-employee-id').addClass('is-valid').removeClass('is-invalid')
                 .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
-            $('#create-employee-name').val(result.firstName + ' ' + result.lastName).addClass('is-valid').removeClass('is-invalid');
+            $('#create-employee-name').val(result.firstName + ' ' + result.lastName).addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
             $('#create-employee-contact-number').val(result.contactNumber).addClass('is-valid').removeClass('is-invalid');
         }
         else {
             $('#create-employee-id').addClass('is-invalid').removeClass('is-valid')
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
-            $('#create-employee-name').val("").removeClass('is-valid').removeClass('is-invalid');
-            $('#create-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
+            $('#create-employee-name').val("").removeClass('is-valid').addClass('is-invalid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+            $('#create-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
         }
     }, 'json')
+}
+
+function checkCreateEmployeeName() {
+    let firstName = "";
+    let lastName = "";
+    let name = $('#create-employee-name').val();
+    name = name.split(" ");
+    if (name.length === 1) {
+        firstName = name[0];
+        lastName = name[0];
+    }
+    else {
+        firstName = name[0];
+        lastName = name[1];
+    }
+
+    $.get('scripts/getEmployeeDetailsByName.php', {firstname: firstName, lastname: lastName}, function(result) {
+        if (result) {
+            nameList = result;
+            $('#nameModal').modal('show');
+        }
+        else {
+            $('#create-employee-id').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+            $('#create-employee-name').val("").removeClass('is-valid').addClass('is-invalid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+            $('#create-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
+        }
+    }, 'json')
+}
+
+function chooseName(index) {
+    $('#create-employee-id').val(nameList[index].employeeID).addClass('is-valid').removeClass('is-invalid')
+        .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+    $('#create-employee-name').val(nameList[index].firstName + ' ' + nameList[index].lastName).addClass('is-valid').removeClass('is-invalid')
+        .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+    $('#create-employee-contact-number').val(nameList[index].contactNumber).addClass('is-valid').removeClass('is-invalid');
+    $('#nameModal').modal('hide');
 }
 
 function checkAddEmployeeDetails() {
@@ -86,8 +141,8 @@ function checkAddEmployeeDetails() {
         else {
             $('#add-employee-id').addClass('is-invalid').removeClass('is-valid')
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
-            $('#add-employee-name').val("").removeClass('is-valid').removeClass('is-invalid');
-            $('#add-employee-contact-number').val("").removeClass('is-valid').removeClass('is-invalid');
+            $('#add-employee-name').val("").removeClass('is-valid').addClass('is-invalid');
+            $('#add-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
         }
     }, 'json')
 }
@@ -132,4 +187,22 @@ function createNewCallNote() {
         if ($.isNumeric(result)) window.location.href='ticket.php?ticketNum=' + result;
     }, 'json');
 
+}
+
+function assignSpecialist() {
+
+input = $('#available-Specialists');
+let specialistsList
+$.get('scripts/assignSpecialist.php', function(result) {
+  let array = [];
+  for (let i in result) {
+      array.push(result[i][0]);
+  }
+
+}, 'json')
+
+  input.on('focus', function() {
+     specialistList.evaluate();
+     specialistList.open();
+});
 }

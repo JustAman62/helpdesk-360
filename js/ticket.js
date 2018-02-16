@@ -2,10 +2,12 @@
 let ticketInfo;
 
 $(function() {
+    $('#save-button').hide();
+
     //Get the ticket number from the GET request when the page is loaded
     ticketNum = location.search.split('&')[0].split('=')[1];
 
-    $.get('scripts/getTickets.php', {ticketnum:ticketNum}, function(result) {
+    $.get('scripts/getTickets.php', {ticketnum:ticketNum, sort:'ticketNumber'}, function(result) {
         if (!result) {
             return;
         }
@@ -59,7 +61,7 @@ function populateTicketInfo(ticket) {
     //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
         if (ticket[element.dataset.autofill]) {
-            element.innerHTML = ticket[element.dataset.autofill];
+            $(element).val(ticket[element.dataset.autofill]);
         }
     });
 
@@ -68,7 +70,7 @@ function populateTicketInfo(ticket) {
         $('#employee-id').text(result.employeeID);
         $('#employee-name').text(result.firstName + ' ' + result.lastName);
         $('#employee-contact-number').text(result.contactNumber.substr(0, 5) + ' ' + result.contactNumber.substr(5));
-    }, 'json')
+    }, 'json');
 
     //Add badges for if the ticket if open or closed
     if (ticket.ticketStatus == 0) {
@@ -142,35 +144,36 @@ function populateTicketInfo(ticket) {
 
 //    Populate Created By Field
     $.get('scripts/getUserDetailsByID.php',{userid:ticket.userID}, function(result) {
-        $('#created-by').text(result.firstName + ' ' + result.lastName + ' (' + result.userID + ')');
+        $('#created-by').val(result.firstName + ' ' + result.lastName + ' (' + result.userID + ')');
     }, 'json');
 
 //    Populate problem type field
 
     $.get('scripts/findProblemTypeName.php',{problemtypeid:ticket.problemTypeID}, function(result) {
-        $('#problem-type').text(result[0].problemTypeName)
+        $('#problem-type').val(result[0].problemTypeName)
     }, 'json');
 
 //    Populate other fields
-    $('#date-created').html(formatDate(ticket.dateCreated));
+    $('#date-created').val(formatDate(ticket.dateCreated));
+
+    let priorities = ['Low', 'Medium', 'High'];
+    $('#priority').val(priorities[ticket.priority]);
+
+    $('#ticket-number').text(ticket.ticketNumber);
 
 //    Populate specialist details
     if (ticket.specialistID) {
-        let ID = document.createElement('h6');
-        ID.appendChild(document.createTextNode('ID: ' + ticket.specialistID));
-        let name = document.createElement('h6');
-        name.appendChild(document.createTextNode('Jane Doe'));
-        let number = document.createElement('h6');
-        number.appendChild(document.createTextNode('01234 123 321'));
-        let specialism = document.createElement('h6');
-        specialism.appendChild(document.createTextNode('Printing Issues'));
-
-        $('#specialistDetails').append(ID, name, number, specialism);
+        $('#no-specialist').hide();
+        $('#specialistDetails').show()
+        $.get('scripts/getEmployeeInfoFromSpecialistID.php', {specialistid: ticket.specialistID}, function(result) {
+            $('#specialist-employee-id').text(result.employeeID);
+            $('#specialist-name').text(result.firstName + ' ' + result.lastName);
+            $('#specialist-contact-number').text(result.contactNumber);
+        }, 'json');
     }
     else {
-        let notAssigned = document.createElement('h6');
-        notAssigned.appendChild(document.createTextNode('Not Assigned to a Specialist'));
-        $('#specialistDetails').append(notAssigned);
+        $('#no-specialist').show();
+        $('#specialistDetails').hide()
     }
 
 
@@ -195,7 +198,7 @@ function populateNotes(ticket, open=false) {
         plusIcon.setAttribute('class', 'icon-plus-circled');
         newNoteElement.appendChild(plusIcon);
         newNoteElement.appendChild(document.createTextNode(' Add New Note'));
-        $('#note-list').append(newNoteElement)
+        $('#note-list').append(newNoteElement);
 
         if (open)   $('.list-group button:nth-last-child(2)').trigger('click')
 
@@ -275,4 +278,64 @@ function deleteNote() {
         //    Close the modal
         $('#notesModal').modal('hide');
     });
+}
+
+let problemTypesList;
+function editTicket() {
+    // let inputs = ;
+
+    $('input.modifiable').fadeOut(function () {
+        $(this).fadeIn().addClass('form-control').removeClass('form-control-plaintext').removeAttr('readonly');
+    });
+
+    $('#edit-button').fadeOut(function() {
+        $('#save-button').fadeIn();
+    });
+
+//    Add awesomplete stuff to priority type, to match the add call GUI
+    let input = $('#problem-type');
+    problemTypesList = new Awesomplete(input[0]);
+    problemTypesList.minChars = 0;
+    $.get('scripts/getProblemTypes.php', function(result) {
+        console.log(result[0]);
+        let array = [];
+        for (let i in result) {
+            array.push(result[i][0]);
+        }
+        problemTypesList.list = array;
+    }, 'json');
+
+    input.on('focus', function() {
+        problemTypesList.evaluate();
+        problemTypesList.open();
+    });
+}
+
+function saveTicket() {
+    $('input.modifiable').fadeIn().addClass('form-control-plaintext').removeClass('form-control').attr('readonly', true);
+
+
+    $('#save-button').fadeOut(function() {
+        $('#edit-button').fadeIn();
+    });
+
+    problemTypesList.destroy();
+
+    let priority = $('#priority').val();
+
+    if (priority === "Low") priority = 0;
+    if (priority === "Medium") priority = 1;
+    if (priority === "High") priority = 2;
+
+    $.get('scripts/updateTicket.php', {
+        ticketnumber: ticketInfo.ticketNumber,
+        priority: priority,
+        problemtype: $('#problem-type').val(),
+        operatingsystem: $('#operating-system').val(),
+        problemdescription: $('#original-description').val(),
+        licencenumber: $('#software-licence-number').val() === "" ? 'NULL' : $('#software-licence-number').val(),
+        serialnumber: $('#serial-number').val() === "" ? 'NULL' : $('#serial-number').val(),
+    }, function(result) {
+
+    }, 'json');
 }

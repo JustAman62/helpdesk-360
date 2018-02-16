@@ -28,7 +28,7 @@ function resizeGridItem(item){
 
 function getTicketList(){
 
-    $.get('scripts/getTickets.php', function(result) {
+    $.get('scripts/getTickets.php', {sort: 'ticketNumber'}, function(result) {
         ticketList = result;
         showTickets();
     }, 'json');

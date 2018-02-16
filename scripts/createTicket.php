@@ -34,7 +34,7 @@ $sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problem
 $result = $conn->query($sql);
 if ($conn->error) die ($conn->error);
 
-$problemtypeid = $result->fetch_row()[0]+1;
+$problemtypeid = $result->fetch_row()[0];
 
 //    Find the max ticket number, so a new ticket can be added
 $sql = "SELECT MAX(ticketNumber) FROM Tickets";

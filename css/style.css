@@ -56,4 +56,7 @@
   line-height: 1.2rem !important;
   margin-right: -9px; }
 
+#ticket-details > div > label {
+  font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */

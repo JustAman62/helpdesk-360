@@ -13,6 +13,9 @@ if (!isset($_SESSION['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> Ticket - Helpdesk 360 </title>
 
+    <link rel="stylesheet" href="css/awesomplete.css" />
+    <script src="js/awesomplete.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
@@ -55,7 +58,7 @@ if (!isset($_SESSION['userid'])) {
 <!-----------------------Content----------------------------->
 <div class="container mb-5 mt-3">
     <a class="no-hover-underline" href="javascript:history.back()"><i class="icon icon-left-open-big"></i>Back</a>
-    <h1 class="display-4 text-center">Ticket #<span class="auto-fill" data-autofill="ticketNumber"></span></h1>
+    <h1 class="display-4 text-center">Ticket #<span id="ticket-number"></span></h1>
     <div class="container text-center" id="badge-list">
     </div>
 
@@ -64,56 +67,104 @@ if (!isset($_SESSION['userid'])) {
     <h3>Employee Details</h3>
     <dl class="row">
         <dt class="col-4 col-md-3 text-right">ID</dt>
-        <dd class="col-8 col-md-9" id="employee-id">1234</dd>
+        <dd class="col-8 col-md-9" id="employee-id">Placeholder</dd>
 
         <dt class="col-4 col-md-3 text-right">Name</dt>
-        <dd class="col-8 col-md-9" id="employee-name">Name</dd>
+        <dd class="col-8 col-md-9" id="employee-name">Placeholder</dd>
 
         <dt class="col-4 col-md-3 text-right">Contact Number</dt>
-        <dd class="col-8 col-md-9" id="employee-contact-number">07123 456789</dd>
+        <dd class="col-8 col-md-9" id="employee-contact-number">Placeholder</dd>
     </dl>
 
     <hr>
 
     <div class="d-flex mb-3">
         <h3>Ticket Details</h3>
-        <a class="ml-auto no-hover-underline" href="#">Edit <i class="icon icon-pencil"></i> </a>
+        <a class="ml-auto no-hover-underline" id="edit-button" href="javascript:editTicket()">Edit <i class="icon icon-pencil"></i> </a>
+        <a class="ml-auto no-hover-underline" id="save-button" href="javascript:saveTicket()">Save <i class="icon icon-pencil"></i> </a>
     </div>
-    <dl class="row">
-        <dt class="col-4 col-md-3 text-right">Created On</dt>
-        <dd class="col-8 col-md-9" id="date-created">20/10/2017 12:48 (6 days)</dd>
+    <form id="ticket-details">
+        <div class="form-group row">
+            <label for="date-created" class="col-2 col-md-3 col-form-label text-right">Created On</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="date-created" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Created By</dt>
-        <dd class="col-8 col-md-9" id="created-by">John (1003)</dd>
+        <div class="form-group row">
+            <label for="created-by" class="col-2 col-md-3 text-right col-form-label">Created By</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext" id="created-by" value="fwefwe">
+            </div>
+        </div>
 
 <!--TODO: Make this actually work-->
-        <dt class="col-4 col-md-3 text-right">Last Modified</dt>
-        <dd class="col-8 col-md-9" id="last-modified">21/10/2017 15:35</dd>
+        <div class="form-group row">
+            <label for="last-modified" class="col-2 col-md-3 text-right col-form-label">Last Modified</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext" id="last-modified" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Problem Type</dt>
-        <dd class="col-8 col-md-9" id="problem-type">No Problem Type Given</dd>
+        <div class="form-group row">
+            <label for="problem-type" class="col-2 col-md-3 text-right col-form-label">Problem Type</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="problem-type" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Original Description</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="originalDescription" id="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam deserunt error est hic in, nihil perspiciatis provident quasi qui quis quod recusandae sequi suscipit voluptates. Eveniet nisi recusandae voluptatem!</dd>
+        <div class="form-group row">
+            <label for="priority" class="col-2 col-md-3 text-right col-form-label">Priority</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable" id="priority" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Serial Number</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="serialNumber" id="">No Serial Number Given</dd>
+        <div class="form-group row">
+            <label for="original-description" class="col-2 col-md-3 text-right col-form-label">Original Description</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Unique Identifier</dt>
-        <dd class="col-8 col-md-9" id="">No Unique Identifier Given</dd>
+        <div class="form-group row">
+            <label for="serial-number" class="col-2 col-md-3 text-right col-form-label">Serial Number</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="serialNumber" id="serial-number" value="">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Software Licence Number</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="softwareLicenceNumber" id="">No Licence Number Given</dd>
+        <div class="form-group row">
+            <label for="software-licence-number" class="col-2 col-md-3 text-right col-form-label">Software Licence Number</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="">
+            </div>
+        </div>
 
-        <dt class="col-4 col-md-3 text-right">Operating System</dt>
-        <dd class="col-8 col-md-9 auto-fill" data-autofill="operatingSystem" id="">No Operating System Given</dd>
-    </dl>
+        <div class="form-group row">
+            <label for="operating-system" class="col-2 col-md-3 text-right col-form-label">Operating System</label>
+            <div class="col-10 col-md-9">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="operatingSystem" id="operating-system" value="Placeholder">
+            </div>
+        </div>
+    </form>
 
 
     <hr>
 
     <h3>Specialist Details</h3>
+    <h6 id="no-specialist">No Specialist is currently assigned to this ticket</h6>
     <div id="specialistDetails">
+        <dl class="row">
+            <dt class="col-4 col-md-3 text-right">ID</dt>
+            <dd class="col-8 col-md-9" id="specialist-employee-id">Placeholder</dd>
+
+            <dt class="col-4 col-md-3 text-right">Name</dt>
+            <dd class="col-8 col-md-9" id="specialist-name">Placeholder</dd>
+
+            <dt class="col-4 col-md-3 text-right">Contact Number</dt>
+            <dd class="col-8 col-md-9" id="specialist-contact-number">Placeholder</dd>
+        </dl>
     </div>
     <hr>
 
