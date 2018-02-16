@@ -265,7 +265,7 @@ if (!isset($_SESSION['userid'])) {
                 <br/>
                 <div class="row">
                     <div class="col-md-4 col-5">
-                        <label for="available-Specialists">  Select a specialist:</label>
+                        <label for="available-Specialists" style="text-align: right">Select a specialist:</label>
                     </div>
                     <div class="col-md-4 col-7">
                           <input class="form-control custom-select" id="available-Specialists"/>
