@@ -74,7 +74,8 @@ $(function() {
 function assignSpecialist() {
     let input = $('#available-Specialists');
     let specialistsList = new Awesomplete(input[0]);
-    $.get('scripts/assignSpecialist.php', function(result) {
+    specialistsList.minChars = 0;
+    $.get('scripts/assignSpecialist.php', function assignSpecialist(result) {
         let array = [];
         for (let i in result) {
             array.push(result[i][0]);
@@ -88,6 +89,20 @@ function assignSpecialist() {
         specialistList.open();
     });
 }
+problemTypesList.minChars = 0;
+$.get('scripts/getProblemTypes.php', function(result) {
+    console.log(result[0]);
+    let array = [];
+    for (let i in result) {
+        array.push(result[i][0]);
+    }
+    problemTypesList.list = array;
+}, 'json');
+
+input.on('focus', function() {
+    problemTypesList.evaluate();
+    problemTypesList.open();
+});
 
 function checkCreateEmployeeDetails() {
     let employeeID = $('#create-employee-id').val();
