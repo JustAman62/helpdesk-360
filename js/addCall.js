@@ -191,7 +191,7 @@ function createNewCallNote() {
 
 function assignSpecialist() {
 
-input = $('#create-OS');
+input = $('#available-Specialists');
 let specialistsList
 $.get('scripts/assignSpecialist.php', function(result) {
   let array = [];
