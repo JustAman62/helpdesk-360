@@ -262,6 +262,7 @@ if (!isset($_SESSION['userid'])) {
             <div class="modal-header justify-between">
                 <h3 class="my-0">Available specialists<i class="icon icon-search"></i></h3>
             </div>
+                <br/>
                 <div class="row">
                     <div class="col-md-4 col-5">
                         <label for="available-Specialists">Select a specialist:</label>
@@ -269,7 +270,7 @@ if (!isset($_SESSION['userid'])) {
                     <div class="col-md-4 col-7">
                           <input class="form-control custom-select" id="available-Specialists"/>
                     </div>
-
+                    <br/>
                 </div>
 
             </div>
