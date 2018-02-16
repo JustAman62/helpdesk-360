@@ -201,7 +201,7 @@ $.get('scripts/assignSpecialist.php', function(result) {
 
 }, 'json')
 
-  input.on('focus', function() {
+  input.on('focus', assignSpecialist() {
      specialistList.evaluate();
      specialistList.open();
 });
