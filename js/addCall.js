@@ -71,6 +71,24 @@ $(function() {
     });
 });
 
+function assignSpecialist() {
+    input = $('#available-Specialists');
+    let specialistsList
+    $.get('scripts/assignSpecialist.php', function(result) {
+        let array = [];
+        for (let i in result) {
+            array.push(result[i][0]);
+        }
+
+    }, 'json');
+
+    input.on('focus', assignSpecialist()
+    {
+        specialistList.evaluate();
+        specialistList.open();
+    });
+}
+
 function checkCreateEmployeeDetails() {
     let employeeID = $('#create-employee-id').val();
     $.get('scripts/checkDetails.php', {employeeid: employeeID}, function(result) {
@@ -189,20 +207,3 @@ function createNewCallNote() {
 
 }
 
-function assignSpecialist() {
-
-input = $('#available-Specialists');
-let specialistsList
-$.get('scripts/assignSpecialist.php', function(result) {
-  let array = [];
-  for (let i in result) {
-      array.push(result[i][0]);
-  }
-
-}, 'json');
-
-  input.on('focus', assignSpecialist() {
-     specialistList.evaluate();
-     specialistList.open();
-});
-}
