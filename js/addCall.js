@@ -199,10 +199,10 @@ $.get('scripts/assignSpecialist.php', function(result) {
       array.push(result[i][0]);
   }
 
-}, 'json')
+}, 'json');
 
   input.on('focus', assignSpecialist() {
      specialistList.evaluate();
      specialistList.open();
 });
-};
+}

@@ -184,7 +184,7 @@ if (!isset($_SESSION['userid'])) {
                     </div>
 
                     <div class="row justify-content-center col-12">
-                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal" onclick="assignSpecialist();">Assign to specialist</button>
+                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal" onclick="assignSpecialist()">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
                         <button class="btn btn-primary col-md-4 my-5" type="button" onclick="createNewTicket()">Create Ticket</button>
