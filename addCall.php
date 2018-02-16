@@ -270,9 +270,8 @@ if (!isset($_SESSION['userid'])) {
                     <div class="col-md-4 col-7">
                           <input class="form-control custom-select" id="available-Specialists"/>
                     </div>
-                    <br/>
                 </div>
-
+                <br/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
