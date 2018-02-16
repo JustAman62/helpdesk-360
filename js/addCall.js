@@ -188,3 +188,17 @@ function createNewCallNote() {
     }, 'json');
 
 }
+
+function assignSpecialist() {
+
+input = $('#create-OS');
+let specialistsList
+$.get('scripts/assignSpecialist.php', function(result) {
+  let array = [];
+  for (let i in result) {
+      array.push(result[i][0]);
+  }
+  specialistList.list = array;
+
+}, 'json')
+}
