@@ -89,20 +89,6 @@ function assignSpecialist() {
         specialistList.open();
     });
 }
-problemTypesList.minChars = 0;
-$.get('scripts/getProblemTypes.php', function(result) {
-    console.log(result[0]);
-    let array = [];
-    for (let i in result) {
-        array.push(result[i][0]);
-    }
-    problemTypesList.list = array;
-}, 'json');
-
-input.on('focus', function() {
-    problemTypesList.evaluate();
-    problemTypesList.open();
-});
 
 function checkCreateEmployeeDetails() {
     let employeeID = $('#create-employee-id').val();
