@@ -88,8 +88,6 @@ if (!isset($_SESSION['userid'])) {
     </div>
 
 
-</div>
-
 
 
 </body>

@@ -14,7 +14,8 @@ if (!isset($_SESSION['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Analytics - Helpdesk 360</title>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
@@ -33,7 +34,7 @@ if (!isset($_SESSION['userid'])) {
     <script src="js/analytics.js"></script>
 
 </head>
-<body class="bg-light" onload="charts()">
+<body class="bg-light" >
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
@@ -67,11 +68,25 @@ if (!isset($_SESSION['userid'])) {
             <h1 class="display-4 text-center mt-4" style="font-size: 4em">Current Analytics</h1>
         </div>
     </div>
+    <div class="d-flex justify-content-center w-100 flex-wrap">
+        <div class="btn-group-toggle btn-group m-1" role="group">
+            <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="charts()" id="Priority">Priority Analytics</button>
+            <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="charts2()" id="Time">Time to close tickets</button>
+        </div>
+
+    </div>
+    <script>
+        $(function() {
+            $( "#Priority" ).click(function() {
+                $( "#graphFrame" ).toggle();
+            });
+        });
+    </script>
 
 </div>
 <div class="col-12 col-md-8 mx-auto">
 
-<div class="ct-chart ct-double-octave"></div>
+<div id ="graphFrame" class="ct-chart ct-double-octave"></div>
 </div>
 
 
