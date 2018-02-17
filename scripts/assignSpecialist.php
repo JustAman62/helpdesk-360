@@ -36,4 +36,3 @@ $result1 = $conn->query($sql1);
 if ($conn->error) die($conn->error);
 
 echo json_encode($result1->fetch_all());
-console.log(json_encode($result1->fetch_all());)
