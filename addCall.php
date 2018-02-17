@@ -181,14 +181,6 @@ if (!isset($_SESSION['userid'])) {
                             <textarea name="" id="create-notes" class="form-control w-100"></textarea>
                         </div>
                     </div>
-                    <div class="row mt-4">
-                        <div class="col-md-4 col-5">
-                            <label for="available-Specialists">Select a specialist:</label>
-                        </div>
-                        <div class="col-md-4 col-7">
-                              <input class="form-control custom-select" id="available-Specialists"/>
-                        </div>
-                    </div>
                     <div class="row justify-content-center col-12">
                         <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
@@ -262,7 +254,7 @@ if (!isset($_SESSION['userid'])) {
 </div>
 
 <!-- Modal for assign to specialist -->
-<!-- <div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
@@ -285,7 +277,7 @@ if (!isset($_SESSION['userid'])) {
         </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <div class="modal fade" id="nameModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
