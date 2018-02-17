@@ -73,12 +73,11 @@ $(function() {
     input = $('#available-Specialists');
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
-    $.get('scripts/assignSpecialist.php', function(result) {
+    $.get('scripts/assignSpecialist.php', {userid: userID, problems: Problems}, function(result) {
        console.log("hey");
        let array1 = [];
        for (let i in result) {
-         var result1 = result[i].userID.concat(" ", result[i].Problems);
-         array1.push(result1);
+           array1.push(result[i]);
        }
        specialistList.list = array1;
     }, 'json');
@@ -104,6 +103,20 @@ function checkCreateEmployeeDetails() {
             $('#create-employee-name').val("").removeClass('is-valid').addClass('is-invalid')
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
             $('#create-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
+        }
+    }, 'json')
+}
+
+function checkSoftware() {
+    let licenceNumber = $('#create-licence-number').val();
+    $.get('scripts/checkLicence.php', {licencenumber: licenceNumber}, function(result) {
+        if (result) {
+            $('#create-licence-number').addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+        }
+        else {
+            $('#create-licence-number').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
         }
     }, 'json')
 }
