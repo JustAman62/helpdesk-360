@@ -69,14 +69,11 @@ $(function() {
             $('#name-list').append(listItem);
         }
     });
-});
-
-function assignSpecialist() {
 
     let input = $('#available-Specialists');
     let specialistsList = new Awesomplete(input[0]);
     specialistsList.minChars = 0;
-    $.get('scripts/assignSpecialist.php', assignSpecialist(result) {
+    $.get('scripts/assignSpecialist.php', function(result) {
         let array = [];
         for (let i in result) {
             array.push(result[i][0]);
@@ -84,12 +81,13 @@ function assignSpecialist() {
 
     }, 'json');
 
-    input.on('focus', assignSpecialist()
+    input.on('focus', function()
     {
-       specialistList.evaluate();
-       specialistList.open();
+        specialistList.evaluate();
+        specialistList.open();
     });
-}
+    }
+});
 
 function checkCreateEmployeeDetails() {
     let employeeID = $('#create-employee-id').val();
