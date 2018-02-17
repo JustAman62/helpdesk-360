@@ -29,7 +29,7 @@ function createTicket(index, tickets) {
     let ticketHeaderContainer = createNewElement('div', 'ticket-header justify-content-between');
 
     let ticketHeading = createNewElement('h5');
-    ticketHeading.append(document.createTextNode('Ticket #' + ticket.ticketNumber));
+    ticketHeading.append(document.createTextNode('Problem Type' + ticket.problemType));
 
     let headingBadge = document.createElement('h5');
     let badge = createNewElement('span', 'badge');
