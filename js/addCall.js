@@ -77,12 +77,8 @@ $(function() {
        console.log("hey");
        let array1 = [];
        for (let i in result) {
-<<<<<<< HEAD
-           array1.push(result[i]);
-=======
          var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
          array1.push(result1);
->>>>>>> 03a9b0bc60fbb631d13c6e528b971266d800ed3d
        }
        specialistList.list = array1;
     }, 'json');
