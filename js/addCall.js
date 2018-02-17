@@ -77,7 +77,7 @@ $(function() {
        console.log("hey");
        let array1 = [];
        for (let i in result) {
-         var result1 = JSON.stringify(result[i]);
+         var result1 = JSON.stringify(result[i][0]);
          array1.push(result1);
        }
        specialistList.list = array1;
