@@ -262,7 +262,7 @@ if (!isset($_SESSION['userid'])) {
 </div>
 
 <!-- Modal for assign to specialist -->
-<div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
+<!-- <div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
@@ -285,7 +285,7 @@ if (!isset($_SESSION['userid'])) {
         </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="modal fade" id="nameModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
