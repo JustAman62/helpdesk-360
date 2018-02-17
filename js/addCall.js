@@ -70,6 +70,7 @@ $(function() {
         }
     });
 
+
     let input = $('#available-Specialists');
     let specialistsList = new Awesomplete(input[0]);
     specialistsList.minChars = 0;
@@ -85,8 +86,8 @@ $(function() {
     {
         specialistList.evaluate();
         specialistList.open();
-    });
     }
+  );
 });
 
 function checkCreateEmployeeDetails() {
