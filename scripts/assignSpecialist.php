@@ -13,6 +13,7 @@ while($row = $result->fetch_object()) {
     $rows[]=$row;
 }
 
+console.log($problemtypeid);
 echo json_encode($rows);
 
 $sql1 = "SELECT Tbl1.userID, Tbl1.Problems
@@ -35,3 +36,4 @@ $result1 = $conn->query($sql1);
 if ($conn->error) die($conn->error);
 
 echo json_encode($result1->fetch_all());
+console.log(json_encode($result1->fetch_all());)
