@@ -20,6 +20,6 @@ if ($conn->error) die ($conn->error);
 while($row = $result->fetch_object()) {
     $rows[]=$row;
 }
-console.log($result);
+console.log($rows);
 
 echo json_encode($rows);
