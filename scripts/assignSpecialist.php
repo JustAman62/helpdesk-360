@@ -2,19 +2,7 @@
 
 require 'connect.php';
 
-$problemtypeid = $_REQUEST['problemtypeid'];
-
-$sql = "SELECT * FROM ProblemTypes WHERE problemTypeID = $problemtypeid";
-
-$result = $conn->query($sql);
-if ($conn->error) die ($conn->error);
-
-while($row = $result->fetch_object()) {
-    $rows[]=$row;
-}
-
-console.log($problemtypeid);
-echo json_encode($rows);
+include 'findProblemTypeName';
 
 $sql1 = "SELECT Tbl1.userID, Tbl1.Problems
         FROM
@@ -29,7 +17,7 @@ $sql1 = "SELECT Tbl1.userID, Tbl1.Problems
         FROM Specialists) AS Tbl, Specialists, Users
         GROUP BY Tbl.userID) AS Tbl1, Specialists
         WHERE Tbl1.userID = Specialists.userID
-        AND Specialists.problemTypeID = $problemtypeid
+        AND Specialists.problemTypeID = $rows[0][1]
         ORDER BY Problems";
 
 $result1 = $conn->query($sql1);
