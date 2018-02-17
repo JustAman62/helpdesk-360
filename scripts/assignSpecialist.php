@@ -23,8 +23,13 @@ $sql = "SELECT Tbl1.userID, Tbl1.Problems
         FROM Specialists) AS Tbl, Specialists, Users
         GROUP BY Tbl.userID) AS Tbl1, Specialists
         WHERE Tbl1.userID = Specialists.userID
+<<<<<<< HEAD
         AND Specialists.problemTypeID = 1008
         ORDER BY Problems";
+=======
+        AND Specialists.problemTypeID = $problemtypeid
+        ORDER BY `Problems`";
+>>>>>>> f0343d6221dac54d93a097aa7a0d283330ce4217
 
         $result = $conn->query($sql);
         if ($conn->error) die($conn->error);
