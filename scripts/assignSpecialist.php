@@ -24,7 +24,7 @@ $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Proble
         GROUP BY Tbl.userID) AS Tbl1, Specialists, Employees
         WHERE Tbl1.userID = Specialists.userID
         AND Employees.employeeID = Specialists.userID
-        AND Specialists.problemTypeID = $problemtypeid
+        AND Specialists.problemTypeID = '$problemtypeid'
         ORDER BY Problems";
 
         $result = $conn->query($sql);
