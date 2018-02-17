@@ -112,7 +112,6 @@ function checkSoftware() {
     let licenceNumber = $('#create-licence-number').val();
     $.get('scripts/checkLicence.php', {licencenumber: licenceNumber}, function(result) {
         if (result) {
-            console.log("hello");
             $('#create-licence-number').addClass('is-valid').removeClass('is-invalid')
                 .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
         }
