@@ -75,19 +75,17 @@ $(function() {
     specialistList.minChars = 0;
     $.get('scripts/assignSpecialist.php', function(result) {
         console.log(result[0]);
-        let array = [];
+        let array1 = [];
         for (let i in result) {
             array.push(result[i][0]);
         }
-        specialistList.list = array;
+        specialistList.list = array1;
     }, 'json');
 
-    input.on('focus', function()
-    {
+    input.on('focus', function(){
         specialistList.evaluate();
         specialistList.open();
-    }
-  );
+    });
 });
 
 function checkCreateEmployeeDetails() {
