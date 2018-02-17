@@ -84,11 +84,11 @@ function assignSpecialist() {
 
     }, 'json');
 
-    //input.on('focus', function assignSpecialist()
-    //{
-    //    specialistList.evaluate();
-    //    specialistList.open();
-    //});
+    input.on('focus', function assignSpecialist()
+    {
+        specialistList.evaluate();
+       specialistList.open();
+    });
 }
 
 function checkCreateEmployeeDetails() {
