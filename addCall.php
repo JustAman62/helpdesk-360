@@ -158,7 +158,7 @@ if (!isset($_SESSION['userid'])) {
                                     <div class="input-group">
                                         <input type="text" id="create-serial-number" class="form-control w-100">
                                         <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button" onclick="checkSerialNumber()">Check</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkHardware()">Check</button>
                                 </span>
                                     </div>
                                 </div>
