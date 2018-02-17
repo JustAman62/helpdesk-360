@@ -23,5 +23,4 @@ $sql = "SELECT Tbl1.userID, Tbl1.Problems
 $result = $conn->query($sql);
 if ($conn->error) die($conn->error);
 
-echo json_encode($result->fetch_object());
-return;
+echo json_encode($result->fetch_all());
