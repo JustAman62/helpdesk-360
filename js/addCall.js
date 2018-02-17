@@ -109,6 +109,7 @@ function checkCreateEmployeeDetails() {
 }
 
 function checkSoftware() {
+    console.log("hello");
     let licenceNumber = $('#create-licence-number').val();
     $.get('scripts/checkLicence.php', {licencenumber: licenceNumber}, function(result) {
         if (result) {
