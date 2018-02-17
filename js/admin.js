@@ -1,4 +1,4 @@
-$(function(){
+$(function(){ 
     loadEmployeeList();
 
     $('#employeeModal').on('show.bs.modal', function(event) {
