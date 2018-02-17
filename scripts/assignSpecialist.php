@@ -2,15 +2,11 @@
 
 require 'connect.php';
 
-$problemtype = $_REQUEST['problemtype'];
+include 'findProblemTypeName.php';
 
-$sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problemtype'";
-$result = $conn->query($sql);
-if ($conn->error) die ($conn->error);
+$problemtypeid = JSON.stringify($rows);
 
-$problemtypeid = $result->fetch_row()[0];
-
-$sql = "SELECT Tbl1.userID, Tbl1.Problems
+$sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
         FROM
         (SELECT Tbl.userID, MAX(Tbl.Count) AS Problems
         FROM (SELECT Users.userID, COUNT(1) as Count
@@ -21,9 +17,10 @@ $sql = "SELECT Tbl1.userID, Tbl1.Problems
         UNION
         SELECT Specialists.userID, 0 AS Count
         FROM Specialists) AS Tbl, Specialists, Users
-        GROUP BY Tbl.userID) AS Tbl1, Specialists
+        GROUP BY Tbl.userID) AS Tbl1, Specialists, Employees
         WHERE Tbl1.userID = Specialists.userID
-        AND Specialists.problemTypeID = 1008
+        AND Employees.employeeID = Specialists.userID
+        AND Specialists.problemTypeID = '$problemtypeid'
         ORDER BY Problems";
 
         $result = $conn->query($sql);
