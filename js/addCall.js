@@ -71,7 +71,7 @@ $(function() {
     });
 
 
-    let input = $('#available-Specialists');
+    input = $('#available-Specialists');
     let specialistsList = new Awesomplete(input[0]);
     specialistsList.minChars = 0;
     $.get('scripts/assignSpecialist.php', function(result) {
