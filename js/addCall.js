@@ -77,7 +77,7 @@ $(function() {
        console.log("hey");
        let array1 = [];
        for (let i in result) {
-         var result1 = JSON.parse((result[i].userID).concat("       ").concat(result[i].Problems));
+         var result1 = JSON.parse(result[i].userID.concat("       ", result[i].Problems));
          array1.push(result1);
        }
        specialistList.list = array1;
