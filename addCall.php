@@ -246,15 +246,13 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                     </div>
                     <div class="row mt-4">
-                    <div class="row">
-                        <div class="col-md-4 col-5" style="text-align: right">
+                        <div class="col-md-4 col-5">
                             <label for="available-Specialists">Select a specialist:</label>
                         </div>
                         <div class="col-md-4 col-7">
                               <input class="form-control custom-select" id="available-Specialists"/>
                         </div>
                     </div>
-                  </div> 
                     <div class="row justify-content-center">
                         <button class="btn btn-primary col-12 col-md-4 my-5" type="button" onclick="createNewCallNote()">Add to ticket</button>
                     </div>
