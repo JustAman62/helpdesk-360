@@ -70,7 +70,6 @@ $(function() {
         }
     });
 
-
     input = $('#available-Specialists');
     let specialistsList = new Awesomplete(input[0]);
     specialistsList.minChars = 0;
