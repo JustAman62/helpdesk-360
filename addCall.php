@@ -262,7 +262,7 @@ if (!isset($_SESSION['userid'])) {
             </div>
                 <br/>
                 <div class="row">
-                    <div class="col-md-4 col-5000">
+                    <div class="col-md-8 col-8">
                           <input class="form-control custom-select" id="available-Specialists"/>
                     </div>
                 </div>
