@@ -3,6 +3,7 @@
 require 'connect.php';
 
 include 'findProblemTypeName';
+console.log($result);
 
 $sql1 = "SELECT Tbl1.userID, Tbl1.Problems
         FROM
@@ -17,7 +18,7 @@ $sql1 = "SELECT Tbl1.userID, Tbl1.Problems
         FROM Specialists) AS Tbl, Specialists, Users
         GROUP BY Tbl.userID) AS Tbl1, Specialists
         WHERE Tbl1.userID = Specialists.userID
-        AND Specialists.problemTypeID = $rows[0][1]
+        AND Specialists.problemTypeID = 1005
         ORDER BY Problems";
 
 $result1 = $conn->query($sql1);
