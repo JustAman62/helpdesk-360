@@ -4,7 +4,18 @@ require 'connect.php';
 
 $problemtypeid = $_REQUEST['problemtypeid'];
 
-$sql = "SELECT Tbl1.userID, Tbl1.Problems
+$sql = "SELECT * FROM ProblemTypes WHERE problemTypeID = $problemtypeid";
+
+$result = $conn->query($sql);
+if ($conn->error) die ($conn->error);
+
+while($row = $result->fetch_object()) {
+    $rows[]=$row;
+}
+
+echo json_encode($rows);
+
+$sql1 = "SELECT Tbl1.userID, Tbl1.Problems
         FROM
         (SELECT Tbl.userID, MAX(Tbl.Count) AS Problems
         FROM (SELECT Users.userID, COUNT(1) as Count
@@ -20,7 +31,7 @@ $sql = "SELECT Tbl1.userID, Tbl1.Problems
         AND Specialists.problemTypeID = $problemtypeid
         ORDER BY Problems";
 
-$result = $conn->query($sql);
+$result1 = $conn->query($sql1);
 if ($conn->error) die($conn->error);
 
-echo json_encode($result->fetch_all());
+echo json_encode($result1->fetch_all());
