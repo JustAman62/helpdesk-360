@@ -73,15 +73,15 @@ $(function() {
     input = $('#available-Specialists');
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
-    specialistList.list = ['1000','1005']
-    //$.get('scripts/assignSpecialist.php', function(result) {
-    //    console.log("hey");
-    //    let array1 = [];
-    //    for (let i in result) {
-    //        array1.push(result[i][0]);
-    //    }
-    //    specialistList.list = array1;
-    //}, 'json');
+    $.get('scripts/assignSpecialist.php', function(result) {
+        console.log("hey");
+       let array1 = [];
+        for (let i in result) {
+            array1.push(result[i]);
+        }
+        specialistList.list = array1;
+    }, 'json');
+
     input.on('focus', function(){
         specialistList.evaluate();
         specialistList.open();
