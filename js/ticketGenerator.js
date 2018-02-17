@@ -44,6 +44,7 @@ function createTicket(index, tickets) {
     else {
         badge.setAttribute('class', 'badge badge-primary');
         badge.append(document.createTextNode('Closed'));
+        let ticketHeaderContainer = createNewElement('div', 'ticket-header justify-content-between');
         let ticketHeading = createNewElement('h5');
         ticketHeading.append(document.createTextNode(ticket.problemType));
     }
