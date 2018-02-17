@@ -2,9 +2,10 @@
 
 require 'connect.php';
 
-$problemtypeid = $_REQUEST['problemtypeid'];
+include 'findProblemTypeName';
+console.log($result);
 
-$sql = "SELECT Tbl1.userID, Tbl1.Problems
+$sql1 = "SELECT Tbl1.userID, Tbl1.Problems
         FROM
         (SELECT Tbl.userID, MAX(Tbl.Count) AS Problems
         FROM (SELECT Users.userID, COUNT(1) as Count
@@ -17,11 +18,10 @@ $sql = "SELECT Tbl1.userID, Tbl1.Problems
         FROM Specialists) AS Tbl, Specialists, Users
         GROUP BY Tbl.userID) AS Tbl1, Specialists
         WHERE Tbl1.userID = Specialists.userID
-        AND Specialists.problemTypeID = $problemtypeid
+        AND Specialists.problemTypeID = 1005
         ORDER BY Problems";
 
-$result = $conn->query($sql);
+$result1 = $conn->query($sql1);
 if ($conn->error) die($conn->error);
 
-echo json_encode($result->fetch_object());
-return;
+echo json_encode($result1->fetch_all());
