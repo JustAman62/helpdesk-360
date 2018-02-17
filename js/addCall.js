@@ -73,7 +73,7 @@ $(function() {
     input = $('#available-Specialists');
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
-    $.get('scripts/assignSpecialist.php', function(result) {
+    $.get('scripts/assignSpecialist.php', {userID: userID}, function(result) {
        console.log("hey");
        let array1 = [];
        for (let i in result) {
