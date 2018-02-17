@@ -79,7 +79,7 @@ $(function() {
         for (let i in result) {
             array.push(result[i][0]);
         }
-
+        specialistList.list = array;
     }, 'json');
 
     input.on('focus', function()
