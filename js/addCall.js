@@ -122,6 +122,20 @@ function checkSoftware() {
     }, 'json')
 }
 
+function checkHardware() {
+    let serialNumber = $('#create-serial-number').val();
+    $.get('scripts/checkSerialNumber.php', {serialnumber: serialNumber}, function(result) {
+        if (result) {
+            $('#create-serial-number').addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+        }
+        else {
+            $('#create-serial-number').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+        }
+    }, 'json')
+}
+
 function checkCreateEmployeeName() {
     let firstName = "";
     let lastName = "";

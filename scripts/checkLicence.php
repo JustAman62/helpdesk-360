@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 
-// Check Employee ID
+// Check licence
 if ($_REQUEST['licencenumber']) {
     $licencenumber = $_REQUEST['licencenumber'];
     $sql = "SELECT * FROM Software WHERE licenceNumber = $licencenumber";
