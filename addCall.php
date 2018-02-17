@@ -189,7 +189,7 @@ if (!isset($_SESSION['userid'])) {
                         <div class="col-md-4 col-7">
                               <input class="form-control custom-select" id="available-Specialists"/>
                         </div>
-                    </div>
+                    </div>    
                     <div class="row justify-content-center col-12">
                         <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
                            <div class ="col-md-2">
