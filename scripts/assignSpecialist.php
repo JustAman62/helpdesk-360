@@ -8,7 +8,7 @@ $sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problem
 $result = $conn->query($sql);
 if ($conn->error) die ($conn->error);
 
-$problemtypeid = $result->fetch_row()[0];
+$problemtypeid = $result;
 
 $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
         FROM
