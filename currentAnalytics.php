@@ -15,7 +15,7 @@ if (!isset($_SESSION['userid'])) {
     <title>Analytics - Helpdesk 360</title>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/glyphs/css/glyph.css">
 
@@ -34,7 +34,7 @@ if (!isset($_SESSION['userid'])) {
     <script src="js/analytics.js"></script>
 
 </head>
-<body class="bg-light" >
+<body class="bg-light" onload="charts()" >
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">

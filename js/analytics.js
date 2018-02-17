@@ -7,8 +7,9 @@ var Priority0;
 var Priority1;
 var Priority2;
 function charts() {
-
+        console.log('1');
     $.get('scripts/getTickets.php', function(result){
+        console.log('2');
         //Getting Priority
         console.log(result);
         var result1 = result.map(a => a.priority);
@@ -65,15 +66,16 @@ function charts() {
         ];
 
         new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
-        }, 'json')
+        }, 'json');
 
 
 
 
 }
 function charts2() {
-
+        console.log('3');
     $.get('scripts/getTickets.php', function(result){
+        console.log('4');
         //Getting Priority
         //console.log(result);
         var result1 = result.map(b => b.dateCreated);
