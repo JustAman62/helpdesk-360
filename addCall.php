@@ -258,7 +258,7 @@ if (!isset($_SESSION['userid'])) {
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
-                <h3 class="my-0">Available specialists<i class="icon icon-search"></i></h3>
+                <h3 class="my-0">Available specialists<i class="icon icon-user"></i></h3>
             </div>
                 <br/>
                 <div class="row">
