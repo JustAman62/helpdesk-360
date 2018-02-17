@@ -5,3 +5,14 @@
     stroke: #40739e;
     stroke-linecap: square;
 }
+#empty {
+    display: none;
+}
+
+.ct-series-a .ct-bar {
+    /* Colour of your bars */
+    stroke: #40739e;
+    /* The width of your bars */
+    stroke-width: 60px;
+
+}

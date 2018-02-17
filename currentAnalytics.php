@@ -32,9 +32,11 @@ if (!isset($_SESSION['userid'])) {
 
     <script src="js/script.js"></script>
     <script src="js/analytics.js"></script>
+    <script src="js/analyticsDays.js"></script>
+    <script src="scripts/analyticsProblemType.js"></script>
 
 </head>
-<body class="bg-light" onload="charts()" >
+<body class="bg-light" >
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
@@ -69,19 +71,23 @@ if (!isset($_SESSION['userid'])) {
         </div>
     </div>
     <div class="d-flex justify-content-center w-100 flex-wrap">
-        <div class="btn-group-toggle btn-group m-1" role="group">
+        <!--<div class="btn-group-toggle btn-group m-1" role="group">
             <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="charts()" id="Priority">Priority Analytics</button>
             <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="charts2()" id="Time">Time to close tickets</button>
+        </div> -->
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+                <input type="checkbox" checked autocomplete="off" onchange="charts()" id = "Priority"> Priority
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" autocomplete="off" onchange="charts2()" id ="Time"> Days taken to close
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" autocomplete="off" onchange="charts3()" id ="ProblemType"> Problem Types
+            </label>
         </div>
 
     </div>
-    <script>
-        $(function() {
-            $( "#Priority" ).click(function() {
-                $( "#graphFrame" ).toggle();
-            });
-        });
-    </script>
 
 </div>
 <div class="col-12 col-md-8 mx-auto">
