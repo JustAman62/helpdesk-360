@@ -23,8 +23,8 @@ $sql = "SELECT Tbl1.userID, Tbl1.Problems
         FROM Specialists) AS Tbl, Specialists, Users
         GROUP BY Tbl.userID) AS Tbl1, Specialists
         WHERE Tbl1.userID = Specialists.userID
-        AND Specialists.problemTypeID = $problemtypeid
-        ORDER BY `Problems`";
+        AND Specialists.problemTypeID = 1008
+        ORDER BY Problems";
 
         $result = $conn->query($sql);
         if ($conn->error) die($conn->error);
