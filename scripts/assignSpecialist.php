@@ -8,7 +8,6 @@ $result = $conn->query($sql);
 if ($conn->error) die ($conn->error);
 
 $problemtypeid = $result->fetch_row()[0];
-console.log($problemtypeid);
 
 $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
         FROM
