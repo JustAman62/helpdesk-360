@@ -171,3 +171,32 @@ function createSoftwareItem(software) {
     }
     $('#software-list').append(item);
 }
+
+function loadHardwareList() {
+    $.get('././scripts/getFullHardwareDetails.php', function(result) {
+        $('#hardware-list').html("");
+        //Create list items for each hardware item returned in the query
+        for (let i in result) {
+            createHardwareItem(result[i]);
+        }
+
+        //Update the footer to show how many hardware is in the list
+        $('#hardware-count').text(result.length);
+
+    }, 'json');
+}
+
+function createHardwareItem(hardware) {
+    let item = document.createElement('button');
+    item.setAttribute('class', 'list-group-item list-group-item-action');
+    item.dataset.hardware = hardware.;
+    //item.dataset.toggle = 'modal';
+    //item.dataset.target = '#employeeModal';
+    item.append(document.createTextNode(hardware.name + ' ' + hardware.type + ' '));
+    if (hardware.licenceNumber) {
+        let userIcon = document.createElement('i');
+        userIcon.setAttribute('class', 'icon icon-user');
+        item.append(userIcon);
+    }
+    $('#hardware-list').append(item);
+}
