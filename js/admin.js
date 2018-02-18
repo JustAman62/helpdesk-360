@@ -191,6 +191,16 @@ function loadHardwareList() {
             createHardwareItem(result[i]);
         }
 
+        let addHardware = document.createElement('button');
+        addHardware.setAttribute('class', 'list-group-item list-group-item-action');
+        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        let plusSign = document.createElement('i');
+        plusSign.setAttribute('class', 'icon icon-plus-circled');
+        addHardware.append(plusSign);
+        addHardware.append(document.createTextNode(' Add Hardware'));
+
+        $('#hardware-list').append(addHardware);
+
         //Update the footer to show how many hardware is in the list
         $('#hardware-count').text(result.length);
 
