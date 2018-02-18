@@ -211,13 +211,9 @@ function createHardwareItem(hardware) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
     item.dataset.hardware = hardware.serialNumber;
-    //item.dataset.toggle = 'modal';
-    //item.dataset.target = '#employeeModal';
+    item.dataset.toggle = 'modal';
+    item.dataset.target = '#hardwareModal';
     item.append(document.createTextNode(hardware.make + '  ' + hardware.type + ' : ' + hardware.serialNumber));
-    if (hardware.licenceNumber) {
-        let userIcon = document.createElement('i');
-        //userIcon.setAttribute('class', 'icon icon-user');
-        item.append(userIcon);
-    }
+
     $('#hardware-list').append(item);
 }

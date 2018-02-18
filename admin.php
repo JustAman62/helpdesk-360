@@ -189,5 +189,44 @@ if (!isset($_SESSION['userid'])) {
     </div>
 </div>
 
+<div class="modal fade" id="softwareModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-between">
+                <h3 class="my-0">Edit User</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="employee-id" class="col-sm-4 col-form-label">Licence Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" readonly class="form-control-plaintext" id="employee-id" value="lala">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="first-name" class="col-sm-4 col-form-label">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="first-name" placeholder="John">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="last-name" class="col-sm-4 col-form-label">Type</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="last-name" placeholder="Smith">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-danger" onclick="deleteEmployee()">Delete Employee</button>
+                <div class="right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick="saveRecord()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
