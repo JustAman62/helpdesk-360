@@ -149,11 +149,10 @@ function populateTicketInfo(ticket) {
 
 //    Populate problem type field
 
-  if (ticket.problemTypeName) {
     $.get('scripts/findProblemTypeName.php',{problemtypeid:ticket.problemTypeID}, function(result) {
         $('#problem-type').val(result[0].problemTypeName)
     }, 'json');
-  }
+    
 //    Populate other fields
     $('#date-created').val(formatDate(ticket.dateCreated));
 
