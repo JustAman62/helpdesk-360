@@ -52,7 +52,7 @@ if (!isset($_SESSION['userid'])) {
                 <a class="nav-link" href="ticketList.php">View Tickets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="analytics.php">Analytics</a>
+                <a class="nav-link active" href="currentAnalytics.php">Analytics</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="admin.php">Admin</a>
@@ -67,7 +67,7 @@ if (!isset($_SESSION['userid'])) {
 <div class="container mt-4">
     <div class="row">
         <div class="col-12">
-            <h1 class="display-4 text-center mt-4" style="font-size: 4em">Current Analytics</h1>
+            <h1 class="display-4 text-center mt-4" style="font-size: 4em">Analytics</h1>
         </div>
     </div>
     <div class="d-flex justify-content-center w-100 flex-wrap">
@@ -85,9 +85,7 @@ if (!isset($_SESSION['userid'])) {
             <label class="btn btn-primary">
                 <input type="checkbox" autocomplete="off" onchange="charts3()" id ="ProblemType"> Problem Types
             </label>
-            <label class="btn btn-primary">
-                <input type="checkbox" autocomplete="off" onchange="clearBox('graphFrame')" id ="ProblemType"> Clear
-            </label>
+
         </div>
 
     </div>
