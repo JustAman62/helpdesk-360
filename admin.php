@@ -71,9 +71,33 @@ if (!isset($_SESSION['userid'])) {
                     <span id="user-count"></span> Employees
                 </div>
             </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="card">
+                <h5 class="card-header text-center">
+                    Employees
+                    <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
+                </h5>
+                <div class="list-group list-group-flush" id="user-list"></div>
+                <div class="card-footer text-muted small text-center">
+                    <span id="user-count"></span> Employees
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+              <div class="card">
+                  <h5 class="card-header text-center">
+                      Employees
+                      <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
+                  </h5>
+                  <div class="list-group list-group-flush" id="user-list"></div>
+                  <div class="card-footer text-muted small text-center">
+                      <span id="user-count"></span> Employees
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
-</div>
 
 
 
