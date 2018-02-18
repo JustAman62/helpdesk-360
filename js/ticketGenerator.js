@@ -94,3 +94,6 @@ function createNewElement(elementString, classString) {
     element.setAttribute('class', classString);
     return element;
 }
+
+    let specialistString = "Not Assigned";
+    if (ticket.specialistID) specialistString = ticket.specialistID
