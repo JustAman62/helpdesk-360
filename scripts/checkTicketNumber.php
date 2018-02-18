@@ -5,7 +5,7 @@ require 'connect.php';
 // Check Ticket Number
 if ($_REQUEST['ticketnumber']) {
     $ticketnumber = $_REQUEST['ticketnumber'];
-    $sql = "SELECT * FROM tickets WHERE ticketNumber = $ticketnumber";
+    $sql = "SELECT * FROM Tickets WHERE ticketNumber = $ticketnumber";
 
     $result = $conn->query($sql);
     if ($conn->error) die($conn->error);
