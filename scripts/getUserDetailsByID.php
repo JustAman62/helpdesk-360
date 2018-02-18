@@ -1,21 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: adhoot
- * Date: 03/02/2018
- * Time: 15:46
- * Gets all information for the users in the system, and outputs a json file with this information
- */
 
-require('connect.php');
+session_start();
+require 'connect.php';
 
-$userid = $_REQUEST['userid'];
+$sort = $_REQUEST['sort'];
 
-$sql = "SELECT * FROM Users LEFT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Users.userID = $userid";
+
+$sql = "SELECT Tickets.ticketNumber, Tickets.userID, Tickets.employeeID, Tickets.dateCreated, Tickets.dateClosed, Tickets.priority, Tickets.problemTypeID, Tickets.originalDescription, Tickets.specialistID, Tickets.ticketStatus, Tickets.serialNumber, Tickets.licenceNumber, Tickets.operatingSystem
+        FROM Tickets, Specialists, Employees
+        WHERE Specialists.specialistID = Tickets.specialistID
+        AND Employees.employeeID = Specialists.userID
+        AND Employees.employeeID = $userid";
 
 $result = $conn->query($sql);
-
 if ($conn->error) die($conn->error);
 
+while($row = $result->fetch_object()) {
+    $rows[]=$row;
+}
 
-echo json_encode($result->fetch_object());
+echo json_encode($rows);

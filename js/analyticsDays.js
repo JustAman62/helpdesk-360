@@ -73,11 +73,11 @@ function charts2() {
 
                 var uniqArr = Array.from(new Set(finalDays))
 
-
-                //console.log(uniqArr);
+                uniqArr.sort().map(String);
+                console.log(uniqArr.sort().map(String));
 
                 var data = {
-                    labels: uniqArr.sort(),
+                    labels: uniqArr.sort().map(String),
                     series: [counts]
                 };
 
@@ -101,8 +101,6 @@ function charts2() {
             }
             , 'json')
 
-
-
-
+charts4();
 
 }
