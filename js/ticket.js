@@ -175,6 +175,10 @@ function populateTicketInfo(ticket) {
         $('#no-specialist').show();
         $('#specialistDetails').hide()
     }
+<<<<<<< HEAD
+=======
+}
+>>>>>>> abb7495413cae822ba83854ec095974477e60e08
 
 // Set closed tickets to show problem problem type
   if (ticket.problemType) {
@@ -183,11 +187,7 @@ function populateTicketInfo(ticket) {
     }, 'json');
   }
 
-
-
-
 function populateNotes(ticket, open=false) {
-
 
     $.get('scripts/getNotes.php', {ticketnumber: ticket.ticketNumber}, function(result) {
         $('#note-list').html("");
@@ -211,8 +211,6 @@ function populateNotes(ticket, open=false) {
 
 
     }, 'json');
-
-
 }
 
 function makeNoteListItem(note) {
@@ -260,8 +258,6 @@ function addNewNote(text) {
     }, function(result) {
         populateNotes(ticketInfo, true);
     }, 'json');
-
-
 }
 
 function closeTicket() {
