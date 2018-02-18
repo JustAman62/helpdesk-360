@@ -64,7 +64,6 @@ if (!isset($_SESSION['userid'])) {
     <div class="row">
         <div class="col-12">
             <h1 class="text-center display-4">Specialist Homepage</h1>
-            <h4 class="text-center small">(#1005)</h4>
         </div>
     </div>
     <div class="row">
