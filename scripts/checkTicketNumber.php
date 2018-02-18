@@ -2,7 +2,7 @@
 
 require 'connect.php';
 
-// Check Employee ID
+// Check Ticket Number
 if ($_REQUEST['ticketnumber']) {
     $ticketnumber = $_REQUEST['ticketnumber'];
     $sql = "SELECT * FROM tickets WHERE ticketNumber = $ticketnumber";

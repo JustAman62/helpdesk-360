@@ -140,7 +140,7 @@ function checkHardware() {
 
 function checkTicketNumber() {
     let ticketnumber = $('#add-ticket-number').val();
-    $.get('scripts/checkTicketNumber.php', {ticketnumber: ticketNumber}, function(result) {
+    $.get('scripts/checkTicketNumber.php', {ticketnumber: ticketnumber}, function(result) {
         if (result) {
             $('#add-ticket-number').addClass('is-valid').removeClass('is-invalid')
                 .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
