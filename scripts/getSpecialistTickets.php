@@ -9,7 +9,7 @@ $sql = "SELECT Tickets.ticketNumber, Tickets.userID, Tickets.employeeID, Tickets
         FROM Tickets, Specialists, Employees
         WHERE Specialists.specialistID = Tickets.specialistID
         AND Employees.employeeID = Specialists.userID
-        AND Employees.employeeID = $userid";
+        AND Employees.employeeID = '$userid'";
 
 $result = $conn->query($sql);
 if ($conn->error) die($conn->error);
