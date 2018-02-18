@@ -57,7 +57,9 @@ function charts2() {
 
 
                     var firstDate = new Date(splitArray[f + 1][0], splitArray[f + 1][1], splitArray[f + 1][2]);
+
                     var secondDate = new Date(splitArray[f][0], splitArray[f][1], splitArray[f][2]);
+
                     var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
                     finalDays.push(diffDays);
 
