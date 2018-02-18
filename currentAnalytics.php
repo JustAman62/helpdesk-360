@@ -105,7 +105,7 @@ if (!isset($_SESSION['userid'])) {
             <label for="employeeSelect">Select employee:</label>
             <select id="employeeSelect" onchange="charts5()">
             <option></option>
-        </select>
+            </select>
         </div>
     </div>
 </div>
