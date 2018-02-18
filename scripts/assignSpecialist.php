@@ -10,6 +10,7 @@ $result = $conn->query($sql);
 if ($conn->error) die ($conn->error);
 
 $problemtypeid = $result->fetch_row()[0];
+console.log($problemtypeid);
 
 //$problemtypeid = JSON.stringify($rows);
 
