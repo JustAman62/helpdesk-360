@@ -1,7 +1,8 @@
 function charts2() {
     //console.log('3');
-    if(document.getElementById('Time').checked) {
+
         $.get('scripts/getTickets.php', {sort: 'ticketNumber'}, function (result) {
+
                 //console.log('4');
                 //Getting Priority
                 //console.log(result);
@@ -99,10 +100,6 @@ function charts2() {
 
             }
             , 'json')
-    }
-    else{
-        document.getElementById('graphFrame').innerHTML = "";
-    }
 
 
 

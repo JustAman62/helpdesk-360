@@ -75,16 +75,18 @@ if (!isset($_SESSION['userid'])) {
             <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="charts()" id="Priority">Priority Analytics</button>
             <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="charts2()" id="Time">Time to close tickets</button>
         </div> -->
+
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                <input type="checkbox" checked autocomplete="off" onchange="charts()" id = "Priority"> Priority
+                <input type="checkbox" checked autocomplete="off" onchange="charts()" id = "Priority" class ="CheckedBox"> Priority
             </label>
             <label class="btn btn-primary">
-                <input type="checkbox" autocomplete="off" onchange="charts2()" id ="Time"> Days taken to close
+                <input type="checkbox" autocomplete="off" onchange="charts2()" id ="Time" class ="CheckedBox"> Days taken to close
             </label>
             <label class="btn btn-primary">
-                <input type="checkbox" autocomplete="off" onchange="charts3()" id ="ProblemType"> Problem Types
+                <input type="checkbox" autocomplete="off" onchange="charts3()" id ="ProblemType" class ="CheckedBox"> Problem Types
             </label>
+
 
         </div>
 
