@@ -58,7 +58,7 @@ function charts() {
 
 
         }, 'json')
-
+    document.getElementById('selectbox').style.display = "none";
     }
 
 

@@ -101,7 +101,7 @@ if (!isset($_SESSION['userid'])) {
 
     </div>
     <div class="col-md-4">
-        <div id="selectbox">
+        <div id="selectbox" style= "display: none">
             <label for="employeeSelect">Select employee:</label>
             <select id="employeeSelect" onclick="charts5()">
             <option></option>
