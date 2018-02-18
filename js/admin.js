@@ -164,7 +164,7 @@ function createSoftwareItem(software) {
     item.dataset.software = software.licenceNumber;
     //item.dataset.toggle = 'modal';
     //item.dataset.target = '#employeeModal';
-    item.append(document.createTextNode(software.licenceNumber +  '<br/>'  + software.name + ' : ' + software.type + ' '));
+    item.append(document.createTextNode(software.licenceNumber +  '\n'  + software.name + ' : ' + software.type + ' '));
     if (software.licenceNumber) {
         let userIcon = document.createElement('i');
         //userIcon.setAttribute('class', 'icon icon-user');
