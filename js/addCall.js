@@ -69,22 +69,6 @@ $(function() {
         }
     });
 
-    input = $('#available-Specialists');
-    let specialistList = new Awesomplete(input[0]);
-    specialistList.minChars = 0;
-    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()}, function(result) {
-        console.log("hey");
-        let array = [];
-        for (let i in result) {
-            var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
-            array.push(result1);
-        }
-        specialistList.list = array;
-    }, 'json');
-    input.on('focus', function(){
-        specialistList.evaluate();
-        specialistList.open();
-    });
 });
 
 function checkCreateEmployeeDetails() {
@@ -105,6 +89,25 @@ function checkCreateEmployeeDetails() {
             $('#create-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
         }
     }, 'json')
+}
+
+function assignNewSpecialist(){
+    let input = $('#available-Specialists');
+    let specialistList = new Awesomplete(input[0]);
+    specialistList.minChars = 0;
+    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()}, function(result) {
+        console.log("hey");
+        let array = [];
+        for (let i in result) {
+            var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
+            array.push(result1);
+        }
+        specialistList.list = array;
+    }, 'json');
+    input.on('focus', function(){
+        specialistList.evaluate();
+        specialistList.open();
+    });
 }
 
 function checkSoftware() {
