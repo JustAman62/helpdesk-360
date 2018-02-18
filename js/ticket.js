@@ -175,9 +175,28 @@ function populateTicketInfo(ticket) {
         $('#no-specialist').show();
         $('#specialistDetails').hide()
     }
+$userID = $result->fetch_row()[0];
 
+
+$sql = "SELECT * FROM Users LEFT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Users.userID = $userID";
+
+$result = $conn->query($sql);
+
+if ($conn->error) die($conn->error);
 
 }
+
+// Set closed tickets to show problem problem type
+  if (ticket.problemType) {
+    $.get('scripts/getProblemType.php', {problemtype: ticket.problemType}, function(result) {
+      $('#problem-type').text(ticket.problemtype);
+    }, 'json');
+
+  )
+  }
+
+
+
 
 function populateNotes(ticket, open=false) {
 
