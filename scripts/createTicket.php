@@ -45,7 +45,7 @@ $ticketnumber = $result->fetch_row()[0]+1;
 
 //change the sql for creating a ticket depending on iff the licence number and serial number are provided
 $licencenumber = $_REQUEST['licencenumber'];
-$serialnumber = $_REQUEST['serialnumber'];
+$serialnumber = $_REQUEST['serialnumber']; 
 
 if (isset($_REQUEST['licencenumber']) && isset($_REQUEST['serialnumber'])) {
     $licencenumber = $_REQUEST['licencenumber'];
