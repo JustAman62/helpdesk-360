@@ -28,8 +28,6 @@ function createTicket(index, tickets) {
 
     let ticketHeaderContainer = createNewElement('div', 'ticket-header justify-content-between');
 
-    let ticketHeading = createNewElement('h5');
-    ticketHeading.append(document.createTextNode('Ticket #' + ticket.ticketNumber));
 
     let headingBadge = document.createElement('h5');
     let badge = createNewElement('span', 'badge');
@@ -40,6 +38,8 @@ function createTicket(index, tickets) {
         badge.setAttribute('class', badgeClass[ticket.priority]);
         let badgeText = ['Low Priority', 'Medium Priority', 'High Priority'];
         badge.append(document.createTextNode(badgeText[ticket.priority]));
+        let ticketHeading = createNewElement('h5');
+        ticketHeading.append(document.createTextNode('Ticket #' + ticket.ticketNumber));
     }
     else {
         badge.setAttribute('class', 'badge badge-primary');
