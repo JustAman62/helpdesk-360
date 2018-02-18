@@ -5,8 +5,7 @@ require 'connect.php';
 //include 'findProblemTypeName.php';
 
 $problemtype = $_REQUEST['problemtype'];
-console.log($problemtype);
-/*$sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problemtype'";
+$sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problemtype'";
 $result = $conn->query($sql);
 if ($conn->error) die ($conn->error);
 
@@ -28,10 +27,10 @@ $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Proble
         GROUP BY Tbl.userID) AS Tbl1, Specialists, Employees
         WHERE Tbl1.userID = Specialists.userID
         AND Employees.employeeID = Specialists.userID
-        AND Specialists.problemTypeID = $problemtypeid
-        ORDER BY Problems";*/
+        AND Specialists.problemTypeID = '$problemtypeid'
+        ORDER BY Problems";
 
-$sql = "SELECT DISTINCT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
+/*$sql = "SELECT DISTINCT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
         FROM
         (SELECT Tbl.userID, MAX(Tbl.Count) AS Problems
         FROM (SELECT Users.userID, COUNT(1) as Count
@@ -45,7 +44,7 @@ $sql = "SELECT DISTINCT Employees.firstName, Employees.lastName, Tbl1.userID, Tb
         GROUP BY Tbl.userID) AS Tbl1, Specialists, Employees
         WHERE Tbl1.userID = Specialists.userID
         AND Employees.employeeID = Specialists.userID
-        ORDER BY Problems";
+        ORDER BY Problems";*/
 
 $result = $conn->query($sql);
 if ($conn->error) die($conn->error);
