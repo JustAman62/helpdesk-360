@@ -180,7 +180,7 @@ function populateTicketInfo(ticket) {
 // Set closed tickets to show problem type
   if (ticket.problemTypeName) {
     $('#problem-type').show();
-    $.get('scripts/findProblemTypeID.php',{problemtypeid: ticket.problemTypeID}, function(result) {
+    $.get('scripts/findProblemTypeID.php',{problemtypeid: ticket.problemTypeName}, function(result) {
         $('#problem-type').val(result[0].problemTypeName)
     }, 'json');
   }
