@@ -182,7 +182,7 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                     </div>
                     <div class="row justify-content-center col-12">
-                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal" onclick="assignNewSpecialist()">Assign to specialist</button>
+                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal" >Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
                         <button class="btn btn-primary col-md-4 my-5" type="button" onclick="createNewTicket()">Create Ticket</button>
@@ -265,7 +265,8 @@ if (!isset($_SESSION['userid'])) {
                   <div class = "col-md-1">
                   </div>
                     <div class="col-md-10">
-                          <input class="form-control custom-select" id="available-Specialists"/>
+                        <button class="btn btn-primary" onclick="assignNewSpecialist()" type="submit">Available Specialists</button>
+                        <input class="form-control custom-select" id="available-Specialists"/>
                     </div>
                   <div class = "col-md-1">
                   </div>
