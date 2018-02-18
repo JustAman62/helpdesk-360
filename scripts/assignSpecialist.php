@@ -4,8 +4,8 @@ require 'connect.php';
 
 //include 'findProblemTypeName.php';
 
-$problemtype = $_REQUEST['problemtype'];
-console.log($problemtype);
+/*$problemtype = $_REQUEST['problemtype'];
+console.log($problemtype);*/
 /*$sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problemtype'";
 $result = $conn->query($sql);
 if ($conn->error) die ($conn->error);
