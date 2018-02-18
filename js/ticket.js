@@ -178,11 +178,11 @@ function populateTicketInfo(ticket) {
 }
 
 // Set closed tickets to show problem problem type
-  // if (ticket.problemType) {
-  //   $.get('scripts/getProblemType.php', {problemtype: ticket.problemType}, function(result) {
-  //     $('#problem-type').text(ticket.problemtype);
-  //   }, 'json');
-  // }
+  if (ticket.problemType) {
+    $.get('scripts/getProblemType.php', {problemtype: ticket.problemType}, function(result) {
+      $('#problem-type').text(ticket.problemtype);
+    }, 'json');
+  }
 
 function populateNotes(ticket, open=false) {
 
