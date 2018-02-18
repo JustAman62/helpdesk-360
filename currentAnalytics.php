@@ -31,6 +31,7 @@ if (!isset($_SESSION['userid'])) {
 
 
     <script src="js/script.js"></script>
+    <script src="js/analyticsUserData.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/analyticsDays.js"></script>
     <script src="scripts/analyticsProblemType.js"></script>
@@ -93,9 +94,22 @@ if (!isset($_SESSION['userid'])) {
     </div>
 
 </div>
-<div class="col-12 col-md-8 mx-auto">
+<div class="row">
+    <div class="col-md-8">
 
-<div id ="graphFrame" class="ct-chart ct-double-octave"></div>
+        <div id ="graphFrame" class="ct-chart ct-double-octave"></div>
+
+    </div>
+    <div class="col-md-4">
+        <div id="selectbox">
+            <label for="employeeSelect">Select employee:</label>
+            <select id="employeeSelect" onchange="charts5()">
+            <option></option>
+        </select>
+        </div>
+    </div>
+</div>
+
 </div>
 
 

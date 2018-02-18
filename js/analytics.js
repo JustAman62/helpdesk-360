@@ -13,7 +13,7 @@ function charts() {
         $.get('scripts/getTickets.php', {sort: 'ticketNumber'}, function (result) {
 
             //Getting Priority
-
+            console.log(result);
             var result1 = result.map(a => a.priority);
 
             var p0 = [];

@@ -53,10 +53,11 @@ function charts3() {
                         }
                     }
                     //console.log(finalArr);
-
+                    console.log(finalArr);
                     var data = {
                         labels: finalArr,
                         series: [filteredArr]
+
                     };
 
                     var options = {
