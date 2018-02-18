@@ -1,6 +1,7 @@
 $(function(){
     loadEmployeeList();
     loadSoftwareList();
+    loadHardwareList()
 
     $('#employeeModal').on('show.bs.modal', function(event) {
         let employeeID;
