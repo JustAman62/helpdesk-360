@@ -83,18 +83,16 @@ if (!isset($_SESSION['userid'])) {
                     <span id="software-count"></span> Software
                 </div>
             </div>
-          </div>
-          <div class="col-md-4 col-12">
-              <div class="card">
-                  <h5 class="card-header text-center">
-                      Hardware
-                      <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
-                  </h5>
-                  <div class="list-group list-group-flush" id="hardware-list"></div>
-                  <div class="card-footer text-muted small text-center">
-                      <span id="hardware-count"></span> Hardware
-                  </div>
-              </div>
+            <div class="card">
+                <h5 class="card-header text-center">
+                    Hardware
+                    <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
+                </h5>
+                <div class="list-group list-group-flush" id="hardware-list"></div>
+                <div class="card-footer text-muted small text-center">
+                    <span id="hardware-count"></span> Hardware
+                </div>
+            </div>
           </div>
         </div>
     </div>
