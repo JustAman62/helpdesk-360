@@ -26,8 +26,8 @@ $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Proble
 $result = $conn->query($sql);
 if ($conn->error) die($conn->error);
 
-while($row = $result->fetch_object()) {
-    $rows[]=$row;
+while($row1 = $result->fetch_object()) {
+    $rows1[]=$row1;
 }
 
-echo json_encode($rows);
+echo json_encode($rows1);
