@@ -159,10 +159,10 @@ function loadSoftwareList() {
 function createSoftwareItem(software) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
-    item.dataset. = software.licenceNumber;
-    item.dataset.toggle = 'modal';
-    item.dataset.target = '#employeeModal';
-    item.append(document.createTextNode(user.type + ' ' + user.name + ' '));
+    item.dataset.software = software.licenceNumber;
+    //item.dataset.toggle = 'modal';
+    //item.dataset.target = '#employeeModal';
+    item.append(document.createTextNode(software.name + ' ' + software.type + ' '));
     if (software.licenceNumber) {
         let userIcon = document.createElement('i');
         userIcon.setAttribute('class', 'icon icon-user');
