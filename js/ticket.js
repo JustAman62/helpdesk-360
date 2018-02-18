@@ -152,7 +152,7 @@ function populateTicketInfo(ticket) {
     $.get('scripts/findProblemTypeName.php',{problemtypeid:ticket.problemTypeID}, function(result) {
         $('#problem-type').val(result[0].problemTypeName)
     }, 'json');
-
+    
 //    Populate other fields
     $('#date-created').val(formatDate(ticket.dateCreated));
 
@@ -177,12 +177,12 @@ function populateTicketInfo(ticket) {
     }
 }
 
-// Set closed tickets to show problem problem type
-  if (ticket.problemType) {
-    $.get('scripts/getProblemType.php', {problemtype: ticket.problemType}, function(result) {
-      $('#problem-type').text(ticket.problemtype);
-    }, 'json');
-  }
+// Set closed tickets to show problem type
+  // if (ticket.problemTypeName) {
+  //   $.get('scripts/findProblemTypeName.php',{problemtypename: ticket.problemTypeName}, function(result) {
+  //       $('#problem-type').val(result[0].problemTypeName)
+  //   }, 'json');
+  // }
 
 function populateNotes(ticket, open=false) {
 

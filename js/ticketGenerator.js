@@ -43,7 +43,7 @@ function createTicket(index, tickets) {
     else {
         badge.setAttribute('class', 'badge badge-primary');
         badge.append(document.createTextNode('Closed'));
-        ticketHeading.append(document.createTextNode(ticket.problemType));
+        ticketHeading.append(document.createTextNode('ticket.problemTypeName'));
     }
 
     headingBadge.append(badge);
