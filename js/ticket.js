@@ -172,15 +172,6 @@ function populateTicketInfo(ticket) {
         $('#no-specialist').show();
         $('#specialistDetails').hide()
     }
-
-//$userID = $result->fetch_row()[0];
-
-//$sql = "SELECT * FROM Users LEFT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Users.userID = $userID";
-
-//$result = $conn->query($sql);
-
-//if ($conn->error) die($conn->error);
-
 }
 
 // Set closed tickets to show problem problem type
@@ -192,11 +183,7 @@ function populateTicketInfo(ticket) {
   // )
   // }
 
-
-
-
 function populateNotes(ticket, open=false) {
-
 
     $.get('scripts/getNotes.php', {ticketnumber: ticket.ticketNumber}, function(result) {
         $('#note-list').html("");
@@ -220,8 +207,6 @@ function populateNotes(ticket, open=false) {
 
 
     }, 'json');
-
-
 }
 
 function makeNoteListItem(note) {
@@ -269,8 +254,6 @@ function addNewNote(text) {
     }, function(result) {
         populateNotes(ticketInfo, true);
     }, 'json');
-
-
 }
 
 function closeTicket() {
@@ -294,7 +277,7 @@ function deleteNote() {
         //    Close the modal
         $('#notesModal').modal('hide');
     });
-} 
+}
 
 let problemTypesList;
 function editTicket() {
