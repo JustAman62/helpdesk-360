@@ -210,7 +210,7 @@ if (!isset($_SESSION['userid'])) {
                             <div class="input-group">
                                 <input type="text" class="form-control" id="add-ticket-number" placeholder="1234">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkTicketNumber()">Confirm</button>
                                 </span>
                             </div>
                             <small class="text-secondary">Ticket to add call to</small>

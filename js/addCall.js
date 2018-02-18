@@ -135,6 +135,20 @@ function checkHardware() {
     }, 'json')
 }
 
+function checkTicketNumber() {
+    let ticketnumber = $('#add-ticket-number').val();
+    $.get('scripts/checkTicketNumber.php', {ticketnumber: ticketNumber}, function(result) {
+        if (result) {
+            $('#add-ticket-number').addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+        }
+        else {
+            $('#add-ticket-number').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+        }
+    }, 'json')
+}
+
 function checkCreateEmployeeName() {
     let firstName = "";
     let lastName = "";
