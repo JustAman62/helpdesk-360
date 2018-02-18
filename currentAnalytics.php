@@ -85,6 +85,9 @@ if (!isset($_SESSION['userid'])) {
             <label class="btn btn-primary">
                 <input type="checkbox" autocomplete="off" onchange="charts3()" id ="ProblemType"> Problem Types
             </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" autocomplete="off" onchange="clearBox('graphFrame')" id ="ProblemType"> Clear
+            </label>
         </div>
 
     </div>
