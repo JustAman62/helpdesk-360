@@ -72,12 +72,12 @@ $(function() {
     input = $('#available-Specialists');
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
-    $.get('scripts/assignSpecialist.php',function(result) {
+    $.get('scripts/assignSpecialist.php', function(result) {
         console.log("hey");
         let array = [];
         for (let i in result) {
-            var result = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
-            array.push(result);
+            var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
+            array.push(result1);
         }
         specialistList.list = array;
     }, 'json');
