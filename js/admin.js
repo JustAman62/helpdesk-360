@@ -164,7 +164,7 @@ function createSoftwareItem(software) {
     item.dataset.software = software.licenceNumber;
     //item.dataset.toggle = 'modal';
     //item.dataset.target = '#employeeModal';
-    item.append(document.createTextNode(software.licenceNumber +  '<br>'  + software.name + ' : ' + software.type + ' '));
+    item.append(document.createTextNode(software.name + ' : ' + software.type + ' - ' + software.licenceNumber));
     if (software.licenceNumber) {
         let userIcon = document.createElement('i');
         //userIcon.setAttribute('class', 'icon icon-user');
@@ -193,7 +193,7 @@ function createHardwareItem(hardware) {
     item.dataset.hardware = hardware.serialNumber;
     //item.dataset.toggle = 'modal';
     //item.dataset.target = '#employeeModal';
-    item.append(document.createTextNode(hardware.serialNumber + ' ' + hardware.type + ' ' + hardware.make + ' '));
+    item.append(document.createTextNode(hardware.make + '  ' + hardware.type + ' : ' + hardware.serialNumber));
     if (hardware.licenceNumber) {
         let userIcon = document.createElement('i');
         //userIcon.setAttribute('class', 'icon icon-user');
