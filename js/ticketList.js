@@ -34,6 +34,7 @@ function getTicketList(){
     }, 'json');
 }
 
+
 function showTickets() {
     //reset ticket list everything this function is run
     $('#ticket-list').html("");
