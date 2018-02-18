@@ -34,7 +34,6 @@ function getTicketList(){
     }, 'json');
 }
 
-
 function showTickets() {
     //reset ticket list everything this function is run
     $('#ticket-list').html("");
@@ -58,10 +57,7 @@ function showTickets() {
 
         if (ticketList[i].priority == 2)
             filter = $('#filter-high-priority').hasClass('active');
-
-
-
-
+        
         if (filter) createTicket(i, ticketList);
     }
     resizeAllGridItems();
