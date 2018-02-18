@@ -193,26 +193,26 @@ if (!isset($_SESSION['userid'])) {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header justify-between">
-                <h3 class="my-0">Edit User</h3>
+                <h3 class="my-0">Edit Software</h3>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="form-group row">
                         <label for="licence-number" class="col-sm-4 col-form-label">Licence Number</label>
                         <div class="col-sm-8">
-                            <input type="text" readonly class="form-control-plaintext" id="licence-number" value="lala">
+                            <input type="text" readonly class="form-control-plaintext" id="licence-number" placeholder="######">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-4 col-form-label">Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="name" placeholder="John">
+                            <input type="text" class="form-control" id="name" placeholder="Software name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="type" class="col-sm-4 col-form-label">Type</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="type" placeholder="Smith">
+                            <input type="text" class="form-control" id="type" placeholder="Software type">
                         </div>
                     </div>
                 </form>
