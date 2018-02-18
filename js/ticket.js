@@ -175,17 +175,14 @@ function populateTicketInfo(ticket) {
         $('#no-specialist').show();
         $('#specialistDetails').hide()
     }
-<<<<<<< HEAD
-=======
 }
->>>>>>> abb7495413cae822ba83854ec095974477e60e08
 
 // Set closed tickets to show problem problem type
-  if (ticket.problemType) {
-    $.get('scripts/getProblemType.php', {problemtype: ticket.problemType}, function(result) {
-      $('#problem-type').text(ticket.problemtype);
-    }, 'json');
-  }
+  // if (ticket.problemType) {
+  //   $.get('scripts/getProblemType.php', {problemtype: ticket.problemType}, function(result) {
+  //     $('#problem-type').text(ticket.problemtype);
+  //   }, 'json');
+  // }
 
 function populateNotes(ticket, open=false) {
 
