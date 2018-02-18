@@ -196,7 +196,7 @@ function loadHardwareList() {
 
         let addHardware = document.createElement('button');
         addHardware.setAttribute('class', 'list-group-item list-group-item-action');
-        addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        addHardware.setAttribute('onclick', 'createNewSoftware()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addHardware.append(plusSign);
