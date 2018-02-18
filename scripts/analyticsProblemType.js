@@ -86,7 +86,7 @@ function charts3() {
 
 
 
-
+    document.getElementById('selectbox').style.display = "none";
 
 }
 
