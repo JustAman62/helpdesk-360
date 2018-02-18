@@ -162,7 +162,7 @@ function loadSoftwareList() {
 
         let addSoftware = document.createElement('button');
         addSoftware.setAttribute('class', 'list-group-item list-group-item-action');
-        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        addSoftware.setAttribute('onclick', 'createNewSoftware()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addSoftware.append(plusSign);
@@ -170,7 +170,7 @@ function loadSoftwareList() {
 
         $('#software-list').append(addSoftware);
 
-        //Update the footer to show how many users are in the list
+        //Update the footer to show how many software items are in the list
         $('#software-count').text(result.length);
 
     }, 'json');
@@ -180,14 +180,10 @@ function createSoftwareItem(software) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
     item.dataset.software = software.licenceNumber;
-    //item.dataset.toggle = 'modal';
-    //item.dataset.target = '#employeeModal';
+    item.dataset.toggle = 'modal';
+    item.dataset.target = '#softwareModal';
     item.append(document.createTextNode(software.name + ' : ' + software.type + ' - ' + software.licenceNumber));
-    if (software.licenceNumber) {
-        let userIcon = document.createElement('i');
-        //userIcon.setAttribute('class', 'icon icon-user');
-        item.append(userIcon);
-    }
+
     $('#software-list').append(item);
 }
 
