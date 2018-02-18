@@ -31,6 +31,7 @@ function createTicket(index, tickets) {
     let ticketHeading = createNewElement('h5');
     let headingBadge = document.createElement('h5');
     let badge = createNewElement('span', 'badge');
+    ticketHeading.append(document.createTextNode('Ticket #' + ticket.ticketNumber));
 
     //Only assign a priority badge is the ticket is open, otherwise assign a closed badge
     if (ticket.ticketStatus == 0) {
@@ -38,15 +39,13 @@ function createTicket(index, tickets) {
         badge.setAttribute('class', badgeClass[ticket.priority]);
         let badgeText = ['Low Priority', 'Medium Priority', 'High Priority'];
         badge.append(document.createTextNode(badgeText[ticket.priority]));
-        ticketHeading.append(document.createTextNode('Ticket #' + ticket.ticketNumber));
     }
     else {
         badge.setAttribute('class', 'badge badge-primary');
         badge.append(document.createTextNode('Closed'));
-        ticketHeading.append(document.createTextNode(ticket.problemType));
     }
-    headingBadge.append(badge);
 
+    headingBadge.append(badge);
     ticketHeaderContainer.append(ticketHeading);
     ticketHeaderContainer.append(headingBadge);
 
