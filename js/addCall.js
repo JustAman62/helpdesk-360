@@ -70,25 +70,22 @@ $(function() {
         }
     });
 
-    function assignNewSpecialist() {
-        let input = $('#available-Specialists');
-        let specialistList = new Awesomplete(input[0]);
-        specialistList.minChars = 0;
-        $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val(),} ,function(result) {
-            console.log("hey");
-            let array = [];
-            for (let i in result) {
-                var result = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
-                array.push(result);
-            }
-            specialistList.list = array;
-        }, 'json');
-        input.on('focus', function(){
-            specialistList.evaluate();
-            specialistList.open();
-        });
-    }
-
+    input = $('#available-Specialists');
+    let specialistList = new Awesomplete(input[0]);
+    specialistList.minChars = 0;
+    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val(),} ,function(result) {
+        console.log("hey");
+        let array = [];
+        for (let i in result) {
+            var result = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
+            array.push(result);
+        }
+        specialistList.list = array;
+    }, 'json');
+    input.on('focus', function(){
+        specialistList.evaluate();
+        specialistList.open();
+    });
 });
 
 function checkCreateEmployeeDetails() {

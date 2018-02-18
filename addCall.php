@@ -126,7 +126,6 @@ if (!isset($_SESSION['userid'])) {
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-problem-type">Problem Type</label>
                             <input class="form-control custom-select" id="create-problem-type"/>
-                            <button class="btn btn-secondary" onclick="assignNewSpecialist()" type="button">Available Specialists</button>
                         </div>
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-OS">Operating System</label>
