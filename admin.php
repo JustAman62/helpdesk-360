@@ -41,7 +41,7 @@ if (!isset($_SESSION['userid'])) {
                 <a class="nav-link" href="ticketList.php">View Tickets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="analytics.php">Analytics</a>
+                <a class="nav-link" href="currentAnalytics.php">Analytics</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="admin.php">Admin</a>
