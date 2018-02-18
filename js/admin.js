@@ -10,6 +10,14 @@ $(function(){
             loadEmployeeById(employeeID)
         }
     });
+
+    $('#softwareModal').on('show.bs.modal', function(event) {
+        let employeeID;
+        if (event.relatedTarget) {
+            employeeID = event.relatedTarget.dataset.employeeId;
+            loadEmployeeById(employeeID)
+        }
+    });
 });
 
 function loadEmployeeList() {
