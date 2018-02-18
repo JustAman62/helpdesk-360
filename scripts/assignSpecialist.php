@@ -2,9 +2,12 @@
 
 require 'connect.php';
 
-include 'findProblemTypeName.php';
+$problemtype = $_REQUEST['problemtype'];
+$sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problemtype'";
+$result = $conn->query($sql);
+if ($conn->error) die ($conn->error);
 
-$problemtypeid = JSON.stringify($rows);
+$problemtypeid = $result->fetch_row()[0];
 
 $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
         FROM
@@ -20,14 +23,14 @@ $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Proble
         GROUP BY Tbl.userID) AS Tbl1, Specialists, Employees
         WHERE Tbl1.userID = Specialists.userID
         AND Employees.employeeID = Specialists.userID
-        AND Specialists.problemTypeID = 1005
+        AND Specialists.problemTypeID = '$problemtypeid'
         ORDER BY Problems";
 
-        $result = $conn->query($sql);
-        if ($conn->error) die($conn->error);
+$result = $conn->query($sql);
+if ($conn->error) die($conn->error);
 
-        while($row = $result->fetch_object()) {
-            $rows[]=$row;
-        }
+while($row = $result->fetch_object()) {
+    $rows[]=$row;
+}
 
-        echo json_encode($rows);
+echo json_encode($rows);

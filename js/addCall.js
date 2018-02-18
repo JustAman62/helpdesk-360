@@ -29,7 +29,6 @@ $(function() {
         OSList.open();
     });
 
-
     let createTime = $('#create-time');
     createTime.timepicker({
         minTime: '09:00am',
@@ -70,22 +69,6 @@ $(function() {
         }
     });
 
-    input = $('#available-Specialists');
-    let specialistList = new Awesomplete(input[0]);
-    specialistList.minChars = 0;
-    $.get('scripts/assignSpecialist.php',function(result) {
-       console.log("hey");
-       let array1 = [];
-       for (let i in result) {
-         var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
-         array1.push(result1);
-       }
-       specialistList.list = array1;
-    }, 'json');
-    input.on('focus', function(){
-        specialistList.evaluate();
-        specialistList.open();
-    });
 });
 
 function checkCreateEmployeeDetails() {
@@ -106,6 +89,25 @@ function checkCreateEmployeeDetails() {
             $('#create-employee-contact-number').val("").removeClass('is-valid').addClass('is-invalid');
         }
     }, 'json')
+}
+
+function assignNewSpecialist(){
+    let input = $('#available-Specialists');
+    let specialistList = new Awesomplete(input[0]);
+    specialistList.minChars = 0;
+    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()}, function(result) {
+        console.log("hey");
+        let array = [];
+        for (let i in result) {
+            var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
+            array.push(result1);
+        }
+        specialistList.list = array;
+    }, 'json');
+    input.on('focus', function(){
+        specialistList.evaluate();
+        specialistList.open();
+    });
 }
 
 function checkSoftware() {
@@ -131,6 +133,20 @@ function checkHardware() {
         }
         else {
             $('#create-serial-number').addClass('is-invalid').removeClass('is-valid')
+                .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
+        }
+    }, 'json')
+}
+
+function checkTicketNumber() {
+    let ticketnumber = $('#add-ticket-number').val();
+    $.get('scripts/checkTicketNumber.php', {ticketnumber: ticketnumber}, function(result) {
+        if (result) {
+            $('#add-ticket-number').addClass('is-valid').removeClass('is-invalid')
+                .next().children().addClass('btn-success').removeClass('btn-secondary btn-danger');
+        }
+        else {
+            $('#add-ticket-number').addClass('is-invalid').removeClass('is-valid')
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
         }
     }, 'json')

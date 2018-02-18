@@ -125,7 +125,7 @@ if (!isset($_SESSION['userid'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="form-control custom-select" id="create-problem-type" value="Account login"/>
+                            <input class="form-control custom-select" id="create-problem-type"/>
                         </div>
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-OS">Operating System</label>
@@ -182,7 +182,7 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                     </div>
                     <div class="row justify-content-center col-12">
-                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal">Assign to specialist</button>
+                        <button type="button" class="btn btn-primary col-md-4 my-5" data-toggle="modal" data-target="#assignModal" onclick="assignNewSpecialist()">Assign to specialist</button>
                            <div class ="col-md-2">
                            </div>
                         <button class="btn btn-primary col-md-4 my-5" type="button" onclick="createNewTicket()">Create Ticket</button>
@@ -210,7 +210,7 @@ if (!isset($_SESSION['userid'])) {
                             <div class="input-group">
                                 <input type="text" class="form-control" id="add-ticket-number" placeholder="1234">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Confirm</button>
+                                    <button class="btn btn-secondary" type="button" onclick="checkTicketNumber()">Confirm</button>
                                 </span>
                             </div>
                             <small class="text-secondary">Ticket to add call to</small>
@@ -265,7 +265,7 @@ if (!isset($_SESSION['userid'])) {
                   <div class = "col-md-1">
                   </div>
                     <div class="col-md-10">
-                          <input class="form-control custom-select" id="available-Specialists"/>
+                        <input class="form-control custom-select" id="available-Specialists"/>
                     </div>
                   <div class = "col-md-1">
                   </div>
