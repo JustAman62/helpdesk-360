@@ -297,7 +297,7 @@ function deleteNote() {
         //    Close the modal
         $('#notesModal').modal('hide');
     });
-}
+} 
 
 let problemTypesList;
 function editTicket() {
