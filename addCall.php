@@ -125,7 +125,7 @@ if (!isset($_SESSION['userid'])) {
                     <div class="row mt-4">
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-problem-type">Problem Type</label>
-                            <input class="form-control custom-select" id="create-problem-type" value="Account login"/>
+                            <input class="form-control custom-select" id="create-problem-type"/>
                         </div>
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="create-OS">Operating System</label>
