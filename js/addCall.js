@@ -69,6 +69,26 @@ $(function() {
             $('#name-list').append(listItem);
         }
     });
+
+    function assignNewSpecialist() {
+        let input = $('#available-Specialists');
+        let specialistList = new Awesomplete(input[0]);
+        specialistList.minChars = 0;
+        $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val(),} ,function(result) {
+            console.log("hey");
+            let array = [];
+            for (let i in result) {
+                var result = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
+                array.push(result);
+            }
+            specialistList.list = array;
+        }, 'json');
+        input.on('focus', function(){
+            specialistList.evaluate();
+            specialistList.open();
+        });
+    }
+
 });
 
 function checkCreateEmployeeDetails() {
@@ -215,23 +235,4 @@ function createNewCallNote() {
         if ($.isNumeric(result)) window.location.href='ticket.php?ticketNum=' + result;
     }, 'json');
 
-}
-
-function assignNewSpecialist() {
-    let input = $('#available-Specialists');
-    let specialistList = new Awesomplete(input[0]);
-    specialistList.minChars = 0;
-    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val(),} ,function(result) {
-        console.log("hey");
-        let array = [];
-        for (let i in result) {
-            var result = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
-            array.push(result);
-        }
-        specialistList.list = array;
-    }, 'json');
-    input.on('focus', function(){
-        specialistList.evaluate();
-        specialistList.open();
-    });
 }
