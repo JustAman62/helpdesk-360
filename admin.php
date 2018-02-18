@@ -200,7 +200,7 @@ if (!isset($_SESSION['userid'])) {
                     <div class="form-group row">
                         <label for="licence-number" class="col-sm-4 col-form-label">Licence Number</label>
                         <div class="col-sm-8">
-                            <input type="text" readonly class="form-control-plaintext" id="licence-number" placeholder="######">
+                            <input type="text" class="form-control" id="licence-number" placeholder="######">
                         </div>
                     </div>
                     <div class="form-group row">
