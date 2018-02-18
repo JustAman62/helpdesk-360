@@ -164,10 +164,10 @@ function createSoftwareItem(software) {
     item.dataset.software = software.licenceNumber;
     //item.dataset.toggle = 'modal';
     //item.dataset.target = '#employeeModal';
-    item.append(document.createTextNode(software.name + ' ' + software.type + ' '));
+    item.append(document.createTextNode(software.licenceNumber + ' ' + software.name + ' ' + software.type + ' '));
     if (software.licenceNumber) {
         let userIcon = document.createElement('i');
-        userIcon.setAttribute('class', 'icon icon-user');
+        //userIcon.setAttribute('class', 'icon icon-user');
         item.append(userIcon);
     }
     $('#software-list').append(item);
@@ -193,10 +193,10 @@ function createHardwareItem(hardware) {
     item.dataset.hardware = hardware.serialNumber;
     //item.dataset.toggle = 'modal';
     //item.dataset.target = '#employeeModal';
-    item.append(document.createTextNode(hardware.name + ' ' + hardware.type + ' '));
+    item.append(document.createTextNode(hardware.serialNumber + ' ' + hardware.type + ' ' + hardware.make + ' '));
     if (hardware.licenceNumber) {
         let userIcon = document.createElement('i');
-        userIcon.setAttribute('class', 'icon icon-user');
+        //userIcon.setAttribute('class', 'icon icon-user');
         item.append(userIcon);
     }
     $('#hardware-list').append(item);
