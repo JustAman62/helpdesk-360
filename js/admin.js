@@ -1,5 +1,6 @@
-$(function(){ 
+$(function(){
     loadEmployeeList();
+    loadSoftwareList();
 
     $('#employeeModal').on('show.bs.modal', function(event) {
         let employeeID;
@@ -140,4 +141,33 @@ function deleteEmployee() {
         loadEmployeeList();
         $('#employeeModal').modal('hide');
     });
+}
+
+function loadSoftwareList() {
+    $.get('././scripts/getFullSoftwareDetails.php', function(result) {
+        $('#software-list').html("");
+        //Create list items for each user returned in the query
+        for (let i in result) {
+            createSoftwareItem(result[i]);
+        }
+
+        //Update the footer to show how many users are in the list
+        $('#software-count').text(result.length);
+
+    }, 'json');
+}
+
+function createSoftwareItem(software) {
+    let item = document.createElement('button');
+    item.setAttribute('class', 'list-group-item list-group-item-action');
+    item.dataset.software = software.licenceNumber;
+    //item.dataset.toggle = 'modal';
+    //item.dataset.target = '#employeeModal';
+    item.append(document.createTextNode(software.name + ' ' + software.type + ' '));
+    if (software.licenceNumber) {
+        let userIcon = document.createElement('i');
+        userIcon.setAttribute('class', 'icon icon-user');
+        item.append(userIcon);
+    }
+    $('#software-list').append(item);
 }

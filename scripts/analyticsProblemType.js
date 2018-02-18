@@ -1,6 +1,6 @@
 function charts3() {
     //console.log('1');
-    if(document.getElementById('ProblemType').checked) {
+
         $.get('scripts/getProblemTypes.php', function (result) {
             //console.log(result);
             $.get('scripts/getProblemTypeID.php', function (result2) {
@@ -83,10 +83,7 @@ function charts3() {
 
         }, 'json')
 
-    }
-    else {
-        document.getElementById('graphFrame').innerHTML = "";
-    }
+
 
 
 
