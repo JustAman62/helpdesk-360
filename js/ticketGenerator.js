@@ -49,7 +49,6 @@ function createTicket(index, tickets) {
     }
     headingBadge.append(badge);
 
-    ticketHeaderContainer.append(ticketHeading);
     ticketHeaderContainer.append(headingBadge);
 
 
