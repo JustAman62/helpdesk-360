@@ -119,7 +119,6 @@ function checkSoftware() {
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
         }
     }, 'json')
-    console.log($('#create-problem-type').val());
 }
 
 function checkHardware() {
