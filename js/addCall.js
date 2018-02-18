@@ -19,24 +19,6 @@ $(function() {
        problemTypesList.open();
     });
 
-    let input1 = $('#available-Specialists');
-    let specialistList = new Awesomplete(input1[0]);
-    specialistList.minChars = 0;
-    console.log($('#create-problem-type').val());
-    $.get('scripts/assignSpecialist.php', input ,function(result) {
-        console.log("hey");
-        let array1 = [];
-        for (let i in result) {
-            var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
-            array1.push(result1);
-        }
-        specialistList.list = array1;
-    }, 'json');
-    input1.on('focus', function(){
-        specialistList.evaluate();
-        specialistList.open();
-    });
-
     input = $('#create-OS');
     let OSList = new Awesomplete(input[0]);
     OSList.minChars = 0;
@@ -233,4 +215,23 @@ function createNewCallNote() {
         if ($.isNumeric(result)) window.location.href='ticket.php?ticketNum=' + result;
     }, 'json');
 
+}
+
+function assignNewSpecialist() {
+    let input = $('#available-Specialists');
+    let specialistList = new Awesomplete(input[0]);
+    specialistList.minChars = 0;
+    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val(),} ,function(result) {
+        console.log("hey");
+        let array = [];
+        for (let i in result) {
+            var result = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
+            array.push(result);
+        }
+        specialistList.list = array;
+    }, 'json');
+    input.on('focus', function(){
+        specialistList.evaluate();
+        specialistList.open();
+    });
 }
