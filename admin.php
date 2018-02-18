@@ -78,9 +78,9 @@ if (!isset($_SESSION['userid'])) {
                     Software
                     <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
                 </h5>
-                <div class="list-group list-group-flush" id="user-list"></div>
+                <div class="list-group list-group-flush" id="software-list"></div>
                 <div class="card-footer text-muted small text-center">
-                    <span id="user-count"></span> Software
+                    <span id="software-count"></span> Software
                 </div>
             </div>
           </div>
@@ -90,9 +90,9 @@ if (!isset($_SESSION['userid'])) {
                       Hardware
                       <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
                   </h5>
-                  <div class="list-group list-group-flush" id="user-list"></div>
+                  <div class="list-group list-group-flush" id="hardware-list"></div>
                   <div class="card-footer text-muted small text-center">
-                      <span id="user-count"></span> Hardware
+                      <span id="hardware-count"></span> Hardware
                   </div>
               </div>
           </div>
