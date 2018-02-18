@@ -9,7 +9,6 @@ $(function() {
 //    To do this, sort tickets by dateCreated
     $.get('scripts/getSpecialistTickets.php', function(result) {
         //reverse the array the change the sorting to be descending instead of ascending
-        result.reverse();
         for (let i = 0; i<result.length; i++) {
             createTicket(i, result);
         }
