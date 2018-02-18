@@ -83,6 +83,7 @@ if (!isset($_SESSION['userid'])) {
                     <span id="software-count"></span> Software
                 </div>
             </div>
+            <br/>
             <div class="card">
                 <h5 class="card-header text-center">
                     Hardware
