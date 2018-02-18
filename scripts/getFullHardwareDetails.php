@@ -2,7 +2,7 @@
 
 require('connect.php');
 
-$sql = "SELECT * FROM Hardware";
+$sql = "SELECT * FROM Equipment";
 
 $result = $conn->query($sql);
 
