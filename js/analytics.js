@@ -69,6 +69,12 @@ function charts() {
         new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
         }, 'json')
 
+
+}
+
+function clearBox(elementID)
+{
+    document.getElementById(elementID).innerHTML = "";
 }
 
 
