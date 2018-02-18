@@ -181,7 +181,7 @@ function populateTicketInfo(ticket) {
   if (ticket.problemTypeName) {
     $('#problem-type').show();
     $.get('scripts/findProblemTypeID.php',{problemtypeid: ticket.problemTypeID}, function(result) {
-        $('#problem-type').val(rows[0].problemTypeName)
+        $('#problem-type').val(result[0].problemTypeName)
     }, 'json');
   }
 
