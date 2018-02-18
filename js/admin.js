@@ -10,6 +10,14 @@ $(function(){
             loadEmployeeById(employeeID)
         }
     });
+
+    $('#softwareModal').on('show.bs.modal', function(event) {
+        let employeeID;
+        if (event.relatedTarget) {
+            employeeID = event.relatedTarget.dataset.employeeId;
+            loadEmployeeById(employeeID)
+        }
+    });
 });
 
 function loadEmployeeList() {
@@ -152,6 +160,16 @@ function loadSoftwareList() {
             createSoftwareItem(result[i]);
         }
 
+        let addSoftware = document.createElement('button');
+        addSoftware.setAttribute('class', 'list-group-item list-group-item-action');
+        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        let plusSign = document.createElement('i');
+        plusSign.setAttribute('class', 'icon icon-plus-circled');
+        addSoftware.append(plusSign);
+        addSoftware.append(document.createTextNode(' Add Software'));
+
+        $('#software-list').append(addSoftware);
+
         //Update the footer to show how many users are in the list
         $('#software-count').text(result.length);
 
@@ -181,6 +199,16 @@ function loadHardwareList() {
             createHardwareItem(result[i]);
         }
 
+        let addHardware = document.createElement('button');
+        addHardware.setAttribute('class', 'list-group-item list-group-item-action');
+        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        let plusSign = document.createElement('i');
+        plusSign.setAttribute('class', 'icon icon-plus-circled');
+        addHardware.append(plusSign);
+        addHardware.append(document.createTextNode(' Add Hardware'));
+
+        $('#hardware-list').append(addHardware);
+
         //Update the footer to show how many hardware is in the list
         $('#hardware-count').text(result.length);
 
@@ -191,13 +219,9 @@ function createHardwareItem(hardware) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
     item.dataset.hardware = hardware.serialNumber;
-    //item.dataset.toggle = 'modal';
-    //item.dataset.target = '#employeeModal';
+    item.dataset.toggle = 'modal';
+    item.dataset.target = '#hardwareModal';
     item.append(document.createTextNode(hardware.make + '  ' + hardware.type + ' : ' + hardware.serialNumber));
-    if (hardware.licenceNumber) {
-        let userIcon = document.createElement('i');
-        //userIcon.setAttribute('class', 'icon icon-user');
-        item.append(userIcon);
-    }
+
     $('#hardware-list').append(item);
 }
