@@ -189,7 +189,7 @@ function loadHardwareList() {
 function createHardwareItem(hardware) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
-    item.dataset.hardware = hardware.;
+    item.dataset.hardware = hardware.serialNumber;
     //item.dataset.toggle = 'modal';
     //item.dataset.target = '#employeeModal';
     item.append(document.createTextNode(hardware.name + ' ' + hardware.type + ' '));
