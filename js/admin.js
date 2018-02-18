@@ -12,10 +12,9 @@ $(function(){
     });
 
     $('#softwareModal').on('show.bs.modal', function(event) {
-        let employeeID;
+        let licenceNumber;
         if (event.relatedTarget) {
-            employeeID = event.relatedTarget.dataset.employeeId;
-            loadEmployeeById(employeeID)
+            licenceNumber = event.relatedTarget.dataset.licenceNumber;
         }
     });
 });
@@ -205,7 +204,7 @@ function loadHardwareList() {
 
         $('#hardware-list').append(addHardware);
 
-        //Update the footer to show how many hardware is in the list
+        //Update the footer to show how many hardware items are in the list
         $('#hardware-count').text(result.length);
 
     }, 'json');
