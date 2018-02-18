@@ -29,8 +29,6 @@ $(function() {
         OSList.open();
     });
 
-    console.log($('#create-problem-type').val());
-
     let createTime = $('#create-time');
     createTime.timepicker({
         minTime: '09:00am',
@@ -74,7 +72,7 @@ $(function() {
     input = $('#available-Specialists');
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
-    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val(),} ,function(result) {
+    $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()} ,function(result) {
         console.log("hey");
         let array = [];
         for (let i in result) {
@@ -121,6 +119,7 @@ function checkSoftware() {
                 .next().children().addClass('btn-danger').removeClass('btn-secondary btn-success');
         }
     }, 'json')
+    console.log($('#create-problem-type').val());
 }
 
 function checkHardware() {
