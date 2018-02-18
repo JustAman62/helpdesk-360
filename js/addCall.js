@@ -20,8 +20,9 @@ $(function() {
     });
 
     let input1 = $('#available-Specialists');
-    let specialistList = new Awesomplete(input[0]);
+    let specialistList = new Awesomplete(input1[0]);
     specialistList.minChars = 0;
+    console.log(input);
     $.get('scripts/assignSpecialist.php', input ,function(result) {
         console.log("hey");
         let array1 = [];
