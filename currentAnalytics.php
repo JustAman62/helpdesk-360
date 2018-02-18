@@ -37,7 +37,7 @@ if (!isset($_SESSION['userid'])) {
     <script src="scripts/analyticsProblemType.js"></script>
 
 </head>
-<body class="bg-light" >
+<body class="bg-light" onload="charts4()" >
 
 <nav class="navbar  navbar-expand-md navbar-dark bg-dark flex-sm-nowrap">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">

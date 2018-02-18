@@ -101,6 +101,6 @@ function charts2() {
             }
             , 'json')
 
-charts4();
+
 
 }

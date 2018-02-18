@@ -15,7 +15,6 @@ function charts4(){
         })
 
         console.log(filteredArr.sort());
-        $('#employeeSelect option').empty();
         for(var i=0; i< filteredArr.sort().length;i++)
         {
 
