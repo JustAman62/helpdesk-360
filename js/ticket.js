@@ -21,9 +21,6 @@ $(function() {
         populateNotes(result[0]);
     }, 'json');
 
-
-
-
     //When the notes modal is shown, update the note textarea to match the note it was clicked on
     $('#notesModal').on('show.bs.modal', function(event) {
         noteID = $(event.relatedTarget).data('noteId');
@@ -175,16 +172,16 @@ function populateTicketInfo(ticket) {
         $('#no-specialist').show();
         $('#specialistDetails').hide()
     }
-// $userID = $result->fetch_row()[0];
-//
-//
-// $sql = "SELECT * FROM Users LEFT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Users.userID = $userID";
-//
-// $result = $conn->query($sql);
-//
-// if ($conn->error) die($conn->error);
-//
-// }
+
+//$userID = $result->fetch_row()[0];
+
+//$sql = "SELECT * FROM Users LEFT JOIN Employees ON Users.employeeID = Employees.employeeID WHERE Users.userID = $userID";
+
+//$result = $conn->query($sql);
+
+//if ($conn->error) die($conn->error);
+
+}
 
 // Set closed tickets to show problem problem type
   // if (ticket.problemType) {
