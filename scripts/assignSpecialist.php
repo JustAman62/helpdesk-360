@@ -4,7 +4,14 @@ require 'connect.php';
 
 include 'findProblemTypeName.php';
 
-$problemtypeid = JSON.stringify($rows);
+$problemtype = $_REQUEST['problemtype'];
+$sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problemtype'";
+$result = $conn->query($sql);
+if ($conn->error) die ($conn->error);
+
+$problemtypeid = $result->fetch_row()[0];
+
+//$problemtypeid = JSON.stringify($rows);
 
 $sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
         FROM
