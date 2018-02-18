@@ -103,6 +103,6 @@ function charts2() {
             }
             , 'json')
 
-
-
+    document.getElementById('selectbox').style.display = "block";
 }
+
