@@ -198,31 +198,24 @@ if (!isset($_SESSION['userid'])) {
             <div class="modal-body">
                 <form>
                     <div class="form-group row">
-                        <label for="employee-id" class="col-sm-4 col-form-label">Licence Number</label>
+                        <label for="licence-number" class="col-sm-4 col-form-label">Licence Number</label>
                         <div class="col-sm-8">
-                            <input type="text" readonly class="form-control-plaintext" id="employee-id" value="lala">
+                            <input type="text" readonly class="form-control-plaintext" id="licence-number" value="lala">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="first-name" class="col-sm-4 col-form-label">Name</label>
+                        <label for="name" class="col-sm-4 col-form-label">Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="first-name" placeholder="John">
+                            <input type="text" class="form-control" id="name" placeholder="John">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="last-name" class="col-sm-4 col-form-label">Type</label>
+                        <label for="type" class="col-sm-4 col-form-label">Type</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="last-name" placeholder="Smith">
+                            <input type="text" class="form-control" id="type" placeholder="Smith">
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-outline-danger" onclick="deleteEmployee()">Delete Employee</button>
-                <div class="right">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success" onclick="saveRecord()">Save</button>
-                </div>
             </div>
         </div>
     </div>
