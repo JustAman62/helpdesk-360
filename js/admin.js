@@ -152,6 +152,16 @@ function loadSoftwareList() {
             createSoftwareItem(result[i]);
         }
 
+        let addSoftware = document.createElement('button');
+        addSoftware.setAttribute('class', 'list-group-item list-group-item-action');
+        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        let plusSign = document.createElement('i');
+        plusSign.setAttribute('class', 'icon icon-plus-circled');
+        addSoftware.append(plusSign);
+        addSoftware.append(document.createTextNode(' Add Software'));
+
+        $('#software-list').append(addSoftware);
+
         //Update the footer to show how many users are in the list
         $('#software-count').text(result.length);
 
