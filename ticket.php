@@ -136,7 +136,7 @@ if (!isset($_SESSION['userid'])) {
         <div class="form-group row">
             <label for="software-licence-number" class="col-2 col-md-3 text-right col-form-label">Licence Number</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="softwareLicenceNumber" id="software-licence-number" value="">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="licenceNumber" id="software-licence-number" value="">
             </div>
         </div>
 
