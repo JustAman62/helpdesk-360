@@ -296,13 +296,13 @@ if (!isset($_SESSION['userid'])) {
                     <div class="form-group row">
                         <label for="name" class="col-sm-4 col-form-label">Type</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="type" placeholder="Hardware type">
+                            <input type="text" class="form-control" id="hardware-type" placeholder="Hardware type">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="type" class="col-sm-4 col-form-label">Make</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="type" placeholder="Hardware make">
+                            <input type="text" class="form-control" id="make" placeholder="Hardware make">
                         </div>
                     </div>
                 </form>

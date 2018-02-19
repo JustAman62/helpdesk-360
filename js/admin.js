@@ -299,7 +299,7 @@ function saveNewHardware(){
 function saveHardware() {
     $.get('scripts/updateHardwareDetails.php', {
         serialnumber: $('#serial-number').val(),
-        type: $('#type').val(),
+        type: $('#hardware-type').val(),
         make: $('#make').val(),
 
     }, function(result) {
@@ -324,7 +324,7 @@ function loadHardwareBySerialNumber(serialNumber) {
     $.get('././scripts/getFullHardwareDetailsBySerialNumber.php', {serialnumber: serialNumber}, function(result) {
         // Fill in details in the hardware modal
         $('#serial-number').val(result.licenceNumber);
-        $('#type').val(result.type);
+        $('#hardware-type').val(result.type);
         $('#make').val(result.make);
 
       },  'json');
