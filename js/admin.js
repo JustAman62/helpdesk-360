@@ -193,6 +193,21 @@ function createNewSoftware() {
         loadEmployeeList();
 }
 
+function saveSoftware() {
+    $.get('scripts/updateSoftwareDetails.php', {
+        licencenumber: $('#licence-number').val(),
+        name: $('#name').val(),
+        type: $('#type').val(),
+
+    }, function(result) {
+        //On success, update the employee list
+        loadSoftwareList();
+        //    close the modal which this has been called from
+        $('#SoftwareModal').modal('hide');
+
+    });
+}
+
     function createNewEmployee() {
         $.get('scripts/createEmployee.php', function(result) {
             $('#employeeModal').modal('show');
