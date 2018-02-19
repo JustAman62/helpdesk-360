@@ -17,7 +17,6 @@ $(function(){
             licenceNumber = event.relatedTarget.dataset.licenceNumber;
             loadSoftwareByLicence(licenceNumber)
         }
-        console.log(licenceNumber);
     });
 });
 
@@ -194,8 +193,9 @@ function createNewSoftware() {
     }
 
     function loadSoftwareByLicence(licenceNumber) {
-        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {softwarelicence: $('#software-licence').val()}, function(result) {
-            // Fill in employee details in the employee modal
+        console.log(licenceNumber);
+        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {softwarelicence: licenceNumber, function(result) {
+            // Fill in employee details in the software modal
             $('#licence-number').val(result.licenceNumber);
             $('#name').val(result.name);
             $('#type').val(result.type);
