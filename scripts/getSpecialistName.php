@@ -2,7 +2,9 @@
 
 require('connect.php');
 
-var result1 = ('#available-Specialists').val();
+$specialistname = $_REQUEST['specialistname'];
+
+var result1 = $specialistname;
 var result2 = result1.split(":");
 var result3 = result2[0];
 var result4 = result1.split(" ");
