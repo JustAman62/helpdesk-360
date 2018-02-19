@@ -220,12 +220,45 @@ function charts6()
                     console.log(finalArray3);
             console.log(tempArray4);
                 console.log(finalArray2.length);
+            var arr2 = [];
+            var arr3 =[];
+            var ii = 0;
+                for(i=0; i<tempArray4.length; i++){
+                    var arr3 = new Array();
+                    ii = 0;
+                    for(m=0; m<tempArray4[i].length; m++){
+                        if(tempArray4[i][m] >=0) {
+                            arr3[ii] = tempArray4[i][m];
+                            ii++
+                        }
+                    }
+                    console.log(arr3);
+
+                    var total =0;
+                    for(n=0; n<arr3.length; n++){
+                        console.log(arr3[n]);
+                        total += arr3[n];
+                    }
+                    var average = total/arr3.length;
+                    var arr3 = new Array();
+                    arr3[0] = Math.round(average);
+
+                    arr2.push(arr3);
+                }
 
 
+                console.log(arr2);
+                var arr4 = [].concat.apply([], arr2);
+            console.log(arr4);
 
 
-
-
+                new Chartist.Line('.ct-chart', {
+                    labels: finalArray3,
+                    series: [arr4]
+                }, {
+                    low: 0,
+                    showArea: true
+                });
             }
         , 'json')
         }
