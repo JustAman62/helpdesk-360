@@ -91,6 +91,7 @@ if (!isset($_SESSION['userid'])) {
                 </div>
             </div>
             <br/>
+            <div class="col-md-4 col-12">
             <div class="card">
                 <h5 class="card-header text-center">
                     Hardware
@@ -101,6 +102,7 @@ if (!isset($_SESSION['userid'])) {
                     <span id="hardware-count"></span> Hardware
                 </div>
             </div>
+          </div>
           </div>
         </div>
     </div>
