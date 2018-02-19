@@ -152,6 +152,12 @@ if (!isset($_SESSION['userid'])) {
                             <input type="text" class="form-control" id="job-title" placeholder="Software Engineer">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="job-title" class="col-sm-4 col-form-label">Availability</label>
+                        <div class="col-sm-8">
+                            <input type="checkbox" id="availability" value="1">
+                        </div>
+                    </div>
 
                     <hr>
                     <div id="user-indicator">
