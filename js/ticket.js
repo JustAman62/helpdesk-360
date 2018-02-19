@@ -58,6 +58,7 @@ $(function() {
 });
 
 function populateTicketInfo(ticket) {
+    console.log(ticket);
     //Auto fill basic information
     $('.auto-fill').each(function(i, element) {
         if (ticket[element.dataset.autofill]) {
