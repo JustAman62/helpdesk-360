@@ -203,7 +203,7 @@ function saveSoftware() {
         //On success, update the employee list
         loadSoftwareList();
         //    close the modal which this has been called from
-        $('#SoftwareModal').modal('hide');
+        $('#softwareModal').modal('hide');
 
     });
 }
