@@ -200,8 +200,7 @@ function createNewSoftware() {
             $('#type').val(result.type);
 
             }
-        }, 'json')
-    }
+      }, 'json')
 
 function loadHardwareList() {
     $.get('././scripts/getFullHardwareDetails.php', function(result) {
