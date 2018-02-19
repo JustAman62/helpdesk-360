@@ -131,6 +131,11 @@ if (!isset($_SESSION['userid'])) {
                             <label for="create-OS">Operating System</label>
                             <input class="form-control custom-select" id="create-OS"/>
                         </div>
+                        <div class="col-12 col-md-4" style="z-index: 100">
+                            <label for="assigned-specialist-name">Assigned Specialist</label>
+                            <input type="text" class="form-control" id="assigned-specialist-name" placeholder="John Doe" readonly>
+
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
