@@ -15,6 +15,7 @@ $(function(){
         let licenceNumber;
         if (event.relatedTarget) {
             licenceNumber = event.relatedTarget.dataset.licenceNumber;
+            loadSoftwareByLicence(licenceNumber)
         }
     });
 });
@@ -191,6 +192,16 @@ function createNewSoftware() {
         loadEmployeeList();
     }
 
+    function loadSoftwareByLicence(licenceNumber) {
+        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {softwarelicence: $('#software-licence').val()}, function(result) {
+            // Fill in employee details in the employee modal
+            $('#licence-number').val(result.licenceNumber);
+            $('#name').val(result.name);
+            $('#type').val(result.type);
+
+          },  'json');
+      }
+
 function loadHardwareList() {
     $.get('././scripts/getFullHardwareDetails.php', function(result) {
         $('#hardware-list').html("");
@@ -201,7 +212,7 @@ function loadHardwareList() {
 
         let addHardware = document.createElement('button');
         addHardware.setAttribute('class', 'list-group-item list-group-item-action');
-        addHardware.setAttribute('onclick', 'createNewSoftware()');
+        addHardware.setAttribute('onclick', 'createNewHardware()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addHardware.append(plusSign);
