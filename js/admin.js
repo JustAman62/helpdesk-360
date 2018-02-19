@@ -223,7 +223,8 @@ function saveSoftware() {
 
 function deleteSoftware() {
     $.get('scripts/deleteSoftware.php', {licencenumber: $('#licence-number').val()}, function(result) {
-
+      loadSoftwareList();
+      $('#softwareModal').modal('hide');
     });
 
     loadSoftwareList();
