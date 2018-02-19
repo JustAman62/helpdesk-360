@@ -44,20 +44,20 @@ if (!isset($_SESSION['userid'])) {
                         <a class="nav-link" href="specialistHome.php">Specialist Home</a>
                     </li>
                     <?php } ?>
-            <li class="nav-item">
-                <a class="nav-link" href="ticketList.php">View Tickets</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="currentAnalytics.php">Analytics</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="admin.php">Admin</a>
-            </li>
-        </ul>
-    </div>
-    <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
-        <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['username'] ?> <i class="icon-user"></i></a>
-    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ticketList.php">View Tickets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="currentAnalytics.php">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin.php">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ml-auto order-2 order-md-3" style="white-space: nowrap">
+                <a id="accountPopover" class="navbar-text nav-link nav-account" href="#" data-toggle="popover" title="Account" data-placement="bottom"> <?= $_SESSION['username'] ?> <i class="icon-user"></i></a>
+            </div>
 </nav>
 
 <div class="container mt-4">
@@ -71,40 +71,49 @@ if (!isset($_SESSION['userid'])) {
             <div class="card">
                 <h5 class="card-header text-center">
                     Employees
-                    <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
                 </h5>
                 <div class="list-group list-group-flush" id="user-list"></div>
                 <div class="card-footer text-muted small text-center">
                     <span id="user-count"></span> Employees
                 </div>
             </div>
-          </div>
-          <div class="col-md-4 col-12">
+        </div>
+        <div class="col-md-4 col-12">
             <div class="card">
                 <h5 class="card-header text-center">
                     Software
-                    <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
+                    <a class="text-secondary" href="#"></a>
                 </h5>
                 <div class="list-group list-group-flush" id="software-list"></div>
                 <div class="card-footer text-muted small text-center">
                     <span id="software-count"></span> Software
                 </div>
             </div>
-          </div>
-            <div class="col-md-4 col-12">
+        </div>
+        <div class="col-md-4 col-12">
             <div class="card">
                 <h5 class="card-header text-center">
                     Hardware
-                    <a class="text-secondary" href="#"><i class="icon icon-search"></i></a>
                 </h5>
                 <div class="list-group list-group-flush" id="hardware-list"></div>
                 <div class="card-footer text-muted small text-center">
                     <span id="hardware-count"></span> Hardware
                 </div>
             </div>
-          </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="card">
+                <h5 class="card-header text-center">
+                    Hardware
+                </h5>
+                <div class="list-group list-group-flush" id="hardware-list"></div>
+                <div class="card-footer text-muted small text-center">
+                    <span id="hardware-count"></span> Hardware
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
 
 
