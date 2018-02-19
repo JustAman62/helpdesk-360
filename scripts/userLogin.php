@@ -14,11 +14,19 @@ if ($conn->error) die($conn->error);
 if ($result->num_rows == 0) {
     echo 'failure';
 }
+
 else {
-    echo 'success';
-    $_SESSION['userid'] = $userID;
     $employee = $result->fetch_object();
-    $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
+    if ($employee->accessLevel) {
+        echo 'specialist';
+        $_SESSION['userid'] = $userID;
+        $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
+    }
+    else {
+        echo 'both';
+        $_SESSION['userid'] = $userID;
+        $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
+    }
 }
 
 

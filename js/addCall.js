@@ -6,7 +6,6 @@ $(function() {
     let problemTypesList = new Awesomplete(input[0]);
     problemTypesList.minChars = 0;
     $.get('scripts/getProblemTypes.php', function(result) {
-       console.log(result[0]);
        let array = [];
        for (let i in result) {
            array.push(result[i][0]);
@@ -96,7 +95,6 @@ function assignNewSpecialist(){
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
     $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()}, function(result) {
-        console.log("hey");
         let array = [];
         for (let i in result) {
             var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
@@ -107,6 +105,26 @@ function assignNewSpecialist(){
     input.on('focus', function(){
         specialistList.evaluate();
         specialistList.open();
+    });
+}
+
+function assignedSpecialistName(){
+    let input = $('#available-Specialists');
+    let specialistName = new Awesomplete(input[0]);
+    // let variable = '#available-Specialists'.val().firstName.concat(" ", '#available-Specialists'.val().lastName);
+    $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result){
+        console.log("hello");
+        let variable = "";
+        for (let i in '#available-Specialists'.val()) {
+          console.log("hii");
+            var result1 = '#available-Specialists'[i].firstName.concat(" ", '#available-Specialists'[i].lastName);
+            variable.push(result1);
+        }
+        specialistName.list = variable;
+    }, 'json');
+    input.on('focus', function(){
+        specialistName.evaluate();
+        specialistName.open();
     });
 }
 
@@ -219,6 +237,7 @@ function createNewTicket() {
         employeeid: $('#create-employee-id').val(),
         problemtype: $('#create-problem-type').val(),
         operatingsystem: $('#create-OS').val(),
+        specialistname: $('#available-Specialists').val(),
         problemdescription: $('#create-problem-description').val(),
         licencenumber: $('#create-licence-number').val() ? $('#create-licence-number').val() : undefined,
         serialnumber: $('#create-serial-number').val() ? $('#create-serial-number').val() : undefined,

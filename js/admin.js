@@ -12,10 +12,10 @@ $(function(){
     });
 
     $('#softwareModal').on('show.bs.modal', function(event) {
-        let employeeID;
+        let licenceNumber;
         if (event.relatedTarget) {
-            employeeID = event.relatedTarget.dataset.employeeId;
-            loadEmployeeById(employeeID)
+            licenceNumber = event.relatedTarget.dataset.licenceNumber;
+            loadSoftwareByLicence(licenceNumber)
         }
     });
 });
@@ -162,7 +162,7 @@ function loadSoftwareList() {
 
         let addSoftware = document.createElement('button');
         addSoftware.setAttribute('class', 'list-group-item list-group-item-action');
-        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        addSoftware.setAttribute('onclick', 'createNewSoftware()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addSoftware.append(plusSign);
@@ -179,13 +179,53 @@ function loadSoftwareList() {
 function createSoftwareItem(software) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
-    item.dataset.software = software.licenceNumber;
+    item.dataset.licenceNumber= software.licenceNumber;
     item.dataset.toggle = 'modal';
     item.dataset.target = '#softwareModal';
     item.append(document.createTextNode(software.name + ' : ' + software.type + ' - ' + software.licenceNumber));
 
     $('#software-list').append(item);
 }
+
+function createNewSoftware() {
+        $('#softwareModal').modal('show');
+        loadSoftwareByLicence();
+        loadEmployeeList();
+}
+
+function saveSoftware() {
+    $.get('scripts/updateSoftwareDetails.php', {
+        licencenumber: $('#licence-number').val(),
+        name: $('#name').val(),
+        type: $('#type').val(),
+
+    }, function(result) {
+        //On success, update the employee list
+        loadSoftwareList();
+        //    close the modal which this has been called from
+        $('#softwareModal').modal('hide');
+
+    });
+}
+
+    function createNewEmployee() {
+        $.get('scripts/createEmployee.php', function(result) {
+            $('#employeeModal').modal('show');
+            loadEmployeeById(result.employeeid)
+            loadEmployeeList();
+        }, 'json');
+    }
+
+    function loadSoftwareByLicence(licenceNumber) {
+        console.log(licenceNumber);
+        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {licencenumber: licenceNumber}, function(result) {
+            // Fill in employee details in the software modal
+            $('#licence-number').val(result.licenceNumber);
+            $('#name').val(result.name);
+            $('#type').val(result.type);
+
+          },  'json');
+      }
 
 function loadHardwareList() {
     $.get('././scripts/getFullHardwareDetails.php', function(result) {
@@ -197,7 +237,7 @@ function loadHardwareList() {
 
         let addHardware = document.createElement('button');
         addHardware.setAttribute('class', 'list-group-item list-group-item-action');
-        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        addHardware.setAttribute('onclick', 'createNewHardware()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addHardware.append(plusSign);
@@ -205,7 +245,7 @@ function loadHardwareList() {
 
         $('#hardware-list').append(addHardware);
 
-        //Update the footer to show how many hardware is in the list
+        //Update the footer to show how many hardware items are in the list
         $('#hardware-count').text(result.length);
 
     }, 'json');
