@@ -273,5 +273,82 @@ if (!isset($_SESSION['userid'])) {
     </div>
 </div>
 
+<div class="modal fade" id="hardwareModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-between">
+                <h3 class="my-0">Edit Hardware</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="licence-number" class="col-sm-4 col-form-label">Serial Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="serial-number" placeholder="######">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-4 col-form-label">Type</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="hardware-type" placeholder="Hardware type">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="type" class="col-sm-4 col-form-label">Make</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="make" placeholder="Hardware make">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-danger" onclick="deleteHardware()">Delete Hardware</button>
+                <div class="right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick = "saveHardware()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newHardwareModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-between">
+                <h3 class="my-0">New Hardware</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="licence-number" class="col-sm-4 col-form-label">Serial Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="new-serial-number" placeholder="######">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-4 col-form-label">Type</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="new-hardware-type" placeholder="Hardware type">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="type" class="col-sm-4 col-form-label">Type</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="new-make" placeholder="Hardware make">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <div class="right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick = "saveNewHardware()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

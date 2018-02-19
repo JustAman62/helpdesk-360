@@ -2,7 +2,7 @@
 $(function(){
     loadEmployeeList();
     loadHardwareList();
-    loadHardwareList()
+    loadSoftwareList()
 
     $('#employeeModal').on('show.bs.modal', function(event) {
         let employeeID;
@@ -17,6 +17,14 @@ $(function(){
         if (event.relatedTarget) {
             licenceNumber = event.relatedTarget.dataset.licenceNumber;
             loadSoftwareByLicence(licenceNumber)
+        }
+    });
+
+    $('#hardwareModal').on('show.bs.modal', function(event) {
+        let serialNumber;
+        if (event.relatedTarget) {
+            serialNumber = event.relatedTarget.dataset.hardware;
+            loadHardwareBySerialNumber(serialNumber)
         }
     });
 });
@@ -281,27 +289,27 @@ function createHardwareItem(hardware) {
 
 function createNewHardware() {
         document.getElementById('new-serial-number').value = ''
-        document.getElementById('new-type').value = ''
+        document.getElementById('new-hardware-type').value = ''
         document.getElementById('new-make').value = ''
         $('#newHardwareModal').modal('show');
-        loadSoftwareList();
+        loadHardwareList();
 }
 
 function saveNewHardware(){
   $.get('scripts/createHardware.php', {
       serialnumber: $('#new-serial-number').val(),
-      type: $('#new-type').val(),
+      type: $('#new-hardware-type').val(),
       make: $('#new-make').val(),
     });
 
   loadHardwareList();
-  $('#newSoftwareModal').modal('hide');
+  $('#newHardwareModal').modal('hide');
 }
 
 function saveHardware() {
     $.get('scripts/updateHardwareDetails.php', {
         serialnumber: $('#serial-number').val(),
-        type: $('#type').val(),
+        type: $('#hardware-type').val(),
         make: $('#make').val(),
 
     }, function(result) {
@@ -323,11 +331,10 @@ function deleteHardware() {
 }
 
 function loadHardwareBySerialNumber(serialNumber) {
-    console.log(serialNumber);
     $.get('././scripts/getFullHardwareDetailsBySerialNumber.php', {serialnumber: serialNumber}, function(result) {
-        // Fill in employee details in the software modal
+        // Fill in details in the hardware modal
         $('#serial-number').val(result.licenceNumber);
-        $('#type').val(result.type);
+        $('#hardware-type').val(result.type);
         $('#make').val(result.make);
 
       },  'json');
