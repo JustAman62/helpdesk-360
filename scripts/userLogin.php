@@ -19,7 +19,7 @@ if ($result->num_rows == 0) {
 }
 
 else {
-    if ($result1) {
+    if ($result1=='0') {
         echo 'both';
         $_SESSION['userid'] = $userID;
         $employee = $result->fetch_object();
