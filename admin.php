@@ -9,7 +9,7 @@ if (!isset($_SESSION['userid'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -155,7 +155,7 @@ if (!isset($_SESSION['userid'])) {
                     <div class="form-group row">
                         <label for="job-title" class="col-sm-4 col-form-label">Availability</label>
                         <div class="col-sm-8">
-                            <input type="checkbox" id="availability">
+                            <input type="checkbox" id="availability" value="1">
                         </div>
                     </div>
 
