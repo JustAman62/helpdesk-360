@@ -186,6 +186,11 @@ function createSoftwareItem(software) {
     $('#software-list').append(item);
 }
 
+function createNewSoftware() {
+        $('#softwareModal').modal('show');
+        loadEmployeeList();
+    }
+
 function loadHardwareList() {
     $.get('././scripts/getFullHardwareDetails.php', function(result) {
         $('#hardware-list').html("");
