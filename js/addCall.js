@@ -6,7 +6,6 @@ $(function() {
     let problemTypesList = new Awesomplete(input[0]);
     problemTypesList.minChars = 0;
     $.get('scripts/getProblemTypes.php', function(result) {
-       console.log(result[0]);
        let array = [];
        for (let i in result) {
            array.push(result[i][0]);
@@ -115,9 +114,9 @@ function assignedSpecialistName(){
     $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result) {
       console.log("hello");
         let variable = "";
-        for (let i in '#available-Specialists') {
+        for (let i in specialistList) {
           console.log("hii");
-            var result1 = '#available-Specialists'[0].firstName.concat(" ", '#available-Specialists'[0].lastName);
+            var result1 = '#available-Specialists'[i].firstName.concat(" ", '#available-Specialists'[i].lastName);
             variable.push(result1);
         }
         specialistName.list = variable;
