@@ -19,6 +19,14 @@ $(function(){
             loadSoftwareByLicence(licenceNumber)
         }
     });
+
+    $('#hardwareModal').on('show.bs.modal', function(event) {
+        let serialNumber;
+        if (event.relatedTarget) {
+            serialNumber = event.relatedTarget.dataset.serialNumber;
+            loadHardwareBySerialNumberByLicence(serialNumber)
+        }
+    });
 });
 
 function loadEmployeeList() {
