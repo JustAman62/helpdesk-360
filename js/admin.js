@@ -194,9 +194,9 @@ function createNewSoftware() {
 
     function loadSoftwareByLicence(licenceNumber) {
         console.log(licenceNumber);
-        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {softwarelicence: licenceNumber}, function(result) {
+        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {licencenumber: licenceNumber}, function(result) {
             // Fill in employee details in the software modal
-            //$('#licence-number').val(result.licenceNumber);
+            $('#licence-number').val(result.licenceNumber);
             $('#name').val(result.name);
             $('#type').val(result.type);
 
