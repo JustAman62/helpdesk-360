@@ -1,5 +1,6 @@
 // Contributions by: Jess McCreery, Aman Dhoot, Mary Roca, Linus kurz
 let nameList;
+let specialistList;
 
 $(function() {
     let input = $('#create-problem-type');
@@ -67,6 +68,22 @@ $(function() {
             $('#name-list').append(listItem);
         }
     });
+    $('#specialistModal').on('show.bs.modal', function(event) {
+        let list = $('#specialist-list');
+        list.html("");
+        //    Make a list item
+        for (let i in specialistList) {
+            let listItem = document.createElement('button')
+            listItem.setAttribute('type', 'button');
+            listItem.setAttribute('class', 'list-group-item list-group-item-action');
+            listItem.setAttribute('onclick', "javascript:chooseSpecialist(this)");
+            listItem.dataset.specialistId = specialistList[i].specialistID;
+            listItem.dataset.firstName = specialistList[i].firstName;
+            listItem.dataset.lastName = specialistList[i].lastName;
+            listItem.appendChild(document.createTextNode(specialistList[i].firstName + ' ' + specialistList[i].lastName + '   ' + specialistList[i].Problems));
+            $('#specialist-list').append(listItem);
+        }
+    });
 
 });
 
@@ -91,40 +108,19 @@ function checkCreateEmployeeDetails() {
 }
 
 function assignNewSpecialist(){
-    let input = $('#available-Specialists');
-    let specialistList = new Awesomplete(input[0]);
-    specialistList.minChars = 0;
     $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()}, function(result) {
-        let array = [];
-        for (let i in result) {
-            var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
-            array.push(result1);
-        }
-        specialistList.list = array;
+        specialistList = result;
+        $('#specialistModal').modal('show');
     }, 'json');
-    input.on('focus', function(){
-        specialistList.evaluate();
-        specialistList.open();
-    });
+}
+function chooseSpecialist(element) {
+    let specialist = $('#assigned-specialist-name');
+    specialist.val(element.dataset.firstName + " " + element.dataset.lastName);
+    specialist[0].dataset.specialistId = element.dataset.specialistId;
+
+    $('#specialistModal').modal('hide');
 }
 
-function assignedSpecialistName(){
-    let specialistName = $('#available-Specialists').val();
-    $.get('scripts/getSpecialistName.php', {specialistname: specialistName}, function(result) {
-      console.log("hey");
-      document.getElementById('assigned-specialist-name').value = result
-    }, 'json');
-    // $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result){
-    //     console.log("hello");
-    //     let variable = "";
-    //     for (let i in '#available-Specialists'.val()) {
-    //       console.log("hii");
-    //         var result1 = '#available-Specialists'[i].firstName.concat(" ", '#available-Specialists'[i].lastName);
-    //         variable.push(result1);
-    //     }
-    //     specialistName.list = variable;
-    // }, 'json');
-}
 
 function checkSoftware() {
     let licenceNumber = $('#create-licence-number').val();
@@ -227,6 +223,11 @@ function checkAddEmployeeDetails() {
 function createNewTicket() {
 //    TODO: implement validation
     let calltime = $('#create-time').val() + ':00';
+    let specialistID = "NULL";
+    if ($('#assigned-specialist-name')[0].dataset.specialistId) {
+        specialistID = $('#assigned-specialist-name')[0].dataset.specialistId;
+    }
+
 
     $.get('scripts/createTicket.php', {
         calltime: calltime,
@@ -241,7 +242,7 @@ function createNewTicket() {
         serialnumber: $('#create-serial-number').val() ? $('#create-serial-number').val() : undefined,
         callnotes: $('#create-notes').val(),
         ticketstatus: 0,
-    //    todo: send correct userid when sending request
+        specialistid: specialistID
     }, function(result) {
         console.log(result);
 

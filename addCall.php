@@ -140,7 +140,7 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="assigned-specialist-name">Assigned Specialist</label>
-                            <input type="text" class="form-control" id="assigned-specialist-name" placeholder="No specialist" onclick="assignedSpecialistName"readonly>
+                            <input type="text" class="form-control" id="assigned-specialist-name" placeholder="No specialist" onclick="assignNewSpecialist()"readonly>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -255,33 +255,6 @@ if (!isset($_SESSION['userid'])) {
     </div>
 </div>
 
-<!-- Modal for assign to specialist -->
-<div class="modal fade" id="assignModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog pt-5" role="document">
-        <div class="modal-content">
-            <div class="modal-header justify-between">
-                <h3 class="my-0">Select a specialist<i class="icon icon-user"></i></h3>
-            </div>
-                <br/>
-                <div class="row">
-                  <div class = "col-md-1">
-                  </div>
-                    <div class="col-md-10">
-                        <input class="form-control custom-select" id="available-Specialists"/>
-                    </div>
-                  <div class = "col-md-1">
-                  </div>
-                </div>
-                <br/>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-success" id="saveSpecialist" onclick="assignedSpecialistName()">Assign</button>
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="nameModal" tabindex="-1" role="dialog">
     <div class="modal-dialog pt-5" role="document">
         <div class="modal-content">
@@ -295,7 +268,21 @@ if (!isset($_SESSION['userid'])) {
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="specialistModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog pt-5" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group list-group-flush" id="specialist-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 </body>

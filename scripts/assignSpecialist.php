@@ -9,7 +9,7 @@ if ($conn->error) die ($conn->error);
 
 $problemtypeid = $result->fetch_row()[0];
 
-$sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems
+$sql = "SELECT Employees.firstName, Employees.lastName, Tbl1.userID, Tbl1.Problems, Specialists.specialistID
         FROM
         (SELECT Tbl.userID, MAX(Tbl.Count) AS Problems
         FROM (SELECT Users.userID, COUNT(1) as Count
