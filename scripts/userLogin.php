@@ -19,19 +19,18 @@ if ($result->num_rows == 0) {
 }
 
 else {
-    /*if ($result1=='0') {
+    if ($result1=='0') {
         echo 'both';
         $_SESSION['userid'] = $userID;
         $employee = $result->fetch_object();
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
     }
     else {
-        echo 'specialist';
+        echo $result1;
         $_SESSION['userid'] = $userID;
         $employee = $result->fetch_object();
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
-    }*/
-    echo $result1;
+    }
 }
 
 
