@@ -188,11 +188,22 @@ function createSoftwareItem(software) {
 }
 
 function createNewSoftware() {
-        $('#softwareModal').modal('show');
-        document.getElementById('licence-number').value = ''
-        document.getElementById('name').value = ''
-        document.getElementById('type').value = ''
+        document.getElementById('new-licence-number').value = ''
+        document.getElementById('new-name').value = ''
+        document.getElementById('new-type').value = ''
+        $('#newSoftwareModal').modal('show');
         loadEmployeeList();
+}
+
+function saveNewSoftware(){
+  $.get('scripts/createSoftware.php', {
+      licencenumber: $('#licence-number').val(),
+      name: $('#name').val(),
+      type: $('#type').val(),
+    }
+
+  loadSoftwareList();
+  $('#softwareModal').modal('hide');
 }
 
 function saveSoftware() {

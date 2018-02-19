@@ -228,5 +228,43 @@ if (!isset($_SESSION['userid'])) {
     </div>
 </div>
 
+<div class="modal fade" id="newSoftwareModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-between">
+                <h3 class="my-0">New Software</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="licence-number" class="col-sm-4 col-form-label">Licence Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="new-licence-number" placeholder="######">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-4 col-form-label">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="new-name" placeholder="Software name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="type" class="col-sm-4 col-form-label">Type</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="new-type" placeholder="Software type">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <div class="right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick = "saveNewSoftware()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
