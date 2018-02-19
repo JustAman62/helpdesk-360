@@ -200,7 +200,7 @@ function saveNewSoftware(){
       licencenumber: $('#licence-number').val(),
       name: $('#name').val(),
       type: $('#type').val(),
-    }
+    });
 }
 
   loadSoftwareList();
