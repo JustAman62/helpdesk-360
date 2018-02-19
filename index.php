@@ -5,6 +5,7 @@ session_start();
 if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
 }
+
 /*else{
     $userID = $_SESSION['userid'];
     $sql ="SELECT `Users`.`accessLevel` FROM `Users` WHERE userID = '$userID'";
@@ -14,7 +15,7 @@ if (!isset($_SESSION['userid'])) {
     if ($employee->accessLevel)
         header('Location: specialistHome.php');
 }*/
- 
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +44,12 @@ if (!isset($_SESSION['userid'])) {
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <?php
+    if ($_SESSION['accesslevel']){ ?>
+    <a class="navbar-brand nav-abs order-1" href="specialistHome.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
+    <?php } else { ?>
     <a class="navbar-brand nav-abs order-1" href="index.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
+    <?php } ?>
     <div class="navbar-collapse collapse order-3 order-md-1">
         <ul class="navbar-nav">
             <li class="nav-item">
