@@ -282,7 +282,7 @@ function createNewHardware() {
         document.getElementById('new-type').value = ''
         document.getElementById('new-make').value = ''
         $('#newHardwareModal').modal('show');
-        loadSoftwareList();
+        loadHardwareList();
 }
 
 function saveNewHardware(){
@@ -293,7 +293,7 @@ function saveNewHardware(){
     });
 
   loadHardwareList();
-  $('#newSoftwareModal').modal('hide');
+  $('#newHardwareModal').modal('hide');
 }
 
 function saveHardware() {
@@ -321,9 +321,8 @@ function deleteHardware() {
 }
 
 function loadHardwareBySerialNumber(serialNumber) {
-    console.log(serialNumber);
     $.get('././scripts/getFullHardwareDetailsBySerialNumber.php', {serialnumber: serialNumber}, function(result) {
-        // Fill in employee details in the software modal
+        // Fill in details in the hardware modal
         $('#serial-number').val(result.licenceNumber);
         $('#type').val(result.type);
         $('#make').val(result.make);
