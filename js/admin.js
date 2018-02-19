@@ -201,6 +201,7 @@ function saveNewSoftware(){
       name: $('#name').val(),
       type: $('#type').val(),
     }
+}
 
   loadSoftwareList();
   $('#softwareModal').modal('hide');
