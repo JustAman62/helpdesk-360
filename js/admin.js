@@ -331,7 +331,7 @@ function deleteHardware() {
 function loadHardwareBySerialNumber(serialNumber) {
     $.get('././scripts/getFullHardwareDetailsBySerialNumber.php', {serialnumber: serialNumber}, function(result) {
         // Fill in details in the hardware modal
-        $('#serial-number').val(result.licenceNumber);
+        $('#serial-number').val(result.serialNumber);
         $('#hardware-type').val(result.type);
         $('#make').val(result.make);
 
