@@ -110,7 +110,6 @@ function assignNewSpecialist(){
 
 function assignedSpecialistName(){
     let input = $('#available-Specialists');
-    let specialistName;
     $.get('scripts/getSpecialistName.php', {specialistname: $('#available-Specialists').val()}, function(result) {
       console.log("hey");
       document.getElementById('assigned-specialist-name').value = result
@@ -126,8 +125,6 @@ function assignedSpecialistName(){
     //     specialistName.list = variable;
     // }, 'json');
     input.on('focus', function(){
-        specialistName.evaluate();
-        specialistName.open();
     });
 }
 
