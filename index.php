@@ -5,6 +5,9 @@ session_start();
 if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
 }
+if ($_SESSION['accesslevel']){
+    header('Location: specialistHome.php');
+}
 /*else{
     $userID = $_SESSION['userid'];
     $sql ="SELECT `Users`.`accessLevel` FROM `Users` WHERE userID = '$userID'";
@@ -14,7 +17,7 @@ if (!isset($_SESSION['userid'])) {
     if ($employee->accessLevel)
         header('Location: specialistHome.php');
 }*/
- 
+
 ?>
 
 <!DOCTYPE html>
