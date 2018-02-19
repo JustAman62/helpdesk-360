@@ -57,7 +57,7 @@ function showTickets() {
 
         if (ticketList[i].priority == 2)
             filter = $('#filter-high-priority').hasClass('active');
-        
+
         if (filter) createTicket(i, ticketList);
     }
     resizeAllGridItems();
