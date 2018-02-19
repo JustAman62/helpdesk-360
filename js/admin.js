@@ -221,6 +221,14 @@ function saveSoftware() {
     });
 }
 
+function deleteSoftware() {
+    $.get('scripts/deleteSoftware.php', {licencenumber: $('#licence-number').val()}, function(result) {
+
+    });
+
+    loadSoftwareList();
+}
+
 function loadSoftwareByLicence(licenceNumber) {
     console.log(licenceNumber);
     $.get('././scripts/getFullSoftwareDetailsByLicence.php', {licencenumber: licenceNumber}, function(result) {
