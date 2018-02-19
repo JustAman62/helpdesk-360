@@ -329,7 +329,6 @@ function deleteHardware() {
       $('#hardwareModal').modal('hide');
     });
 
-    loadHardwareList();
 }
 
 function loadHardwareBySerialNumber(serialNumber) {
