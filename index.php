@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
 }
-else{
+/*else{
     $userID = $_SESSION['userid'];
     $sql ="SELECT `Users`.`accessLevel` FROM `Users` WHERE userID = '$userID'";
     $result = $conn->query($sql);
@@ -13,8 +13,8 @@ else{
     $employee = $result->fetch_object();
     if ($employee->accessLevel)
         header('Location: specialistHome.php');
-}
-
+}*/
+ 
 ?>
 
 <!DOCTYPE html>
