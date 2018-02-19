@@ -192,7 +192,7 @@ function createNewSoftware() {
         document.getElementById('new-name').value = ''
         document.getElementById('new-type').value = ''
         $('#newSoftwareModal').modal('show');
-        loadEmployeeList();
+        loadSoftwareList();
 }
 
 function saveNewSoftware(){
