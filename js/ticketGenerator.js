@@ -47,7 +47,7 @@ function createTicket(index, tickets) {
         badge.append(document.createTextNode('Closed'));
 
         $.get('scripts/getProblemTypeFromID.php', {problemtypeid: ticket.problemTypeID}, function(result) {
-            let problemText = createNewElement('i', '');
+            let problemText = createNewElement('i', 'small');
             problemText.append(document.createTextNode(result.problemTypeName));
             ticketHeading.append(problemText);
         }, 'json');
