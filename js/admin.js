@@ -17,6 +17,7 @@ $(function(){
             licenceNumber = event.relatedTarget.dataset.licenceNumber;
             loadSoftwareByLicence(licenceNumber)
         }
+        console.log(licenceNumber);
     });
 });
 
