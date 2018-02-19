@@ -1,15 +1,14 @@
 <?php
 session_start();
+require ('userLogin.php');
+$employee = $result->fetch_object();
 
 //If the user is not logged in, send them to login page
 if (!isset($_SESSION['userid'])) {
   header('Location: login.php');
 }
-
-require ('userLogin.php');
-$employee = $result->fetch_object();
 //If user as only specialist access transfer to Specialist Homepage
-if ($employee->accessLevel) {
+else if ($employee->accessLevel) {
     header('Location: specialistHome.php');
 }
 ?>
