@@ -179,7 +179,7 @@ function loadSoftwareList() {
 function createSoftwareItem(software) {
     let item = document.createElement('button');
     item.setAttribute('class', 'list-group-item list-group-item-action');
-    item.dataset.software = software.licenceNumber;
+    item.dataset.licenceNumber= software.licenceNumber;
     item.dataset.toggle = 'modal';
     item.dataset.target = '#softwareModal';
     item.append(document.createTextNode(software.name + ' : ' + software.type + ' - ' + software.licenceNumber));
