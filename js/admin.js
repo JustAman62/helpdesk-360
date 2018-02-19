@@ -197,9 +197,9 @@ function createNewSoftware() {
 
 function saveNewSoftware(){
   $.get('scripts/createSoftware.php', {
-      licencenumber: $('#licence-number').val(),
-      name: $('#name').val(),
-      type: $('#type').val(),
+      licencenumber: $('#new-licence-number').val(),
+      name: $('#new-name').val(),
+      type: $('#new-type').val(),
     });
 
   loadSoftwareList();
