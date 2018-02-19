@@ -112,7 +112,7 @@ function assignedSpecialistName(){
     let input = $('#available-Specialists');
     let specialistName = new Awesomplete(input[0]);
     // let variable = '#available-Specialists'.val().firstName.concat(" ", '#available-Specialists'.val().lastName);
-    $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result){
+    $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(results){
         console.log("hello");
         let variable = "";
         for (let i in '#available-Specialists'.val()) {
