@@ -110,12 +110,16 @@ function assignNewSpecialist(){
 }
 
 function assignedSpecialistName(){
+  console.log("hi");
     let input = $('#create-problem-type');
     let specialistName = new awesomplete(input[0]);
+    console.log("hey");
     $.get('#create-problem-type', {problemtype: $('#create-problem-type').val()}, function(result) {
+      console.log("hello");
         let variable = "";
-        for (result) {
-            var result1 = result.firstName.concat(" ", result.lastName);
+        for ('#create-problem-type'.firstName) {
+          console.log("hii");
+            var result1 = '#create-problem-type'.firstName.concat(" ", '#create-problem-type'.lastName);
             variable.push(result1);
         }
         specialistName.list = variable;
