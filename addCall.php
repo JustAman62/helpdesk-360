@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot, Jess McCreery, Mary Roca, Linus kurz
 <?php
 session_start();
 //If the user is not logged in, send them to login page
