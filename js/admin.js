@@ -300,10 +300,12 @@ function saveNewHardware(){
       serialnumber: $('#new-serial-number').val(),
       type: $('#new-hardware-type').val(),
       make: $('#new-make').val(),
+    }, function(result) {
+      loadHardwareList();
+      $('#newHardwareModal').modal('hide');
     });
 
-  loadHardwareList();
-  $('#newHardwareModal').modal('hide');
+
 }
 
 function saveHardware() {
