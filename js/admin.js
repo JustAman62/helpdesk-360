@@ -279,7 +279,7 @@ function createHardwareItem(hardware) {
 
 function createNewHardware() {
         document.getElementById('new-serial-number').value = ''
-        document.getElementById('new-type').value = ''
+        document.getElementById('new-hardware-type').value = ''
         document.getElementById('new-make').value = ''
         $('#newHardwareModal').modal('show');
         loadHardwareList();
@@ -288,7 +288,7 @@ function createNewHardware() {
 function saveNewHardware(){
   $.get('scripts/createHardware.php', {
       serialnumber: $('#new-serial-number').val(),
-      type: $('#new-type').val(),
+      type: $('#new-hardware-type').val(),
       make: $('#new-make').val(),
     });
 
