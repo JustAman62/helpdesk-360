@@ -106,6 +106,10 @@ if (!isset($_SESSION['userid'])) {
             <select id="employeeSelect" onchange="charts5()">
             <option></option>
             </select>
+
+        </div>
+        <div id="Avg" style="display: none">
+            <input type="checkbox" id="AverageTime" onchange="charts6()">Average time for problem types
         </div>
     </div>
 </div>

@@ -59,6 +59,7 @@ function charts() {
 
         }, 'json')
     document.getElementById('selectbox').style.display = "none";
+    document.getElementById('Avg').style.display = "none";
     }
 
 
