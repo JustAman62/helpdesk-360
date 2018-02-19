@@ -190,7 +190,7 @@ function createSoftwareItem(software) {
 function createNewSoftware() {
         $('#softwareModal').modal('show');
         loadEmployeeList();
-    }
+}
 
     function loadSoftwareByLicence(licenceNumber) {
         console.log(licenceNumber);
