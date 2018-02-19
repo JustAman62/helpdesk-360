@@ -56,13 +56,13 @@ if (isset($_REQUEST['licencenumber']) && isset($_REQUEST['serialnumber'])) {
 }
 else if (isset($_REQUEST['licencenumber'])) {
     $licencenumber = $_REQUEST['licencenumber'];
-    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `serialNumber`, `operatingSystem`)
-        VALUES ('$ticketnumber','$userid','$employeeid','$calldate','$priority','$problemtypeid','$problemdescription','$ticketstatus','$serialnumber', '$operatingsystem')";
+    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `licenceNumber`, `operatingSystem`)
+        VALUES ('$ticketnumber','$userid','$employeeid','$calldate','$priority','$problemtypeid','$problemdescription','$ticketstatus','$licencenumber','$operatingsystem')";
 }
 else if (isset($_REQUEST['serialnumber'])) {
     $serialnumber = $_REQUEST['serialnumber'];
-    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `licenceNumber`, `operatingSystem`)
-        VALUES ('$ticketnumber','$userid','$employeeid','$calldate','$priority','$problemtypeid','$problemdescription','$ticketstatus','$licencenumber','$operatingsystem')";
+    $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `serialNumber`, `operatingSystem`)
+        VALUES ('$ticketnumber','$userid','$employeeid','$calldate','$priority','$problemtypeid','$problemdescription','$ticketstatus','$serialnumber', '$operatingsystem')";
 }
 else{
     $sql = "INSERT INTO `Tickets`(`ticketNumber`, `userID`, `employeeID`, `dateCreated`, `priority`, `problemTypeID`, `originalDescription`, `ticketStatus`, `operatingSystem`)
