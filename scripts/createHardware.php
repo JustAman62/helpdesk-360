@@ -3,9 +3,9 @@
 
 require('connect.php');
 
-$licencenumber = $_REQUEST['serialnumber'];
-$name = $_REQUEST['type'];
-$type = $_REQUEST['make'];
+$serialnumber = $_REQUEST['serialnumber'];
+$type = $_REQUEST['type'];
+$make = $_REQUEST['make'];
 
 //Create the hardware entry in database
 
