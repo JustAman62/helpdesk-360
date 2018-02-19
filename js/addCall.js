@@ -131,7 +131,7 @@ function assignedSpecialistName(){
     input.on('focus', function(){
         specialistName.evaluate();
         specialistName.open();
-        $('#assigned-specialist-name') = specialistName
+        $('#assigned-specialist-name') = specialistName;
     });
 }
 
