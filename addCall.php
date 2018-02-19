@@ -133,7 +133,7 @@ if (!isset($_SESSION['userid'])) {
                         </div>
                         <div class="col-12 col-md-4" style="z-index: 100">
                             <label for="assigned-specialist-name">Assigned Specialist</label>
-                            <input type="text" class="form-control" id="assigned-specialist-name" placeholder="No specialist" readonly>
+                            <input type="text" class="form-control" id="assigned-specialist-name" placeholder="No specialist" onclick="assignedSpecialistName"readonly>
                         </div>
                     </div>
                     <div class="row mt-4">
