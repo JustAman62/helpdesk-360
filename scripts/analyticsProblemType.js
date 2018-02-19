@@ -159,11 +159,9 @@ function charts6()
                 var tempArray4 = [];
                 for(b=0; b<finalArray2.length-1; b++){
                     if (finalArray2[b][0] === finalArray2[b + 1][0]) {
-                        alert(finalArray2[b][0]);
-                        alert(finalArray2[b+1][0]);
-                        alert(tempArray3.length);
+
                         for(c=b+1; c<finalArray2.length; c++) {
-                            alert(finalArray2[c][0]);
+
 
                             //alert(finalArray2[b][0]);
                         //alert(finalArray2[c][0]);
@@ -222,6 +220,9 @@ function charts6()
                     console.log(finalArray3);
             console.log(tempArray4);
                 console.log(finalArray2.length);
+
+
+
 
 
 
