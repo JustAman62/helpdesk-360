@@ -104,11 +104,11 @@ if (!isset($_SESSION['userid'])) {
         <div class="col-md-4 col-12">
             <div class="card">
                 <h5 class="card-header text-center">
-                    Hardware
+                    Problem Types
                 </h5>
-                <div class="list-group list-group-flush" id="hardware-list"></div>
+                <div class="list-group list-group-flush" id="problem-list"></div>
                 <div class="card-footer text-muted small text-center">
-                    <span id="hardware-count"></span> Hardware
+                    <span id="problem-count"></span> Problem Types
                 </div>
             </div>
         </div>
@@ -354,6 +354,46 @@ if (!isset($_SESSION['userid'])) {
                 <div class="right">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-success" onclick = "saveNewHardware()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="problem-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-between">
+                <h3 class="my-0">Edit Problem Type</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="problem-id" class="col-sm-4 col-form-label">Problem ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control-plaintext" readonly id="problem-id" placeholder="######">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="problem-name" class="col-sm-4 col-form-label">Problem Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="problem-name" placeholder="Problem Type Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="parent-problem" class="col-sm-4 col-form-label">Parent Problem</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="parent-problem" placeholder="parent-problem">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <div class="left">
+                    <button type="button" class="btn btn-outline-danger" onclick="deleteProblem()">Delete Problem</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" onclick = "saveProblemType()">Save</button>
                 </div>
             </div>
         </div>

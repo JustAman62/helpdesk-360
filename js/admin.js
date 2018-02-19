@@ -2,7 +2,8 @@
 $(function(){
     loadEmployeeList();
     loadHardwareList();
-    loadSoftwareList()
+    loadSoftwareList();
+    loadProblemTypes();
 
     $('#employeeModal').on('show.bs.modal', function(event) {
         let employeeID;
@@ -25,6 +26,13 @@ $(function(){
         if (event.relatedTarget) {
             serialNumber = event.relatedTarget.dataset.hardware;
             loadHardwareBySerialNumber(serialNumber)
+        }
+    });
+    $('#problem-modal').on('show.bs.modal', function(event) {
+        let problemTypeName;
+        if (event.relatedTarget) {
+            problemTypeName = event.relatedTarget.dataset.problemTypeName;
+            loadProblemTypeModal(problemTypeName)
         }
     });
 });
@@ -339,4 +347,48 @@ function loadHardwareBySerialNumber(serialNumber) {
         $('#make').val(result.make);
 
       },  'json');
-  }
+}
+
+function loadProblemTypes() {
+    $.get('././scripts/getProblemTypes.php', function(result) {
+        $('#problem-list').html("");
+        //Create list items for each user returned in the query
+        for (let i in result) {
+            createProblemItem(result[i]);
+        }
+
+        //Create a list item to allow a new user to be added
+        let addUser = document.createElement('button');
+        addUser.setAttribute('class', 'list-group-item list-group-item-action');
+        addUser.setAttribute('onclick', 'createNewProblem()');
+        let plusSign = document.createElement('i');
+        plusSign.setAttribute('class', 'icon icon-plus-circled');
+        addUser.append(plusSign);
+        addUser.append(document.createTextNode(' Add Problem Type'));
+
+        $('#problem-list').append(addUser);
+
+        //Update the footer to show how many users are in the list
+        $('#problem-count').text(result.length);
+
+    },  'json');
+}
+
+function createProblemItem(problem) {
+    let item = document.createElement('button');
+    item.setAttribute('class', 'list-group-item list-group-item-action');
+    item.dataset.problemTypeName = problem;
+    item.dataset.toggle = 'modal';
+    item.dataset.target = '#problem-modal';
+    item.append(document.createTextNode(problem));
+
+    $('#problem-list').append(item);
+}
+
+function loadProblemTypeModal(problemType) {
+    $.get('scripts/getProblemTypeFromName.php', {problemtype: problemType}, function(result) {
+        $('#problem-id').val(result[0].problemTypeID);
+        $('#problem-name').val(result[0].problemTypeName);
+        $('#parent-problem').val(result[0].parentProblemTypeID);
+    },  'json');
+}
