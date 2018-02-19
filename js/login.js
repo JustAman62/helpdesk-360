@@ -4,8 +4,7 @@ $(function() {
 
 
 function login() {
-    $.get('scripts/userLogin.php',{userid:$('#user-id').val(), password: $('#password').val(), acesslevel: $('#acess-level').val()}, function(result) {
-        console.log(result)
+    $.get('scripts/userLogin.php',{userid:$('#user-id').val(), password: $('#password').val()}, function(result) {
         if (result === 'both') {
             window.location.href = 'index.php';
         }
