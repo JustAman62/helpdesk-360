@@ -87,7 +87,7 @@ if (!isset($_SESSION['userid'])) {
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
-            <h4 class="text-center">My Tickets</h4>
+            <h3 class="text-center">My Tickets</h3>
         </div>
         <div class="col-12">
             <div id="ticket-list"></div>
