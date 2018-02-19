@@ -12,7 +12,7 @@ if ($_SESSION['acesslevel']) {
 
 <!DOCTYPE html>
 <html lang="en">
-<link>
+<link> 
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
