@@ -1,7 +1,7 @@
 // Contributions by: Jess McCreery, Aman Dhoot
 $(function(){
     loadEmployeeList();
-    loadSoftwareList();
+    loadHardwareList();
     loadHardwareList()
 
     $('#employeeModal').on('show.bs.modal', function(event) {
@@ -276,3 +276,57 @@ function createHardwareItem(hardware) {
 
     $('#hardware-list').append(item);
 }
+
+function createNewHardware() {
+        document.getElementById('new-serial-number').value = ''
+        document.getElementById('new-type').value = ''
+        document.getElementById('new-make').value = ''
+        $('#newHardwareModal').modal('show');
+        loadSoftwareList();
+}
+
+function saveNewHardware(){
+  $.get('scripts/createHardware.php', {
+      serialnumber: $('#new-serial-number').val(),
+      type: $('#new-type').val(),
+      make: $('#new-make').val(),
+    });
+
+  loadHardwareList();
+  $('#newSoftwareModal').modal('hide');
+}
+
+function saveHardware() {
+    $.get('scripts/updateHardwareDetails.php', {
+        serialnumber: $('#serial-number').val(),
+        type: $('#type').val(),
+        make: $('#make').val(),
+
+    }, function(result) {
+        //On success, update the employee list
+        loadHardwareList();
+        //    close the modal which this has been called from
+        $('#hardwareModal').modal('hide');
+
+    });
+}
+
+function deleteHardware() {
+    $.get('scripts/deleteHardware.php', {serialnumber: $('#serial-number').val()}, function(result) {
+      loadHardwareList();
+      $('#hardwareModal').modal('hide');
+    });
+
+    loadHardwareList();
+}
+
+function loadHardwareBySerialNumber(serialNumber) {
+    console.log(serialNumber);
+    $.get('././scripts/getFullHardwareDetailsBySerialNumber.php', {serialnumber: serialNumber}, function(result) {
+        // Fill in employee details in the software modal
+        $('#serial-number').val(result.licenceNumber);
+        $('#type').val(result.type);
+        $('#make').val(result.make);
+
+      },  'json');
+  }
