@@ -21,11 +21,13 @@ else {
         echo 'specialist';
         $_SESSION['userid'] = $userID;
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
+        $_SESSION['acesslevel'] = $employee->accessLevel;
     }
     else {
         echo 'both';
         $_SESSION['userid'] = $userID;
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
+        $_SESSION['acesslevel'] = $employee->accessLevel;
     }
 }
 
