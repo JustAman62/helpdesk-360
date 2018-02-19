@@ -2,9 +2,9 @@
 
 require('connect.php');
 
-$licencenumber = $_REQUEST['employeeid'];
-$name = $_REQUEST['firstname'];
-$type = $_REQUEST['lastname'];
+$licencenumber = $_REQUEST['licencenumber'];
+$name = $_REQUEST['name'];
+$type = $_REQUEST['type'];
 
 // update software table
 
