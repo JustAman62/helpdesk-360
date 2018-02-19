@@ -221,7 +221,7 @@ if (!isset($_SESSION['userid'])) {
                 <button type="button" class="btn btn-outline-danger">Delete Software</button>
                 <div class="right">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-success" onclick = "saveSoftware()">Save</button>
                 </div>
             </div>
         </div>
