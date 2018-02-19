@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
 }
-if ($_SESSION['accesslevel']){
+else if ($_SESSION['accesslevel']){
     header('Location: specialistHome.php');
 }
 /*else{
