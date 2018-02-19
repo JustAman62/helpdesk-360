@@ -109,7 +109,9 @@ function assignNewSpecialist(){
 }
 
 function assignedSpecialistName(){
+console.log("hi");
     let input = $('#available-Specialists');
+    console.log("hi");
     let specialistName = new Awesomplete(input[0]);
     console.log("hi");
     $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result) {
