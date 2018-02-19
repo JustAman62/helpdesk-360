@@ -22,13 +22,12 @@ else {
         $employee = $result->fetch_object();
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
     }
-    elseif ($acessLevel==1){
+    else {
         echo 'both';
         $_SESSION['userid'] = $userID;
         $employee = $result->fetch_object();
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
     }
-
 
 }
 
