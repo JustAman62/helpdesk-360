@@ -12,6 +12,7 @@ $sql = "SELECT * FROM Users LEFT JOIN Employees ON Users.employeeID = Employees.
 $result = $conn->query($sql);
 if ($conn->error) die($conn->error);
 
+console.log($acessLevel);
 if ($result->num_rows == 0) {
     echo 'failure';
 }
