@@ -217,6 +217,13 @@ if (!isset($_SESSION['userid'])) {
                     </div>
                 </form>
             </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-danger">Delete Software</button>
+                <div class="right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success">Save</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

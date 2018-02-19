@@ -189,12 +189,21 @@ function createSoftwareItem(software) {
 
 function createNewSoftware() {
         $('#softwareModal').modal('show');
+        loadSoftwareByLicence();
         loadEmployeeList();
+}
+
+    function createNewEmployee() {
+        $.get('scripts/createEmployee.php', function(result) {
+            $('#employeeModal').modal('show');
+            loadEmployeeById(result.employeeid)
+            loadEmployeeList();
+        }, 'json');
     }
 
     function loadSoftwareByLicence(licenceNumber) {
         console.log(licenceNumber);
-        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {softwarelicence: licenceNumber}, function(result) {
+        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {licencenumber: licenceNumber}, function(result) {
             // Fill in employee details in the software modal
             $('#licence-number').val(result.licenceNumber);
             $('#name').val(result.name);
