@@ -1,5 +1,5 @@
-// Contributions by: Jess McCreery
 <?php
+// Contributions by: Jess McCreery
 require 'connect.php';
 
 // Check serial number

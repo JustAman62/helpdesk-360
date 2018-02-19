@@ -1,6 +1,5 @@
-// Contributions by: Jess McCreery, Mary Roca, Linus kurz
 <?php
-
+// Contributions by: Jess McCreery, Mary Roca, Linus kurz
 require 'connect.php';
 
 $problemtype = $_REQUEST['problemtype'];

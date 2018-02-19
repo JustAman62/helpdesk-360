@@ -1,5 +1,5 @@
-// Contributions by: Jess McCreery
 <?php
+// Contributions by: Jess McCreery
 
 session_start();
 require 'connect.php';

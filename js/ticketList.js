@@ -1,4 +1,5 @@
 // Contributions by: Aman Dhoot
+<?php
 let ticketList;
 $(function() {
 //

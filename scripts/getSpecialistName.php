@@ -1,5 +1,5 @@
-// Contributions by: Linus kurz
 <?php
+// Contributions by: Linus kurz
 
 require('connect.php');
 

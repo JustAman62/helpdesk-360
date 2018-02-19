@@ -1,5 +1,5 @@
-// Contributions by: Aman Dhoot
 <?php
+// Contributions by: Aman Dhoot
 
   include 'database-details.php'; // For db information
 

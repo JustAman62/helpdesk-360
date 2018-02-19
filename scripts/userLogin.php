@@ -1,5 +1,5 @@
-// Contributions by: Aman Dhoot
 <?php
+// Contributions by: Aman Dhoot
 session_start();
 
 require('connect.php');
