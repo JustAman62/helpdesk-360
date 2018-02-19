@@ -6,7 +6,6 @@ if (!isset($_SESSION['userid'])) {
     header('Location: login.php');
 }
 else{
-    require('connect.php');
     $userID = $_SESSION['userid'];
     $sql ="SELECT `Users`.`accessLevel` FROM `Users` WHERE userID = '$userID'";
     $result = $conn->query($sql);
