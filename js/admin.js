@@ -1,4 +1,4 @@
-// Contributions by: Jess McCreery, Aman Dhoot
+// Contributions by: Jess McCreery, Aman Dhoot, Linus Kurz
 $(function(){
     loadEmployeeList();
     loadHardwareList();
@@ -78,6 +78,7 @@ function loadEmployeeById(employeeID) {
         $('#job-title').val(result.jobTitle);
         $('#department').val(result.department);
         $('#contact-number').val(result.contactNumber);
+        $('#availability').val(result.available);
 
 
     //    Check if this employee has a user account, if yes
@@ -128,6 +129,7 @@ function saveRecord() {
         contactnumber: $('#contact-number').val(),
         userid: $('#user-id').val(),
         password: $('#user-password').val(),
+        availability: $('#availability').val(),
         accesslevel: $('#user-access-level')[0].selectedIndex
     }, function(result) {
         //On success, update the employee list
