@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot
 <?php
 session_start();
 
@@ -30,5 +31,3 @@ else {
         $_SESSION['accesslevel'] = $employee->accessLevel;
     }
 }
-
-

@@ -1,3 +1,4 @@
+// Contributions by: Jess McCreery, Mary Roca, Linus kurz
 <?php
 
 require 'connect.php';

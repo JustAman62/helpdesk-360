@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot
 <?php
 
   include 'database-details.php'; // For db information

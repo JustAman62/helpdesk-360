@@ -1,3 +1,4 @@
+// Contributions by: Linus kurz
 <?php
 
 require('connect.php');

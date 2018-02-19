@@ -1,3 +1,4 @@
+// Contributions by: Jess McCreery, Linus kurz
 <?php
 
 session_start();

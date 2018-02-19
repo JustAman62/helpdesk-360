@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot
 <?php
 /**
  * Created by PhpStorm.
@@ -27,4 +28,3 @@ if ($_REQUEST['employeeid']) {
     echo json_encode($result->fetch_object());
     return;
 }
-

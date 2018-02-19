@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot
 <?php
 
 require 'connect.php';
