@@ -78,13 +78,25 @@ function createTicket(index, tickets) {
     ticketFooter.append(dateCreated);
     let assignedSpecialist = document.createElement('span');
     let specialistString = "Not Assigned";
-    if (ticket.specialistID) specialistString = ticket.specialistID;
+
     if (ticket.ticketStatus == 1) {
         let dateClosed = ticket.dateClosed.split('-')
         specialistString = dateClosed[2] + '/' + dateClosed[1] + '/' + dateClosed[0]
+        assignedSpecialist.append(document.createTextNode(specialistString));
+        ticketFooter.append(assignedSpecialist);
     }
-    assignedSpecialist.append(document.createTextNode(specialistString));
-    ticketFooter.append(assignedSpecialist);
+    else if (ticket.specialistID) {
+        $.get('scripts/getEmployeeInfoFromSpecialistID.php', {specialistid: ticket.specialistID}, function(result) {
+            specialistString = "Assigned To " + result.firstName + " " + result.lastName;
+            assignedSpecialist.append(document.createTextNode(specialistString));
+            ticketFooter.append(assignedSpecialist);
+        }, 'json');
+    }
+    else {
+        specialistString = "Not Assigned";
+        assignedSpecialist.append(document.createTextNode(specialistString));
+        ticketFooter.append(assignedSpecialist);
+    }
 
     ticketBody.append(ticketFooter);
 
