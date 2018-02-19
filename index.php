@@ -3,8 +3,18 @@ session_start();
 
 //If the user is not logged in, send them to login page
 if (!isset($_SESSION['userid'])) {
-  header('Location: login.php');
+    header('Location: login.php');
 }
+
+/*else{
+    $userID = $_SESSION['userid'];
+    $sql ="SELECT `Users`.`accessLevel` FROM `Users` WHERE userID = '$userID'";
+    $result = $conn->query($sql);
+    if ($conn->error) die($conn->error);
+    $employee = $result->fetch_object();
+    if ($employee->accessLevel)
+        header('Location: specialistHome.php');
+}*/
 
 ?>
 
@@ -27,7 +37,6 @@ if (!isset($_SESSION['userid'])) {
     <script src="js/script.js"></script>
     <script src="js/ticketGenerator.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/login.js"></script>
 </head>
 <body>
 
@@ -35,12 +44,18 @@ if (!isset($_SESSION['userid'])) {
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand nav-abs order-1" action="javascript:login()"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
+    <?php if ($_SESSION['accesslevel']){ ?>
+    <a class="navbar-brand nav-abs order-1" href="specialistHome.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
     <div class="navbar-collapse collapse order-3 order-md-1">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="specialistHome.php">Specialist Home</a>
-            </li>
+            <?php } else { ?>
+            <a class="navbar-brand nav-abs order-1" href="index.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
+            <div class="navbar-collapse collapse order-3 order-md-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="specialistHome.php">Specialist Home</a>
+                    </li>
+                    <?php } ?>
             <li class="nav-item">
                 <a class="nav-link" href="ticketList.php">View Tickets</a>
             </li>

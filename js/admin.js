@@ -188,9 +188,22 @@ function createSoftwareItem(software) {
 }
 
 function createNewSoftware() {
-        $('#softwareModal').modal('show');
-        loadSoftwareByLicence();
-        loadEmployeeList();
+        document.getElementById('new-licence-number').value = ''
+        document.getElementById('new-name').value = ''
+        document.getElementById('new-type').value = ''
+        $('#newSoftwareModal').modal('show');
+        loadSoftwareList();
+}
+
+function saveNewSoftware(){
+  $.get('scripts/createSoftware.php', {
+      licencenumber: $('#new-licence-number').val(),
+      name: $('#new-name').val(),
+      type: $('#new-type').val(),
+    });
+
+  loadSoftwareList();
+  $('#newSoftwareModal').modal('hide');
 }
 
 function saveSoftware() {
@@ -208,24 +221,25 @@ function saveSoftware() {
     });
 }
 
-    function createNewEmployee() {
-        $.get('scripts/createEmployee.php', function(result) {
-            $('#employeeModal').modal('show');
-            loadEmployeeById(result.employeeid)
-            loadEmployeeList();
-        }, 'json');
-    }
+function deleteSoftware() {
+    $.get('scripts/deleteSoftware.php', {licencenumber: $('#licence-number').val()}, function(result) {
+      loadSoftwareList();
+      $('#softwareModal').modal('hide');
+    });
 
-    function loadSoftwareByLicence(licenceNumber) {
-        console.log(licenceNumber);
-        $.get('././scripts/getFullSoftwareDetailsByLicence.php', {licencenumber: licenceNumber}, function(result) {
-            // Fill in employee details in the software modal
-            $('#licence-number').val(result.licenceNumber);
-            $('#name').val(result.name);
-            $('#type').val(result.type);
+    loadSoftwareList();
+}
 
-          },  'json');
-      }
+function loadSoftwareByLicence(licenceNumber) {
+    console.log(licenceNumber);
+    $.get('././scripts/getFullSoftwareDetailsByLicence.php', {licencenumber: licenceNumber}, function(result) {
+        // Fill in employee details in the software modal
+        $('#licence-number').val(result.licenceNumber);
+        $('#name').val(result.name);
+        $('#type').val(result.type);
+
+      },  'json');
+  }
 
 function loadHardwareList() {
     $.get('././scripts/getFullHardwareDetails.php', function(result) {

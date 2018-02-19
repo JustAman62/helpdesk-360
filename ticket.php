@@ -33,12 +33,18 @@ if (!isset($_SESSION['userid'])) {
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand nav-abs order-1" href="index.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
+    <?php if ($_SESSION['accesslevel']){ ?>
+    <a class="navbar-brand nav-abs order-1" href="specialistHome.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
     <div class="navbar-collapse collapse order-3 order-md-1">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="specialistHome.php">Specialist Home</a>
-            </li>
+            <?php } else { ?>
+            <a class="navbar-brand nav-abs order-1" href="index.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
+            <div class="navbar-collapse collapse order-3 order-md-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="specialistHome.php">Specialist Home</a>
+                    </li>
+                    <?php } ?>
             <li class="nav-item">
                 <a class="nav-link" href="ticketList.php">View Tickets</a>
             </li>
