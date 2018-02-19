@@ -161,7 +161,7 @@ function loadSoftwareList() {
 
         let addSoftware = document.createElement('button');
         addSoftware.setAttribute('class', 'list-group-item list-group-item-action');
-        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        addSoftware.setAttribute('onclick', 'createNewSoftware()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addSoftware.append(plusSign);
