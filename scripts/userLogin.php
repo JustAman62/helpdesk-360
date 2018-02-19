@@ -16,7 +16,7 @@ if ($result->num_rows == 0) {
     echo 'failure';
 }
 else {
-    if ($acessLevel=='1') {
+    if ($acessLevel=='1') { 
         echo 'specialist';
         $_SESSION['userid'] = $userID;
         $employee = $result->fetch_object();
