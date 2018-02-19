@@ -121,7 +121,7 @@ if (!isset($_SESSION['userid'])) {
 
         <div class="form-group row">
             <label for="priority" class="col-2 col-md-3 text-right col-form-label">Priority</label>
-            <div class="col-10 col-md-9">
+            <div class="col-12 col-md-9">
                 <input type="text" readonly class="form-control-plaintext modifiable" id="priority" value="Placeholder">
             </div>
         </div>
