@@ -68,7 +68,7 @@ if (!isset($_SESSION['userid'])) {
     </div>
     <div class="row">
         <div class="col-md-4 col-12">
-            <div class="card">
+            <div class="card mt-4">
                 <h5 class="card-header text-center">
                     Employees
                 </h5>
@@ -79,7 +79,7 @@ if (!isset($_SESSION['userid'])) {
             </div>
         </div>
         <div class="col-md-4 col-12">
-            <div class="card">
+            <div class="card mt-4">
                 <h5 class="card-header text-center">
                     Software
                     <a class="text-secondary" href="#"></a>
@@ -89,9 +89,7 @@ if (!isset($_SESSION['userid'])) {
                     <span id="software-count"></span> Software
                 </div>
             </div>
-        </div>
-        <div class="col-md-4 col-12">
-            <div class="card">
+            <div class="card mt-4">
                 <h5 class="card-header text-center">
                     Hardware
                 </h5>
@@ -102,7 +100,7 @@ if (!isset($_SESSION['userid'])) {
             </div>
         </div>
         <div class="col-md-4 col-12">
-            <div class="card">
+            <div class="card mt-4">
                 <h5 class="card-header text-center">
                     Problem Types
                 </h5>
