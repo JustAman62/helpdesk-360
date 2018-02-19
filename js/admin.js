@@ -161,7 +161,7 @@ function loadSoftwareList() {
 
         let addSoftware = document.createElement('button');
         addSoftware.setAttribute('class', 'list-group-item list-group-item-action');
-        //addSoftware.setAttribute('onclick', 'createNewSoftware()');
+        addSoftware.setAttribute('onclick', 'createNewSoftware()');
         let plusSign = document.createElement('i');
         plusSign.setAttribute('class', 'icon icon-plus-circled');
         addSoftware.append(plusSign);
@@ -185,6 +185,11 @@ function createSoftwareItem(software) {
 
     $('#software-list').append(item);
 }
+
+function createNewSoftware() {
+        $('#softwareModal').modal('show');
+        loadEmployeeList();
+    }
 
 function loadHardwareList() {
     $.get('././scripts/getFullHardwareDetails.php', function(result) {
