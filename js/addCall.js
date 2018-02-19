@@ -71,6 +71,16 @@ $(function() {
     $('#specialistModal').on('show.bs.modal', function(event) {
         let list = $('#specialist-list');
         list.html("");
+
+        //Make sure there are actually some specialists, if not then warn the user and don't show the modal
+        if (!specialistList) {
+            let listItem = document.createElement('button')
+            listItem.setAttribute('type', 'button');
+            listItem.setAttribute('class', 'list-group-item list-group-item-action');
+            listItem.appendChild(document.createTextNode('There are no specialists available for this problem type, or its parents'));
+            $('#specialist-list').append(listItem);
+        }
+
         //    Make a list item
         for (let i in specialistList) {
             let listItem = document.createElement('button')

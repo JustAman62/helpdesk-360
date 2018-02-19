@@ -1,28 +1,11 @@
 // Contributions by: Aman Dhoot
 let ticketInfo;
+let specialistList;
 
 $(function() {
     $('#save-button').hide();
 
-    //Get the ticket number from the GET request when the page is loaded
-    ticketNum = location.search.split('&')[0].split('=')[1];
-
-    $.get('scripts/getTickets.php', {ticketnum:ticketNum, sort:'ticketNumber'}, function(result) {
-        if (!result) {
-            return;
-        }
-        // Place the ticket number in the title of the page
-        document.title = "Ticket #" + result[0].ticketNumber + " | Helpdesk 360";
-
-
-        //When the page is first loaded, populate the ticket info
-        ticketInfo = result[0];
-        populateTicketInfo(result[0]);
-        populateNotes(result[0]);
-    }, 'json');
-
-
-
+    getTicket();
 
     //When the notes modal is shown, update the note textarea to match the note it was clicked on
     $('#notesModal').on('show.bs.modal', function(event) {
@@ -55,7 +38,53 @@ $(function() {
         });
 
     });
+
+    $('#specialistModal').on('show.bs.modal', function(event) {
+        let list = $('#specialist-list');
+        list.html("");
+
+        //Make sure there are actually some specialists, if not then warn the user and don't show the modal
+        if (!specialistList) {
+            let listItem = document.createElement('button')
+            listItem.setAttribute('type', 'button');
+            listItem.setAttribute('class', 'list-group-item list-group-item-action');
+            listItem.appendChild(document.createTextNode('There are no specialists available for this problem type, or its parents'));
+            $('#specialist-list').append(listItem);
+        }
+
+        //    Make a list item
+        for (let i in specialistList) {
+            let listItem = document.createElement('button')
+            listItem.setAttribute('type', 'button');
+            listItem.setAttribute('class', 'list-group-item list-group-item-action');
+            listItem.setAttribute('onclick', "javascript:chooseSpecialist(this)");
+            listItem.dataset.specialistId = specialistList[i].specialistID;
+            listItem.dataset.firstName = specialistList[i].firstName;
+            listItem.dataset.lastName = specialistList[i].lastName;
+            listItem.appendChild(document.createTextNode(specialistList[i].firstName + ' ' + specialistList[i].lastName + '   ' + specialistList[i].Problems));
+            $('#specialist-list').append(listItem);
+        }
+    });
 });
+
+function getTicket() {
+    //Get the ticket number from the GET request when the page is loaded
+    ticketNum = location.search.split('&')[0].split('=')[1];
+
+    $.get('scripts/getTickets.php', {ticketnum:ticketNum, sort:'ticketNumber'}, function(result) {
+        if (!result) {
+            return;
+        }
+        // Place the ticket number in the title of the page
+        document.title = "Ticket #" + result[0].ticketNumber + " | Helpdesk 360";
+
+
+        //When the page is first loaded, populate the ticket info
+        ticketInfo = result[0];
+        populateTicketInfo(result[0]);
+        populateNotes(result[0]);
+    }, 'json');
+}
 
 function populateTicketInfo(ticket) {
     console.log(ticket);
@@ -72,6 +101,8 @@ function populateTicketInfo(ticket) {
         $('#employee-name').text(result.firstName + ' ' + result.lastName);
         $('#employee-contact-number').text(result.contactNumber.substr(0, 5) + ' ' + result.contactNumber.substr(5));
     }, 'json');
+
+    $('#badge-list').html('');
 
     //Add badges for if the ticket if open or closed
     if (ticket.ticketStatus == 0) {
@@ -167,7 +198,7 @@ function populateTicketInfo(ticket) {
         $('#no-specialist').hide();
         $('#specialistDetails').show()
         $.get('scripts/getEmployeeInfoFromSpecialistID.php', {specialistid: ticket.specialistID}, function(result) {
-            $('#specialist-employee-id').text(result.employeeID);
+            $('#specialist-employee-id').text(result.employeeID)[0].dataset.specialistId = ticket.specialistID;
             $('#specialist-name').text(result.firstName + ' ' + result.lastName);
             $('#specialist-contact-number').text(result.contactNumber);
         }, 'json');
@@ -314,12 +345,20 @@ function saveTicket() {
     });
 
     problemTypesList.destroy();
+    updateTicket();
+}
 
+function updateTicket() {
     let priority = $('#priority').val();
 
     if (priority === "Low") priority = 0;
     if (priority === "Medium") priority = 1;
     if (priority === "High") priority = 2;
+
+    let specialistID = "NULL";
+    if ($('#specialist-employee-id')[0].dataset.specialistId) {
+        specialistID = $('#specialist-employee-id')[0].dataset.specialistId;
+    }
 
     $.get('scripts/updateTicket.php', {
         ticketnumber: ticketInfo.ticketNumber,
@@ -329,7 +368,23 @@ function saveTicket() {
         problemdescription: $('#original-description').val(),
         licencenumber: $('#software-licence-number').val() === "" ? 'NULL' : $('#software-licence-number').val(),
         serialnumber: $('#serial-number').val() === "" ? 'NULL' : $('#serial-number').val(),
+        specialistid: specialistID,
     }, function(result) {
+        console.log('stuff');
+        getTicket();
+    });
+}
 
+function assignNewSpecialist(){
+    $.get('scripts/assignSpecialist.php', {problemtype: $('#problem-type').val()}, function(result) {
+        specialistList = result;
+        $('#specialistModal').modal('show');
     }, 'json');
+}
+function chooseSpecialist(element) {
+    let specialist = $('#specialist-employee-id');
+    specialist[0].dataset.specialistId = element.dataset.specialistId;
+    updateTicket();
+
+    $('#specialistModal').modal('hide');
 }

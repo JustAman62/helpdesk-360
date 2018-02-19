@@ -186,7 +186,7 @@ if (!isset($_SESSION['userid'])) {
             <h3>Ticket Actions</h3>
         </div>
         <div class="col-12 col-md-6">
-            <button class="btn btn-primary btn-block mr-0 ml-md-1 my-2 my-md-0">Assign to Specialist</button>
+            <button class="btn btn-primary btn-block mr-0 ml-md-1 my-2 my-md-0" onclick="assignNewSpecialist()">Assign to Specialist</button>
         </div>
         <div class="col12 col-md-6">
             <button class="btn btn-danger btn-block ml-0 mr-md-1 my-2 my-md-0" onclick="closeTicket()">Close Ticket</button>
@@ -215,6 +215,20 @@ if (!isset($_SESSION['userid'])) {
                 <div class="right">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-success" id="saveNote">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="specialistModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog pt-5" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="list-group list-group-flush" id="specialist-list"></div>
+                    </div>
                 </div>
             </div>
         </div>

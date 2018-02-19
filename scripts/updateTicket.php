@@ -21,7 +21,7 @@ $userid = $_SESSION['userid'];
 $serialnumber = $_REQUEST['serialnumber'];
 $licencenumber = $_REQUEST['licencenumber'];
 $ticketnumber = $_REQUEST['ticketnumber'];
-
+$specialistid = $_REQUEST['specialistid'];
 
 //    Find the problemtypeid by looking up the problemtypename given
 $sql = "SELECT problemTypeID FROM ProblemTypes WHERE problemTypeName = '$problemtype'";
@@ -30,7 +30,7 @@ if ($conn->error) die ($conn->error);
 
 $problemtypeid = $result->fetch_row()[0];
 
-$sql = "UPDATE `Tickets` SET `priority`='$priority',`problemTypeID`='$problemtypeid',`originalDescription`='$problemdescription',`serialNumber`=$serialnumber,`licenceNumber`=$licencenumber,`operatingSystem`='$operatingsystem' WHERE ticketNumber = $ticketnumber";
+$sql = "UPDATE `Tickets` SET `priority`='$priority',`problemTypeID`='$problemtypeid',`originalDescription`='$problemdescription',`serialNumber`=$serialnumber,`licenceNumber`=$licencenumber,`operatingSystem`='$operatingsystem', `specialistID`=$specialistid WHERE ticketNumber = $ticketnumber";
 
 $conn->query($sql);
 if($conn->error) die($conn->error);
