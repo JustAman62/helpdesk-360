@@ -109,8 +109,8 @@ function assignNewSpecialist(){
 }
 
 function assignedSpecialistName(){
-    let input = $('#available-Specialists');
-    $.get('scripts/getSpecialistName.php', {specialistname: $('#available-Specialists').val()}, function(result) {
+    let specialistName = $('#available-Specialists').val();
+    $.get('scripts/getSpecialistName.php', {specialistname: specialistName}, function(result) {
       console.log("hey");
       document.getElementById('assigned-specialist-name').value = result
     }, 'json');
@@ -248,6 +248,7 @@ function createNewTicket() {
         if ($.isNumeric(result)) window.location.href='ticket.php?ticketNum=' + result;
     }, 'json');
 }
+
 function createNewCallNote() {
 //    TODO: implement validation
     let calltime = $('#add-call-time').val() + ':00';
