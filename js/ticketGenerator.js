@@ -1,19 +1,20 @@
 // Contributions by: Aman Dhoot
-`        <a class="col-12 col-md-6 col-xl-4 p-3 ticket" href="ticket.php?ticketNum=1">
-            <div class="ticket-header justify-content-between">
-                <h5>Heading</h5>
-                <h5><span class="badge badge-primary">Low Priority</span></h5>
-            </div>
-            <div class="ticket-body">
-                <div class="ticket-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque ea eaque earum enim esse hic, inventore ipsam magnam necessitatibus, </p>
-                </div>
-                <div class="ticket-footer justify-content-between">
-                    <span>left</span>
-                    <span>right</span>
-                </div>
-            </div>
-        </a>`
+// Template of a ticket, which this file creates
+// `        <a class="col-12 col-md-6 col-xl-4 p-3 ticket" href="ticket.php?ticketNum=1">
+//             <div class="ticket-header justify-content-between">
+//                 <h5>Heading</h5>
+//                 <h5><span class="badge badge-primary">Low Priority</span></h5>
+//             </div>
+//             <div class="ticket-body">
+//                 <div class="ticket-description">
+//                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque ea eaque earum enim esse hic, inventore ipsam magnam necessitatibus, </p>
+//                 </div>
+//                 <div class="ticket-footer justify-content-between">
+//                     <span>left</span>
+//                     <span>right</span>
+//                 </div>
+//             </div>
+//         </a>`
 
 
 function createTicket(index, tickets) {
@@ -44,7 +45,13 @@ function createTicket(index, tickets) {
     else {
         badge.setAttribute('class', 'badge badge-primary');
         badge.append(document.createTextNode('Closed'));
-        ticketHeading.append(document.createTextNode(" "));
+
+        $.get('scripts/getProblemTypeFromID.php', {problemtypeid: ticket.problemTypeID}, function(result) {
+            let problemText = createNewElement('i', '');
+            problemText.append(document.createTextNode(result.problemTypeName));
+            ticketHeading.append(problemText);
+        }, 'json');
+
     }
 
     headingBadge.append(badge);
@@ -95,3 +102,18 @@ function createNewElement(elementString, classString) {
     element.setAttribute('class', classString);
     return element;
 }
+function resizeAllGridItems(){
+    let allTickets = document.getElementsByClassName("ticket");
+    for(x=0;x<allTickets.length;x++){
+        resizeGridItem(allTickets[x]);
+    }
+}
+
+function resizeGridItem(item){
+    let ticketList = document.getElementById("ticket-list");
+    let rowHeight = parseInt(window.getComputedStyle(ticketList).getPropertyValue('grid-auto-rows'));
+    let rowGap = parseInt(window.getComputedStyle(ticketList).getPropertyValue('grid-row-gap'));
+    let rowSpan = Math.ceil((item.querySelector('.ticket-body').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+    item.style.gridRowEnd = "span "+rowSpan;
+}
+

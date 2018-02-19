@@ -10,5 +10,7 @@ $(function() {
         for (let i = 0; i<result.length; i++) {
             createTicket(i, result);
         }
+
+        resizeAllGridItems();
     }, 'json');
 });
