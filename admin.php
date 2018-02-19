@@ -86,7 +86,7 @@ if (!isset($_SESSION['userid'])) {
                 </h5>
                 <div class="list-group list-group-flush" id="software-list"></div>
                 <div class="card-footer text-muted small text-center">
-                    <span id="software-count"></span> Software
+                    <span id="software-count"></span> Software Records
                 </div>
             </div>
             <div class="card mt-4">
@@ -95,7 +95,7 @@ if (!isset($_SESSION['userid'])) {
                 </h5>
                 <div class="list-group list-group-flush" id="hardware-list"></div>
                 <div class="card-footer text-muted small text-center">
-                    <span id="hardware-count"></span> Hardware
+                    <span id="hardware-count"></span> Hardware Records
                 </div>
             </div>
         </div>
