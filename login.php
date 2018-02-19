@@ -1,5 +1,5 @@
-// Contributions by: Aman Dhoot
 <?php
+// Contributions by: Aman Dhoot
 
 //End and recreate the session every time the login page is opened, to simulate a logout
 session_destroy();

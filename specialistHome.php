@@ -1,5 +1,5 @@
-// Contributions by: Aman Dhoot, Jess McCreery, Mary Roca, Linus kurz
 <?php
+// Contributions by: Aman Dhoot, Jess McCreery, Mary Roca, Linus kurz
 session_start();
 //If the user is not logged in, send them to login page
 if (!isset($_SESSION['userid'])) {
