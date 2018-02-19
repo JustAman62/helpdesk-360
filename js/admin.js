@@ -189,9 +189,9 @@ function createSoftwareItem(software) {
 
 function createNewSoftware() {
         $('#softwareModal').modal('show');
-        $('#licenceNumber').html(" ");
-        $('#name').html(" ");
-        $('#type').html(" ");
+        document.getElementById('licenence-number').value = ''
+        document.getElementById('licenence-number').value = ''
+        document.getElementById('licenence-number').value = ''
         loadEmployeeList();
 }
 
