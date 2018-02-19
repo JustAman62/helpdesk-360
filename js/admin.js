@@ -191,7 +191,7 @@ function createNewSoftware() {
         $('#softwareModal').modal('show');
         loadSoftwareByLicence();
         loadEmployeeList();
-    }
+}
 
     function createNewEmployee() {
         $.get('scripts/createEmployee.php', function(result) {
