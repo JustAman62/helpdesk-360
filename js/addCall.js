@@ -96,7 +96,6 @@ function assignNewSpecialist(){
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
     $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()}, function(result) {
-        console.log("hey");
         let array = [];
         for (let i in result) {
             var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
@@ -107,6 +106,27 @@ function assignNewSpecialist(){
     input.on('focus', function(){
         specialistList.evaluate();
         specialistList.open();
+    });
+}
+
+function assignedSpecialistName(){
+  console.log("hi");
+    let input = $('#create-problem-type');
+    let specialistName = new awesomplete(input[0]);
+    console.log("hey");
+    $.get('#create-problem-type', {problemtype: $('#create-problem-type').val()}, function(result) {
+      console.log("hello");
+        let variable = "";
+        for (let firstName in '#create-problem-type') {
+          console.log("hii");
+            var result1 = '#create-problem-type'.firstName.concat(" ", '#create-problem-type'.lastName);
+            variable.push(result1);
+        }
+        specialistName.list = variable;
+    }, 'json');
+    input.on('focus', function(){
+        specialistName.evaluate();
+        specialistName.open();
     });
 }
 
