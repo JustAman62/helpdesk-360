@@ -88,7 +88,7 @@ if (!isset($_SESSION['userid'])) {
     <div class="d-flex mb-3">
         <h3>Ticket Details</h3>
         <a class="ml-auto no-hover-underline" id="edit-button" href="javascript:editTicket()">Edit <i class="icon icon-pencil"></i> </a>
-        <a class="ml-auto no-hover-underline" id="save-button" href="javascript:saveTicket()">Save <i class="icon icon-pencil"></i> </a>
+        <a class="ml-auto no-hover-underline" id="save-button" href="javascript:saveTicket()">Save</a>
     </div>
     <form id="ticket-details">
         <div class="form-group row">
@@ -108,21 +108,21 @@ if (!isset($_SESSION['userid'])) {
         <div class="form-group row">
             <label for="problem-type" class="col-2 col-md-3 text-right col-form-label">Problem Type</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="w-100 form-control-plaintext modifiable" id="problem-type" value="Placeholder">
+                <input type="text" readonly class="w-100 form-control-plaintext modifiable" id="problem-type" value="">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="priority" class="col-2 col-md-3 text-right col-form-label">Priority</label>
             <div class="col-12 col-md-9">
-                <input type="text" readonly class="w-100 form-control-plaintext modifiable" id="priority" value="Placeholder">
+                <input type="text" readonly class="w-100 form-control-plaintext modifiable" id="priority" value="">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="original-description" class="col-2 col-md-3 text-right col-form-label">Original Description</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="w-100 form-control-plaintext modifiable auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
+                <input type="text" readonly class="w-100 form-control-plaintext modifiable auto-fill" data-autofill="originalDescription" id="original-description" value="">
             </div>
         </div>
 
@@ -143,7 +143,7 @@ if (!isset($_SESSION['userid'])) {
         <div class="form-group row">
             <label for="operating-system" class="col-2 col-md-3 text-right col-form-label">Operating System</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="operatingSystem" id="operating-system" value="Placeholder">
+                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="operatingSystem" id="operating-system" value="">
             </div>
         </div>
     </form>
