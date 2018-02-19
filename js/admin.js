@@ -24,7 +24,7 @@ $(function(){
         let serialNumber;
         if (event.relatedTarget) {
             serialNumber = event.relatedTarget.dataset.hardware;
-            loadHardwareBySerialNumberByLicence(serialNumber)
+            loadHardwareBySerialNumber(serialNumber)
         }
     });
 });
