@@ -104,5 +104,6 @@ function charts2() {
             , 'json')
 
     document.getElementById('selectbox').style.display = "block";
+    document.getElementById('Avg').style.display = "none";
 }
 
