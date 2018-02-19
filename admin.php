@@ -32,15 +32,17 @@ if (!isset($_SESSION['userid'])) {
         <span class="navbar-toggler-icon"></span>
     </button>
     <?php if ($_SESSION['accesslevel']){ ?>
-        <a class="navbar-brand nav-abs order-1" href="specialistHome.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
-    <?php } else { ?>
-        <a class="navbar-brand nav-abs order-1" href="index.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
-    <?php } ?>
+    <a class="navbar-brand nav-abs order-1" href="specialistHome.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
     <div class="navbar-collapse collapse order-3 order-md-1">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="specialistHome.php">Specialist Home</a>
-            </li>
+            <?php } else { ?>
+            <a class="navbar-brand nav-abs order-1" href="index.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
+            <div class="navbar-collapse collapse order-3 order-md-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="specialistHome.php">Specialist Home</a>
+                    </li>
+                    <?php } ?>
             <li class="nav-item">
                 <a class="nav-link" href="ticketList.php">View Tickets</a>
             </li>
@@ -222,7 +224,7 @@ if (!isset($_SESSION['userid'])) {
                 </form>
             </div>
             <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-outline-danger">Delete Software</button>
+                <button type="button" class="btn btn-outline-danger" onclick="deleteSoftware()">Delete Software</button>
                 <div class="right">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-success" onclick = "saveSoftware()">Save</button>

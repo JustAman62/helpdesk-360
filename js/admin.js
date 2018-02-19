@@ -203,7 +203,7 @@ function saveNewSoftware(){
     });
 
   loadSoftwareList();
-  $('#softwareModal').modal('hide');
+  $('#newSoftwareModal').modal('hide');
 }
 
 function saveSoftware() {
@@ -219,6 +219,15 @@ function saveSoftware() {
         $('#softwareModal').modal('hide');
 
     });
+}
+
+function deleteSoftware() {
+    $.get('scripts/deleteSoftware.php', {licencenumber: $('#licence-number').val()}, function(result) {
+      loadSoftwareList();
+      $('#softwareModal').modal('hide');
+    });
+
+    loadSoftwareList();
 }
 
 function loadSoftwareByLicence(licenceNumber) {
