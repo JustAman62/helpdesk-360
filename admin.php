@@ -90,7 +90,7 @@ if (!isset($_SESSION['userid'])) {
                     <span id="software-count"></span> Software
                 </div>
             </div>
-            <br/>
+          </div>
             <div class="col-md-4 col-12">
             <div class="card">
                 <h5 class="card-header text-center">
@@ -102,7 +102,6 @@ if (!isset($_SESSION['userid'])) {
                     <span id="hardware-count"></span> Hardware
                 </div>
             </div>
-          </div>
           </div>
         </div>
     </div>
