@@ -23,7 +23,7 @@ else {
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
         $_SESSION['accesslevel'] = $employee->accessLevel;
     }
-    else {
+    else { 
         echo 'both';
         $_SESSION['userid'] = $userID;
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
