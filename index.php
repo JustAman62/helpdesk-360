@@ -1,8 +1,6 @@
 <?php
 session_start();
-require ('userLogin.php');
-$employee = $result->fetch_object();
-console.log($employee->accessLevel);
+
 //If the user is not logged in, send them to login page
 if (!isset($_SESSION['userid'])) {
   header('Location: login.php');
