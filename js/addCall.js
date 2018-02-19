@@ -110,11 +110,9 @@ function assignNewSpecialist(){
 }
 
 function assignedSpecialistName(){
-    console.log("hi");
     let input = $('#available-Specialists');
     let specialistName = new Awesomplete(input[0]);
-    console.log("hey");
-    $.get('#create-problem-type', {problemtype: $('#create-problem-type').val()}, function(result) {
+    $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result) {
       console.log("hello");
         let variable = "";
         for (let firstName in '#create-problem-type') {
@@ -239,6 +237,7 @@ function createNewTicket() {
         employeeid: $('#create-employee-id').val(),
         problemtype: $('#create-problem-type').val(),
         operatingsystem: $('#create-OS').val(),
+        specialistname: $('#available-Specialists').val(),
         problemdescription: $('#create-problem-description').val(),
         licencenumber: $('#create-licence-number').val() ? $('#create-licence-number').val() : undefined,
         serialnumber: $('#create-serial-number').val() ? $('#create-serial-number').val() : undefined,
