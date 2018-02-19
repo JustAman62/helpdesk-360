@@ -5,14 +5,18 @@ session_start();
 if (!isset($_SESSION['userid'])) {
   header('Location: login.php');
 }
-if ($_SESSION['acesslevel']) {
+
+require ('userLogin.php');
+$employee = $result->fetch_object();
+//If user as only specialist access transfer to Specialist Homepage
+if ($employee->accessLevel) {
     header('Location: specialistHome.php');
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<link> 
+<link>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
