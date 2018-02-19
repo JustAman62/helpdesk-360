@@ -18,12 +18,12 @@ if ($result->num_rows == 0) {
 else {
     $employee = $result->fetch_object();
     if ($employee->accessLevel) {
-        echo 'both';
+        echo 'specialist';
         $_SESSION['userid'] = $userID;
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
     }
     else {
-        echo 'specialist';
+        echo 'both';
         $_SESSION['userid'] = $userID;
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
     }
