@@ -7,7 +7,8 @@ if (!isset($_SESSION['userid'])) {
 }
 else{
     require('connect.php');
-    $sql ="SELECT `Users`.`accessLevel` FROM `Users`";
+    $userID = $_SESSION['userid'];
+    $sql ="SELECT `Users`.`accessLevel` FROM `Users` WHERE userID = '$userID'";
     $result = $conn->query($sql);
     if ($conn->error) die($conn->error);
     $employee = $result->fetch_object();
