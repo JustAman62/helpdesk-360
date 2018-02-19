@@ -115,9 +115,9 @@ function assignedSpecialistName(){
     $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result) {
       console.log("hello");
         let variable = "";
-        for ('#available-Specialists'[0]) {
+        for (let i in '#available-Specialists') {
           console.log("hii");
-            var result1 = '#available-Specialists'.firstName.concat(" ", '#available-Specialists'.lastName);
+            var result1 = '#available-Specialists'[0].firstName.concat(" ", '#available-Specialists'[0].lastName);
             variable.push(result1);
         }
         specialistName.list = variable;

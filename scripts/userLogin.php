@@ -12,12 +12,12 @@ $sql = "SELECT * FROM Users LEFT JOIN Employees ON Users.employeeID = Employees.
 $result = $conn->query($sql);
 if ($conn->error) die($conn->error);
 
-control.log(result);
 if ($result->num_rows == 0) {
     echo 'failure';
 }
+
 else {
-    if ($acessLevel) {
+    if ($result[2]) {
         echo 'both';
         $_SESSION['userid'] = $userID;
         $employee = $result->fetch_object();
@@ -29,7 +29,6 @@ else {
         $employee = $result->fetch_object();
         $_SESSION['username'] = $employee->firstName." ".$employee->lastName;
     }
-
 }
 
 
