@@ -87,12 +87,8 @@ if (!isset($_SESSION['userid'])) {
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
-            <h4 class="text-center">My Tickets (<span id="num-tickets"></span>)</h4>
+            <h4 class="text-center">My Tickets</h4>
             <h4 class="text-center small my-0">Sort By</h4>
-            <div class="btn-group btn-group-sm mb-2 w-100 my-1">
-                <button class="btn btn-secondary ml-auto active">Date Created</button>
-                <button class="btn btn-secondary mr-auto">Priority</button>
-            </div>
         </div>
         <div class="col-12">
             <div id="ticket-list"></div>
