@@ -172,15 +172,6 @@ if (!isset($_SESSION['userid'])) {
                                 </span>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6">
-                                    <label for="create-unique-identifier">Unique Identifier</label>
-                                    <div class="input-group">
-                                        <input type="text" id="create-unique-identifier" class="form-control w-100">
-                                        <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Check</button>
-                                </span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
