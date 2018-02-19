@@ -110,13 +110,10 @@ function assignNewSpecialist(){
 
 function assignedSpecialistName(){
     let input = $('#available-Specialists');
-    let specialistName = new Awesomplete(input[0]);
+    let specialistName;
     $.get('scripts/getSpecialistName.php', {specialistname: $('#available-Specialists').val()}, function(result) {
       console.log("hey");
-      var result1 = ('#available-Specialists').val();
-      var result2 = result1.split(":");
-      var result3 = result2[0];
-      specialistName.push(result3);
+      document.getElementById('assigned-specialist-name').value = result
     }, 'json');
     // $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result){
     //     console.log("hello");
@@ -131,7 +128,6 @@ function assignedSpecialistName(){
     input.on('focus', function(){
         specialistName.evaluate();
         specialistName.open();
-        $('#assigned-specialist-name') = specialistName;
     });
 }
 
