@@ -111,17 +111,22 @@ function assignNewSpecialist(){
 function assignedSpecialistName(){
     let input = $('#available-Specialists');
     let specialistName = new Awesomplete(input[0]);
-    // let variable = '#available-Specialists'.val().firstName.concat(" ", '#available-Specialists'.val().lastName);
-    $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(results){
-        console.log("hello");
-        let variable = "";
-        for (let i in '#available-Specialists'.val()) {
-          console.log("hii");
-            var result1 = '#available-Specialists'[i].firstName.concat(" ", '#available-Specialists'[i].lastName);
-            variable.push(result1);
-        }
-        specialistName.list = variable;
+    $.get('#available-Specialists', function(result){
+      var result1 = ('#available-Specialists').val();
+      var result2 = result1.split(":");
+      var result3 = result2[0];
+      specialistName.push(result3);
     }, 'json');
+    // $.get('#available-Specialists', {specialistname: $('#available-Specialists').val()}, function(result){
+    //     console.log("hello");
+    //     let variable = "";
+    //     for (let i in '#available-Specialists'.val()) {
+    //       console.log("hii");
+    //         var result1 = '#available-Specialists'[i].firstName.concat(" ", '#available-Specialists'[i].lastName);
+    //         variable.push(result1);
+    //     }
+    //     specialistName.list = variable;
+    // }, 'json');
     input.on('focus', function(){
         specialistName.evaluate();
         specialistName.open();
