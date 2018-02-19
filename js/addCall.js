@@ -103,10 +103,26 @@ function assignNewSpecialist(){
         }
         specialistList.list = array;
     }, 'json');
-    $('#assigned-specialist-name').val(result.contactNumber)
     input.on('focus', function(){
         specialistList.evaluate();
         specialistList.open();
+    });
+}
+
+function assignedSpecialistName(){
+    let input = $('#create-problem-type');
+    let specialistName = new awesomplete(input[0]);
+    $.get('#create-problem-type', {problemtype: $('#create-problem-type').val()}, function(result) {
+        let variable = "";
+        for (result) {
+            var result1 = result.firstName.concat(" ", result.lastName);
+            variable.push(result1);
+        }
+        specialistName.list = variable;
+    }, 'json');
+    input.on('focus', function(){
+        specialistName.evaluate();
+        specialistName.open();
     });
 }
 
