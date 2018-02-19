@@ -96,7 +96,6 @@ function assignNewSpecialist(){
     let specialistList = new Awesomplete(input[0]);
     specialistList.minChars = 0;
     $.get('scripts/assignSpecialist.php', {problemtype: $('#create-problem-type').val()}, function(result) {
-        console.log("hey");
         let array = [];
         for (let i in result) {
             var result1 = result[i].firstName.concat(" ", result[i].lastName, ": ", result[i].userID, " Tickets: ", result[i].Problems);
@@ -104,11 +103,14 @@ function assignNewSpecialist(){
         }
         specialistList.list = array;
     }, 'json');
+    $('#assigned-specialist-name').val(result.contactNumber)
     input.on('focus', function(){
         specialistList.evaluate();
         specialistList.open();
     });
 }
+
+function
 
 function checkSoftware() {
     let licenceNumber = $('#create-licence-number').val();
