@@ -117,7 +117,7 @@ function assignedSpecialistName(){
     $.get('#create-problem-type', {problemtype: $('#create-problem-type').val()}, function(result) {
       console.log("hello");
         let variable = "";
-        for ('#create-problem-type'.firstName) {
+        for (let firstName in '#create-problem-type') {
           console.log("hii");
             var result1 = '#create-problem-type'.firstName.concat(" ", '#create-problem-type'.lastName);
             variable.push(result1);
