@@ -37,8 +37,7 @@ if (!isset($_SESSION['userid'])) {
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <?php
-    if ($_SESSION['accesslevel']){ ?>
+    <?php if ($_SESSION['accesslevel']){ ?>
         <a class="navbar-brand nav-abs order-1" href="specialistHome.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
     <?php } else { ?>
         <a class="navbar-brand nav-abs order-1" href="index.php"><img src="img/helpdesk-logo.png" alt="Helpdesk-360 Logo" height="33px"></a>
