@@ -124,8 +124,6 @@ function assignedSpecialistName(){
     //     }
     //     specialistName.list = variable;
     // }, 'json');
-    input.on('focus', function(){
-    });
 }
 
 function checkSoftware() {
