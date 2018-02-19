@@ -203,7 +203,7 @@ function saveNewSoftware(){
     });
 
   loadSoftwareList();
-  $('#softwareModal').modal('hide');
+  $('#newSoftwareModal').modal('hide');
 }
 
 function saveSoftware() {
