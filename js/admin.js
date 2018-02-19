@@ -1,3 +1,4 @@
+// Contributions by: Jess McCreery, Aman Dhoot
 $(function(){
     loadEmployeeList();
     loadSoftwareList();

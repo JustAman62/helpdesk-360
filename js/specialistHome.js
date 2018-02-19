@@ -1,7 +1,5 @@
-//TODO: Replace temp specialist number
-//let specialistID = 1005;
-//$(function() {
-//    When the page is loaded, display the 5 most recent tickets
+// Contributions by: Jess McCreery
+//    When the page is loaded, display the 3 most recent tickets
 //    To do this, sort tickets by dateCreated
 
 $(function() {
@@ -14,15 +12,3 @@ $(function() {
         }
     }, 'json');
 });
-
-
-
-    // let filteredTickets = tickets.filter(function(obj) {
-    //     return (obj.specialistID === specialistID);
-    // });
-    // for (let i in filteredTickets) {
-    //     createTicket(filteredTickets[i].ticketNumber-1);
-    // }
-    //
-    // $('#num-tickets').text(filteredTickets.length)
-//});

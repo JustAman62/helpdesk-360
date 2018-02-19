@@ -1,4 +1,4 @@
-
+// Contributions by: Jess McCreery, Aman Dhoot, Mary Roca, Linus kurz
 let nameList;
 
 $(function() {

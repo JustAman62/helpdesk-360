@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot
 $(function() {
     $('#login-failure').hide()
 })

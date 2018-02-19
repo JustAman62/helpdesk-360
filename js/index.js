@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot
 $(function() {
 //    When the page is loaded, display the 3 most recent tickets
 //    To do this, sort tickets by dateCreated

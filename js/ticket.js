@@ -1,4 +1,4 @@
-
+// Contributions by: Aman Dhoot
 let ticketInfo;
 
 $(function() {

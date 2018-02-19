@@ -1,3 +1,4 @@
+// Contributions by: Aman Dhoot
 let ticketList;
 $(function() {
 //
@@ -62,5 +63,3 @@ function showTickets() {
     }
     resizeAllGridItems();
 }
-
-

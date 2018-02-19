@@ -1,4 +1,4 @@
-
+// Contributions by: Aman Dhoot
 //On page load, for every page on the website
 $(function() {
     //    Init popover for user logout
