@@ -89,7 +89,13 @@ if (!isset($_SESSION['userid'])) {
         <div class="col-12 col-md-8">
             <h4 class="text-center">My Tickets</h4>
         </div>
-        <div class="col-12">
+        <div class="d-flex justify-content-center w-100 flex-wrap">
+            <div class="btn-group-toggle btn-group m-1" role="group">
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="showSpecialistTickets()" id="filter-open-tickets">Open Tickets</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="button" onclick="showSpecialistTickets()" id="filter-closed-tickets">Closed Tickets</button>
+            </div>
+        </div>
+        <div class="col-12 mt-2">
             <div id="ticket-list"></div>
         </div>
     </div>
