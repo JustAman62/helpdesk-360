@@ -189,7 +189,16 @@ function createSoftwareItem(software) {
 
 function createNewSoftware() {
         $('#softwareModal').modal('show');
+        loadSoftwareByLicence();
         loadEmployeeList();
+    }
+
+    function createNewEmployee() {
+        $.get('scripts/createEmployee.php', function(result) {
+            $('#employeeModal').modal('show');
+            loadEmployeeById(result.employeeid)
+            loadEmployeeList();
+        }, 'json');
     }
 
     function loadSoftwareByLicence(licenceNumber) {
