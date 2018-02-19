@@ -101,36 +101,28 @@ if (!isset($_SESSION['userid'])) {
         <div class="form-group row">
             <label for="created-by" class="col-2 col-md-3 text-right col-form-label">Created By</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext" id="created-by" value="fwefwe">
-            </div>
-        </div>
-
-<!--TODO: Make this actually work-->
-        <div class="form-group row">
-            <label for="last-modified" class="col-2 col-md-3 text-right col-form-label">Last Modified</label>
-            <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext" id="last-modified" value="Placeholder">
+                <input type="text" readonly class="w-100 form-control-plaintext" id="created-by" value="fwefwe">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="problem-type" class="col-2 col-md-3 text-right col-form-label">Problem Type</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable" id="problem-type" value="Placeholder">
+                <input type="text" readonly class="w-100 form-control-plaintext modifiable" id="problem-type" value="Placeholder">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="priority" class="col-2 col-md-3 text-right col-form-label">Priority</label>
             <div class="col-12 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable" id="priority" value="Placeholder">
+                <input type="text" readonly class="w-100 form-control-plaintext modifiable" id="priority" value="Placeholder">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="original-description" class="col-2 col-md-3 text-right col-form-label">Original Description</label>
             <div class="col-10 col-md-9">
-                <input type="text" readonly class="form-control-plaintext modifiable auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
+                <input type="text" readonly class="w-100 form-control-plaintext modifiable auto-fill" data-autofill="originalDescription" id="original-description" value="Placeholder">
             </div>
         </div>
 
